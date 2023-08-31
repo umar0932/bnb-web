@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { Check } from "lucide-react";
 import { XCircle } from "lucide-react";
+import { Info } from "lucide-react";
 export default function Pricing() {
   const [isDivVisible, setIsDivVisible] = useState(true);
   function toggleDivVisibility() {
@@ -19,12 +20,11 @@ export default function Pricing() {
 
         <div className="flex h-[40px] justify-end ">
           {!isDivVisible && (
-            <button
+            <Info
               onClick={toggleDivVisibility}
-              className="field-drop-shadow mr-4 w-[160px] rounded-lg bg-btnprimary p-2 text-white transition-transform hover:scale-105"
-            >
-              About Pricing
-            </button>
+              className="div-drop-shadow mr-4 cursor-pointer rounded-full bg-white  p-2 text-btnprimary  transition-transform hover:scale-105"
+              size={50}
+            />
           )}
         </div>
 
