@@ -2,16 +2,7 @@ import Footer from "@/components/Footer/Footer";
 import Header from "@/components/Header/Header";
 import ContactUs from "@/components/ContactUs/ContactUs";
 import Link from "next/link";
-import { useFormik } from "formik";
-import StaticImage from "next/image";
-import FileSearch from "../../public/assets/file_search.svg";
-import FileTransfer from "../../public/assets/file_transfer.svg";
-import EditInfo from "../../public/assets/info_icon.svg";
-import Register from "../../public/assets/register_icon.svg";
-import Ticket from "../../public/assets/ticket_icon.svg";
-import Account from "../../public/assets/account_icon.svg";
-import File from "../../public/assets/file_icon.svg";
-import ContactBook from "../../public/assets/contact_book.svg";
+
 export default function FindTickets() {
   return (
     <>

@@ -53,14 +53,18 @@ export default function HelpCenter() {
             Attending an event
           </div>
           <div className="flex w-full flex-wrap justify-between gap-8 p-10 max-lg:justify-center">
-            <button className="field-drop-shadow flex items-center gap-4 rounded-lg p-3 px-5 text-xl transition-transform hover:scale-105">
-              <StaticImage src={FileSearch} alt="Logo" className="h-6 w-6" />
-              Find your tickets
-            </button>
-            <button className="field-drop-shadow flex items-center gap-4 rounded-lg p-3 px-5 text-xl transition-transform hover:scale-105">
-              <StaticImage src={ContactBook} alt="Logo" className="h-6 w-6" />
-              Contact organizer
-            </button>
+            <Link href="/find-tickets">
+              <button className="field-drop-shadow flex items-center gap-4 rounded-lg p-3 px-5 text-xl transition-transform hover:scale-105">
+                <StaticImage src={FileSearch} alt="Logo" className="h-6 w-6" />
+                Find your tickets
+              </button>
+            </Link>
+            <Link href="/contact-event-organizer">
+              <button className="field-drop-shadow flex items-center gap-4 rounded-lg p-3 px-5 text-xl transition-transform hover:scale-105">
+                <StaticImage src={ContactBook} alt="Logo" className="h-6 w-6" />
+                Contact organizer
+              </button>
+            </Link>
           </div>
         </div>
         <div className="flex  max-w-[640px] flex-col  ">
