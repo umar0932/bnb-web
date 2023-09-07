@@ -9,9 +9,9 @@ import ContactSalesForm from "@/components/Forms/ContactSalesForm";
 export default function FindTickets() {
   return (
     <>
-      <div className="flex w-full flex-col">
-        <Header />
-        <div className="flex justify-end  bg-primary py-2 pr-4 font-normal text-btnsecondary">
+      <div className="flex w-full flex-col bg-primary">
+        <Header colorScheme="alternative" />
+        <div className="flex justify-end   py-2 pr-4 font-normal text-btnsecondary">
           <Link href="/">Home</Link>/ Contact Sales
         </div>
         <div className="flex  bg-primary p-2 max-lg:flex-col md:p-10">

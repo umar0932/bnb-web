@@ -4,7 +4,7 @@ export default function HeroSection() {
   return (
     <>
       <div className="background-image relative ">
-        <Header />
+        <Header colorScheme="alternative" />
         <div className="via-[rgba(6, 23, 53, 0.04)] absolute left-0 top-0 z-10 h-[800px] w-full bg-gradient-to-b from-[#061735] to-transparent "></div>
 
         <div className=" flex h-[741px] flex-col items-center justify-center">

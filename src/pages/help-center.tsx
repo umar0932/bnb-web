@@ -22,7 +22,7 @@ export default function HelpCenter() {
   return (
     <>
       <div className="flex w-full flex-col  bg-[#EFF8FF] ">
-        <Header />
+        <Header colorScheme="second-alternative" />
         <div className="flex justify-end  py-2 pr-4 font-normal text-btnsecondary">
           <Link href="/help-center">Help Center</Link>
         </div>
