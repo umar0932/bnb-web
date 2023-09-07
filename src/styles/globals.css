@@ -93,12 +93,45 @@ body {
   .drop-shadow-custom {
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   }
+  /* Webkit-based browsers (Chrome, Safari) */
+  ::-webkit-scrollbar {
+    width: 12px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Color of the track */
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #c5c5c5; /* Color of the thumb */
+    border-radius: 6px; /* Rounded corners */
+  }
+
   .linear-gradient {
     background: linear-gradient(
       270deg,
       #def0ff 55.01%,
       rgba(222, 240, 255, 0) 95.77%
     );
+  }
+  .hero-gradient {
+    background: linear-gradient(
+      180deg,
+      #061735 0%,
+      rgba(6, 23, 53, 0.04) 54.17%
+    );
+  }
+
+  .background-image {
+    background-image: url("../../public/assets/hero_section.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* background: linear-gradient(
+      180deg,
+      #061735 0%,
+      rgba(6, 23, 53, 0.5) 54.17%
+    ); */
   }
 }
 

@@ -31,10 +31,12 @@ export default function Header() {
 
   return (
     <>
-      <div className="bg-transparent">
-        <nav className=" bg-white p-5 shadow lg:flex lg:items-center lg:justify-between">
+      <div className=" relative z-20  bg-transparent">
+        <nav className="  bg-transparent p-5 lg:flex lg:items-center lg:justify-between">
           <div className="flex items-center justify-between">
-            <span className="text-2xl">Logo</span>
+            <div className="w-[50px] rounded-lg bg-white p-2 text-center">
+              <span className="text-lg">Logo</span>
+            </div>
             <Sheet>
               <SheetTrigger asChild>
                 <span className="mx-2 block cursor-pointer text-3xl lg:hidden">
@@ -42,7 +44,7 @@ export default function Header() {
                 </span>
               </SheetTrigger>
               <SheetContent>
-                <ul className="my-10 flex w-full flex-col items-center justify-between gap-5 bg-white  transition-all duration-500 ease-in ">
+                <ul className="my-10 flex w-full flex-col items-center justify-between gap-5 bg-transparent  transition-all duration-500 ease-in ">
                   <li className="mx-4 my-3 md:my-0">
                     <Select>
                       <SelectTrigger className="w-[110px] border-none  bg-transparent font-normal text-secondary outline-none">
@@ -111,7 +113,7 @@ export default function Header() {
             </Sheet>
           </div>
 
-          <ul className="absolute left-0 top-[-400px] z-[-1] w-full gap-5 bg-white py-4 pl-7 opacity-0 transition-all duration-500 ease-in lg:static lg:z-auto lg:flex lg:items-center lg:justify-center lg:py-0 lg:pl-10 lg:opacity-100">
+          <ul className="absolute left-0 top-[-400px] z-[-1] w-full gap-5 bg-transparent py-4 pl-7 opacity-0 transition-all duration-500 ease-in lg:static lg:z-auto lg:flex lg:items-center lg:justify-center lg:py-0 lg:pl-10 lg:opacity-100">
             <li className="mx-6 my-6 md:my-0">
               <Select>
                 <SelectTrigger className="w-[110px] border-none  bg-transparent font-normal text-secondary outline-none">
@@ -147,20 +149,6 @@ export default function Header() {
                 <Cross size={12} stroke="none" fill="#CC0001" />
               </div>
             </li>
-
-            {/* <div className="mx-10 my-6 flex h-[35px] max-w-[288px] items-center rounded-lg bg-btnprimary transition-all hover:bg-btnsecondary md:my-0">
-              <Link href="/login">
-                <button className="mx-4 bg-transparent px-6 py-2 text-white max-sm:text-sm ">
-                  Login
-                </button>
-              </Link>
-              <div className="h-[27px] border border-[#878787] opacity-70 "></div>
-              <Link href="/signup">
-                <button className="mx-4 bg-transparent px-6 py-2 text-white max-sm:text-sm">
-                  Sign Up
-                </button>
-              </Link>
-            </div> */}
           </ul>
           <div>
             <form onSubmit={formik.handleSubmit} className="mx-4">
@@ -189,6 +177,7 @@ export default function Header() {
             </Link>
           </div>
         </nav>
+        <div className="mx-5 border-b border-b-[#00437A]"></div>
       </div>
     </>
   );

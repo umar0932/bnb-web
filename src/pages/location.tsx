@@ -20,26 +20,6 @@ export default function Location() {
                 </span>
                 <Autocomplete />
               </div>
-
-              {/* <div className="mt-3 flex   p-2">
-                <Autocomplete />
-                <input
-                  className="w-full border-b border-[#757575]  p-2 text-3xl font-bold text-primary outline-none placeholder:text-primary"
-                  placeholder="California"
-                />
-              </div> */}
-              {/* <div className="mt-2 flex flex-col bg-[#F6FBFF] p-5">
-                <div className=" flex gap-5 border-b border-[#9CB2DF] p-2">
-                  <StaticImage src={CurrentLocation} alt="current-location" />
-                  <span className="text-[#3B5998]">
-                    Use my current location
-                  </span>
-                </div>
-                <div className="flex gap-5 p-2">
-                  <StaticImage src={BrowserLocations} alt="browse-location" />
-                  <span className="text-[#3B5998]">Browse online events</span>
-                </div>
-              </div> */}
             </div>
           </div>
           <div className="flex w-full flex-col justify-center p-10 max-lg:order-1 lg:ml-10 lg:w-1/2">
