@@ -9,28 +9,30 @@ import ContactSalesForm from "@/components/Forms/ContactSalesForm";
 export default function FindTickets() {
   return (
     <>
-      <div className="flex w-full flex-col bg-primary">
-        <Header colorScheme="alternative" />
-        <div className="flex justify-end   py-2 pr-4 font-normal text-btnsecondary">
-          <Link href="/">Home</Link>/ Contact Sales
-        </div>
-        <div className="flex  bg-primary p-2 max-lg:flex-col md:p-10">
-          <div className="flex w-full flex-col items-center justify-center gap-8  px-4 max-lg:order-2 lg:w-[45%]">
-            <ContactSalesForm />
-            <button className=" mt-4 w-[230px] rounded-lg bg-btnprimary p-2 text-white hover:bg-btnsecondary">
-              Contact Sales
-            </button>
+      <div className="flex w-full flex-col ">
+        <div className="flex w-full flex-col bg-primary">
+          <Header colorScheme="alternative" />
+          <div className="flex justify-end   py-2 pr-4 font-normal text-btnsecondary">
+            <Link href="/">Home</Link>/ Contact Sales
           </div>
-          <div className="max-lgorder-1 flex w-full flex-col gap-3  p-8 max-sm:text-center lg:w-[55%]">
-            <span className="  text-6xl font-bold text-white max-md:text-5xl">
-              Reach 90 million unique ticket-buyers on Bnb
-            </span>
-            <span className="py-6 text-3xl font-normal text-[#B2DBFE] max-md:text-2xl">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-              egestas nisl magna, non malesuada metus ornare in.
-            </span>
-            <div className="mt-4">
-              <TrustedSection />
+          <div className="flex  bg-primary p-2 max-lg:flex-col md:p-10">
+            <div className="flex w-full flex-col items-center justify-center gap-8  px-4 max-lg:order-2 lg:w-[45%]">
+              <ContactSalesForm />
+              <button className=" mt-4 w-[230px] rounded-lg bg-btnprimary p-2 text-white hover:bg-btnsecondary">
+                Contact Sales
+              </button>
+            </div>
+            <div className="max-lgorder-1 flex w-full flex-col gap-3  p-8 max-sm:text-center lg:w-[55%]">
+              <span className="  text-6xl font-bold text-white max-md:text-5xl">
+                Reach 90 million unique ticket-buyers on Bnb
+              </span>
+              <span className="py-6 text-3xl font-normal text-[#B2DBFE] max-md:text-2xl">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                egestas nisl magna, non malesuada metus ornare in.
+              </span>
+              <div className="mt-4">
+                <TrustedSection />
+              </div>
             </div>
           </div>
         </div>

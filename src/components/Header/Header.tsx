@@ -7,7 +7,7 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from "@/components/ui/sheet";
+} from "@/core/ui/sheet";
 
 import { Menu, XCircle, Cross } from "lucide-react";
 import {
@@ -18,7 +18,7 @@ import {
   SelectLabel,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
+} from "@/core/ui/select";
 import { useFormik } from "formik";
 
 export default function Header({ colorScheme = "default" }) {

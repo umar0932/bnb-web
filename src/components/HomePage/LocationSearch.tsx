@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useAutocomplete } from "../Hooks/useAutocomplete";
+import { useAutocomplete } from "../../core/hooks/useAutocomplete";
 import Image from "next/image";
 import ArrowIcon from "../../../public/assets/arrow_down.svg";
 import CurrentLocation from "../../../public/assets/current_location.svg";
@@ -32,7 +32,6 @@ export default function LocationSearch() {
               <div className="absolute right-[-230px] top-[40px] flex flex-col gap-3 bg-[#F6FBFF] p-4 max-md:right-[-60px] max-sm:p-3">
                 <div
                   className="flex cursor-pointer gap-5"
-                  ref={findMyLocation}
                   onClick={toggleAdditionalDiv}
                 >
                   <Image src={CurrentLocation} alt="current_location" />

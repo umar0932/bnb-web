@@ -1,5 +1,5 @@
 import Header from "@/components/Header/Header";
-import { Progress } from "@/components/ui/progress";
+import { Progress } from "@/core/ui/progress";
 import MusicIcon from "../../public/assets/music_icon.svg";
 import FoodIcon from "../../public/assets/food_icon.svg";
 import { useState } from "react";
@@ -9,7 +9,7 @@ import {
   DialogContent,
   DialogHeader,
   DialogTitle,
-} from "@/components/ui/dialog";
+} from "@/core/ui/dialog";
 import StaticImage from "next/image";
 
 export default function Interests() {

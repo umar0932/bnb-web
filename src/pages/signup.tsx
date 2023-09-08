@@ -17,7 +17,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog";
+} from "@/core/ui/dialog";
 
 export default function signup() {
   const [isDialogOpen, setIsDialogOpen] = useState(false);

@@ -17,7 +17,7 @@ export default function TrendingCategories() {
   };
 
   const [selected, setSelected] = useState<string[]>([]);
-  const [isVisible, setIsVisible] = useState(true); // State to manage visibility
+  // const [isVisible, setIsVisible] = useState(true);
   const categories: string[] = [
     "Barbers",
     "Stylists",
@@ -47,8 +47,8 @@ export default function TrendingCategories() {
   //   setIsVisible(false); // Set visibility to false when closing
   // };
 
-  const buttonClasses: string =
-    "text-md w-[169px] rounded-lg border border-[#C9C9C9] bg-white p-2";
+  const buttonClasses =
+    "text-md w-[169px] rounded-lg border border-[#C9C9C9]  p-2";
 
   return (
     <>
@@ -100,8 +100,8 @@ export default function TrendingCategories() {
               key={index}
               className={`${buttonClasses} ${
                 selected.includes(category)
-                  ? "bg-[#AF0000] text-white"
-                  : "text-[#313131]"
+                  ? "bg-[#AF0001] text-white"
+                  : "bg-white text-[#313131]"
               }`}
               onClick={() => toggleInterest(category)}
             >

@@ -1,6 +1,6 @@
 import Image, { StaticImageData } from "next/image";
 import { useState } from "react";
-import HeartIcon from "../Icons/HeartIcon"; // Import the HeartIcon component
+import HeartIcon from "../../core/icons/HeartIcon"; // Import the HeartIcon component
 
 // Define an interface for the event object
 interface Event {

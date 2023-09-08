@@ -9,7 +9,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog";
+} from "@/core/ui/dialog";
 
 import LoginImage from "../../public/assets/login_page.png";
 import { Facebook } from "lucide-react";

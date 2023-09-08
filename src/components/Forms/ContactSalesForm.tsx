@@ -7,7 +7,7 @@ import {
   SelectLabel,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
+} from "@/core/ui/select";
 export default function ContactSalesForm() {
   const formik = useFormik({
     initialValues: {

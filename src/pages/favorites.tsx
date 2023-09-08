@@ -1,6 +1,6 @@
 import FollowCard from "@/components/Cards/FollowCard";
 import Header from "@/components/Header/Header";
-import { Progress } from "@/components/ui/progress";
+import { Progress } from "@/core/ui/progress";
 import Link from "next/link";
 import CollectionLogo1 from "../../public/assets/Collection1_logo.svg";
 import CollectionLogo2 from "../../public/assets/Collection2_logo.svg";

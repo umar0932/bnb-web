@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Header from "@/components/Header/Header";
-import { useAutocomplete } from "@/components/Hooks/useAutocomplete";
+import { useAutocomplete } from "@/core/hooks/useAutocomplete";
 import ArrowIcon from "../../public/assets/arrow_down.svg";
 import CurrentLocation from "../../public/assets/current_location.svg";
 import BrowseOnline from "../../public/assets/browse_online.svg";
@@ -81,7 +81,7 @@ export default function FindNextEvent() {
         </div>
 
         {/* Nearest Results */}
-        <div className="mt-40 flex flex-col bg-white p-10 max-sm:p-3">
+        <div className="mt-20 flex flex-col bg-white p-10 max-sm:p-3">
           <span className="gap-10 pl-10 pt-10  text-3xl font-bold text-primary max-sm:flex-col max-sm:pl-0 ">
             Nearest California
           </span>

@@ -1,4 +1,3 @@
-import EventCard from "@/components/Cards/EventCard";
 import Footer from "@/components/Footer/Footer";
 import EventSection from "@/components/HomePage/EventSection";
 import HeroSection from "@/components/HomePage/HeroSection";

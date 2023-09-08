@@ -3,7 +3,7 @@ import CurrentLocation from "../../../public/assets/current_location.svg";
 import BrowserLocations from "../../../public/assets/browse_online.svg";
 import StaticImage from "next/image";
 
-import { useAutocomplete } from "../Hooks/useAutocomplete";
+import { useAutocomplete } from "../../core/hooks/useAutocomplete";
 
 export default function Autocomplete() {
   const { searchInputRef, findMyLocation } = useAutocomplete();

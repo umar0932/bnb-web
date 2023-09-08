@@ -35,7 +35,7 @@ export default function InterestsDialog() {
   };
 
   const buttonClasses: string =
-    "text-md w-[169px] rounded-lg border border-[#C9C9C9] bg-white p-2";
+    "text-md w-[169px] rounded-lg border border-[#C9C9C9] p-2";
 
   return isVisible ? (
     <>
@@ -59,7 +59,7 @@ export default function InterestsDialog() {
               className={`${buttonClasses} ${
                 selected.includes(interest)
                   ? "bg-[#AF0000] text-white"
-                  : "text-[#313131]"
+                  : "bg-white text-[#313131]"
               }`}
               onClick={() => toggleInterest(interest)}
             >
