@@ -7,7 +7,7 @@ export default function FindTickets() {
   return (
     <>
       <div className="flex w-full flex-col  bg-[#EFF8FF] ">
-        <Header colorScheme="third-alternative" />
+        <Header />
         <div className="flex justify-end  py-2 pr-4 font-normal text-btnsecondary">
           <Link href="/help-center">Help Center</Link>/ Your Tickets
         </div>

@@ -58,7 +58,7 @@ export default function InterestsDialog() {
               key={index}
               className={`${buttonClasses} ${
                 selected.includes(interest)
-                  ? "bg-[#AF0001] text-white"
+                  ? "bg-[#AF0000] text-white"
                   : "text-[#313131]"
               }`}
               onClick={() => toggleInterest(interest)}

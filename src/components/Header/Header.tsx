@@ -36,8 +36,6 @@ export default function Header({ colorScheme = "default" }) {
       return "text-white";
     } else if (colorScheme === "second-alternative") {
       return "text-white";
-    } else if (colorScheme === "third-alternative") {
-      return "text-white";
     }
   };
 

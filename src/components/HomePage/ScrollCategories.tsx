@@ -1,5 +1,5 @@
 import ScrollContainer from "react-scroll-horizontal";
-import events from "@/utils/fakeBackend";
+import { events } from "@/utils/fakeBackend";
 import EventCard from "../Cards/EventCard";
 export default function ScrollCategories() {
   const eventsArray = events;

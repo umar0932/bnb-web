@@ -18,7 +18,7 @@ export default function TrendingCategories() {
 
   const [selected, setSelected] = useState<string[]>([]);
   const [isVisible, setIsVisible] = useState(true); // State to manage visibility
-  const interests: string[] = [
+  const categories: string[] = [
     "Barbers",
     "Stylists",
     "Arts & Entertainment",
@@ -35,22 +35,22 @@ export default function TrendingCategories() {
     "Book Club",
   ];
 
-  const toggleInterest = (interest: string): void => {
-    if (selected.includes(interest)) {
-      setSelected(selected.filter((item) => item !== interest));
+  const toggleInterest = (category: string): void => {
+    if (selected.includes(category)) {
+      setSelected(selected.filter((item) => item !== category));
     } else {
-      setSelected([...selected, interest]);
+      setSelected([...selected, category]);
     }
   };
 
-  const handleClose = () => {
-    setIsVisible(false); // Set visibility to false when closing
-  };
+  // const handleClose = () => {
+  //   setIsVisible(false); // Set visibility to false when closing
+  // };
 
   const buttonClasses: string =
     "text-md w-[169px] rounded-lg border border-[#C9C9C9] bg-white p-2";
 
-  return isVisible ? (
+  return (
     <>
       <div className="flex min-h-[450px] flex-col gap-3 bg-[#DEF0FF] p-10">
         <span className="text-3xl font-bold text-[#313131]">
@@ -95,21 +95,21 @@ export default function TrendingCategories() {
           </span>
         </div>
         <div className="mt-5 flex flex-wrap gap-8 max-lg:items-center max-lg:justify-center">
-          {interests.map((interest, index) => (
+          {categories.map((category, index) => (
             <button
               key={index}
               className={`${buttonClasses} ${
-                selected.includes(interest)
-                  ? "bg-[#AF0001] text-white"
+                selected.includes(category)
+                  ? "bg-[#AF0000] text-white"
                   : "text-[#313131]"
               }`}
-              onClick={() => toggleInterest(interest)}
+              onClick={() => toggleInterest(category)}
             >
-              {interest}
+              {category}
             </button>
           ))}
         </div>
       </div>
     </>
-  ) : null;
+  );
 }

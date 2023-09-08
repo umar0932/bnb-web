@@ -7,7 +7,12 @@ import EventImage6 from "../../public/assets/event_card6.png";
 import EventImage7 from "../../public/assets/event_card7.png";
 import EventImage8 from "../../public/assets/event_card8.png";
 
-const events = [
+import OrganizerLogo1 from "../../public/assets/organizer_logo1.svg";
+import OrganizerLogo2 from "../../public/assets/organizer_logo2.svg";
+import OrganizerLogo3 from "../../public/assets/organizer_logo3.svg";
+import OrganizerLogo4 from "../../public/assets/organizer_logo4.svg";
+
+export const events = [
   {
     imageSrc: EventImage1,
     title: "Danica hairstylist: Haircut",
@@ -83,4 +88,25 @@ const events = [
   // Add more event objects as needed
 ];
 
-export default events;
+export const organizers = [
+  {
+    imageSrc: OrganizerLogo1,
+    name: "ABC Company",
+    countFollowers: "87654",
+  },
+  {
+    imageSrc: OrganizerLogo2,
+    name: "ABC Company",
+    countFollowers: "87654",
+  },
+  {
+    imageSrc: OrganizerLogo3,
+    name: "ABC Company",
+    countFollowers: "87654",
+  },
+  {
+    imageSrc: OrganizerLogo4,
+    name: "ABC Company",
+    countFollowers: "87654",
+  },
+];

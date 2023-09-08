@@ -1,12 +1,14 @@
 import EventCard from "../Cards/EventCard";
-import events from "../../utils/fakeBackend";
+import { events } from "../../utils/fakeBackend.js";
 
 export default function EventSection() {
   const eventsArray = events;
 
+  console.log(eventsArray, events);
+
   return (
     <>
-      <div className="flex flex-col gap-2 bg-primary p-10">
+      <div className="mb-5 flex flex-col gap-2 bg-primary p-10">
         <div className="container flex max-h-[350px] flex-col max-md:items-center max-md:justify-center">
           <span className="text-[200px] font-bold text-[#0F3261] max-lg:text-[150px] max-sm:text-[70px]">
             ONLINE
