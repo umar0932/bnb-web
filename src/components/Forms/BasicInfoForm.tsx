@@ -1,5 +1,23 @@
 import BasicInfoIcon from "../../../public/assets/basic_info_icon.svg";
 import { useFormik } from "formik";
+// import { XCircle } from "lucide-react";
+import ReactSelect from "react-select";
+const options = [
+  { value: "event", label: "event" },
+  { value: "concert", label: "concert" },
+  { value: "confrences", label: "confrences" },
+  { value: "seminars", label: "seminars" },
+  { value: "networking sessions", label: "networking sessions" },
+  { value: "charity events", label: "charity events" },
+  { value: "corporate events", label: "corporate events" },
+  { value: "educational event", label: "educational event" },
+  { value: "technical event", label: "technical event" },
+  { value: "ted talk", label: "ted talk" },
+  { value: "exhibition", label: "exhibition" },
+  { value: "Talk Show", label: "Talk Show" },
+  { value: "Workshops", label: "Workshops" },
+];
+
 import {
   Select,
   SelectContent,
@@ -11,13 +29,44 @@ import {
 } from "../../core/ui/select";
 import Image from "next/image";
 import { useState } from "react";
-export default function BasicInfoForm() {
-  const [charCount, setCharCount] = useState(0);
-  const maxCharLimit = 75;
-  const [tagsInput, setTagsInput] = useState("");
-  const [tags, setTags] = useState([]);
+import reactSelect from "react-select";
 
+export default function BasicInfoForm() {
+  const [value, setValue] = useState<any[]>([]);
+  const [charCount, setCharCount] = useState(0);
+  // const [TagCharCount, setTagCharCount] = useState(0);
+  const maxCharLimit = 75;
+  const [tagCount, setTagCount] = useState(0);
+
+  const maxTagLimit = 10;
+  // Handle the tag selection
+  const handleTagChange = (newValue: any) => {
+    if (newValue.length <= maxTagLimit) {
+      setValue(newValue);
+      setTagCount(newValue.length);
+    }
+  };
+
+  // const maxTagLimit = 25;
+  // const [tags, setTags] = useState([]);
+  // const addTags = (event: any) => {
+  //   if (event.key === "Enter" && event.target.value !== "") {
+  //     const newTag = event.target.value.trim().substring(0, 25); // Limit tag length to 25 characters
+  //     setTagCharCount(0);
+  //     // event.target.value = "";
+  //     if (newTag) {
+  //       if (tags.length < 10) {
+  //         setTags([...tags, newTag]);
+  //         formik.setFieldValue("tagval", ""); // Clear the tagval field
+  //       }
+  //     }
+  //   }
+  // };
+  // const removeTags = (indexToRemove: any) => {
+  //   setTags(tags.filter((_, index) => index != indexToRemove));
+  // };
   //   Checking Input should not exceed 75 characters limit
+
   const handleInputChange = (e: any) => {
     const inputValue = e.target.value;
     if (inputValue.length <= maxCharLimit) {
@@ -26,29 +75,20 @@ export default function BasicInfoForm() {
     }
   };
 
-  //  Logic to check valid tags
-  const handleTagsChange = (e: any) => {
-    const inputValue = e.target.value;
+  // const handleTagChange = (e: any) => {
+  //   const tagValue = e.target.value;
+  //   if (tagValue.length <= maxTagLimit) {
+  //     formik.handleChange(e); // Handle formik changes
+  //     setTagCharCount(tagValue.length); // Update charCount
+  //   }
+  // };
 
-    // Split the input by commas and trim whitespace
-    const newTags = inputValue.split(",").map((tag: any) => tag.trim());
-
-    // Filter out empty tags and tags exceeding 25 characters
-    const validTags = newTags.filter(
-      (tag: any) => tag !== "" && tag.length <= 25
-    );
-
-    // Update the tags input field if it doesn't exceed 10 tags
-    if (validTags.length <= 10) {
-      setTagsInput(inputValue);
-      setTags(validTags);
-    }
-  };
   const formik = useFormik({
     initialValues: {
       event_title: "",
       organizer_name: "",
       tags: "",
+      tagval: "",
     },
     onSubmit: (values) => {
       JSON.stringify(values, null, 2);
@@ -151,35 +191,54 @@ export default function BasicInfoForm() {
                   Improve discoverability of your event by adding tags relevant
                   to the subject matter.
                 </span>
-                <div className=" flex  flex-col rounded-lg bg-[#EFF8FF] p-3">
+                <div className=" flex  flex-col flex-wrap rounded-lg bg-[#EFF8FF] p-3 ">
                   <span>Add Tags</span>
-                  <input
-                    className="h-[25px] bg-transparent outline-none placeholder:text-sm"
-                    id="tags"
-                    name="tags"
-                    type="text"
-                    placeholder="Add search keys"
-                    onChange={handleTagsChange} // Use a custom function to handle input change
-                    value={tagsInput}
+                  <ReactSelect
+                    options={options}
+                    defaultValue={value}
+                    placeholder="Add search key"
+                    onChange={handleTagChange}
+                    isMulti
+                    isOptionDisabled={() => value.length >= 10}
+                    styles={{
+                      control: (baseStyles, state) => ({
+                        ...baseStyles,
+                        backgroundColor: "transparent",
+                        border: "none",
+                      }),
+                    }}
                   />
-                </div>
-                <div className="flex flex-wrap">
-                  {tags.map((tag, index) => (
-                    <div
-                      key={index}
-                      className="mb-2 mr-2 rounded-full bg-[#757575] px-2 py-1 text-sm text-white"
-                    >
-                      {tag}
-                    </div>
-                  ))}
+
+                  {/* <div className="flex flex-wrap items-center gap-2">
+                    <ul className="flex flex-wrap gap-1">
+                      {tags.map((tag, index) => (
+                        <li key={index}>
+                          <span className="flex items-center justify-center gap-2 rounded-lg bg-btnsecondary p-2 text-sm text-white">
+                            {tag}{" "}
+                            <XCircle
+                              className="h-[16px] w-[16px] cursor-pointer"
+                              onClick={() => removeTags(index)}
+                            />
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                    <input
+                      className="h-[25px] bg-transparent outline-none placeholder:text-sm"
+                      placeholder="Add search keys"
+                      id="tagval"
+                      name="tagval"
+                      type="text"
+                      onChange={handleTagChange}
+                      value={formik.values.tagval}
+                      maxLength={maxTagLimit}
+                      onKeyUp={(e) => (e.key === "Enter" ? addTags(e) : null)}
+                    />
+                  </div> */}
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-btnsecondary">
-                    {tags.length}/10 Tags
-                  </span>
-                  <span className="text-btnsecondary">
-                    {tagsInput.length}/25
-                  </span>
+                  <span className="text-btnsecondary">{tagCount}/10 Tags</span>
+                  <span className="text-btnsecondary">0/25</span>
                 </div>
               </div>
             </form>
