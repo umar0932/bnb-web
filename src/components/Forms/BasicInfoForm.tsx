@@ -1,7 +1,7 @@
 import BasicInfoIcon from "../../../public/assets/basic_info_icon.svg";
 import { useFormik } from "formik";
 // import { XCircle } from "lucide-react";
-import ReactSelect from "react-select";
+import CreatableSelect from "react-select/creatable";
 const options = [
   { value: "event", label: "event" },
   { value: "concert", label: "concert" },
@@ -34,6 +34,8 @@ import reactSelect from "react-select";
 export default function BasicInfoForm() {
   const [value, setValue] = useState<any[]>([]);
   const [charCount, setCharCount] = useState(0);
+  // const [tagCharCount, setTagCharCount] = useState(0);
+
   // const [TagCharCount, setTagCharCount] = useState(0);
   const maxCharLimit = 75;
   const [tagCount, setTagCount] = useState(0);
@@ -193,13 +195,27 @@ export default function BasicInfoForm() {
                 </span>
                 <div className=" flex  flex-col flex-wrap rounded-lg bg-[#EFF8FF] p-3 ">
                   <span>Add Tags</span>
-                  <ReactSelect
+                  {/* <ReactSelect
                     options={options}
                     defaultValue={value}
                     placeholder="Add search key"
                     onChange={handleTagChange}
                     isMulti
                     isOptionDisabled={() => value.length >= 10}
+                    styles={{
+                      control: (baseStyles, state) => ({
+                        ...baseStyles,
+                        backgroundColor: "transparent",
+                        border: "none",
+                      }),
+                    }}
+                  /> */}
+                  <CreatableSelect
+                    onChange={handleTagChange}
+                    isMulti
+                    isOptionDisabled={() => value.length >= 10}
+                    options={options}
+                    placeholder="Add search key"
                     styles={{
                       control: (baseStyles, state) => ({
                         ...baseStyles,
@@ -238,7 +254,7 @@ export default function BasicInfoForm() {
                 </div>
                 <div className="flex justify-between">
                   <span className="text-btnsecondary">{tagCount}/10 Tags</span>
-                  <span className="text-btnsecondary">0/25</span>
+                  {/* <span className="text-btnsecondary">{tagCharCount}/25</span> */}
                 </div>
               </div>
             </form>
