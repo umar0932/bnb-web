@@ -136,6 +136,11 @@ body {
       rgba(6, 23, 53, 0.5) 54.17%
     ); */
   }
+  .event-details-background {
+    background-image: url("../../public/assets/event-details-background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
 }
 
 @layer base {
