@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Link from "next/link";
+
 import {
   Sheet,
   SheetContent,
@@ -38,7 +39,43 @@ export default function Header({ colorScheme = "default" }) {
       return "text-white";
     }
   };
+  // if (colorScheme === "event-page-header") {
+  //   return (
+  //     <>
+  //       <div className="flex items-center justify-between bg-white p-5">
+  //         <div className="rounded-md bg-[#e4e2e2] p-4 text-black">Logo</div>
+  //         <span className="text-2xl font-bold text-[#313131]">
+  //           Creating an Event
+  //         </span>
+  //         <div>
+  //           <Select>
+  //             <SelectTrigger
+  //               className="w-[250px]   max-sm:w-[220px]"
+  //               asChild={true}
+  //             >
+  //               <SelectValue placeholder="johndeo@gmail.com" />
+  //             </SelectTrigger>
+  //             <SelectContent className="bg-[#07264E] text-white ">
+  //               <SelectGroup>
+  //                 <SelectItem value="Switch to attendee" className="text-white">
+  //                   Switch to attendee
+  //                 </SelectItem>
+  //                 <SelectItem value="Account Settings" className="text-white">
+  //                   Account Settings
+  //                 </SelectItem>
+  //                 <SelectItem value="Logout" className="text-white">
+  //                   Logout
+  //                 </SelectItem>
+  //               </SelectGroup>
+  //             </SelectContent>
+  //           </Select>
+  //         </div>
+  //       </div>
+  //     </>
+  //   );
+  // }
 
+  // Header Without Login
   return (
     <>
       <div className=" relative z-20  bg-transparent">
@@ -197,6 +234,7 @@ export default function Header({ colorScheme = "default" }) {
               </form>
             </div>
           )}
+
           <div className="flex h-full min-w-[328px] items-center justify-evenly rounded-lg bg-btnprimary  p-1 transition-all hover:bg-btnsecondary max-xl:min-w-[128px] max-xl:flex-col max-lg:hidden md:my-0 lg:opacity-100">
             <Link href="/login">
               <button className=" bg-transparent  text-white max-sm:text-sm ">
@@ -213,6 +251,7 @@ export default function Header({ colorScheme = "default" }) {
         </nav>
         <div className="mx-5 border-b border-b-[#00437A]"></div>
       </div>
+      {/* Event Page */}
     </>
   );
 }

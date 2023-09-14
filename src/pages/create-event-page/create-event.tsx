@@ -1,11 +1,13 @@
 import BasicInfoForm from "@/components/Forms/BasicInfoForm";
 import DateTimeForm from "@/components/Forms/DateTimeForm";
 import LocationForm from "@/components/Forms/LocationForm";
+import Header from "@/components/Header/Header";
 import Link from "next/link";
 
 export default function CreateEvent() {
   return (
     <>
+      {/* <Header colorScheme="event-page-header" /> */}
       <div className="flex flex-col bg-[#F1F9FF] p-10 max-sm:p-5">
         <BasicInfoForm />
         <LocationForm />

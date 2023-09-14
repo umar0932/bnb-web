@@ -4,6 +4,15 @@ import Image from "next/image";
 import ArrowIcon from "../../../public/assets/arrow_down.svg";
 import CurrentLocation from "../../../public/assets/current_location.svg";
 import BrowseOnline from "../../../public/assets/browse_online.svg";
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from "@/core/ui/select";
 export default function LocationSearch() {
   const { searchInputRef, findMyLocation } = useAutocomplete();
   const [isAdditionalDivOpen, setIsAdditionalDivOpen] = useState(false);
@@ -34,7 +43,11 @@ export default function LocationSearch() {
                   className="flex cursor-pointer gap-5"
                   onClick={toggleAdditionalDiv}
                 >
-                  <Image src={CurrentLocation} alt="current_location" />
+                  <Image
+                    src={CurrentLocation}
+                    alt="current_location"
+                    onClick={findMyLocation}
+                  />
                   <span className="text-base text-[#3B5998]">
                     Use my current location
                   </span>

@@ -1,6 +1,7 @@
 import * as React from "react";
 import * as SelectPrimitive from "@radix-ui/react-select";
 import { Check, ChevronDown } from "lucide-react";
+import UserProfileIcon from "../../../public/assets/user_profile_icon.svg";
 
 import { cn } from "@/core/lib/utils";
 
@@ -13,7 +14,7 @@ const SelectValue = SelectPrimitive.Value;
 const SelectTrigger = React.forwardRef<
   React.ElementRef<typeof SelectPrimitive.Trigger>,
   React.ComponentPropsWithoutRef<typeof SelectPrimitive.Trigger>
->(({ className, children, ...props }, ref) => (
+>(({ className, children, asChild = false, ...props }, ref) => (
   <SelectPrimitive.Trigger
     ref={ref}
     className={cn(
@@ -24,7 +25,11 @@ const SelectTrigger = React.forwardRef<
   >
     {children}
     <SelectPrimitive.Icon asChild>
-      <ChevronDown className="h-4 w-4 text-btnsecondary " />
+      {asChild ? (
+        <UserProfileIcon className="h-4 w-4 text-btnsecondary" />
+      ) : (
+        <ChevronDown className="h-4 w-4 text-btnsecondary" />
+      )}
     </SelectPrimitive.Icon>
   </SelectPrimitive.Trigger>
 ));
