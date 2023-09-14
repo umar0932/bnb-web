@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
+import UserProfileIcon from "../../../public/assets/user_profile_icon.svg";
+import Image from "next/image";
 
 import {
   Sheet,
@@ -9,6 +11,15 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/core/ui/sheet";
+
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/core/ui/dropdown-menu";
 
 import { Menu, XCircle, Cross } from "lucide-react";
 import {
@@ -39,41 +50,47 @@ export default function Header({ colorScheme = "default" }) {
       return "text-white";
     }
   };
-  // if (colorScheme === "event-page-header") {
-  //   return (
-  //     <>
-  //       <div className="flex items-center justify-between bg-white p-5">
-  //         <div className="rounded-md bg-[#e4e2e2] p-4 text-black">Logo</div>
-  //         <span className="text-2xl font-bold text-[#313131]">
-  //           Creating an Event
-  //         </span>
-  //         <div>
-  //           <Select>
-  //             <SelectTrigger
-  //               className="w-[250px]   max-sm:w-[220px]"
-  //               asChild={true}
-  //             >
-  //               <SelectValue placeholder="johndeo@gmail.com" />
-  //             </SelectTrigger>
-  //             <SelectContent className="bg-[#07264E] text-white ">
-  //               <SelectGroup>
-  //                 <SelectItem value="Switch to attendee" className="text-white">
-  //                   Switch to attendee
-  //                 </SelectItem>
-  //                 <SelectItem value="Account Settings" className="text-white">
-  //                   Account Settings
-  //                 </SelectItem>
-  //                 <SelectItem value="Logout" className="text-white">
-  //                   Logout
-  //                 </SelectItem>
-  //               </SelectGroup>
-  //             </SelectContent>
-  //           </Select>
-  //         </div>
-  //       </div>
-  //     </>
-  //   );
-  // }
+
+  // Event Page Header
+  if (colorScheme === "event-page-header") {
+    return (
+      <>
+        <div className="flex items-center justify-between bg-white p-5">
+          <div className="rounded-md bg-[#e4e2e2] p-4 text-black">Logo</div>
+          <span className="text-2xl font-bold text-[#313131] max-sm:hidden">
+            Creating an Event
+          </span>
+          <div>
+            <DropdownMenu>
+              <DropdownMenuTrigger className="outline-none">
+                <div className="flex items-center gap-2 border-none p-2">
+                  johndoe@gmail.com
+                  <Image
+                    src={UserProfileIcon}
+                    alt="user-profile-icon"
+                    className="h-[17px] w-[17px]"
+                  />
+                </div>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="cursor-pointer bg-[#07264E] p-3 text-white">
+                {/* <DropdownMenuLabel>Switch to attendee</DropdownMenuLabel> */}
+                {/* <DropdownMenuSeparator /> */}
+                <DropdownMenuItem className="cursor-pointer">
+                  Switch to attendee
+                </DropdownMenuItem>
+                <DropdownMenuItem className="cursor-pointer">
+                  Account Settings
+                </DropdownMenuItem>
+                <DropdownMenuItem className="cursor-pointer">
+                  Logout
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </div>
+        </div>
+      </>
+    );
+  }
 
   // Header Without Login
   return (

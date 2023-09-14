@@ -7,7 +7,7 @@ import Link from "next/link";
 export default function CreateEvent() {
   return (
     <>
-      {/* <Header colorScheme="event-page-header" /> */}
+      <Header colorScheme="event-page-header" />
       <div className="flex flex-col bg-[#F1F9FF] p-10 max-sm:p-5">
         <BasicInfoForm />
         <LocationForm />

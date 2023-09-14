@@ -25,11 +25,7 @@ const SelectTrigger = React.forwardRef<
   >
     {children}
     <SelectPrimitive.Icon asChild>
-      {asChild ? (
-        <UserProfileIcon className="h-4 w-4 text-btnsecondary" />
-      ) : (
-        <ChevronDown className="h-4 w-4 text-btnsecondary" />
-      )}
+      <ChevronDown className="h-4 w-4 text-btnsecondary" />
     </SelectPrimitive.Icon>
   </SelectPrimitive.Trigger>
 ));
