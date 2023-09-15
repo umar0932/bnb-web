@@ -133,6 +133,49 @@ export default function Header({ colorScheme = "default" }) {
     );
   }
 
+  // Orders Page Header
+
+  // Following Page Header
+  if (colorScheme === "orders-page-header") {
+    return (
+      <>
+        <div className="flex items-center justify-between border-b border-b-[#00437A] bg-white p-5">
+          <div className="rounded-md bg-[#e4e2e2] p-4 text-black">Logo</div>
+          <span className="text-4xl font-bold text-primary max-sm:hidden">
+            Orders
+          </span>
+          <div>
+            <DropdownMenu>
+              <DropdownMenuTrigger className="outline-none">
+                <div className="flex items-center gap-2 border-none p-2">
+                  johndoe@gmail.com
+                  <Image
+                    src={UserProfileIcon}
+                    alt="user-profile-icon"
+                    className="h-[17px] w-[17px]"
+                  />
+                </div>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="cursor-pointer border-[#07264E] bg-[#07264E] p-3 text-white">
+                {/* <DropdownMenuLabel>Switch to attendee</DropdownMenuLabel> */}
+                {/* <DropdownMenuSeparator /> */}
+                <DropdownMenuItem className="cursor-pointer">
+                  Switch to attendee
+                </DropdownMenuItem>
+                <DropdownMenuItem className="cursor-pointer">
+                  Account Settings
+                </DropdownMenuItem>
+                <DropdownMenuItem className="cursor-pointer">
+                  Logout
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </div>
+        </div>
+      </>
+    );
+  }
+
   // Likes Page Header
   if (colorScheme === "likes-page-header") {
     return (
