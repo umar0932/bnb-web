@@ -98,7 +98,7 @@ export default function Header({ colorScheme = "default" }) {
       <>
         <div className="flex items-center justify-between border-b border-b-[#00437A] bg-white p-5">
           <div className="rounded-md bg-[#e4e2e2] p-4 text-black">Logo</div>
-          <span className="text-2xl font-bold text-[#313131] max-sm:hidden">
+          <span className="text-4xl font-bold text-primary max-sm:hidden">
             Following
           </span>
           <div>
@@ -139,7 +139,7 @@ export default function Header({ colorScheme = "default" }) {
       <>
         <div className="flex items-center justify-between border-b border-b-[#00437A] bg-white p-5">
           <div className="rounded-md bg-[#e4e2e2] p-4 text-black">Logo</div>
-          <span className="text-2xl font-bold text-[#313131] max-sm:hidden">
+          <span className="text-4xl font-bold text-primary max-sm:hidden">
             Likes
           </span>
           <div>
