@@ -78,9 +78,21 @@ export default function AuthHeader({ colorScheme = "default" }) {
                             />
                           </div>
                         </DropdownMenuTrigger>
-                        <DropdownMenuContent className="cursor-pointer bg-[#07264E] p-3 text-white">
+                        <DropdownMenuContent className="cursor-pointer border-[#07264E] bg-[#07264E] p-3 text-white">
                           <DropdownMenuItem className="cursor-pointer">
-                            Switch to attendee
+                            Browse Events
+                          </DropdownMenuItem>
+                          <DropdownMenuItem className="cursor-pointer">
+                            Manage my events
+                          </DropdownMenuItem>
+                          <DropdownMenuItem className="cursor-pointer">
+                            Liked
+                          </DropdownMenuItem>
+                          <DropdownMenuItem className="cursor-pointer">
+                            Following
+                          </DropdownMenuItem>
+                          <DropdownMenuItem className="cursor-pointer">
+                            Interests
                           </DropdownMenuItem>
                           <DropdownMenuItem className="cursor-pointer">
                             Account Settings
@@ -180,9 +192,21 @@ export default function AuthHeader({ colorScheme = "default" }) {
                         />
                       </div>
                     </DropdownMenuTrigger>
-                    <DropdownMenuContent className="cursor-pointer bg-[#07264E] p-3 text-white">
+                    <DropdownMenuContent className="cursor-pointer border-[#07264E] bg-[#07264E] p-3 text-white">
                       <DropdownMenuItem className="cursor-pointer">
-                        Switch to attendee
+                        Browse Events
+                      </DropdownMenuItem>
+                      <DropdownMenuItem className="cursor-pointer">
+                        Manage my events
+                      </DropdownMenuItem>
+                      <DropdownMenuItem className="cursor-pointer">
+                        Liked
+                      </DropdownMenuItem>
+                      <DropdownMenuItem className="cursor-pointer">
+                        Following
+                      </DropdownMenuItem>
+                      <DropdownMenuItem className="cursor-pointer">
+                        Interests
                       </DropdownMenuItem>
                       <DropdownMenuItem className="cursor-pointer">
                         Account Settings
