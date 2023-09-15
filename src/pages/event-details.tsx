@@ -6,6 +6,7 @@ import Image from "next/image";
 import CompanyLogo from "../../public/assets/company_logo.svg";
 import CalendarIcon from "../../public/assets/calendar_icon.svg";
 import LocationIcon from "../../public/assets/location_icon.svg";
+
 import {
   Select,
   SelectContent,
@@ -16,9 +17,11 @@ import {
   SelectValue,
 } from "../core/ui/select";
 import Footer from "@/components/Footer/Footer";
+import Checkout from "@/components/Checkout/Checkout";
 export default function EventDetails() {
   const [isLiked, setIsLiked] = useState(false);
   const [count, setCount] = useState(1);
+  const [showCheckout, setShowCheckout] = useState(false);
 
   const toggleLike = () => {
     setIsLiked(!isLiked);
@@ -37,6 +40,12 @@ export default function EventDetails() {
     if (decrementedValue > 0) {
       setCount(decrementedValue);
     }
+  };
+  const handleReserveClick = () => {
+    setShowCheckout(true);
+  };
+  const handleCloseCheckout = () => {
+    setShowCheckout(false); // Close the dialog
   };
   return (
     <>
@@ -99,9 +108,19 @@ export default function EventDetails() {
                 </div>
               </div>
               <div className="flex items-center justify-between">
-                <Button className="h-[38px] w-[150px] bg-btnprimary text-white hover:bg-btnsecondary">
+                <Button
+                  className="h-[38px] w-[150px] bg-btnprimary text-white hover:bg-btnsecondary"
+                  onClick={handleReserveClick}
+                >
                   Reserve
                 </Button>
+                {showCheckout && (
+                  <Checkout
+                    isOpen={showCheckout}
+                    onClose={handleCloseCheckout}
+                  />
+                )}
+
                 <span className="text-[#F00]">$45</span>
               </div>
             </div>
