@@ -14,7 +14,7 @@ interface CheckoutProps {
 }
 
 export default function Checkout({ isOpen, onClose }: CheckoutProps) {
-  const Ref = useRef<number | null>(null);
+  const Ref = useRef<NodeJS.Timer | null>(null); // Update the type here
 
   const [timer, setTimer] = useState("06:00");
 
@@ -30,7 +30,9 @@ export default function Checkout({ isOpen, onClose }: CheckoutProps) {
         if (timeRemaining <= 0) {
           // Timer has reached 00:00, close the dialog
           onClose();
-          clearInterval(Ref.current);
+          if (Ref.current) {
+            clearInterval(Ref.current); // Clear the interval properly
+          }
           setTimer("00:00");
         } else {
           const minutes = Math.floor((timeRemaining / 1000 / 60) % 60);
@@ -72,10 +74,7 @@ export default function Checkout({ isOpen, onClose }: CheckoutProps) {
           >
             <div className="flex flex-col items-center">
               <span className="text-lg font-bold text-primary">Checkout</span>
-              <span className="text-sm text-[#FF0000]">
-                Time Left:
-                <h2>{timer}</h2>
-              </span>
+              <span className="text-sm text-[#FF0000]">Time Left: {timer}</span>
             </div>
             <div className="p-2">
               <CheckoutForm />
