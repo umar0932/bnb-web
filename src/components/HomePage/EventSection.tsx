@@ -4,7 +4,7 @@ import { events } from "../../utils/fakeBackend.js";
 export default function EventSection() {
   const eventsArray = events;
 
-  console.log(eventsArray, events);
+  // console.log(eventsArray, events);
 
   return (
     <>

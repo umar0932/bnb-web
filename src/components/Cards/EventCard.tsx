@@ -6,6 +6,7 @@ import HeartIcon from "../../core/icons/HeartIcon"; // Import the HeartIcon comp
 interface Event {
   imageSrc: StaticImageData;
   title: string;
+  sub_title: string;
   location: string;
   creatorFollowers: string;
   date: string;
@@ -39,7 +40,12 @@ export default function EventCard({ event }: EventCardProps) {
             {/* Use the HeartIcon component */}
           </div>
           <div className="mt-4 flex flex-col gap-1">
-            <span className="text-md text-secondary">{event.title}</span>
+            <span className="text-md text-secondary">
+              {event.title}
+              <span className="font-bold text-[#061735]">
+                {event.sub_title}
+              </span>
+            </span>
             <span className="text-sm text-[#757575]">{event.location}</span>
             <span className="text-sm font-bold text-[#00B007]">
               {event.creatorFollowers}
