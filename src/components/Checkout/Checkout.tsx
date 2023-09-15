@@ -6,13 +6,56 @@ import {
   DialogTitle,
 } from "@/core/ui/dialog";
 import CheckoutForm from "../Forms/CheckoutForm";
+import { useState, useRef, useEffect } from "react";
 
 interface CheckoutProps {
-  isOpen: boolean; // Prop for checking if the dialog is open
-  onClose: () => void; // Prop for handling dialog close
+  isOpen: boolean;
+  onClose: () => void;
 }
 
 export default function Checkout({ isOpen, onClose }: CheckoutProps) {
+  const Ref = useRef<number | null>(null);
+
+  const [timer, setTimer] = useState("06:00");
+
+  useEffect(() => {
+    if (isOpen) {
+      const deadline = new Date();
+      deadline.setMinutes(deadline.getMinutes() + 6);
+
+      const updateTimer = () => {
+        const currentTime = new Date();
+        const timeRemaining = deadline.getTime() - currentTime.getTime();
+
+        if (timeRemaining <= 0) {
+          // Timer has reached 00:00, close the dialog
+          onClose();
+          clearInterval(Ref.current);
+          setTimer("00:00");
+        } else {
+          const minutes = Math.floor((timeRemaining / 1000 / 60) % 60);
+          const seconds = Math.floor((timeRemaining / 1000) % 60);
+          const formattedTime = `${minutes
+            .toString()
+            .padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
+          setTimer(formattedTime);
+        }
+      };
+
+      // Update the timer every second
+      updateTimer();
+      const timerId = setInterval(updateTimer, 1000);
+      Ref.current = timerId;
+
+      return () => {
+        // Clean up the timer when the component unmounts or isOpen becomes false
+        if (Ref.current) {
+          clearInterval(Ref.current);
+        }
+      };
+    }
+  }, [isOpen, onClose]);
+
   return (
     <>
       <div>
@@ -20,24 +63,21 @@ export default function Checkout({ isOpen, onClose }: CheckoutProps) {
           <DialogContent
             className="flex flex-col"
             style={{
-              width: "95%", // Make the dialog width 100% of the viewport
-              height: "95%", // Make the dialog height 100% of the viewport
-              maxWidth: "95%", // Allow the dialog to expand to full width
-              maxHeight: "95%", // Allow the dialog to expand to full height
+              width: "95%",
+              height: "95%",
+              maxWidth: "95%",
+              maxHeight: "95%",
               overflow: "auto",
             }}
           >
             <div className="flex flex-col items-center">
               <span className="text-lg font-bold text-primary">Checkout</span>
-              <span className="text-sm text-[#FF0000]">Time Left:</span>
-            </div>
-            {/* <DialogHeader className="flex flex-col items-center border border-red-500">
-              <DialogTitle>Checkout</DialogTitle>
-              <DialogTitle className="text-sm text-[#FF0000]">
+              <span className="text-sm text-[#FF0000]">
                 Time Left:
-              </DialogTitle>
-            </DialogHeader> */}
-            <div className=" p-2">
+                <h2>{timer}</h2>
+              </span>
+            </div>
+            <div className="p-2">
               <CheckoutForm />
             </div>
           </DialogContent>
