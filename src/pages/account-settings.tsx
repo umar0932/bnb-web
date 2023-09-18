@@ -1,8 +1,9 @@
 import { useState } from "react";
 import AuthHeader from "@/components/Header/AuthHeader";
+import ContactInfoForm from "@/components/Forms/AccountSettingsForm/ContactInfoForm";
 
 export default function AccountSetting() {
-  const [selectedDiv, setSelectedDiv] = useState(null);
+  const [selectedDiv, setSelectedDiv] = useState(0); // Set the initial state to 0 (index of "Contact Information")
 
   const handleDivClick = (index: any) => {
     setSelectedDiv(index);
@@ -12,9 +13,13 @@ export default function AccountSetting() {
     <>
       <div className="flex flex-col bg-[#DEF0FF]">
         <AuthHeader />
-        <div className="flex">
-          <div className=" w-[60%] border border-red-500"></div>
-          <div className="mt-10 flex w-[40%] flex-wrap items-center justify-center gap-5 border border-green-500 p-5">
+        <div className="flex max-md:flex-col">
+          <div className=" relative w-[60%]  max-md:order-2 max-md:w-full">
+            <div className=" max-md:full absolute w-full p-10 max-md:top-full max-md:order-3 max-md:w-full max-sm:p-5">
+              <ContactInfoForm />
+            </div>
+          </div>
+          <div className="mt-10 flex w-[40%] flex-wrap items-center justify-center gap-5  p-5 max-md:order-1 max-md:w-full">
             {[
               "Contact Information",
               "Change Email",
