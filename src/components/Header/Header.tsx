@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import UserProfileIcon from "../../../public/assets/user_profile_icon.svg";
+import PlusIcon from "../../../public/assets/plus_icon.svg";
 import Image from "next/image";
 
 import {
@@ -272,7 +273,11 @@ export default function Header({ colorScheme = "default" }) {
                       <p className="min-w-[100px] text-sm font-normal">
                         Create an event
                       </p>
-                      <Cross size={12} stroke="none" fill="#CC0001" />
+                      <Image
+                        src={PlusIcon}
+                        alt="plus_icon"
+                        className="h-[12px] w-[12px] text-btnsecondary"
+                      />
                     </div>
                   </li>
                   <form onSubmit={formik.handleSubmit} className="mx-4">
@@ -356,7 +361,11 @@ export default function Header({ colorScheme = "default" }) {
                   } `}
                 >
                   <p className="text-sm font-normal ">Create an event</p>
-                  <Cross size={12} stroke="none" fill="#CC0001" />
+                  <Image
+                    src={PlusIcon}
+                    alt="plus_icon"
+                    className="h-[12px] w-[12px] text-btnsecondary"
+                  />
                 </div>
               </li>
             </ul>

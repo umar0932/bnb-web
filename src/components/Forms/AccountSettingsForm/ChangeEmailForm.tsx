@@ -76,7 +76,7 @@ export default function ChangeEmailForm() {
                         className="h-[25px] bg-transparent outline-none placeholder:text-sm"
                         id="email_address"
                         name="email_address"
-                        type="text"
+                        type="email"
                         placeholder="Enter your email address"
                         onChange={formik.handleChange}
                         value={formik.values.email_address}
@@ -91,7 +91,7 @@ export default function ChangeEmailForm() {
                         className="h-[25px] bg-transparent outline-none placeholder:text-sm"
                         id="confirm_email"
                         name="confirm_email"
-                        type="text"
+                        type="email"
                         placeholder="Re-Enter your email address"
                         onChange={formik.handleChange}
                         value={formik.values.confirm_email}

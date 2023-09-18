@@ -111,7 +111,11 @@ export default function AuthHeader({ colorScheme = "default" }) {
                       <p className="min-w-[100px] text-sm font-normal">
                         Create an event
                       </p>
-                      <Cross size={12} stroke="none" fill="#CC0001" />
+                      <Image
+                        src={PlusIcon}
+                        alt="plus_icon"
+                        className="h-[12px] w-[12px] text-btnsecondary"
+                      />
                     </div>
                   </li>
                   <li className="mx-4 my-6 md:my-0">

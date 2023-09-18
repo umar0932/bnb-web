@@ -3,6 +3,7 @@ import AuthHeader from "@/components/Header/AuthHeader";
 import ContactInfoForm from "@/components/Forms/AccountSettingsForm/ContactInfoForm";
 import Copyright from "@/components/Copyright/Copyright";
 import ChangeEmailForm from "@/components/Forms/AccountSettingsForm/ChangeEmailForm";
+import ChangePasswordForm from "@/components/Forms/AccountSettingsForm/ChangePasswordForm";
 
 export default function AccountSetting() {
   const [selectedDiv, setSelectedDiv] = useState(0);
@@ -16,6 +17,9 @@ export default function AccountSetting() {
       case 1: // "Change Email" button
         setDisplayedForm("ChangeEmail");
         break;
+      case 2: // "Change Email" button
+        setDisplayedForm("ChangePassword");
+        break;
       default:
         setDisplayedForm("ContactInfo");
     }
@@ -26,6 +30,8 @@ export default function AccountSetting() {
     switch (displayedForm) {
       case "ChangeEmail":
         return <ChangeEmailForm />;
+      case "ChangePassword":
+        return <ChangePasswordForm />;
       case "ContactInfo":
       default:
         return <ContactInfoForm />;
