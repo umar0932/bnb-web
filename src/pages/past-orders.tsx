@@ -5,6 +5,7 @@ import { useFormik } from "formik";
 import { Pencil } from "lucide-react";
 import GeneralInfoForm from "@/components/Forms/GeneralInfoForm";
 import Copyright from "@/components/Copyright/Copyright";
+import Link from "next/link";
 
 export default function PastOrders() {
   const formik = useFormik({
@@ -25,9 +26,15 @@ export default function PastOrders() {
         <div className="flex flex-col gap-5 bg-[#F6FBFF] p-10  max-sm:p-5">
           <div className="flex justify-between max-sm:flex-col">
             <div className="flex items-center gap-2 text-lg text-[#3B5998]">
-              <ChevronLeftIcon size={21} className="text-btnsecondary" />
+              <Link href="/orders">
+                <ChevronLeftIcon
+                  size={21}
+                  className="cursor-pointer text-btnsecondary"
+                />
+              </Link>
               Back to current order
             </div>
+
             <div className="cursor-pointer text-[#F00] underline max-sm:pl-7">
               Report this event
             </div>

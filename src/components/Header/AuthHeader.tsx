@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import UserProfileIcon from "../../../public/assets/user_profile_icon.svg";
 import TicketIconRed from "../../../public/assets/ticket_icon_red.svg";
+import PlusIcon from "../../../public/assets/plus_icon.svg";
 
 import Image from "next/image";
 
@@ -141,14 +142,19 @@ export default function AuthHeader({ colorScheme = "default" }) {
                 colorScheme === "second-alternative" ? "none" : ""
               }  left-0 top-[-400px] z-[-1] w-full gap-5 bg-transparent py-4 pl-7 opacity-0 transition-all duration-500 ease-in lg:static lg:z-auto lg:flex lg:items-center lg:justify-end lg:py-0 lg:pl-5 lg:opacity-100 `}
             >
-              <li className="mx-6 my-6 min-w-[150px]  md:my-0">
+              <li className="mx-6 my-6 min-w-[100px]  md:my-0">
                 <div
                   className={`flex cursor-pointer items-center  gap-2 text-secondary text-${
                     colorScheme === "alternative" ? "white" : "secondary"
                   } `}
                 >
                   <p className="text-sm font-normal ">Create an event</p>
-                  <Cross size={12} stroke="none" fill="#CC0001" />
+                  <Image
+                    src={PlusIcon}
+                    alt="plus_icon"
+                    className="h-[12px] w-[12px] text-btnsecondary"
+                  />
+                  {/* <Cross size={12} stroke="none" fill="#CC0001" /> */}
                 </div>
               </li>
               <li className="mx-6 my-6   md:my-0">

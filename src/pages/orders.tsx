@@ -4,6 +4,7 @@ import Header from "@/components/Header/Header";
 import ArrowDown from "../../public/assets/arrow_down.svg";
 import Image from "next/image";
 import { Button } from "@/core/ui/button";
+import Link from "next/link";
 
 export default function Orders() {
   return (
@@ -29,11 +30,13 @@ export default function Orders() {
               <OrderCard />
               <div className="flex flex-col items-center justify-center gap-2 text-lg text-[#313131]">
                 See past orders{" "}
-                <Image
-                  src={ArrowDown}
-                  alt="arrow-down-icon"
-                  className="h-[17px] w-[17px] cursor-pointer"
-                />
+                <Link href="past-orders">
+                  <Image
+                    src={ArrowDown}
+                    alt="arrow-down-icon"
+                    className="h-[17px] w-[17px] cursor-pointer"
+                  />
+                </Link>
               </div>
             </div>
           </div>
