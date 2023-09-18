@@ -390,13 +390,13 @@ export default function ContactInfoForm() {
             </span>
             <div className="flex items-center space-x-2">
               <Checkbox className="text-btnseondary" />
-              <span className="text-[#757575]">
+              <span className="text-[#757575] max-sm:text-sm">
                 Same as home address information
               </span>
             </div>
             <div className="flex items-center space-x-2">
               <Checkbox />
-              <span className="text-[#757575]">
+              <span className="text-[#757575] max-sm:text-sm">
                 Same as work address information
               </span>
             </div>
@@ -409,13 +409,13 @@ export default function ContactInfoForm() {
             </span>
             <div className="flex items-center space-x-2">
               <Checkbox className="text-btnseondary" />
-              <span className="text-[#757575]">
+              <span className="text-[#757575] max-sm:text-sm">
                 Same as home address information
               </span>
             </div>
             <div className="flex items-center space-x-2">
               <Checkbox />
-              <span className="text-[#757575]">
+              <span className="text-[#757575] max-sm:text-sm">
                 Same as work address information
               </span>
             </div>
