@@ -7,6 +7,8 @@ import ChangePasswordForm from "@/components/Forms/AccountSettingsForm/ChangePas
 import PaymentCardForm from "@/components/Forms/AccountSettingsForm/PaymentCardForm";
 import LinkedAccountForm from "@/components/Forms/AccountSettingsForm/LinkedAccountForm";
 import EmailPreferanceForm from "@/components/Forms/AccountSettingsForm/EmailPreferanceForm";
+import CloseAccount from "@/components/Forms/AccountSettingsForm/CloseAccountForm";
+import CloseAccountForm from "@/components/Forms/AccountSettingsForm/CloseAccountForm";
 
 export default function AccountSetting() {
   const [selectedDiv, setSelectedDiv] = useState(0);
@@ -32,6 +34,9 @@ export default function AccountSetting() {
       case 5:
         setDisplayedForm("EmailPreferance");
         break;
+      case 6:
+        setDisplayedForm("CloseAccount");
+        break;
 
       default:
         setDisplayedForm("ContactInfo");
@@ -51,6 +56,8 @@ export default function AccountSetting() {
         return <LinkedAccountForm />;
       case "EmailPreferance":
         return <EmailPreferanceForm />;
+      case "CloseAccount":
+        return <CloseAccountForm />;
       case "ContactInfo":
       default:
         return <ContactInfoForm />;
