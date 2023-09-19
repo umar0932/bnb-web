@@ -61,7 +61,7 @@ export default function PaymentCardForm() {
             className="mt-5 flex w-full flex-col gap-5 max-lg:flex-col"
           >
             <div className=" flex items-center justify-between max-sm:flex-col max-sm:items-start max-sm:justify-start">
-              <span className="text-xl">Your Cards</span>
+              <span className="text-2xl">Your Cards</span>
               <Button className="flex w-[130px] bg-btnprimary font-bold text-white hover:bg-btnsecondary">
                 Add
               </Button>
