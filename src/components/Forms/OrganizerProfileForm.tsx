@@ -35,7 +35,7 @@ export default function OrganizerProfileForm() {
       <div className="flex flex-col gap-5">
         <div className="flex gap-10 max-md:flex-col">
           <div className="flex w-full flex-col gap-5 rounded-lg bg-[#F3FAFF] p-10 max-sm:p-5">
-            <span className="text-xl font-bold text-[#003A6D]">
+            <span className="text-2xl font-bold text-[#003A6D]">
               About the organizer{" "}
             </span>
 
