@@ -11,13 +11,13 @@ import CloseAccountForm from "@/components/Forms/AccountSettingsForm/CloseAccoun
 import PersonalData from "@/components/Forms/AccountSettingsForm/PersonalData";
 
 export default function AccountSetting() {
-  function getScreenHeight() {
-    return window.innerHeight;
-  }
+  // function getScreenHeight() {
+  //   return window.innerHeight;
+  // }
 
-  // Example usage:
-  const screenHeight = getScreenHeight();
-  console.log(`Screen height is ${screenHeight} pixels.`);
+  // // Example usage:
+  // const screenHeight = getScreenHeight();
+  // console.log(`Screen height is ${screenHeight} pixels.`);
 
   const [selectedDiv, setSelectedDiv] = useState(0);
   const [displayedForm, setDisplayedForm] = useState("ContactInfo"); // Initial form to display

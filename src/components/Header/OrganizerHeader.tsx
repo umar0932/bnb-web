@@ -35,7 +35,7 @@ export default function OrganizerHeader() {
     <>
       <div className="card-drop-shadow flex justify-end bg-[#DEF0FF] p-3">
         <div className="flex items-center gap-5">
-          <NavigationMenu>
+          <NavigationMenu className="lg:hidden">
             <NavigationMenuList>
               <NavigationMenuItem>
                 <NavigationMenuTrigger className="rounded-full">
@@ -75,7 +75,7 @@ export default function OrganizerHeader() {
 
           <DropdownMenu>
             <DropdownMenuTrigger className="outline-none">
-              <div className="flex items-center gap-2 rounded-full bg-white p-3">
+              <div className="flex w-[200px] flex-shrink-0 items-center gap-2 rounded-full bg-white p-3">
                 <span>johndoe@gmail.com</span>
                 <Image
                   src={ProfileIcon}

@@ -12,6 +12,8 @@ import StatsIcon from "../../public/assets/stats_icon.svg";
 import FinanceIcon from "../../public/assets/finance_icon.svg";
 import SettingsIcon from "../../public/assets/settings_icon.svg";
 import HelpIcon from "../../public/assets/help_icon.svg";
+import OrganizerHome from "@/components/Organizer/OrganizerHome";
+import EditOrganizerProfile from "@/components/Organizer/EditOrganizerProfile";
 
 export default function Organizer() {
   const [activeDiv, setActiveDiv] = useState("Home");
@@ -42,15 +44,15 @@ export default function Organizer() {
     <>
       <div className="flex flex-col">
         <div className="flex">
-          <div className="w-[5%] bg-white p-5">Logo</div>
+          <div className="w-[80px] bg-white p-5 max-sm:hidden">Logo</div>
           <div className="w-full">
             {" "}
             <OrganizerHeader />
           </div>
         </div>
         {/* Left Side */}
-        <div className="flex w-full">
-          <div className="card-drop-shadow w-[80px] bg-[#DEF0FF] ">
+        <div className="flex w-full ">
+          <div className="card-drop-shadow w-[80px] bg-[#DEF0FF] max-lg:hidden">
             <div className="mb-10 mt-20 flex flex-col justify-center bg-[#DEF0FF]">
               <div
                 className={`flex h-[70px] cursor-pointer items-center justify-center p-2 ${
@@ -132,7 +134,10 @@ export default function Organizer() {
             <div className="card-drop-shadow  mt-20 w-[130px] rounded-r-lg bg-btnprimary p-2 text-center text-white">
               {getActiveDivText()} {/* Display the active div text */}
             </div>
-            <div>Hello world</div>
+            <div className="w-full items-center justify-center">
+              {/* <OrganizerHome /> */}
+              <EditOrganizerProfile />
+            </div>
           </div>
         </div>
       </div>
