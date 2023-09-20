@@ -15,7 +15,7 @@ import {
   SelectValue,
 } from "@/core/ui/select";
 export default function ContactInfoForm() {
-  const [selectedFile, setSelectedFile] = useState(null);
+  const [imageURL, setImageURL] = useState(null);
 
   const formik = useFormik({
     initialValues: {
@@ -41,8 +41,19 @@ export default function ContactInfoForm() {
   });
   const handleFileChange = (event: any) => {
     const file = event.target.files[0]; // Get the first selected file
-    setSelectedFile(file);
+
+    // Read the selected image file and set its URL to display it
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = (e: any) => {
+        setImageURL(e.target.result);
+      };
+      reader.readAsDataURL(file);
+    } else {
+      setImageURL(null); // Clear the image URL if no file is selected
+    }
   };
+
   return (
     <>
       <div className="card-drop-shadow flex gap-10 rounded-lg bg-white p-10 max-sm:p-5">
@@ -117,7 +128,7 @@ export default function ContactInfoForm() {
               {/* Job Title */}
 
               <div className="mt-5 flex  flex-col rounded-lg bg-[#EFF8FF] p-3">
-                <span className="text-sm text-[#757575]">Cell Phone</span>
+                <span className="text-sm text-[#757575]">Job Title</span>
                 <input
                   className="h-[25px] bg-transparent outline-none placeholder:text-sm"
                   id="job_title"
@@ -359,13 +370,22 @@ export default function ContactInfoForm() {
             <div className="mt-5 flex h-[190px] w-[190px] flex-col items-center justify-center rounded-lg bg-[#EFF8FF] p-5">
               <label
                 htmlFor="picture"
-                className="flex h-[80px] w-[80px] flex-shrink-0 cursor-pointer items-center justify-center rounded-full bg-white"
+                className="flex h-[100px] w-[100px] flex-shrink-0 cursor-pointer items-center justify-center rounded-full bg-white"
               >
-                <Image
-                  src={PlusIcon}
-                  alt="plus_icon"
-                  className="cursor-pointer"
-                />
+                {imageURL ? (
+                  <img
+                    src={imageURL}
+                    alt="profile_image"
+                    className="h-[100px] w-[100px] cursor-pointer rounded-full object-cover"
+                  />
+                ) : (
+                  <Image
+                    src={PlusIcon}
+                    alt="plus_icon"
+                    className="cursor-pointer"
+                  />
+                )}
+
                 <input
                   type="file"
                   id="picture"
@@ -374,12 +394,15 @@ export default function ContactInfoForm() {
                   onChange={handleFileChange}
                 />
               </label>
-              <span className="mt-5 text-center text-sm">
-                Upload Profile Picture
-              </span>
-              {selectedFile ? (
-                <p>Selected file: {(selectedFile as File).name}</p>
-              ) : null}
+              {imageURL ? (
+                <span className="mt-5 text-center text-sm">
+                  Click to Change Image
+                </span>
+              ) : (
+                <span className="mt-5 text-center text-sm">
+                  Upload Profile Picture
+                </span>
+              )}
             </div>
           </form>
 
