@@ -16,6 +16,9 @@ import BrowseEventImage1 from "../../public/assets/browse_event1.png";
 import BrowseEventImage2 from "../../public/assets/browse_event2.png";
 import BrowseEventImage3 from "../../public/assets/browse_event3.png";
 
+import OrganizerEventImage1 from "../../public/assets/music_event_image.png";
+import OrganizerEventImage2 from "../../public/assets/concert_image.png";
+
 export const events = [
   {
     imageSrc: EventImage1,
@@ -153,5 +156,30 @@ export const browse_events = [
     date: "19 April 2023",
     price: "$45",
     time: "9:00 PM GMT+5:00",
+  },
+];
+
+export const eventsData = [
+  {
+    id: "1",
+    imageSrc: OrganizerEventImage1,
+    event_name: "Music",
+    sold_tickets: "12562",
+    Gross: "$12562",
+
+    date: "Monday, 31 July 2023",
+
+    Status: "Online",
+  },
+  {
+    id: "1",
+    imageSrc: OrganizerEventImage2,
+    event_name: "Concert",
+    sold_tickets: "12562",
+    Gross: "$12562",
+
+    date: "Monday, 31 July 2023",
+
+    Status: "Online",
   },
 ];

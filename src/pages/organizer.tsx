@@ -14,6 +14,7 @@ import SettingsIcon from "../../public/assets/settings_icon.svg";
 import HelpIcon from "../../public/assets/help_icon.svg";
 import OrganizerHome from "@/components/Organizer/OrganizerHome";
 import EditOrganizerProfile from "@/components/Organizer/EditOrganizerProfile";
+import OrganizerEvents from "@/components/Organizer/OrganizerEvents";
 
 export default function Organizer() {
   const [activeDiv, setActiveDiv] = useState("Home");
@@ -21,6 +22,18 @@ export default function Organizer() {
   // Function to handle div click
   const handleDivClick = (divName: string) => {
     setActiveDiv(divName);
+  };
+
+  const getActiveComponent = () => {
+    switch (activeDiv) {
+      case "Home":
+        return <OrganizerHome />;
+      case "Events":
+        return <OrganizerEvents />;
+      // Add more cases for other options as needed
+      default:
+        return null;
+    }
   };
 
   // Define a function to get the text for the active div
@@ -136,7 +149,9 @@ export default function Organizer() {
             </div>
             <div className="w-full items-center justify-center">
               {/* <OrganizerHome /> */}
-              <EditOrganizerProfile />
+              {/* <EditOrganizerProfile /> */}
+              {/* <OrganizerEvents /> */}
+              {getActiveComponent()}
             </div>
           </div>
         </div>
