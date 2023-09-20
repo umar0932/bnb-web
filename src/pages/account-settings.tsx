@@ -7,11 +7,18 @@ import ChangePasswordForm from "@/components/Forms/AccountSettingsForm/ChangePas
 import PaymentCardForm from "@/components/Forms/AccountSettingsForm/PaymentCardForm";
 import LinkedAccountForm from "@/components/Forms/AccountSettingsForm/LinkedAccountForm";
 import EmailPreferanceForm from "@/components/Forms/AccountSettingsForm/EmailPreferanceForm";
-import CloseAccount from "@/components/Forms/AccountSettingsForm/CloseAccountForm";
 import CloseAccountForm from "@/components/Forms/AccountSettingsForm/CloseAccountForm";
 import PersonalData from "@/components/Forms/AccountSettingsForm/PersonalData";
 
 export default function AccountSetting() {
+  function getScreenHeight() {
+    return window.innerHeight;
+  }
+
+  // Example usage:
+  const screenHeight = getScreenHeight();
+  console.log(`Screen height is ${screenHeight} pixels.`);
+
   const [selectedDiv, setSelectedDiv] = useState(0);
   const [displayedForm, setDisplayedForm] = useState("ContactInfo"); // Initial form to display
 
@@ -104,6 +111,9 @@ export default function AccountSetting() {
           ))}
         </div>
       </div>
+      {/* <div className="absolute bottom-0">
+        <Copyright />
+      </div> */}
     </div>
   );
 }
