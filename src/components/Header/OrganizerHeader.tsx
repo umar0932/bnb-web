@@ -30,7 +30,7 @@ import { BsBank } from "react-icons/bs";
 import StatsIcon from "../../../public/assets/stats_icon.svg";
 import FinanceIcon from "../../../public/assets/finance_icon.svg";
 
-export default function OrganizerHeader() {
+export default function OrganizerHeader({ setActiveDiv }: any) {
   return (
     <>
       <div className="card-drop-shadow flex justify-end bg-[#DEF0FF] p-3">
@@ -43,15 +43,24 @@ export default function OrganizerHeader() {
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <div className="flex w-[260px] flex-wrap">
-                    <div className="flex w-full cursor-pointer items-center gap-4 p-5 hover:bg-btnprimary hover:text-white ">
+                    <div
+                      className="flex w-full cursor-pointer items-center gap-4 p-5 hover:bg-btnprimary hover:text-white "
+                      onClick={() => setActiveDiv("Home")}
+                    >
                       <GoHome size={18} />
                       <span>Home</span>
                     </div>
-                    <div className="flex w-full cursor-pointer items-center gap-4 p-5 hover:bg-btnprimary hover:text-white  ">
+                    <div
+                      className="flex w-full cursor-pointer items-center gap-4 p-5 hover:bg-btnprimary hover:text-white  "
+                      onClick={() => setActiveDiv("Events")}
+                    >
                       <BiCalendar />
                       <span>Events</span>
                     </div>
-                    <div className="flex w-full cursor-pointer items-center gap-4 p-5 hover:bg-btnprimary hover:text-white  ">
+                    <div
+                      className="flex w-full cursor-pointer items-center gap-4 p-5 hover:bg-btnprimary hover:text-white  "
+                      onClick={() => setActiveDiv("Orders")}
+                    >
                       <CiViewList />
                       <span>Orders</span>
                     </div>
@@ -63,7 +72,10 @@ export default function OrganizerHeader() {
                       <BsBank />
                       <span>Finances</span>
                     </div>
-                    <div className="flex w-full cursor-pointer items-center gap-4 p-5 hover:bg-btnprimary hover:text-white ">
+                    <div
+                      className="flex w-full cursor-pointer items-center gap-4 p-5 hover:bg-btnprimary hover:text-white "
+                      onClick={() => setActiveDiv("Settings")}
+                    >
                       <IoSettingsOutline />
                       <span>Settings</span>
                     </div>

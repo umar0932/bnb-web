@@ -20,6 +20,7 @@ import OrganizationSettings from "@/components/Organizer/OrganizationSettings";
 
 export default function Organizer() {
   const [activeDiv, setActiveDiv] = useState("Home");
+  console.log(activeDiv);
 
   // Function to handle div click
   const handleDivClick = (divName: string) => {
@@ -66,7 +67,7 @@ export default function Organizer() {
           <div className="w-[80px] bg-white p-5 max-sm:hidden">Logo</div>
           <div className="w-full">
             {" "}
-            <OrganizerHeader />
+            <OrganizerHeader setActiveDiv={setActiveDiv} />
           </div>
         </div>
         {/* Left Side */}
