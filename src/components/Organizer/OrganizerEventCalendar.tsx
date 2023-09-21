@@ -36,7 +36,7 @@ export default function OrganizerEventCalendar() {
           endAccessor="end"
           style={{ height: 500 }}
           views={["month", "week"]}
-          className="card-drop-shadow rounded-lg bg-[#F3FAFF] p-3"
+          className="table-drop-shadow rounded-lg bg-[#F3FAFF] p-3"
         />
       </div>
     </>

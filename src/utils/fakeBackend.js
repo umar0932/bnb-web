@@ -172,7 +172,7 @@ export const eventsData = [
     Status: "Online",
   },
   {
-    id: "1",
+    id: "2",
     imageSrc: OrganizerEventImage2,
     event_name: "Concert",
     sold_tickets: "12562",
@@ -181,5 +181,32 @@ export const eventsData = [
     date: "Monday, 31 July 2023",
 
     Status: "Online",
+  },
+];
+
+export const OrganizersOrders = [
+  {
+    id: "1",
+    order_number: "#12562",
+    event_name: "Classical Music Event",
+    buyer_name: "John Doe",
+    date: "01 June, 12:00 PM GMT",
+    total: "$12.89",
+  },
+  {
+    id: "2",
+    order_number: "#12563",
+    event_name: "Classical Music Event",
+    buyer_name: "John Doe",
+    date: "01 June, 12:00 PM GMT",
+    total: "$12.89",
+  },
+  {
+    id: "3",
+    order_number: "#12564",
+    event_name: "Classical Music Event",
+    buyer_name: "John Doe",
+    date: "01 June, 12:00 PM GMT",
+    total: "$12.89",
   },
 ];

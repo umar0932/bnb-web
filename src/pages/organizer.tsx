@@ -15,6 +15,8 @@ import HelpIcon from "../../public/assets/help_icon.svg";
 import OrganizerHome from "@/components/Organizer/OrganizerHome";
 import EditOrganizerProfile from "@/components/Organizer/EditOrganizerProfile";
 import OrganizerEvents from "@/components/Organizer/OrganizerEvents";
+import OrganizerOrders from "@/components/Organizer/OrganizerOrders";
+import OrganizationSettings from "@/components/Organizer/OrganizationSettings";
 
 export default function Organizer() {
   const [activeDiv, setActiveDiv] = useState("Home");
@@ -30,6 +32,10 @@ export default function Organizer() {
         return <OrganizerHome />;
       case "Events":
         return <OrganizerEvents />;
+      case "Orders":
+        return <OrganizerOrders />;
+      case "Settings":
+        return <OrganizationSettings />;
       // Add more cases for other options as needed
       default:
         return null;
@@ -43,8 +49,8 @@ export default function Organizer() {
         return "Home";
       case "Events":
         return "Events";
-      case "ListView":
-        return "ListView";
+      case "Orders":
+        return "Orders";
       case "Settings":
         return "Settings";
       // Add more cases as needed
@@ -95,14 +101,14 @@ export default function Organizer() {
               </div>
               <div
                 className={`flex h-[70px] cursor-pointer items-center justify-center p-2 ${
-                  activeDiv === "ListView" ? "bg-btnsecondary text-white" : ""
+                  activeDiv === "Orders" ? "bg-btnsecondary text-white" : ""
                 }`}
-                onClick={() => handleDivClick("ListView")}
+                onClick={() => handleDivClick("Orders")}
               >
                 <CiViewList
                   size={27}
                   className={` ${
-                    activeDiv === "ListView" ? "text-white" : "text-[#3B5998]"
+                    activeDiv === "Orders" ? "text-white" : "text-[#3B5998]"
                   }`}
                 />
               </div>

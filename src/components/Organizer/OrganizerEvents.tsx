@@ -6,13 +6,14 @@ import { ChevronDown } from "lucide-react";
 import { BiCalendar } from "react-icons/bi";
 import { useState } from "react";
 import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/core/ui/dropdown-menu";
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from "@/core/ui/select";
 import OrganizerEventTable from "./OrganizerEventTable";
 import OrganizerEventCalendar from "./OrganizerEventCalendar";
 export default function OrganizerEvents() {
@@ -33,7 +34,7 @@ export default function OrganizerEvents() {
           <div className="h-[1px] bg-[#0080FF]"></div>
           <div className="flex gap-5 max-md:flex-wrap">
             <div
-              className={`flex h-[50px] w-[140px] cursor-pointer items-center justify-center gap-3 rounded-lg p-2 ${
+              className={`flex h-[40px] w-[140px] cursor-pointer items-center justify-center gap-3 rounded-lg p-2 ${
                 activeDiv === "List"
                   ? "bg-btnprimary text-white hover:bg-btnsecondary"
                   : "bg-[#EFF8FF]"
@@ -51,7 +52,7 @@ export default function OrganizerEvents() {
 
             {/* Calendar */}
             <div
-              className={`flex h-[50px] w-[140px] cursor-pointer items-center justify-center gap-3 rounded-lg p-2 ${
+              className={`flex h-[40px] w-[140px] cursor-pointer items-center justify-center gap-3 rounded-lg p-2 ${
                 activeDiv === "Calendar"
                   ? "bg-btnprimary text-white hover:bg-btnsecondary"
                   : "bg-[#EFF8FF]"
@@ -68,24 +69,33 @@ export default function OrganizerEvents() {
             </div>
 
             {/* All Events */}
-            <DropdownMenu>
-              <DropdownMenuTrigger className="flex h-[50px] w-[140px] items-center justify-center gap-2 rounded-lg bg-btnprimary text-white outline-none">
-                All Events
-                <ChevronDown />
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="bg-primary text-white">
-                <DropdownMenuItem>Upcoming Events</DropdownMenuItem>
-                <DropdownMenuItem>All Events</DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
-
-            <div className="flex items-center rounded-lg bg-[#EFF8FF] p-3">
+            <Select>
+              <SelectTrigger
+                className="h-[40px] w-[160px] border-none bg-btnprimary text-white outline-none"
+                color="text-white"
+              >
+                <SelectValue placeholder="All Events" />
+              </SelectTrigger>
+              <SelectContent className="border-none bg-primary text-white outline-none">
+                <SelectGroup>
+                  <SelectItem value="Upcoming Events">
+                    Upcoming Events
+                  </SelectItem>
+                  <SelectItem value="All Events">All Events</SelectItem>
+                </SelectGroup>
+              </SelectContent>
+            </Select>
+            <div className="flex h-[40px] items-center rounded-lg bg-[#EFF8FF] p-3">
               <input
-                className="w-[260px] bg-transparent outline-none placeholder:text-[#757575] max-md:w-full"
+                className="w-[260px] bg-transparent outline-none placeholder:text-[#3B5998]  max-md:w-full"
                 type="text"
                 placeholder="Search event"
               />
-              <Image src={SearchIcon} alt="search_icon" />
+              <Image
+                src={SearchIcon}
+                alt="search_icon"
+                className="h-[19px] w-[19px]"
+              />
             </div>
           </div>
         </div>
