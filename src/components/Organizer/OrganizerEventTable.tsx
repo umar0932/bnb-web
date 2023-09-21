@@ -14,10 +14,33 @@ import DeleteIcon from "../../../public/assets/delete_icon.svg";
 import { eventsData } from "@/utils/fakeBackend";
 import DownloadIcon from "../../../public/assets/download_icon.svg";
 export default function OrganizerEventTable() {
+  const exportToCSV = () => {
+    // Create a CSV string
+    const csvData = eventsData.map((event) => {
+      return `"${event.event_name}","${event.date}","${event.sold_tickets}","${event.Gross}","${event.Status}"`;
+    });
+
+    // Add headers to the CSV
+    const csv = ["Event Name,Date,Sold Tickets,Gross,Status", ...csvData].join(
+      "\n"
+    );
+
+    // Create a blob from the CSV data
+    const blob = new Blob([csv], { type: "text/csv" });
+
+    // Create a download link and trigger a click event to download the file
+    const link = document.createElement("a");
+    link.href = window.URL.createObjectURL(blob);
+    link.download = "event_data.csv";
+    link.click();
+  };
   return (
     <>
       <div className="flex gap-5 max-lg:flex-col">
-        <div className="flex h-[50px] w-[170px] cursor-pointer items-center justify-center gap-3 rounded-lg bg-[#EFF8FF] p-2 lg:order-2">
+        <div
+          className="flex h-[50px] w-[170px] cursor-pointer items-center justify-center gap-3 rounded-lg bg-[#EFF8FF] p-2 lg:order-2"
+          onClick={exportToCSV}
+        >
           <Image
             src={DownloadIcon}
             alt="download_icon"

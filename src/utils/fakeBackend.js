@@ -171,6 +171,7 @@ export const eventsData = [
 
     Status: "Online",
   },
+
   {
     id: "2",
     imageSrc: OrganizerEventImage2,
