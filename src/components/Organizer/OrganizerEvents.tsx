@@ -14,6 +14,7 @@ import {
   DropdownMenuTrigger,
 } from "@/core/ui/dropdown-menu";
 import OrganizerEventTable from "./OrganizerEventTable";
+import OrganizerEventCalendar from "./OrganizerEventCalendar";
 export default function OrganizerEvents() {
   const [activeDiv, setActiveDiv] = useState("List");
   const handleDivClick = (divName: string) => {
@@ -89,7 +90,11 @@ export default function OrganizerEvents() {
           </div>
         </div>
         <div className="mt-5">
-          <OrganizerEventTable />
+          {activeDiv === "List" ? (
+            <OrganizerEventTable />
+          ) : (
+            <OrganizerEventCalendar />
+          )}
         </div>
       </div>
     </>
