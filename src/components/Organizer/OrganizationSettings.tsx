@@ -12,6 +12,14 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/core/ui/select";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/core/ui/dialog";
 import { useState } from "react";
 import EditOrganizerProfile from "./EditOrganizerProfile";
 export default function OrganizationSettings() {
@@ -38,12 +46,32 @@ export default function OrganizationSettings() {
               <span className="text-2xl font-bold text-primary ">
                 Organization Settings
               </span>
-              <Button
-                className="h-[38px] w-[180px] bg-btnprimary text-white hover:bg-btnsecondary"
-                onClick={handleEditClick}
-              >
-                Add Organizer Profile
-              </Button>
+              <Dialog>
+                <DialogTrigger>
+                  <Button className="h-[38px] w-[180px] bg-btnprimary text-white hover:bg-btnsecondary">
+                    Add Organizer Profile
+                  </Button>
+                </DialogTrigger>
+                <DialogContent>
+                  <div className="flex flex-col justify-center gap-2 p-5">
+                    <span className=" text-center text-xl font-bold text-primary">
+                      Are you sure you want to create a new organizer profile?
+                    </span>
+                    <span className="text-center text-[#757575]">
+                      We created an existing organizer profile for you so that
+                      you can easily edit it.
+                    </span>
+                    <div className="mt-5 flex justify-center gap-4 max-sm:flex-col max-sm:items-center">
+                      <Button className="h-[38px] w-[130px] bg-[#DEF0FF] text-primary">
+                        Create new
+                      </Button>
+                      <Button className="h-[38px] w-[130px] bg-btnprimary text-white hover:bg-btnsecondary">
+                        Edit Existing
+                      </Button>
+                    </div>
+                  </div>
+                </DialogContent>
+              </Dialog>
             </div>
             <div className="h-[1px] bg-[#0080FF]"></div>
             <div className="flex flex-col gap-2">
