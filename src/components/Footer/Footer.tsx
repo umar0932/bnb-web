@@ -21,7 +21,9 @@ export default function Footer() {
           style={{ borderBottomColor: "#00437A", borderBottomWidth: "1px" }}
         >
           <div className="mt-4 flex flex-shrink-0 justify-center">
-            <StaticImage src={Logo} alt="Logo" className="mt-4 h-20 w-32" />
+            <div className="flex h-[50px] w-[100px] items-center justify-center rounded-xl bg-white text-center">
+              Logo
+            </div>
           </div>
           <div className="container  p-6 px-16 md:flex md:flex-wrap md:justify-between">
             <div className="flex flex-col max-md:items-center max-md:justify-center ">
@@ -136,7 +138,7 @@ export default function Footer() {
               </Link>
             </div>
             <div className="flex flex-col max-md:items-center max-md:justify-center">
-              <span className="mb-2 text-2xl text-xl font-bold text-btnsecondary md:text-2xl">
+              <span className="mb-2 text-2xl  font-bold text-btnsecondary md:text-2xl">
                 Language
               </span>
               <Select>
