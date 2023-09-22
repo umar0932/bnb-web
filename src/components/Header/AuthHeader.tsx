@@ -86,18 +86,24 @@ export default function AuthHeader({ colorScheme = "default" }) {
                           <DropdownMenuItem className="cursor-pointer">
                             Manage my events
                           </DropdownMenuItem>
-                          <DropdownMenuItem className="cursor-pointer">
-                            Liked
-                          </DropdownMenuItem>
-                          <DropdownMenuItem className="cursor-pointer">
-                            Following
-                          </DropdownMenuItem>
+                          <Link href="/likes">
+                            <DropdownMenuItem className="cursor-pointer">
+                              Liked
+                            </DropdownMenuItem>
+                          </Link>
+                          <Link href="/following">
+                            <DropdownMenuItem className="cursor-pointer">
+                              Following
+                            </DropdownMenuItem>
+                          </Link>
                           <DropdownMenuItem className="cursor-pointer">
                             Interests
                           </DropdownMenuItem>
-                          <DropdownMenuItem className="cursor-pointer">
-                            Account Settings
-                          </DropdownMenuItem>
+                          <Link href="/account-settings">
+                            <DropdownMenuItem className="cursor-pointer">
+                              Account Settings
+                            </DropdownMenuItem>
+                          </Link>
                           <DropdownMenuItem className="cursor-pointer">
                             Logout
                           </DropdownMenuItem>
@@ -107,22 +113,28 @@ export default function AuthHeader({ colorScheme = "default" }) {
                   </li>
 
                   <li className="mx-4 my-6 md:my-0">
-                    <div className="flex  cursor-pointer items-center  gap-2 text-secondary">
-                      <p className="min-w-[100px] text-sm font-normal">
-                        Create an event
-                      </p>
-                      <Image
-                        src={PlusIcon}
-                        alt="plus_icon"
-                        className="h-[12px] w-[12px] text-btnsecondary"
-                      />
-                    </div>
+                    <Link href="/create-event-page/welcome">
+                      <div className="flex  cursor-pointer items-center  gap-2 text-secondary">
+                        <p className="min-w-[100px] text-sm font-normal">
+                          Create an event
+                        </p>
+                        <Image
+                          src={PlusIcon}
+                          alt="plus_icon"
+                          className="h-[12px] w-[12px] text-btnsecondary"
+                        />
+                      </div>
+                    </Link>
                   </li>
                   <li className="mx-4 my-6 md:my-0">
-                    <div className="flex  cursor-pointer items-center  gap-2 text-secondary">
-                      <p className="min-w-[100px] text-sm font-normal">Like</p>
-                      <Heart size={14} stroke="none" fill="#CC0001" />
-                    </div>
+                    <Link href="/likes">
+                      <div className="flex  cursor-pointer items-center  gap-2 text-secondary">
+                        <p className="min-w-[100px] text-sm font-normal">
+                          Like
+                        </p>
+                        <Heart size={14} stroke="none" fill="#CC0001" />
+                      </div>
+                    </Link>
                   </li>
                   <li className="mx-4 my-6 md:my-0">
                     <div className="flex  cursor-pointer items-center  gap-2 text-secondary">
@@ -147,29 +159,33 @@ export default function AuthHeader({ colorScheme = "default" }) {
               }  left-0 top-[-400px] z-[-1] w-full gap-5 bg-transparent py-4 pl-7 opacity-0 transition-all duration-500 ease-in lg:static lg:z-auto lg:flex lg:items-center lg:justify-end lg:py-0 lg:pl-5 lg:opacity-100 `}
             >
               <li className="mx-6 my-6 min-w-[100px]  md:my-0">
-                <div
-                  className={`flex cursor-pointer items-center  gap-2 text-secondary text-${
-                    colorScheme === "alternative" ? "white" : "secondary"
-                  } `}
-                >
-                  <p className="text-sm font-normal ">Create an event</p>
-                  <Image
-                    src={PlusIcon}
-                    alt="plus_icon"
-                    className="h-[12px] w-[12px] text-btnsecondary"
-                  />
-                  {/* <Cross size={12} stroke="none" fill="#CC0001" /> */}
-                </div>
+                <Link href="/create-event-page/welcome">
+                  <div
+                    className={`flex cursor-pointer items-center  gap-2 text-secondary text-${
+                      colorScheme === "alternative" ? "white" : "secondary"
+                    } `}
+                  >
+                    <p className="text-sm font-normal ">Create an event</p>
+                    <Image
+                      src={PlusIcon}
+                      alt="plus_icon"
+                      className="h-[12px] w-[12px] text-btnsecondary"
+                    />
+                    {/* <Cross size={12} stroke="none" fill="#CC0001" /> */}
+                  </div>
+                </Link>
               </li>
               <li className="mx-6 my-6   md:my-0">
-                <div
-                  className={`flex cursor-pointer items-center  gap-2 text-secondary text-${
-                    colorScheme === "alternative" ? "white" : "secondary"
-                  } `}
-                >
-                  <p className="text-sm font-normal ">Like</p>
-                  <Heart size={14} stroke="#CC0001" />
-                </div>
+                <Link href="/likes">
+                  <div
+                    className={`flex cursor-pointer items-center  gap-2 text-secondary text-${
+                      colorScheme === "alternative" ? "white" : "secondary"
+                    } `}
+                  >
+                    <p className="text-sm font-normal ">Like</p>
+                    <Heart size={14} stroke="#CC0001" />
+                  </div>
+                </Link>
               </li>
               <li className="mx-6 my-6   md:my-0">
                 <div
@@ -209,18 +225,25 @@ export default function AuthHeader({ colorScheme = "default" }) {
                       <DropdownMenuItem className="cursor-pointer">
                         Manage my events
                       </DropdownMenuItem>
-                      <DropdownMenuItem className="cursor-pointer">
-                        Liked
-                      </DropdownMenuItem>
-                      <DropdownMenuItem className="cursor-pointer">
-                        Following
-                      </DropdownMenuItem>
+                      <Link href="/likes">
+                        <DropdownMenuItem className="cursor-pointer">
+                          Liked
+                        </DropdownMenuItem>
+                      </Link>
+
+                      <Link href="/following">
+                        <DropdownMenuItem className="cursor-pointer">
+                          Following
+                        </DropdownMenuItem>
+                      </Link>
                       <DropdownMenuItem className="cursor-pointer">
                         Interests
                       </DropdownMenuItem>
-                      <DropdownMenuItem className="cursor-pointer">
-                        Account Settings
-                      </DropdownMenuItem>
+                      <Link href="/account-settings">
+                        <DropdownMenuItem className="cursor-pointer">
+                          Account Settings
+                        </DropdownMenuItem>
+                      </Link>
                       <DropdownMenuItem className="cursor-pointer">
                         Logout
                       </DropdownMenuItem>

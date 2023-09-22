@@ -18,6 +18,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/core/ui/dialog";
+import { Button } from "@/core/ui/button";
 
 export default function signup() {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
@@ -226,15 +227,17 @@ export default function signup() {
               read the <span className="underline">Privacy Policy</span>
             </p>
             <div className="flex justify-center gap-5">
-              <button
+              <Button
                 onClick={() => setIsDialogOpen(false)}
                 className="shadow-tertiary-500 flex h-[48px] w-[131px] items-center justify-center rounded-lg bg-[#DEF0FF] font-bold text-primary shadow-sm"
               >
                 Cancel
-              </button>
-              <button className="shadow-tertiary-500 flex h-[48px] w-[131px] items-center justify-center rounded-lg bg-btnprimary text-white shadow-sm hover:bg-btnsecondary">
-                I Agree
-              </button>
+              </Button>
+              <Link href="/interests">
+                <Button className="shadow-tertiary-500 flex h-[48px] w-[131px] items-center justify-center rounded-lg bg-btnprimary text-white shadow-sm hover:bg-btnsecondary">
+                  I Agree
+                </Button>
+              </Link>
             </div>
           </DialogHeader>
         </DialogContent>

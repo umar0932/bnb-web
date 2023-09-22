@@ -7,6 +7,7 @@ import BenefitSection from "@/components/Sections/BenefitSection";
 import PaidInfoSection from "@/components/Sections/PaidInfoSection";
 import HelpCenterSection from "@/components/Sections/HelpCenterSection";
 import Footer from "@/components/Footer/Footer";
+import { Button } from "@/core/ui/button";
 export default function CreateEvent() {
   return (
     <>
@@ -31,9 +32,11 @@ export default function CreateEvent() {
                 Curabitur non vestibulum <br className="max-sm:hidden" />
                 nulla. Praesent auctor molestie ornare.
               </span>
-              <button className=" mt-4 w-[230px] rounded-lg bg-btnprimary p-2 text-white hover:bg-btnsecondary">
-                Get Started for free
-              </button>
+              <Link href="/create-event-page/welcome">
+                <Button className=" mt-4 w-[230px] rounded-lg bg-btnprimary p-2 text-white hover:bg-btnsecondary">
+                  Get Started for free
+                </Button>
+              </Link>
             </div>
           </div>
           <StandOutSection />

@@ -1,4 +1,6 @@
 import { Separator } from "@/core/ui/separator";
+import Link from "next/link";
+import { Button } from "@/core/ui/button";
 export default function HelpCenterSection() {
   return (
     <>
@@ -17,9 +19,11 @@ export default function HelpCenterSection() {
               <br className="max-xl:hidden" />
               non vestibulum nulla. Praesent auctor molestie ornare.
             </span>
-            <button className=" w-[190px] rounded-lg bg-btnprimary p-2 text-white hover:bg-btnsecondary">
-              Contact us
-            </button>
+            <Link href="/contact-sales">
+              <Button className=" w-[190px] rounded-lg bg-btnprimary p-2 text-white hover:bg-btnsecondary">
+                Contact us
+              </Button>
+            </Link>
           </div>
         </div>
       </div>
