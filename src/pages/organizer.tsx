@@ -20,7 +20,6 @@ import OrganizationSettings from "@/components/Organizer/OrganizationSettings";
 
 export default function Organizer() {
   const [activeDiv, setActiveDiv] = useState("Home");
-  console.log(activeDiv);
 
   // Function to handle div click
   const handleDivClick = (divName: string) => {

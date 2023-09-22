@@ -1,4 +1,6 @@
 import Header from "../Header/Header";
+import { Button } from "@/core/ui/button";
+import Link from "next/link";
 
 export default function HeroSection() {
   return (
@@ -19,9 +21,11 @@ export default function HeroSection() {
               <br className="max-sm:hidden" />
               molestie ornare.
             </span>
-            <button className=" mt-8 w-[350px] rounded-lg bg-btnprimary p-2 text-white hover:bg-btnsecondary max-sm:w-[290px]">
-              Find next event
-            </button>
+            <Link href="/find-next-event">
+              <Button className="mt-8 w-[350px] rounded-lg bg-btnprimary p-2 text-lg text-white hover:bg-btnsecondary max-sm:w-[290px]">
+                Find next event
+              </Button>
+            </Link>
           </div>
         </div>
       </div>
