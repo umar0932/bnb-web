@@ -243,7 +243,7 @@ export default function Header({ colorScheme = "default" }) {
                   <li className="mx-4 my-3 md:my-0">
                     <Select>
                       <SelectTrigger className="w-[110px] border-none  bg-transparent font-normal text-secondary outline-none">
-                        <SelectValue placeholder="Organizer" />
+                        <SelectValue placeholder="Organize" />
                       </SelectTrigger>
                       <SelectContent>
                         <SelectGroup>
@@ -269,16 +269,18 @@ export default function Header({ colorScheme = "default" }) {
                     </Select>
                   </li>
                   <li className="mx-4 my-6 md:my-0">
-                    <div className="flex  cursor-pointer items-center  gap-2 text-secondary">
-                      <p className="min-w-[100px] text-sm font-normal">
-                        Create an event
-                      </p>
-                      <Image
-                        src={PlusIcon}
-                        alt="plus_icon"
-                        className="h-[12px] w-[12px] text-btnsecondary"
-                      />
-                    </div>
+                    <Link href="/create-event-page/welcome">
+                      <div className="flex  cursor-pointer items-center  gap-2 text-secondary">
+                        <p className="min-w-[100px] text-sm font-normal">
+                          Create an event
+                        </p>
+                        <Image
+                          src={PlusIcon}
+                          alt="plus_icon"
+                          className="h-[12px] w-[12px] text-btnsecondary"
+                        />
+                      </div>
+                    </Link>
                   </li>
                   <form onSubmit={formik.handleSubmit} className="mx-4">
                     <input
@@ -325,7 +327,7 @@ export default function Header({ colorScheme = "default" }) {
                     }  bg-transparent font-normal  outline-none`}
                   >
                     <SelectValue
-                      placeholder="Organizer"
+                      placeholder="Organize"
                       className="text-[30px]"
                     />
                   </SelectTrigger>
@@ -355,18 +357,20 @@ export default function Header({ colorScheme = "default" }) {
                 </Select>
               </li>
               <li className="mx-6 my-6 min-w-[150px]  md:my-0">
-                <div
-                  className={`flex cursor-pointer items-center  gap-2 text-secondary text-${
-                    colorScheme === "alternative" ? "white" : "secondary"
-                  } `}
-                >
-                  <p className="text-sm font-normal ">Create an event</p>
-                  <Image
-                    src={PlusIcon}
-                    alt="plus_icon"
-                    className="h-[12px] w-[12px] text-btnsecondary"
-                  />
-                </div>
+                <Link href="/create-event-page/welcome">
+                  <div
+                    className={`flex cursor-pointer items-center  gap-2 text-secondary text-${
+                      colorScheme === "alternative" ? "white" : "secondary"
+                    } `}
+                  >
+                    <p className="text-sm font-normal ">Create an event</p>
+                    <Image
+                      src={PlusIcon}
+                      alt="plus_icon"
+                      className="h-[12px] w-[12px] text-btnsecondary"
+                    />
+                  </div>
+                </Link>
               </li>
             </ul>
           )}
