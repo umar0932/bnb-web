@@ -16,6 +16,7 @@ import {
 } from "@/core/ui/select";
 import OrganizerEventTable from "./OrganizerEventTable";
 import OrganizerEventCalendar from "./OrganizerEventCalendar";
+import Link from "next/link";
 export default function OrganizerEvents() {
   const [activeDiv, setActiveDiv] = useState("List");
   const handleDivClick = (divName: string) => {
@@ -25,9 +26,11 @@ export default function OrganizerEvents() {
     <>
       <div className="flex w-full flex-col p-10 max-sm:p-5">
         <div className="flex justify-end max-sm:mb-3 ">
-          <Button className="flex h-[43px] w-[150px] justify-center rounded-sm bg-btnprimary p-3 font-bold text-white hover:bg-btnsecondary">
-            Create Event
-          </Button>
+          <Link href="/create-event-page/welcome">
+            <Button className="flex h-[43px] w-[150px] justify-center rounded-sm bg-btnprimary p-3 font-bold text-white hover:bg-btnsecondary">
+              Create Event
+            </Button>
+          </Link>
         </div>
         <div className="flex flex-col gap-5">
           <span className="text-2xl font-bold text-primary ">Events</span>

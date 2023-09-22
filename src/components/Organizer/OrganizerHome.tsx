@@ -5,6 +5,7 @@ import OrganizeProfileImage from "../../../public/assets/Organizer_profile_image
 import EditProfileIcon from "../../../public/assets/edit_profile_icon.svg";
 import LinkIcon from "../../../public/assets/link_icon.svg";
 import { RadioGroup, RadioGroupItem } from "@/core/ui/radio-group";
+import Link from "next/link";
 export default function OrganizerHome() {
   return (
     <>
@@ -21,9 +22,11 @@ export default function OrganizerHome() {
               <span className="text-[#757575]">Go to events</span>
             </div>
             <div className="lg:ml-10">
-              <Button className="h-[38px] w-[120px] bg-btnprimary text-white hover:bg-btnsecondary">
-                Create Event
-              </Button>
+              <Link href="/create-event-page/welcome">
+                <Button className="h-[38px] w-[120px] bg-btnprimary text-white hover:bg-btnsecondary">
+                  Create Event
+                </Button>
+              </Link>
             </div>
           </div>
 
@@ -89,16 +92,13 @@ export default function OrganizerHome() {
             </div>
             <div className="ml-10 max-sm:ml-0">
               <Button className="h-[38px] w-[120px] bg-btnprimary text-white hover:bg-btnsecondary">
-                Create Event
+                Start Here
               </Button>
             </div>
           </div>
           <div className="mt-3 flex gap-5">
             <div className="flex">
-              <RadioGroup
-                defaultValue="option-one"
-                className="flex items-center gap-5 max-md:flex-col max-md:items-start max-sm:mt-5"
-              >
+              <RadioGroup className="flex items-center gap-5 max-md:flex-col max-md:items-start max-sm:mt-5">
                 <div className=" flex h-[50px] items-center justify-between gap-5 rounded-lg bg-white p-2">
                   <RadioGroupItem
                     value="option-one"
@@ -130,6 +130,7 @@ export default function OrganizerHome() {
                     value="option-three"
                     id="option-three"
                     className="h-[20px] w-[20px] border-btnprimary  text-btnprimary"
+                    defaultChecked={true}
                   />
                   <Label
                     htmlFor="option-three"

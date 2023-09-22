@@ -20,22 +20,22 @@ export default function EmailPreferanceForm() {
           <div className="mt-5 flex flex-col gap-2">
             <span className="text-lg">Email me</span>
             <div className="flex items-center space-x-2">
-              <Checkbox className="text-btnseondary" />
+              <Checkbox className="text-btnseondary" defaultChecked={true} />
               <span>Updates about new Bnb features and announcements</span>
             </div>
             <div className="flex items-center space-x-2">
-              <Checkbox className="text-btnseondary" />
+              <Checkbox className="text-btnseondary" defaultChecked={true} />
               <span>
                 Requests for additional information on an event after you have
                 attended
               </span>
             </div>
             <div className="flex items-center space-x-2">
-              <Checkbox className="text-btnseondary" />
+              <Checkbox className="text-btnseondary" defaultChecked={true} />
               <span>Updates about new Bnb features and announcements</span>
             </div>
             <div className="flex items-center space-x-2">
-              <Checkbox className="text-btnseondary" />
+              <Checkbox className="text-btnseondary" defaultChecked={true} />
               <span>
                 Requests for additional information on an event after you have
                 attended
@@ -46,19 +46,19 @@ export default function EmailPreferanceForm() {
           <div className="mt-5 flex flex-col gap-2">
             <span className="text-lg">Notifications</span>
             <div className="flex items-center space-x-2">
-              <Checkbox className="text-btnseondary" />
+              <Checkbox className="text-btnseondary" defaultChecked={true} />
               <span>When an organizer you follow announces a new event</span>
             </div>
             <div className="flex items-center space-x-2">
-              <Checkbox className="text-btnseondary" />
+              <Checkbox className="text-btnseondary" defaultChecked={true} />
               <span>Receive updates on collections you follow</span>
             </div>
             <div className="flex items-center space-x-2">
-              <Checkbox className="text-btnseondary" />
+              <Checkbox className="text-btnseondary" defaultChecked={true} />
               <span>When an organizer you follow announces a new event</span>
             </div>
             <div className="flex items-center space-x-2">
-              <Checkbox className="text-btnseondary" />
+              <Checkbox className="text-btnseondary" defaultChecked={true} />
               <span>Receive updates on collections you follow</span>
             </div>
           </div>
@@ -73,19 +73,19 @@ export default function EmailPreferanceForm() {
           <div className="mt-5 flex flex-col gap-2">
             <span className="text-lg">Email me</span>
             <div className="flex items-center space-x-2">
-              <Checkbox className="text-btnseondary" />
+              <Checkbox className="text-btnseondary" defaultChecked={true} />
               <span>Monthly tips and tools for organizing events</span>
             </div>
             <div className="flex items-center space-x-2">
-              <Checkbox className="text-btnseondary" />
+              <Checkbox className="text-btnseondary" defaultChecked={true} />
               <span>Event Sales Recap</span>
             </div>
             <div className="flex items-center space-x-2">
-              <Checkbox className="text-btnseondary" />
+              <Checkbox className="text-btnseondary" defaultChecked={true} />
               <span>Monthly tips and tools for organizing events</span>
             </div>
             <div className="flex items-center space-x-2">
-              <Checkbox className="text-btnseondary" />
+              <Checkbox className="text-btnseondary" defaultChecked={true} />
               <span>Event Sales Recap</span>
             </div>
           </div>
@@ -93,19 +93,19 @@ export default function EmailPreferanceForm() {
           <div className="mt-5 flex flex-col gap-2">
             <span className="text-lg">Notifications</span>
             <div className="flex items-center space-x-2">
-              <Checkbox className="text-btnseondary" />
+              <Checkbox className="text-btnseondary" defaultChecked={true} />
               <span>Important reminders for my next event</span>
             </div>
             <div className="flex items-center space-x-2">
-              <Checkbox className="text-btnseondary" />
+              <Checkbox className="text-btnseondary" defaultChecked={true} />
               <span>Order confirmations from my attendees</span>
             </div>
             <div className="flex items-center space-x-2">
-              <Checkbox className="text-btnseondary" />
+              <Checkbox className="text-btnseondary" defaultChecked={true} />
               <span>Important reminders for my next event</span>
             </div>
             <div className="flex items-center space-x-2">
-              <Checkbox className="text-btnseondary" />
+              <Checkbox className="text-btnseondary" defaultChecked={true} />
               <span>Order confirmations from my attendees</span>
             </div>
           </div>

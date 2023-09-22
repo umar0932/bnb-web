@@ -33,21 +33,21 @@ export default function CloseAccountForm() {
           </div>
           <div className="mt-5 flex flex-col gap-2">
             <div className="flex items-center space-x-2">
-              <Checkbox className="text-btnseondary" />
+              <Checkbox className="text-btnseondary" defaultChecked={true} />
               <span>I do not want my information saved by Bnb</span>
             </div>
             <div className="flex items-center space-x-2">
-              <Checkbox className="text-btnseondary" />
+              <Checkbox className="text-btnseondary" defaultChecked={true} />
               <span>
                 I am not interested in managing my attendance at any events
               </span>
             </div>
             <div className="flex items-center space-x-2">
-              <Checkbox className="text-btnseondary" />
+              <Checkbox className="text-btnseondary" defaultChecked={true} />
               <span>The site is too difficult to use</span>
             </div>
             <div className="flex items-center space-x-2">
-              <Checkbox className="text-btnseondary" />
+              <Checkbox className="text-btnseondary" defaultChecked={true} />
               <span>I am not attending any events</span>
             </div>
             <div className="flex items-center space-x-2">

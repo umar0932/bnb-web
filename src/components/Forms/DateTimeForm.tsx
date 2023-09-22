@@ -105,11 +105,11 @@ export default function DateTimeForm() {
             </div>
             <div className="mt-3 flex flex-col gap-2">
               <div className="flex items-center space-x-2">
-                <Checkbox className="text-btnseondary" />
+                <Checkbox className="text-btnseondary" defaultChecked={true} />
                 <span>Display start time.</span>
               </div>
               <div className="flex items-center space-x-2">
-                <Checkbox />
+                <Checkbox defaultChecked={true} />
                 <span>Display end time.</span>
               </div>
             </div>
