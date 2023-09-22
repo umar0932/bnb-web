@@ -72,9 +72,11 @@ export default function OrganizerHome() {
               <span className="text-xl font-bold text-[#003A6D]">
                 Need any help?
               </span>
-              <span className="text-[#3B5998] underline">
-                Go to help center
-              </span>
+              <Link href="/help-center">
+                <span className="text-[#3B5998] underline">
+                  Go to help center
+                </span>
+              </Link>
             </div>
           </div>
         </div>
