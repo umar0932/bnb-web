@@ -7,26 +7,48 @@ const localizer = momentLocalizer(moment);
 
 const myEventsList = [
   {
-    start: moment("2023-09-23T10:00:00").toDate(),
-    end: moment("2023-09-23T13:00:00").toDate(),
+    start: moment("2023-09-26T10:00:00").toDate(),
+    end: moment("2023-09-26T13:00:00").toDate(),
     title: "Concert",
   },
-  {
-    start: moment("2023-09-26T10:00:00").toDate(),
-    end: moment("2023-09-28T13:00:00").toDate(),
-    title: "Music Workshop",
-  },
-  {
-    start: moment("2023-09-24T10:00:00").toDate(),
-    end: moment("2023-09-24T13:00:00").toDate(),
-    title: "Conference",
-  },
 ];
+
+const today = moment().startOf("day").toDate(); // Get today's date
+
+const dayPropGetter = (date: any) => {
+  // Check the day of the week (0 for Sunday, 1 for Monday, etc.)
+  const dayOfWeek = moment(date).day();
+
+  // Apply different classes based on the day of the week
+  switch (dayOfWeek) {
+    case 0: // Sunday
+      return { className: "sunday" }; // Apply a class for Sundays
+    case 1: // Monday
+      return { className: "monday" }; // Apply a class for Mondays
+    case 2: // Tuesday
+      return { className: "tuesday" }; // Apply a class for Tuesdays
+    case 3: // Wednesday
+      return { className: "wednesday" }; // Apply a class for Wednesdays
+    case 4: // Thursday
+      return { className: "thursday" }; // Apply a class for Thursdays
+    case 5: // Friday
+      return { className: "friday" }; // Apply a class for Fridays
+    case 6: // Saturday
+      return { className: "saturday" }; // Apply a class for Saturdays
+    default:
+      return {}; // For other days, no special class
+  }
+};
 
 export default function OrganizerEventCalendar() {
   const handleSelect = () => {
     window.open("/create-event-page/welcome"); // Open in a new tab
   };
+
+  const today = moment().startOf("day").toDate(); // Get today's date
+
+  // Set the initial date to the first day of the current month
+  const initialDate = moment().startOf("month").toDate();
 
   return (
     <div>
@@ -41,6 +63,9 @@ export default function OrganizerEventCalendar() {
         views={["month", "week"]}
         formats={{ weekdayFormat: "dddd" }}
         className="table-drop-shadow rounded-lg bg-[#F3FAFF] p-3"
+        min={today} // Set the minimum selectable date to today
+        dayPropGetter={dayPropGetter}
+        date={initialDate} // Set the initial date to the first day of the current month
       />
     </div>
   );

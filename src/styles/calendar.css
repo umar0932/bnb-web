@@ -76,6 +76,35 @@
   text-decoration: none;
 }
 
+.rbc-day-bg + .rbc-day-bg {
+  border-left: none;
+}
+
+.sunday,
+.tuesday,
+.thursday,
+.saturday {
+  background-color: #ebf4fc;
+}
+.monday,
+.wednesday,
+.friday {
+  background-color: #f3faff;
+}
+
+.rbc-month-view,
+.rbc-time-view {
+  border: none;
+}
+
+.rbc-off-range-bg {
+  cursor: not-allowed;
+}
+.rbc-off-range:hover::before {
+  content: "";
+
+  cursor: progress;
+}
 .rbc-row-segment {
   cursor: pointer;
   opacity: 1;
@@ -128,6 +157,13 @@
   opacity: 0; /* Initially hide the content */
   transition: opacity 0.3s ease; /* Add a transition for smooth appearance */
 }
+
+.rbc-date-cell.rbc-off-range {
+  color: #757575;
+}
+
+/* .rbc-off-range-bg {
+} */
 
 .rbc-day-bg:hover::before {
   opacity: 100; /* Show the content on hover */
