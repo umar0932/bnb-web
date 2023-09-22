@@ -53,10 +53,13 @@ export default function FindNextEvent() {
               <div className="absolute  top-[90px] flex flex-col gap-3 bg-[#F6FBFF] p-4  max-sm:p-3">
                 <div
                   className="flex cursor-pointer gap-5"
-                  ref={findMyLocation}
                   onClick={toggleAdditionalDiv}
                 >
-                  <Image src={CurrentLocation} alt="current_location" />
+                  <Image
+                    src={CurrentLocation}
+                    alt="current_location"
+                    onClick={findMyLocation}
+                  />
                   <span className="text-base text-[#3B5998]">
                     Use my current location
                   </span>
