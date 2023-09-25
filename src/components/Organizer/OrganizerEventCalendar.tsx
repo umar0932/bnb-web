@@ -63,9 +63,8 @@ export default function OrganizerEventCalendar() {
         views={["month", "week"]}
         formats={{ weekdayFormat: "dddd" }}
         className="table-drop-shadow rounded-lg bg-[#F3FAFF] p-3"
-        min={today} // Set the minimum selectable date to today
         dayPropGetter={dayPropGetter}
-        date={initialDate} // Set the initial date to the first day of the current month
+        // date={initialDate} // Set the initial date to the first day of the current month
       />
     </div>
   );
