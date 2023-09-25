@@ -134,12 +134,25 @@ body {
     background-image: url("../../public/assets/hero_section.png");
     background-size: cover;
     background-repeat: no-repeat;
+    animation: changeBackground 10s linear infinite alternate;
     /* background: linear-gradient(
       180deg,
       #061735 0%,
       rgba(6, 23, 53, 0.5) 54.17%
     ); */
   }
+  @keyframes changeBackground {
+    0% {
+      background-image: url("../../public/assets/hero_section.png"); /* First image */
+    }
+    50% {
+      background-image: url("../../public/assets/hero_section-2.png"); /* Second image */
+    }
+    100% {
+      background-image: url("../../public/assets/hero_section.png"); /* Back to the first image */
+    }
+  }
+
   .event-details-background {
     background-image: url("../../public/assets/event-details-background.png");
     background-size: cover;
