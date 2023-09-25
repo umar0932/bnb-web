@@ -31,7 +31,6 @@
     "lucide-solid": "^0.269.0",
     "next": "^13.4.2",
     "react": "18.2.0",
-    "react-async-script-loader": "^0.3.0",
     "react-big-calendar": "^1.8.4",
     "react-dom": "18.2.0",
     "react-google-places-autocomplete": "^4.0.1",
