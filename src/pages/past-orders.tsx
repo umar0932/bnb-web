@@ -1,24 +1,11 @@
 import Header from "@/components/Header/Header";
 import { ChevronLeftIcon } from "lucide-react";
 import { Button } from "@/core/ui/button";
-import { useFormik } from "formik";
-import { Pencil } from "lucide-react";
 import GeneralInfoForm from "@/components/Forms/GeneralInfoForm";
 import Copyright from "@/components/Copyright/Copyright";
 import Link from "next/link";
 
 export default function PastOrders() {
-  const formik = useFormik({
-    initialValues: {
-      first_name: "",
-      last_name: "",
-      email_address: "",
-      delivery_method: "",
-    },
-    onSubmit: (values) => {
-      JSON.stringify(values, null, 2);
-    },
-  });
   return (
     <>
       <div className="flex flex-col">

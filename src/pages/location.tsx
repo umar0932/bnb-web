@@ -1,10 +1,7 @@
 import Header from "@/components/Header/Header";
 import { Progress } from "@/core/ui/progress";
 import Autocomplete from "@/components/AutoComplete/AutoCompleteAcc";
-import CurrentLocation from "../../public/assets/current_location.svg";
-import BrowserLocations from "../../public/assets/browse_online.svg";
 import Link from "next/link";
-import StaticImage from "next/image";
 
 export default function Location() {
   return (

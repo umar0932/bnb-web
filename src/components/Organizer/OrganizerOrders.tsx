@@ -3,14 +3,12 @@ import {
   SelectContent,
   SelectGroup,
   SelectItem,
-  SelectLabel,
   SelectTrigger,
   SelectValue,
 } from "@/core/ui/select";
 import SearchIcon from "../../../public/assets/search_icon_red.svg";
 import Image from "next/image";
-import { ChevronDown } from "lucide-react";
-import { SelectIcon } from "@radix-ui/react-select";
+
 import OrganizerOrdersTable from "./OrganizerOrdersTable";
 export default function OrganizerOrders() {
   return (

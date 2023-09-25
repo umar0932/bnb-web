@@ -5,10 +5,8 @@ import { useState } from "react";
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
 } from "@/core/ui/dialog";
 
 import LoginImage from "../../public/assets/login_page.png";
@@ -17,7 +15,7 @@ import { Mail } from "lucide-react";
 import { AiFillApple } from "react-icons/ai";
 import { FcGoogle } from "react-icons/fc";
 import { useFormik } from "formik";
-export default function login() {
+export default function Login() {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const formik = useFormik({
     initialValues: { email: "", password: "" },

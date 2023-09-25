@@ -1,12 +1,9 @@
-import StaticImage from "next/image";
-import Logo from "../../../public/assets/logo.jpg";
 import Link from "next/link";
 import Copyright from "../Copyright/Copyright";
 import {
   Select,
   SelectContent,
   SelectGroup,
-  SelectItem,
   SelectLabel,
   SelectTrigger,
   SelectValue,

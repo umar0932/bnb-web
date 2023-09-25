@@ -1,4 +1,3 @@
-import { Separator } from "@/core/ui/separator";
 import Link from "next/link";
 import { Button } from "@/core/ui/button";
 export default function HelpCenterSection() {

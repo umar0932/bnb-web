@@ -1,10 +1,4 @@
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-} from "@/core/ui/dialog";
+import { Dialog, DialogContent } from "@/core/ui/dialog";
 import CheckoutForm from "../Forms/CheckoutForm";
 import { useState, useRef, useEffect } from "react";
 

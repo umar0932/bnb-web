@@ -91,7 +91,7 @@ export default function AccountSetting() {
             "Contact Information",
             "Change Email",
             "Change Password",
-            "Debit/ Credit Card",
+            "Credit/ Debit Card",
             "Linked Account",
             "Email Preference",
             "Close Account",
@@ -111,9 +111,6 @@ export default function AccountSetting() {
           ))}
         </div>
       </div>
-      {/* <div className="absolute bottom-0">
-        <Copyright />
-      </div> */}
     </div>
   );
 }

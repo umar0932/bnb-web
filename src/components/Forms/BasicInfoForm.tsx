@@ -23,13 +23,11 @@ import {
   SelectContent,
   SelectGroup,
   SelectItem,
-  SelectLabel,
   SelectTrigger,
   SelectValue,
 } from "../../core/ui/select";
 import Image from "next/image";
 import { useState } from "react";
-import reactSelect from "react-select";
 
 export default function BasicInfoForm() {
   const [value, setValue] = useState<any[]>([]);

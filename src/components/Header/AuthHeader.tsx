@@ -19,22 +19,11 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/core/ui/dropdown-menu";
 
-import { Menu, XCircle, Heart, Cross } from "lucide-react";
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectTrigger,
-  SelectValue,
-} from "@/core/ui/select";
-import { useFormik } from "formik";
+import { Menu, Heart } from "lucide-react";
+
 export default function AuthHeader({ colorScheme = "default" }) {
   const getButtonClasses = () => {
     if (colorScheme === "default") {

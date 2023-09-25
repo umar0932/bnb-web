@@ -13,9 +13,9 @@ const myEventsList = [
   },
 ];
 
-const today = moment().startOf("day").toDate(); // Get today's date
+// const today = moment().startOf("day").toDate(); // Get today's date
 
-const dayPropGetter = (date: any) => {
+const dayPropGetter = (date: Date) => {
   // Check the day of the week (0 for Sunday, 1 for Monday, etc.)
   const dayOfWeek = moment(date).day();
 

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import CurrentLocation from "../../../public/assets/current_location.svg";
 import BrowserLocations from "../../../public/assets/browse_online.svg";
 import StaticImage from "next/image";

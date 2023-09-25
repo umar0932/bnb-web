@@ -4,30 +4,20 @@ import UserProfileIcon from "../../../public/assets/user_profile_icon.svg";
 import PlusIcon from "../../../public/assets/plus_icon.svg";
 import Image from "next/image";
 
-import {
-  Sheet,
-  SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/core/ui/sheet";
+import { Sheet, SheetContent, SheetTrigger } from "@/core/ui/sheet";
 
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/core/ui/dropdown-menu";
 
-import { Menu, XCircle, Cross } from "lucide-react";
+import { Menu } from "lucide-react";
 import {
   Select,
   SelectContent,
   SelectGroup,
-  SelectItem,
   SelectLabel,
   SelectTrigger,
   SelectValue,

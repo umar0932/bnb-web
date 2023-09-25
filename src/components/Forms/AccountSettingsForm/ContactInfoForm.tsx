@@ -4,13 +4,11 @@ import { Checkbox } from "@/core/ui/checkbox";
 import { Button } from "@/core/ui/button";
 import PlusIcon from "../../../../public/assets/plus_icon.svg";
 import Image from "next/image";
-import { Input } from "@/core/ui/input";
 import {
   Select,
   SelectContent,
   SelectGroup,
   SelectItem,
-  SelectLabel,
   SelectTrigger,
   SelectValue,
 } from "@/core/ui/select";
@@ -373,7 +371,7 @@ export default function ContactInfoForm() {
                 className="flex h-[100px] w-[100px] flex-shrink-0 cursor-pointer items-center justify-center rounded-full bg-white"
               >
                 {imageURL ? (
-                  <img
+                  <Image
                     src={imageURL}
                     alt="profile_image"
                     className="h-[100px] w-[100px] cursor-pointer rounded-full object-cover"

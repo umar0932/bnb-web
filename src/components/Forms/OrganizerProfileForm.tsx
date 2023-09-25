@@ -89,7 +89,7 @@ export default function OrganizerProfileForm() {
               className="flex h-[100px] w-full flex-shrink-0 cursor-pointer items-center justify-center"
             >
               {imageURL ? (
-                <img
+                <Image
                   src={imageURL}
                   alt="profile_image"
                   className="h-[100px] w-[100px] cursor-pointer rounded-full object-cover"

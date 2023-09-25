@@ -13,14 +13,12 @@ import Link from "next/link";
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
 } from "@/core/ui/dialog";
 import { Button } from "@/core/ui/button";
 
-export default function signup() {
+export default function Signup() {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [showSecondForm, setShowSecondForm] = useState(false);
 

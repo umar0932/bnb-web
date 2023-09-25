@@ -5,20 +5,15 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/core/ui/dropdown-menu";
 
 import {
   NavigationMenu,
   NavigationMenuContent,
-  NavigationMenuIndicator,
   NavigationMenuItem,
-  NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-  NavigationMenuViewport,
 } from "@/core/ui/navigation-menu";
 import { GoHome } from "react-icons/go";
 import { BiCalendar } from "react-icons/bi";
@@ -27,8 +22,6 @@ import { IoSettingsOutline } from "react-icons/io5";
 import { BsGrid3X3GapFill } from "react-icons/bs";
 import { IoMdStats } from "react-icons/io";
 import { BsBank } from "react-icons/bs";
-import StatsIcon from "../../../public/assets/stats_icon.svg";
-import FinanceIcon from "../../../public/assets/finance_icon.svg";
 
 export default function OrganizerHeader({ setActiveDiv }: any) {
   return (

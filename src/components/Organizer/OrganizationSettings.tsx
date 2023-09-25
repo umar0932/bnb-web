@@ -1,6 +1,5 @@
 import { Button } from "@/core/ui/button";
 import { useFormik } from "formik";
-import Link from "next/link";
 import Image from "next/image";
 import OrganizerProfileImage from "../../../public/assets/organizer_image_settings.png";
 import {
@@ -8,18 +7,10 @@ import {
   SelectContent,
   SelectGroup,
   SelectItem,
-  SelectLabel,
   SelectTrigger,
   SelectValue,
 } from "@/core/ui/select";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/core/ui/dialog";
+import { Dialog, DialogContent, DialogTrigger } from "@/core/ui/dialog";
 import { useState } from "react";
 import EditOrganizerProfile from "./EditOrganizerProfile";
 export default function OrganizationSettings() {

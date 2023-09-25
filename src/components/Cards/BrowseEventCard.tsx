@@ -1,5 +1,4 @@
 import Image, { StaticImageData } from "next/image";
-import BrowseEventImage1 from "../../../public/assets/browse_event1.png";
 
 interface BrowseEvent {
   imageSrc: StaticImageData;

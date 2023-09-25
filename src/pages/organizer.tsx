@@ -5,15 +5,12 @@ import { BiCalendar } from "react-icons/bi";
 import { CiViewList } from "react-icons/ci";
 import { IoSettingsOutline } from "react-icons/io5";
 import Image from "next/image";
-import HomeIcon from "../../public/assets/home_icon.svg";
-import CalendarIcon from "../../public/assets/calendar_icon_organizer.svg";
-import ListIcon from "../../public/assets/list_icon.svg";
 import StatsIcon from "../../public/assets/stats_icon.svg";
 import FinanceIcon from "../../public/assets/finance_icon.svg";
-import SettingsIcon from "../../public/assets/settings_icon.svg";
+
 import HelpIcon from "../../public/assets/help_icon.svg";
 import OrganizerHome from "@/components/Organizer/OrganizerHome";
-import EditOrganizerProfile from "@/components/Organizer/EditOrganizerProfile";
+
 import OrganizerEvents from "@/components/Organizer/OrganizerEvents";
 import OrganizerOrders from "@/components/Organizer/OrganizerOrders";
 import OrganizationSettings from "@/components/Organizer/OrganizationSettings";
