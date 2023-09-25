@@ -125,14 +125,14 @@ export default function CheckoutForm() {
 
           <div className="flex w-full flex-col gap-3 p-10 max-lg:p-1">
             <div className="flex items-center space-x-2">
-              <Checkbox />
+              <Checkbox defaultChecked={true} />
               <span className="text-[#757575]">
                 Keep me updated on more events and news from this event
                 organizer
               </span>
             </div>
             <div className="flex items-center space-x-2">
-              <Checkbox />
+              <Checkbox defaultChecked={true} />
               <span className="text-[#757575]">
                 Send me emails about the best events happening nearby or online
               </span>
