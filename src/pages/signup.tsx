@@ -1,5 +1,4 @@
 import StaticImage from "next/image";
-import Logo from "../../public/assets/logo.jpg";
 import Footer from "@/components/Footer/Footer";
 import { useState } from "react";
 import { Info } from "lucide-react";
@@ -47,7 +46,9 @@ export default function Signup() {
         </div>
         <div className="flex w-full flex-col justify-between md:w-1/2">
           <div className=" mr-4 flex flex-shrink-0 justify-end">
-            <StaticImage src={Logo} alt="Logo" className="mt-4 h-20 w-32" />
+            <div className="m-2 rounded-lg bg-[#d3d3d3] p-3 text-center">
+              <span>Logo</span>
+            </div>
           </div>
           {!showSecondForm && (
             <div
