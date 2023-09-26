@@ -8,7 +8,7 @@ interface CheckoutProps {
 }
 
 export default function Checkout({ isOpen, onClose }: CheckoutProps) {
-  const Ref = useRef<NodeJS.Timer | null>(null); // Update the type here
+  const Ref = useRef<number | NodeJS.Timeout | null>(null); // Update the type here
 
   const [timer, setTimer] = useState("06:00");
 
@@ -24,8 +24,8 @@ export default function Checkout({ isOpen, onClose }: CheckoutProps) {
         if (timeRemaining <= 0) {
           // Timer has reached 00:00, close the dialog
           onClose();
-          if (Ref.current) {
-            clearInterval(Ref.current); // Clear the interval properly
+          if (Ref.current !== null) {
+            clearInterval(Ref.current as number); // Cast to number
           }
           setTimer("00:00");
         } else {
@@ -45,8 +45,8 @@ export default function Checkout({ isOpen, onClose }: CheckoutProps) {
 
       return () => {
         // Clean up the timer when the component unmounts or isOpen becomes false
-        if (Ref.current) {
-          clearInterval(Ref.current);
+        if (Ref.current !== null) {
+          clearInterval(Ref.current as number); // Cast to number
         }
       };
     }
