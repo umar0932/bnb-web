@@ -69,9 +69,11 @@ export default function Header({ colorScheme = "default" }) {
                 <DropdownMenuItem className="cursor-pointer">
                   Switch to attendee
                 </DropdownMenuItem>
-                <DropdownMenuItem className="cursor-pointer">
-                  Account Settings
-                </DropdownMenuItem>
+                <Link href="/account-settings">
+                  <DropdownMenuItem className="cursor-pointer">
+                    Account Settings
+                  </DropdownMenuItem>
+                </Link>
                 <DropdownMenuItem className="cursor-pointer">
                   Logout
                 </DropdownMenuItem>
@@ -110,9 +112,11 @@ export default function Header({ colorScheme = "default" }) {
                 <DropdownMenuItem className="cursor-pointer">
                   Switch to attendee
                 </DropdownMenuItem>
-                <DropdownMenuItem className="cursor-pointer">
-                  Account Settings
-                </DropdownMenuItem>
+                <Link href="/account-settings">
+                  <DropdownMenuItem className="cursor-pointer">
+                    Account Settings
+                  </DropdownMenuItem>
+                </Link>
                 <DropdownMenuItem className="cursor-pointer">
                   Logout
                 </DropdownMenuItem>
@@ -153,9 +157,11 @@ export default function Header({ colorScheme = "default" }) {
                 <DropdownMenuItem className="cursor-pointer">
                   Switch to attendee
                 </DropdownMenuItem>
-                <DropdownMenuItem className="cursor-pointer">
-                  Account Settings
-                </DropdownMenuItem>
+                <Link href="/account-settings">
+                  <DropdownMenuItem className="cursor-pointer">
+                    Account Settings
+                  </DropdownMenuItem>
+                </Link>
                 <DropdownMenuItem className="cursor-pointer">
                   Logout
                 </DropdownMenuItem>
@@ -194,9 +200,11 @@ export default function Header({ colorScheme = "default" }) {
                 <DropdownMenuItem className="cursor-pointer">
                   Switch to attendee
                 </DropdownMenuItem>
-                <DropdownMenuItem className="cursor-pointer">
-                  Account Settings
-                </DropdownMenuItem>
+                <Link href="/account-settings">
+                  <DropdownMenuItem className="cursor-pointer">
+                    Account Settings
+                  </DropdownMenuItem>
+                </Link>
                 <DropdownMenuItem className="cursor-pointer">
                   Logout
                 </DropdownMenuItem>
