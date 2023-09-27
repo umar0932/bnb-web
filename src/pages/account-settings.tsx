@@ -84,9 +84,9 @@ export default function AccountSetting() {
         <Copyright />
       </div> */}
 
-      <div className="flex  flex-col border border-red-500">
-        <div className="flex border border-green-500 max-md:flex-col">
-          <div className=" w-[60%]  max-lg:mt-20 max-md:order-2 max-md:w-full max-sm:mt-40">
+      <div className="flex flex-col">
+        <div className="flex min-h-screen  max-md:flex-col">
+          <div className=" w-[60%]  max-lg:mt-20 max-md:order-2 max-md:w-full max-sm:mt-10">
             <div className="max-md:full  flex w-full flex-col p-10 max-md:top-full max-md:order-3 max-md:w-full max-sm:p-5">
               {renderForm()} {/* Render the selected form */}
             </div>
