@@ -62,11 +62,10 @@ export default function CloseAccountForm() {
             >
               {/* Card Holder Name */}
               <div className=" flex  flex-col gap-3">
-                <input
-                  className="h-[115px] rounded-lg bg-[#EFF8FF] p-2 outline-none"
+                <textarea
+                  className="h-[115px] resize-none rounded-lg bg-[#EFF8FF] p-2 outline-none"
                   id="other_information"
                   name="other_information"
-                  type="text"
                   placeholder=""
                   onChange={formik.handleChange}
                   value={formik.values.other_information}
