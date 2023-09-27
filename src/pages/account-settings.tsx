@@ -78,38 +78,46 @@ export default function AccountSetting() {
   };
 
   return (
-    <div className="flex flex-col bg-[#DEF0FF]">
+    <div className="flex max-h-[590px] flex-col bg-[#DEF0FF] max-xl:max-h-[800px]">
       <AuthHeader />
-      <div className="flex max-md:flex-col">
-        <div className="relative w-[60%] max-md:order-2 max-md:w-full">
-          <div className="max-md:full absolute w-full p-10 max-md:top-full max-md:order-3 max-md:w-full max-sm:p-5">
-            {renderForm()} {/* Render the selected form */}
+      {/* <div className="absolute bottom-0">
+        <Copyright />
+      </div> */}
+
+      <div className="flex  flex-col border border-red-500">
+        <div className="flex border border-green-500 max-md:flex-col">
+          <div className=" w-[60%]  max-lg:mt-20 max-md:order-2 max-md:w-full max-sm:mt-40">
+            <div className="max-md:full  flex w-full flex-col p-10 max-md:top-full max-md:order-3 max-md:w-full max-sm:p-5">
+              {renderForm()} {/* Render the selected form */}
+            </div>
+          </div>
+          <div className="mt-20 flex max-h-[300px] w-[40%] flex-wrap items-center justify-center gap-5 p-5 max-xl:max-h-[530px] max-lg:max-h-[600px]  max-md:order-1 max-md:w-full">
+            {[
+              "Contact Information",
+              "Change Email",
+              "Change Password",
+              "Credit/ Debit Card",
+              "Linked Account",
+              "Email Preference",
+              "Close Account",
+              "Personal Data",
+            ].map((label, index) => (
+              <div
+                key={index}
+                className={`div-drop-shadow flex h-[110px] w-[110px] cursor-pointer items-center justify-center rounded-lg p-3 text-center ${
+                  selectedDiv === index
+                    ? "bg-secondary  text-white"
+                    : "bg-white text-[#757575]"
+                }`}
+                onClick={() => handleDivClick(index)}
+              >
+                {label}
+              </div>
+            ))}
           </div>
         </div>
-        <div className="mt-10 flex w-[40%] flex-wrap items-center justify-center gap-5 p-5 max-md:order-1 max-md:w-full">
-          {[
-            "Contact Information",
-            "Change Email",
-            "Change Password",
-            "Credit/ Debit Card",
-            "Linked Account",
-            "Email Preference",
-            "Close Account",
-            "Personal Data",
-          ].map((label, index) => (
-            <div
-              key={index}
-              className={`div-drop-shadow flex h-[110px] w-[110px] cursor-pointer items-center justify-center rounded-lg p-3 text-center ${
-                selectedDiv === index
-                  ? "bg-secondary  text-white"
-                  : "bg-white text-[#757575]"
-              }`}
-              onClick={() => handleDivClick(index)}
-            >
-              {label}
-            </div>
-          ))}
-        </div>
+
+        <Copyright />
       </div>
     </div>
   );
