@@ -28,13 +28,13 @@ export default function Footer() {
                 Helpful links
               </span>
               <Link
-                href="/"
+                href="/create-event-page/welcome"
                 className="mb-0.5 cursor-pointer font-normal text-navcolors hover:text-white"
               >
                 Create Events
               </Link>
               <Link
-                href="/"
+                href="/pricing"
                 className="mb-0.5 cursor-pointer font-normal text-navcolors hover:text-white"
               >
                 Pricing
@@ -46,25 +46,25 @@ export default function Footer() {
                 Resource
               </Link>
               <Link
-                href="/"
+                href="/contact-sales"
                 className="mb-0.5 cursor-pointer font-normal text-navcolors hover:text-white"
               >
                 Contact sales
               </Link>
               <Link
-                href="/"
+                href="/find-tickets"
                 className="mb-0.5 cursor-pointer font-normal text-navcolors hover:text-white"
               >
                 Find your tickets
               </Link>
               <Link
-                href="/"
+                href="/contact-event-organizer"
                 className="mb-0.5 cursor-pointer text-center font-normal text-navcolors hover:text-white"
               >
                 Contact an organizer
               </Link>
               <Link
-                href="/"
+                href="/help-center"
                 className="mb-0.5 cursor-pointer font-normal text-navcolors hover:text-white"
               >
                 Visit help center

@@ -1,4 +1,5 @@
 import StaticImage from "next/image";
+import Link from "next/link";
 
 import Footer from "@/components/Footer/Footer";
 import { useState } from "react";
@@ -15,6 +16,7 @@ import { Mail } from "lucide-react";
 import { AiFillApple } from "react-icons/ai";
 import { FcGoogle } from "react-icons/fc";
 import { useFormik } from "formik";
+import { Button } from "@/core/ui/button";
 export default function Login() {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const formik = useFormik({
@@ -66,12 +68,14 @@ export default function Login() {
                   onChange={formik.handleChange}
                   value={formik.values.password}
                 />
-                <button
-                  type="submit"
-                  className="h-[45px] rounded-lg bg-btnprimary text-white hover:bg-btnsecondary"
-                >
-                  Login
-                </button>
+                <Link href="/">
+                  <Button
+                    type="submit"
+                    className="h-[45px] w-full rounded-lg bg-btnprimary text-white hover:bg-btnsecondary"
+                  >
+                    Login
+                  </Button>
+                </Link>
                 <button
                   className=" field-drop-shadow h-[45px] rounded-lg bg-white "
                   onClick={() => {
