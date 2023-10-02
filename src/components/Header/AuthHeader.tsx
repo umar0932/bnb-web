@@ -69,9 +69,11 @@ export default function AuthHeader({ colorScheme = "default" }) {
                           </div>
                         </DropdownMenuTrigger>
                         <DropdownMenuContent className="cursor-pointer border-[#07264E] bg-[#07264E] p-3 text-white">
-                          <DropdownMenuItem className="cursor-pointer">
-                            Browse Events
-                          </DropdownMenuItem>
+                          <Link href="/browse-events">
+                            <DropdownMenuItem className="cursor-pointer">
+                              Browse Events
+                            </DropdownMenuItem>
+                          </Link>
                           <DropdownMenuItem className="cursor-pointer">
                             Manage my events
                           </DropdownMenuItem>
@@ -85,9 +87,9 @@ export default function AuthHeader({ colorScheme = "default" }) {
                               Following
                             </DropdownMenuItem>
                           </Link>
-                          <DropdownMenuItem className="cursor-pointer">
+                          {/* <DropdownMenuItem className="cursor-pointer">
                             Interests
-                          </DropdownMenuItem>
+                          </DropdownMenuItem> */}
                           <Link href="/account-settings">
                             <DropdownMenuItem className="cursor-pointer">
                               Account Settings
@@ -208,9 +210,11 @@ export default function AuthHeader({ colorScheme = "default" }) {
                       </div>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent className="cursor-pointer border-[#07264E] bg-[#07264E] p-3 text-white">
-                      <DropdownMenuItem className="cursor-pointer">
-                        Browse Events
-                      </DropdownMenuItem>
+                      <Link href="/browse-events">
+                        <DropdownMenuItem className="cursor-pointer">
+                          Browse Events
+                        </DropdownMenuItem>
+                      </Link>
                       <DropdownMenuItem className="cursor-pointer">
                         Manage my events
                       </DropdownMenuItem>
@@ -225,9 +229,9 @@ export default function AuthHeader({ colorScheme = "default" }) {
                           Following
                         </DropdownMenuItem>
                       </Link>
-                      <DropdownMenuItem className="cursor-pointer">
+                      {/* <DropdownMenuItem className="cursor-pointer">
                         Interests
-                      </DropdownMenuItem>
+                      </DropdownMenuItem> */}
                       <Link href="/account-settings">
                         <DropdownMenuItem className="cursor-pointer">
                           Account Settings

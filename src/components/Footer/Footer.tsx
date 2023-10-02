@@ -104,7 +104,7 @@ export default function Footer() {
                 Contact us
               </span>
               <Link
-                href="/"
+                href="/contact-sales"
                 className="mb-0.5 cursor-pointer font-normal text-navcolors hover:text-white"
               >
                 Contact support

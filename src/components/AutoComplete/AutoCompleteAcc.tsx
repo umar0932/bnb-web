@@ -2,6 +2,7 @@ import React from "react";
 import CurrentLocation from "../../../public/assets/current_location.svg";
 import BrowserLocations from "../../../public/assets/browse_online.svg";
 import StaticImage from "next/image";
+import Link from "next/link";
 
 import { useAutocomplete } from "../../core/hooks/useAutocomplete";
 
@@ -30,12 +31,19 @@ export default function Autocomplete() {
                   onClick={findMyLocation}
                   className="cursor-pointer"
                 />
-                <span className="text-[#3B5998]">Use my current location</span>
+                <span
+                  className="cursor-pointer text-[#3B5998]"
+                  onClick={findMyLocation}
+                >
+                  Use my current location
+                </span>
               </div>
-              <div className="flex gap-5 p-2">
-                <StaticImage src={BrowserLocations} alt="browse-location" />
-                <span className="text-[#3B5998]">Browse online events</span>
-              </div>
+              <Link href="/browse-events">
+                <div className="flex gap-5 p-2">
+                  <StaticImage src={BrowserLocations} alt="browse-location" />
+                  <span className="text-[#3B5998]">Browse online events</span>
+                </div>
+              </Link>
             </div>
           </div>
           {/*  */}

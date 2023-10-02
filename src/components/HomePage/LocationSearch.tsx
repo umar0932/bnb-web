@@ -4,6 +4,7 @@ import Image from "next/image";
 import ArrowIcon from "../../../public/assets/arrow_down.svg";
 import CurrentLocation from "../../../public/assets/current_location.svg";
 import BrowseOnline from "../../../public/assets/browse_online.svg";
+import Link from "next/link";
 
 export default function LocationSearch() {
   const { searchInputRef, findMyLocation } = useAutocomplete();
@@ -40,17 +41,23 @@ export default function LocationSearch() {
                     alt="current_location"
                     onClick={findMyLocation}
                   />
-                  <span className="text-base text-[#3B5998]">
+                  <span
+                    className="text-base text-[#3B5998]"
+                    onClick={findMyLocation}
+                  >
                     Use my current location
                   </span>
                 </div>
                 <div className="border border-[#9CB2DF]"></div>
-                <div className="flex cursor-pointer gap-6">
-                  <Image src={BrowseOnline} alt="browse_online_events" />
-                  <span className="text-base text-[#3B5998]">
-                    Browse online events
-                  </span>
-                </div>
+                <Link href="/browse-events">
+                  <div className="flex cursor-pointer gap-6">
+                    <Image src={BrowseOnline} alt="browse_online_events" />
+
+                    <span className="text-base text-[#3B5998]">
+                      Browse online events
+                    </span>
+                  </div>
+                </Link>
               </div>
             )}
           </div>
