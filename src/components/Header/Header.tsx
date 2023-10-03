@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import UserProfileIcon from "../../../public/assets/user_profile_icon.svg";
 import PlusIcon from "../../../public/assets/plus_icon.svg";
+import ChevronDown from "../../../public/assets/arrow_down.svg";
 import Image from "next/image";
 
 import { Sheet, SheetContent, SheetTrigger } from "@/core/ui/sheet";
@@ -239,21 +240,28 @@ export default function Header({ colorScheme = "default" }) {
               <SheetContent>
                 <ul className="my-10 flex w-full flex-col items-center justify-between gap-5 bg-transparent  transition-all duration-500 ease-in ">
                   <li className="mx-4 my-3 md:my-0">
-                    <Select>
-                      <SelectTrigger className="w-[110px] border-none  bg-transparent font-normal text-secondary outline-none">
-                        <SelectValue placeholder="Organize" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectGroup>
-                          <SelectLabel className=" font-normal">
-                            Organize
-                          </SelectLabel>
-                        </SelectGroup>
-                      </SelectContent>
-                    </Select>
+                    <DropdownMenu>
+                      <DropdownMenuTrigger className="outline-none">
+                        <div className="flex  cursor-pointer items-center  gap-4 text-secondary">
+                          Organize
+                          <Image
+                            src={ChevronDown}
+                            alt="user-profile-icon"
+                            className="h-[13px] w-[13px]"
+                          />
+                        </div>
+                      </DropdownMenuTrigger>
+                      <DropdownMenuContent className="cursor-pointer bg-white p-3 text-black">
+                        <Link href="/organizer">
+                          <DropdownMenuItem className="cursor-pointer">
+                            Organizer Profile
+                          </DropdownMenuItem>
+                        </Link>
+                      </DropdownMenuContent>
+                    </DropdownMenu>
                   </li>
                   <li className="mx-4 my-6 md:my-0">
-                    <Select>
+                    {/* <Select>
                       <SelectTrigger className="w-[80px] border-none  bg-transparent font-normal text-secondary outline-none">
                         <SelectValue placeholder="Help" />
                       </SelectTrigger>
@@ -264,12 +272,42 @@ export default function Header({ colorScheme = "default" }) {
                           </SelectLabel>
                         </SelectGroup>
                       </SelectContent>
-                    </Select>
+                    </Select> */}
+                    <DropdownMenu>
+                      <DropdownMenuTrigger className="outline-none">
+                        <div className="flex  cursor-pointer items-center  gap-4 text-secondary">
+                          Help
+                          <Image
+                            src={ChevronDown}
+                            alt="user-profile-icon"
+                            className="h-[13px] w-[13px]"
+                          />
+                        </div>
+                      </DropdownMenuTrigger>
+                      <DropdownMenuContent className="cursor-pointer bg-white p-3 text-black">
+                        <Link href="/help-center">
+                          <DropdownMenuItem className="cursor-pointer">
+                            Help Center
+                          </DropdownMenuItem>
+                        </Link>
+
+                        <Link href="/find-tickets">
+                          <DropdownMenuItem className="cursor-pointer">
+                            Find your tickets
+                          </DropdownMenuItem>
+                        </Link>
+                        <Link href="/contact-event-organizer">
+                          <DropdownMenuItem className="cursor-pointer">
+                            Contact your event organizer
+                          </DropdownMenuItem>
+                        </Link>
+                      </DropdownMenuContent>
+                    </DropdownMenu>
                   </li>
                   <li className="mx-4 my-6 md:my-0">
                     <Link href="/create-event-page/welcome">
-                      <div className="flex  cursor-pointer items-center  gap-2 text-secondary">
-                        <p className="min-w-[100px] text-sm font-normal">
+                      <div className="flex  cursor-pointer items-center  gap-4 text-secondary">
+                        <p className="text-md min-w-[100px] font-normal">
                           Create an event
                         </p>
                         <Image
@@ -318,7 +356,7 @@ export default function Header({ colorScheme = "default" }) {
               }  left-0 top-[-400px] z-[-1] w-full gap-5 bg-transparent py-4 pl-7 opacity-0 transition-all duration-500 ease-in lg:static lg:z-auto lg:flex lg:items-center lg:justify-center lg:py-0 lg:pl-10 lg:opacity-100 `}
             >
               <li className="mx-6 my-6  md:my-0">
-                <Select>
+                {/* <Select>
                   <SelectTrigger
                     className={`w-[110px] border-none text-${
                       colorScheme === "alternative" ? "white" : "secondary"
@@ -336,10 +374,44 @@ export default function Header({ colorScheme = "default" }) {
                       </SelectLabel>
                     </SelectGroup>
                   </SelectContent>
-                </Select>
+                </Select> */}
+                <DropdownMenu>
+                  <DropdownMenuTrigger
+                    className={`w-[80px] border-none  bg-transparent font-normal text-${
+                      colorScheme === "alternative" ? "white" : "secondary"
+                    }  outline-none`}
+                  >
+                    <div className="flex  cursor-pointer items-center  gap-4 ">
+                      Organize
+                      <Image
+                        src={ChevronDown}
+                        alt="user-profile-icon"
+                        className="h-[13px] w-[13px]"
+                      />
+                    </div>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent className="cursor-pointer bg-white p-2 text-black">
+                    <Link href="/organizer">
+                      <DropdownMenuItem className="cursor-pointer">
+                        Organizer
+                      </DropdownMenuItem>
+                    </Link>
+                    {/* 
+                    <Link href="/find-tickets">
+                      <DropdownMenuItem className="cursor-pointer">
+                        Find your tickets
+                      </DropdownMenuItem>
+                    </Link>
+                    <Link href="/contact-event-organizer">
+                      <DropdownMenuItem className="cursor-pointer">
+                        Contact your event organizer
+                      </DropdownMenuItem>
+                    </Link> */}
+                  </DropdownMenuContent>
+                </DropdownMenu>
               </li>
               <li className="mx-6 my-6 md:my-0">
-                <Select>
+                {/* <Select>
                   <SelectTrigger
                     className={`w-[80px] border-none  bg-transparent font-normal text-${
                       colorScheme === "alternative" ? "white" : "secondary"
@@ -352,20 +424,54 @@ export default function Header({ colorScheme = "default" }) {
                       <SelectLabel className=" font-normal">Help</SelectLabel>
                     </SelectGroup>
                   </SelectContent>
-                </Select>
+                </Select> */}
+                <DropdownMenu>
+                  <DropdownMenuTrigger
+                    className={`w-[80px] border-none  bg-transparent font-normal text-${
+                      colorScheme === "alternative" ? "white" : "secondary"
+                    }  outline-none`}
+                  >
+                    <div className="flex  cursor-pointer items-center  gap-4 ">
+                      Help
+                      <Image
+                        src={ChevronDown}
+                        alt="user-profile-icon"
+                        className="h-[13px] w-[13px]"
+                      />
+                    </div>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent className="cursor-pointer bg-white p-2 text-black">
+                    <Link href="/help-center">
+                      <DropdownMenuItem className="cursor-pointer">
+                        Help Center
+                      </DropdownMenuItem>
+                    </Link>
+
+                    <Link href="/find-tickets">
+                      <DropdownMenuItem className="cursor-pointer">
+                        Find your tickets
+                      </DropdownMenuItem>
+                    </Link>
+                    <Link href="/contact-event-organizer">
+                      <DropdownMenuItem className="cursor-pointer">
+                        Contact your event organizer
+                      </DropdownMenuItem>
+                    </Link>
+                  </DropdownMenuContent>
+                </DropdownMenu>
               </li>
               <li className="mx-6 my-6 min-w-[150px]  md:my-0">
                 <Link href="/create-event-page/welcome">
                   <div
-                    className={`flex cursor-pointer items-center  gap-2 text-secondary text-${
+                    className={`flex cursor-pointer items-center  gap-4 text-secondary text-${
                       colorScheme === "alternative" ? "white" : "secondary"
                     } `}
                   >
-                    <p className="text-sm font-normal ">Create an event</p>
+                    <p className="text-md font-normal ">Create an event</p>
                     <Image
                       src={PlusIcon}
                       alt="plus_icon"
-                      className="h-[12px] w-[12px] text-btnsecondary"
+                      className="h-[13px] w-[13px] text-btnsecondary"
                     />
                   </div>
                 </Link>
