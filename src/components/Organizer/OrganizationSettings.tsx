@@ -56,7 +56,10 @@ export default function OrganizationSettings() {
                       <Button className="h-[38px] w-[130px] bg-[#DEF0FF] text-primary">
                         Create new
                       </Button>
-                      <Button className="h-[38px] w-[130px] bg-btnprimary text-white hover:bg-btnsecondary">
+                      <Button
+                        className="h-[38px] w-[130px] bg-btnprimary text-white hover:bg-btnsecondary"
+                        onClick={handleEditClick}
+                      >
                         Edit Existing
                       </Button>
                     </div>

@@ -13,6 +13,7 @@ import LinkIcon from "../../../public/assets/link_icon.svg";
 import DeleteIcon from "../../../public/assets/delete_icon.svg";
 import { eventsData } from "@/utils/fakeBackend";
 import DownloadIcon from "../../../public/assets/download_icon.svg";
+import Link from "next/link";
 export default function OrganizerEventTable() {
   const exportToCSV = () => {
     // Create a CSV string
@@ -82,11 +83,13 @@ export default function OrganizerEventTable() {
                 <TableCell>
                   <div className="flex items-center justify-center  gap-5">
                     {" "}
-                    <Image
-                      src={EditProfileIcon}
-                      alt="edit_profile_icon"
-                      className=" h-[19px] w-[19px] cursor-pointer"
-                    />
+                    <Link href="/create-event-page/create-event">
+                      <Image
+                        src={EditProfileIcon}
+                        alt="edit_profile_icon"
+                        className=" h-[19px] w-[19px] cursor-pointer"
+                      />
+                    </Link>
                     <Image
                       src={LinkIcon}
                       alt="link_icon"

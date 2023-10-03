@@ -1,6 +1,7 @@
 import { Checkbox } from "@/core/ui/checkbox";
 import { useFormik } from "formik";
 import { Button } from "@/core/ui/button";
+import Link from "next/link";
 export default function CloseAccountForm() {
   const formik = useFormik({
     initialValues: {
@@ -97,9 +98,11 @@ export default function CloseAccountForm() {
                 />
               </div>
             </form>
-            <Button className="mt-5 flex w-[160px] bg-btnprimary font-bold text-white hover:bg-btnsecondary">
-              Close Account
-            </Button>
+            <Link href="/">
+              <Button className="mt-5 flex w-[160px] bg-btnprimary font-bold text-white hover:bg-btnsecondary">
+                Close Account
+              </Button>
+            </Link>
           </div>
         </div>
       </div>

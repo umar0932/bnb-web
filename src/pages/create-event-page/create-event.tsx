@@ -3,6 +3,7 @@ import DateTimeForm from "@/components/Forms/DateTimeForm";
 import LocationForm from "@/components/Forms/LocationForm";
 import Header from "@/components/Header/Header";
 import Link from "next/link";
+import { Button } from "@/core/ui/button";
 
 export default function CreateEvent() {
   return (
@@ -18,10 +19,10 @@ export default function CreateEvent() {
               Discard
             </button>
           </Link>
-          <Link href="/create-event-page/third-step">
-            <button className="flex h-[43px] w-[170px] items-center justify-center rounded-sm bg-btnprimary p-4 font-bold text-white hover:bg-btnsecondary max-sm:w-[160px]">
+          <Link href="/">
+            <Button className="text-md flex h-[43px] w-[170px] items-center justify-center rounded-sm bg-btnprimary p-4 font-bold text-white hover:bg-btnsecondary max-sm:w-[160px]">
               Save & Continue
-            </button>
+            </Button>
           </Link>
         </div>
       </div>
