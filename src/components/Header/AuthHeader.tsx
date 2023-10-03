@@ -128,16 +128,18 @@ export default function AuthHeader({ colorScheme = "default" }) {
                     </Link>
                   </li>
                   <li className="mx-4 my-6 md:my-0">
-                    <div className="flex  cursor-pointer items-center  gap-2 text-secondary">
-                      <p className="min-w-[100px] text-sm font-normal">
-                        Tickets
-                      </p>
-                      <Image
-                        src={TicketIconRed}
-                        alt="ticket_icon"
-                        className="h-[15px] w-[15px]"
-                      />
-                    </div>
+                    <Link href="/orders">
+                      <div className="flex  cursor-pointer items-center  gap-2 text-secondary">
+                        <p className="min-w-[100px] text-sm font-normal">
+                          Tickets
+                        </p>
+                        <Image
+                          src={TicketIconRed}
+                          alt="ticket_icon"
+                          className="h-[15px] w-[15px]"
+                        />
+                      </div>
+                    </Link>
                   </li>
                 </ul>
               </SheetContent>
@@ -179,18 +181,20 @@ export default function AuthHeader({ colorScheme = "default" }) {
                 </Link>
               </li>
               <li className="mx-6 my-6   md:my-0">
-                <div
-                  className={`flex cursor-pointer items-center  gap-2 text-secondary text-${
-                    colorScheme === "alternative" ? "white" : "secondary"
-                  } `}
-                >
-                  <p className="text-sm font-normal ">Tickets</p>
-                  <Image
-                    src={TicketIconRed}
-                    alt="ticket_icon"
-                    className="h-[15px] w-[15px]"
-                  />
-                </div>
+                <Link href="/orders">
+                  <div
+                    className={`flex cursor-pointer items-center  gap-2 text-secondary text-${
+                      colorScheme === "alternative" ? "white" : "secondary"
+                    } `}
+                  >
+                    <p className="text-sm font-normal ">Tickets</p>
+                    <Image
+                      src={TicketIconRed}
+                      alt="ticket_icon"
+                      className="h-[15px] w-[15px]"
+                    />
+                  </div>
+                </Link>
               </li>
               <li className="my-6 min-w-[150px]  md:my-0">
                 <div>
@@ -237,9 +241,11 @@ export default function AuthHeader({ colorScheme = "default" }) {
                           Account Settings
                         </DropdownMenuItem>
                       </Link>
-                      <DropdownMenuItem className="cursor-pointer">
-                        Logout
-                      </DropdownMenuItem>
+                      <Link href="/">
+                        <DropdownMenuItem className="cursor-pointer">
+                          Logout
+                        </DropdownMenuItem>
+                      </Link>
                     </DropdownMenuContent>
                   </DropdownMenu>
                 </div>
