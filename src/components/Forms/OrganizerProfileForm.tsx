@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Button } from "@/core/ui/button";
 import AddImageIcon from "../../../public/assets/add_image.svg";
 import Image from "next/image";
+import Link from "next/link";
 export default function OrganizerProfileForm() {
   const [imageURL, setImageURL] = useState(null);
   const formik = useFormik({
@@ -130,10 +131,11 @@ export default function OrganizerProfileForm() {
           <Button className="flex h-[43px] w-[120px] items-center justify-center rounded-sm bg-[#DEF0FF] p-3 font-bold text-primary">
             Cancel
           </Button>
-
-          <Button className="flex h-[43px] w-[120px] items-center justify-center rounded-sm bg-btnprimary p-3 font-bold text-white hover:bg-btnsecondary">
-            Save
-          </Button>
+          <Link href="/organizer">
+            <Button className="flex h-[43px] w-[120px] items-center justify-center rounded-sm bg-btnprimary p-3 font-bold text-white hover:bg-btnsecondary">
+              Save
+            </Button>
+          </Link>
         </div>
       </div>
     </>
