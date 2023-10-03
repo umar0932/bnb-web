@@ -6,6 +6,7 @@ import PayPalIcon from "../../../public/assets/paypal.svg";
 import Image from "next/image";
 import { Checkbox } from "@/core/ui/checkbox";
 import { Button } from "@/core/ui/button";
+import Link from "next/link";
 export default function CheckoutForm() {
   const formik = useFormik({
     initialValues: {
@@ -140,9 +141,11 @@ export default function CheckoutForm() {
             <span className="black mt-2">
               By selecting Register, I agree to the Bnb Terms of Service
             </span>
-            <Button className="text-md mt-3 h-[45px] w-[150px] bg-btnprimary font-bold text-white hover:bg-btnsecondary">
-              Register
-            </Button>
+            <Link href="/">
+              <Button className="text-md mt-3 h-[45px] w-[150px] bg-btnprimary font-bold text-white hover:bg-btnsecondary">
+                Register
+              </Button>
+            </Link>
           </div>
         </div>
 
