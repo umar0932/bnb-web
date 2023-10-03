@@ -5,6 +5,7 @@ import { useState } from "react";
 import { Check } from "lucide-react";
 import { XCircle } from "lucide-react";
 import { Info } from "lucide-react";
+import { Button } from "@/core/ui/button";
 export default function Pricing() {
   const [isDivVisible, setIsDivVisible] = useState(true);
   function toggleDivVisibility() {
@@ -93,9 +94,11 @@ export default function Pricing() {
             Lorem ipsum dolor sit amet,
             <br /> consectetur adipiscing elit.{" "}
           </span>
-          <button className="my-6 max-w-[322px] rounded-lg bg-btnprimary p-3 font-normal text-white hover:bg-btnsecondary">
-            Get Started for free
-          </button>
+          <Link href="/create-event-page/welcome">
+            <button className="my-6 max-w-[322px] rounded-lg bg-btnprimary p-3 font-normal text-white hover:bg-btnsecondary">
+              Get Started for free
+            </button>
+          </Link>
         </div>
         <div
           className="flex w-full flex-col gap-4 "
