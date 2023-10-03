@@ -5,8 +5,9 @@ import { BiCalendar } from "react-icons/bi";
 import { CiViewList } from "react-icons/ci";
 import { IoSettingsOutline } from "react-icons/io5";
 import Image from "next/image";
-import StatsIcon from "../../public/assets/stats_icon.svg";
-import FinanceIcon from "../../public/assets/finance_icon.svg";
+// import StatsIcon from "../../public/assets/stats_icon.svg";
+// import FinanceIcon from "../../public/assets/finance_icon.svg";
+import Link from "next/link";
 
 import HelpIcon from "../../public/assets/help_icon.svg";
 import OrganizerHome from "@/components/Organizer/OrganizerHome";
@@ -109,20 +110,6 @@ export default function Organizer() {
                   }`}
                 />
               </div>
-              <div className="flex h-[70px] cursor-pointer items-center justify-center p-2">
-                <Image
-                  src={StatsIcon}
-                  alt="stats_icon"
-                  className="h-[22px] w-[22px]"
-                />
-              </div>
-              <div className="flex h-[80px] cursor-pointer items-center justify-center p-2">
-                <Image
-                  src={FinanceIcon}
-                  alt="finance_icon"
-                  className="h-[22px] w-[22px]"
-                />
-              </div>
               <div
                 className={`flex h-[70px] cursor-pointer items-center justify-center p-2 ${
                   activeDiv === "Settings" ? "bg-btnsecondary text-white" : ""
@@ -136,13 +123,30 @@ export default function Organizer() {
                   }`}
                 />
               </div>
-              <div className="mt-5 flex h-[80px] cursor-pointer items-center justify-center p-2">
-                <Image
-                  src={HelpIcon}
-                  alt="help_icon"
+              <div className="flex h-[70px] cursor-pointer items-center justify-center p-2">
+                {/* <Image
+                  src={StatsIcon}
+                  alt="stats_icon"
                   className="h-[22px] w-[22px]"
-                />
+                /> */}
               </div>
+              <div className="flex h-[80px] cursor-pointer items-center justify-center p-2">
+                {/* <Image
+                  src={FinanceIcon}
+                  alt="finance_icon"
+                  className="h-[22px] w-[22px]"
+                /> */}
+              </div>
+
+              <Link href="/help-center">
+                <div className="mt-5 flex h-[80px] cursor-pointer items-center justify-center p-2">
+                  <Image
+                    src={HelpIcon}
+                    alt="help_icon"
+                    className="h-[22px] w-[22px]"
+                  />
+                </div>
+              </Link>
             </div>
           </div>
           {/* Right Side */}

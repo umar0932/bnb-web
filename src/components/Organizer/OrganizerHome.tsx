@@ -41,6 +41,7 @@ export default function OrganizerHome() {
                 <span className="text-xl font-bold text-[#003A6D]">
                   Rockstar
                 </span>
+
                 <Image
                   src={EditProfileIcon}
                   alt="edit_profile_icon"
@@ -106,6 +107,7 @@ export default function OrganizerHome() {
                     value="option-one"
                     id="option-one"
                     className="h-[20px] w-[20px] border-btnprimary  text-btnprimary"
+                    checked={true}
                   />
                   <Label
                     htmlFor="option-one"
@@ -119,6 +121,7 @@ export default function OrganizerHome() {
                     value="option-two"
                     id="option-two"
                     className="h-[20px] w-[20px] border-btnprimary  text-btnprimary"
+                    checked={true}
                   />
                   <Label
                     htmlFor="option-two"
@@ -132,7 +135,7 @@ export default function OrganizerHome() {
                     value="option-three"
                     id="option-three"
                     className="h-[20px] w-[20px] border-btnprimary  text-btnprimary"
-                    defaultChecked={true}
+                    checked={true}
                   />
                   <Label
                     htmlFor="option-three"

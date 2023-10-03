@@ -57,14 +57,14 @@ export default function OrganizerHeader({ setActiveDiv }: any) {
                       <CiViewList />
                       <span>Orders</span>
                     </div>
-                    <div className="flex w-full cursor-pointer items-center gap-4 p-5 hover:bg-btnprimary hover:text-white ">
+                    {/* <div className="flex w-full cursor-pointer items-center gap-4 p-5 hover:bg-btnprimary hover:text-white ">
                       <IoMdStats />
                       <span>Stats</span>
                     </div>
                     <div className="flex w-full cursor-pointer items-center gap-4 p-5 hover:bg-btnprimary hover:text-white ">
                       <BsBank />
                       <span>Finances</span>
-                    </div>
+                    </div> */}
                     <div
                       className="flex w-full cursor-pointer items-center gap-4 p-5 hover:bg-btnprimary hover:text-white "
                       onClick={() => setActiveDiv("Settings")}
