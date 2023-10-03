@@ -169,7 +169,7 @@ export default function CheckoutForm() {
           </div>
 
           {/* Event Type */}
-          <div className="flex w-full flex-col justify-center gap-3 bg-[#F6FBFF] p-10 max-sm:p-5">
+          {/* <div className="flex w-full flex-col justify-center gap-3 bg-[#F6FBFF] p-10 max-sm:p-5">
             <span className="text-center text-3xl font-bold text-primary">
               Event type
             </span>
@@ -205,7 +205,7 @@ export default function CheckoutForm() {
                 />
               </div>
             </RadioGroup>
-          </div>
+          </div> */}
         </div>
       </div>
     </>
