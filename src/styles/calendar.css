@@ -101,7 +101,7 @@
   cursor: not-allowed;
 }
 .rbc-off-range:hover::before {
-  content: "";
+  content: '';
 
   cursor: progress;
 }
@@ -141,7 +141,7 @@
 }
 
 .rbc-day-bg::before {
-  content: "+ Create event";
+  content: '+ Create event';
   position: absolute;
   font-size: 14px;
   top: 0;
@@ -176,7 +176,7 @@
   cursor: pointer;
 }
 .rbc-today:hover {
-  content: "+create-event";
+  content: '+create-event';
 }
 
 .rbc-row-bg {
