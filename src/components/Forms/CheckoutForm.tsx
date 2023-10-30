@@ -9,6 +9,7 @@ import { Button } from '@/core/ui/button'
 
 import CreditCardIcon from '../../../public/assets/credit_card.svg'
 import PayPalIcon from '../../../public/assets/paypal.svg'
+import { Input } from '@/core/ui/input'
 
 const CheckoutForm = () => {
   const formik = useFormik({
@@ -33,7 +34,7 @@ const CheckoutForm = () => {
               {/* First Name */}
               <div className='div-drop-shadow mt-5 flex flex-col rounded-lg bg-white p-3'>
                 <span className='text-sm text-[#757575]'>First Name</span>
-                <input
+                <Input
                   className='h-[25px] bg-transparent outline-none placeholder:text-sm'
                   id='first_name'
                   name='first_name'
@@ -46,7 +47,7 @@ const CheckoutForm = () => {
               {/* Last Name */}
               <div className='div-drop-shadow mt-5 flex flex-col rounded-lg bg-white p-3'>
                 <span className='text-sm text-[#757575]'>Last Name</span>
-                <input
+                <Input
                   className='h-[25px] bg-transparent outline-none placeholder:text-sm'
                   id='last_name'
                   name='last_name'
@@ -58,7 +59,7 @@ const CheckoutForm = () => {
               </div>
               <div className='div-drop-shadow mt-5 flex flex-col rounded-lg bg-white p-3'>
                 <span className='text-sm text-[#757575]'>Email Address</span>
-                <input
+                <Input
                   className='h-[25px] bg-transparent outline-none placeholder:text-sm'
                   id='email'
                   name='email'

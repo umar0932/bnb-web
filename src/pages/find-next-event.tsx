@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import Image from 'next/image'
 
+import { Input } from '@/core/ui/input'
+
 import Header from '@/components/Header/Header'
 import useAutocomplete from '@/core/hooks/useAutocomplete'
 import EventCard from '@/components/Cards/EventCard'
@@ -36,7 +38,7 @@ const FindNextEvent = () => {
             <span className='pl-2 text-xl text-white max-sm:pl-0'>Find best event in</span>
 
             <div className='flex items-center '>
-              <input
+              <Input
                 className='w-full max-w-[240px] bg-transparent p-1   text-start text-4xl font-bold text-[#DEF0FF]  outline-none placeholder:text-[#DEF0FF]'
                 placeholder='California'
                 ref={searchInputRef}

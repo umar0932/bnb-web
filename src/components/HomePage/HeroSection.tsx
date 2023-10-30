@@ -1,6 +1,7 @@
 import Link from 'next/link'
 
 import Header from '../Header/Header'
+
 import { Button } from '@/core/ui/button'
 
 const HeroSection = () => {

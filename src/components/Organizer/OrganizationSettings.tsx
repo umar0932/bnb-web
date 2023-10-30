@@ -12,6 +12,7 @@ import {
   SelectValue
 } from '@/core/ui/select'
 import { Dialog, DialogContent, DialogTrigger } from '@/core/ui/dialog'
+import { Input } from '@/core/ui/input'
 
 import EditOrganizerProfile from './EditOrganizerProfile'
 
@@ -88,7 +89,7 @@ const OrganizationSettings = () => {
                     <form onSubmit={formik.handleSubmit} className='flex w-full flex-col gap-5'>
                       <div className='flex w-full flex-col rounded-lg bg-white p-2 '>
                         <span className='text-sm text-[#757575]'>Organization Name</span>
-                        <input
+                        <Input
                           className='h-[25px] bg-transparent outline-none placeholder:text-sm'
                           id='organization_name'
                           name='organization_name'

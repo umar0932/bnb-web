@@ -1,6 +1,8 @@
 import EventCard from '../Cards/EventCard'
 import { events } from '../../utils/fakeBackend.js'
 
+import { Button } from '@/core/ui/button'
+
 const EventSection = () => {
   const eventsArray = events
 
@@ -21,9 +23,9 @@ const EventSection = () => {
           ))}
         </div>
         <div className='flex  w-full items-center justify-center'>
-          <button className=' mt-8 w-[450px] rounded-lg bg-btnprimary p-2 font-bold text-white hover:bg-btnsecondary'>
+          <Button className=' mt-8 w-[450px] rounded-lg bg-btnprimary p-2 font-bold text-white hover:bg-btnsecondary'>
             Show more
-          </button>
+          </Button>
         </div>
       </div>
     </>

@@ -12,6 +12,7 @@ import Footer from '@/components/Footer/Footer'
 
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/core/ui/dialog'
 import { Button } from '@/core/ui/button'
+import { Input } from '@/core/ui/input'
 
 import SignupImage from '../../public/assets/signup_page.png'
 
@@ -51,7 +52,7 @@ const Signup = () => {
             >
               <div className='m-10 w-full '>
                 <form onSubmit={formik.handleSubmit} className='flex flex-col gap-6 md:gap-8'>
-                  <input
+                  <Input
                     className='field-drop-shadow h-[45px] rounded-lg p-5 outline-none'
                     id='email'
                     name='email'
@@ -61,32 +62,32 @@ const Signup = () => {
                     value={formik.values.email}
                   />
 
-                  <button
+                  <Button
                     type='submit'
                     className='h-[45px] rounded-lg bg-btnprimary text-white hover:bg-btnsecondary'
                   >
                     Continue
-                  </button>
+                  </Button>
                   <div className='rounded-10 flex items-center p-2 text-[#313131]'>
                     <div className='flex-grow border-t-2 border-[#B2DBFE]'></div>
                     <div className='rounded-lg bg-white px-2'>or</div>
                     <div className='flex-grow border-t-2 border-[#B2DBFE]'></div>
                   </div>
 
-                  <button
+                  <Button
                     type='submit'
                     className=' field-drop-shadow flex h-[45px] items-center justify-center gap-3 rounded-lg bg-white'
                   >
                     <FcGoogle size={25} /> Sign up with Google
-                  </button>
+                  </Button>
                   <p className='text-center text-btnprimary'>Other sign up methods</p>
                   <div className='flex justify-center gap-5'>
-                    <button className='field-drop-shadow flex h-[54px] w-[54px] items-center justify-center rounded-full bg-white '>
+                    <Button className='field-drop-shadow flex h-[54px] w-[54px] items-center justify-center rounded-full bg-white '>
                       <Facebook size={25} fill='#3B5998' stroke='none' />
-                    </button>
-                    <button className='field-drop-shadow flex h-[54px] w-[54px] items-center justify-center rounded-full  bg-white'>
+                    </Button>
+                    <Button className='field-drop-shadow flex h-[54px] w-[54px] items-center justify-center rounded-full  bg-white'>
                       <AiFillApple size={25} fill='black' stroke='none' />
-                    </button>
+                    </Button>
                   </div>
                   <div>
                     <Link
@@ -108,7 +109,7 @@ const Signup = () => {
               <div className='m-10 w-full '>
                 <form onSubmit={formik.handleSubmit} className='flex flex-col gap-6 md:gap-8'>
                   <div className='relative'>
-                    <input
+                    <Input
                       className='field-drop-shadow h-[45px] w-full rounded-lg p-5 pr-12 outline-none'
                       id='email'
                       name='email'
@@ -121,7 +122,7 @@ const Signup = () => {
                       <Pencil size={20} color='red' className='cursor-pointer' />
                     </div>
                   </div>
-                  <input
+                  <Input
                     className=' field-drop-shadow h-[45px] rounded-lg p-5  outline-none'
                     id='confirm_email'
                     name='confirm_email'
@@ -131,7 +132,7 @@ const Signup = () => {
                     value={formik.values.confirm_email}
                   />
                   <div className='flex flex-col justify-between gap-6 sm:flex-row'>
-                    <input
+                    <Input
                       className=' field-drop-shadow h-[45px] w-full rounded-lg p-5 outline-none'
                       id='first_name'
                       name='first_name'
@@ -140,7 +141,7 @@ const Signup = () => {
                       onChange={formik.handleChange}
                       value={formik.values.first_name}
                     />
-                    <input
+                    <Input
                       className='field-drop-shadow h-[45px] w-full rounded-lg p-5 outline-none'
                       id='last_name'
                       name='last_name'
@@ -150,7 +151,7 @@ const Signup = () => {
                       value={formik.values.last_name}
                     />
                   </div>
-                  <input
+                  <Input
                     className=' field-drop-shadow h-[45px] rounded-lg p-5 outline-none'
                     id='password'
                     name='password'
@@ -161,7 +162,7 @@ const Signup = () => {
                   />
                   <p className='text-[#757575]'>Password must be at least 8 characters</p>
 
-                  <button
+                  <Button
                     type='submit'
                     className='h-[45px] rounded-lg bg-btnprimary text-white hover:bg-btnsecondary'
                     onClick={() => {
@@ -169,7 +170,7 @@ const Signup = () => {
                     }}
                   >
                     Create an account
-                  </button>
+                  </Button>
 
                   <div>
                     <Link

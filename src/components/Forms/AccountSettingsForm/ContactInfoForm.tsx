@@ -15,6 +15,7 @@ import {
 } from '@/core/ui/select'
 
 import PlusIcon from '../../../../public/assets/plus_icon.svg'
+import { Input } from '@/core/ui/input'
 
 const ContactInfoForm = () => {
   const [imageURL, setImageURL] = useState(null)
@@ -68,7 +69,7 @@ const ContactInfoForm = () => {
               {/* First Name */}
               <div className='mt-5 flex  flex-col rounded-lg bg-[#EFF8FF] p-3'>
                 <span className='text-sm text-[#757575]'>First Name</span>
-                <input
+                <Input
                   className='h-[25px] bg-transparent outline-none placeholder:text-sm'
                   id='first_name'
                   name='first_name'
@@ -83,7 +84,7 @@ const ContactInfoForm = () => {
 
               <div className='mt-5 flex  flex-col rounded-lg bg-[#EFF8FF] p-3'>
                 <span className='text-sm text-[#757575]'>Last Name</span>
-                <input
+                <Input
                   className='h-[25px] bg-transparent outline-none placeholder:text-sm'
                   id='last_name'
                   name='last_name'
@@ -98,7 +99,7 @@ const ContactInfoForm = () => {
 
               <div className='mt-5 flex  flex-col rounded-lg bg-[#EFF8FF] p-3'>
                 <span className='text-sm text-[#757575]'>Home Phone</span>
-                <input
+                <Input
                   className='h-[25px] bg-transparent outline-none placeholder:text-sm'
                   id='home_phone'
                   name='home_phone'
@@ -113,7 +114,7 @@ const ContactInfoForm = () => {
 
               <div className='mt-5 flex  flex-col rounded-lg bg-[#EFF8FF] p-3'>
                 <span className='text-sm text-[#757575]'>Cell Phone</span>
-                <input
+                <Input
                   className='h-[25px] bg-transparent outline-none placeholder:text-sm'
                   id='cell_phone'
                   name='cell_phone'
@@ -128,7 +129,7 @@ const ContactInfoForm = () => {
 
               <div className='mt-5 flex  flex-col rounded-lg bg-[#EFF8FF] p-3'>
                 <span className='text-sm text-[#757575]'>Job Title</span>
-                <input
+                <Input
                   className='h-[25px] bg-transparent outline-none placeholder:text-sm'
                   id='job_title'
                   name='job_title'
@@ -143,7 +144,7 @@ const ContactInfoForm = () => {
 
               <div className='mt-5 flex  flex-col rounded-lg bg-[#EFF8FF] p-3'>
                 <span className='text-sm text-[#757575]'>Company/ Organization</span>
-                <input
+                <Input
                   className='h-[25px] bg-transparent outline-none placeholder:text-sm'
                   id='company_name'
                   name='company_name'
@@ -158,7 +159,7 @@ const ContactInfoForm = () => {
 
               <div className='mt-5 flex  flex-col rounded-lg bg-[#EFF8FF] p-3'>
                 <span className='text-sm text-[#757575]'>Website</span>
-                <input
+                <Input
                   className='h-[25px] bg-transparent outline-none placeholder:text-sm'
                   id='website_name'
                   name='website_name'
@@ -176,7 +177,7 @@ const ContactInfoForm = () => {
                 {/* Address */}
                 <div className='mt-5 flex  flex-col rounded-lg bg-[#EFF8FF] p-3'>
                   <span className='text-sm text-[#757575]'>Address</span>
-                  <input
+                  <Input
                     className='h-[25px] bg-transparent outline-none placeholder:text-sm'
                     id='address'
                     name='address'
@@ -190,7 +191,7 @@ const ContactInfoForm = () => {
                 {/* Second Address */}
                 <div className='mt-5 flex  flex-col rounded-lg bg-[#EFF8FF] p-3'>
                   <span className='text-sm text-[#757575]'>Address 2</span>
-                  <input
+                  <Input
                     className='h-[25px] bg-transparent outline-none placeholder:text-sm'
                     id='address_two'
                     name='address_two'
@@ -204,7 +205,7 @@ const ContactInfoForm = () => {
                 {/* City */}
                 <div className='mt-5 flex  flex-col rounded-lg bg-[#EFF8FF] p-3'>
                   <span className='text-sm text-[#757575]'>City</span>
-                  <input
+                  <Input
                     className='h-[25px] bg-transparent outline-none placeholder:text-sm'
                     id='city'
                     name='city'
@@ -233,7 +234,7 @@ const ContactInfoForm = () => {
                 {/*Zip/Postal Code*/}
                 <div className='mt-5 flex  flex-col rounded-lg bg-[#EFF8FF] p-3'>
                   <span className='text-sm text-[#757575]'>Zip/ Postal Code</span>
-                  <input
+                  <Input
                     className='h-[25px] bg-transparent outline-none placeholder:text-sm'
                     id='postal_code'
                     name='postal_code'
@@ -268,7 +269,7 @@ const ContactInfoForm = () => {
                 {/* Address */}
                 <div className='mt-5 flex  flex-col rounded-lg bg-[#EFF8FF] p-3'>
                   <span className='text-sm text-[#757575]'>Address</span>
-                  <input
+                  <Input
                     className='h-[25px] bg-transparent outline-none placeholder:text-sm'
                     id='address'
                     name='address'
@@ -282,7 +283,7 @@ const ContactInfoForm = () => {
                 {/* Second Address */}
                 <div className='mt-5 flex  flex-col rounded-lg bg-[#EFF8FF] p-3'>
                   <span className='text-sm text-[#757575]'>Address 2</span>
-                  <input
+                  <Input
                     className='h-[25px] bg-transparent outline-none placeholder:text-sm'
                     id='address_two'
                     name='address_two'
@@ -296,7 +297,7 @@ const ContactInfoForm = () => {
                 {/* City */}
                 <div className='mt-5 flex  flex-col rounded-lg bg-[#EFF8FF] p-3'>
                   <span className='text-sm text-[#757575]'>City</span>
-                  <input
+                  <Input
                     className='h-[25px] bg-transparent outline-none placeholder:text-sm'
                     id='city'
                     name='city'
@@ -325,7 +326,7 @@ const ContactInfoForm = () => {
                 {/*Zip/Postal Code*/}
                 <div className='mt-5 flex  flex-col rounded-lg bg-[#EFF8FF] p-3'>
                   <span className='text-sm text-[#757575]'>Zip/ Postal Code</span>
-                  <input
+                  <Input
                     className='h-[25px] bg-transparent outline-none placeholder:text-sm'
                     id='postal_code'
                     name='postal_code'
@@ -367,7 +368,7 @@ const ContactInfoForm = () => {
                   <Image src={PlusIcon} alt='plus_icon' className='cursor-pointer' />
                 )}
 
-                <input
+                <Input
                   type='file'
                   id='picture'
                   accept='image/*'

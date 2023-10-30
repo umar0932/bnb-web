@@ -1,6 +1,9 @@
 import React from 'react'
+
 import StaticImage from 'next/image'
 import Link from 'next/link'
+
+import { Input } from '@/core/ui/input'
 
 import useAutocomplete from '../../core/hooks/useAutocomplete'
 
@@ -17,7 +20,7 @@ const Autocomplete = () => {
           <div className='flex flex-col'>
             <div className='mt-3 flex   p-2'>
               {/* <Autocomplete /> */}
-              <input
+              <Input
                 className='w-full border-b border-[#757575]  p-2 text-3xl font-bold text-primary outline-none placeholder:text-primary'
                 placeholder='California'
                 ref={searchInputRef}

@@ -8,6 +8,7 @@ import {
   SelectTrigger,
   SelectValue
 } from '@/core/ui/select'
+import { Input } from '@/core/ui/input'
 
 const ContactSalesForm = () => {
   const formik = useFormik({
@@ -31,7 +32,7 @@ const ContactSalesForm = () => {
             <span className='text-base text-[#757575]'>
               Email<span className='text-[#F00]'>*</span>
             </span>
-            <input
+            <Input
               className='h-[35px] w-full rounded-lg p-3 outline-none'
               id='email'
               name='email'
@@ -46,7 +47,7 @@ const ContactSalesForm = () => {
             <span className='text-base text-[#757575]'>
               Company name<span className='text-[#F00]'>*</span>
             </span>
-            <input
+            <Input
               className='h-[35px] w-full rounded-lg p-3 outline-none'
               id='company_name'
               name='company_name'
@@ -63,7 +64,7 @@ const ContactSalesForm = () => {
               <span className='text-base text-[#757575]'>
                 First name<span className='text-[#F00]'>*</span>
               </span>
-              <input
+              <Input
                 className='  h-[35px] w-full rounded-lg p-3 outline-none'
                 id='first_name'
                 name='first_name'
@@ -77,7 +78,7 @@ const ContactSalesForm = () => {
               <span className='text-base text-[#757575]'>
                 Last name<span className='text-[#F00]'>*</span>
               </span>
-              <input
+              <Input
                 className='  h-[35px] w-full rounded-lg p-3 outline-none'
                 id='last_name'
                 name='last_name'
@@ -112,7 +113,7 @@ const ContactSalesForm = () => {
             <span className='text-base text-[#757575]'>
               Phone number<span className='text-[#F00]'>*</span>
             </span>
-            <input
+            <Input
               className='h-[35px] w-full rounded-lg p-3 outline-none'
               id='phone_number'
               name='phone_number'

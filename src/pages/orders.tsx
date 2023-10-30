@@ -66,7 +66,7 @@ const Orders = () => {
               </div>
               <div className='flex items-center justify-center gap-2 text-lg text-[#313131]'>
                 {/* Toggle visibility of past orders */}
-                <button
+                <Button
                   onClick={() => setShowPastOrders(!showPastOrders)}
                   className='flex cursor-pointer items-center gap-3'
                 >
@@ -78,7 +78,7 @@ const Orders = () => {
                       showPastOrders ? 'rotate-180' : ''
                     }`}
                   />
-                </button>
+                </Button>
               </div>
             </div>
           </div>
@@ -102,12 +102,12 @@ const Orders = () => {
               value={formik.values.email}
             />
             <div className='flex justify-center gap-5'>
-              <button
+              <Button
                 onClick={() => setIsDialogOpen(false)}
                 className='shadow-tertiary-500 flex h-[48px] w-[131px] items-center justify-center rounded-lg bg-btnprimary text-white shadow-sm hover:bg-btnsecondary'
               >
                 Verify Email
-              </button>
+              </Button>
             </div>
           </DialogHeader>
         </DialogContent>

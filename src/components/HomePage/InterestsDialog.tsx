@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import Image from 'next/image'
 
+import { Button } from '@/core/ui/button'
+
 import CrossIcon from '../../../public/assets/cross_icon.svg'
 
 const InterestsDialog = () => {
@@ -50,7 +52,7 @@ const InterestsDialog = () => {
         </span>
         <div className='mt-5 flex flex-wrap gap-8 max-lg:items-center max-lg:justify-center'>
           {interests.map((interest, index) => (
-            <button
+            <Button
               key={index}
               className={`${buttonClasses} ${
                 selected.includes(interest) ? 'bg-[#AF0000] text-white' : 'bg-white text-[#313131]'
@@ -58,7 +60,7 @@ const InterestsDialog = () => {
               onClick={() => toggleInterest(interest)}
             >
               {interest}
-            </button>
+            </Button>
           ))}
         </div>
       </div>

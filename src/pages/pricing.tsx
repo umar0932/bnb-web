@@ -4,6 +4,8 @@ import { Check } from 'lucide-react'
 import { XCircle } from 'lucide-react'
 import { Info } from 'lucide-react'
 
+import { Button } from '@/core/ui/button'
+
 import Footer from '@/components/Footer/Footer'
 import Header from '@/components/Header/Header'
 
@@ -41,12 +43,12 @@ const Pricing = () => {
 
           {isDivVisible && (
             <div className='div-drop-shadow absolute right-[68px] top-[311px] flex flex-col rounded-lg bg-white p-5   max-sm:right-0 '>
-              <button
+              <Button
                 onClick={toggleDivVisibility}
                 className='absolute right-2 top-2 cursor-pointer p-2'
               >
                 <XCircle className='text-btnsecondary' size={25} />
-              </button>
+              </Button>
               <div className=' flex flex-col  p-10 max-md:p-4'>
                 <span className='text-4xl font-bold text-[#313131] max-md:text-3xl'>
                   About Pricing
@@ -95,9 +97,9 @@ const Pricing = () => {
             <br /> consectetur adipiscing elit.{' '}
           </span>
           <Link href='/create-event-page/welcome'>
-            <button className='my-6 max-w-[322px] rounded-lg bg-btnprimary p-3 font-normal text-white hover:bg-btnsecondary'>
+            <Button className='my-6 max-w-[322px] rounded-lg bg-btnprimary p-3 font-normal text-white hover:bg-btnsecondary'>
               Get Started for free
-            </button>
+            </Button>
           </Link>
         </div>
         <div

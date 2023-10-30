@@ -12,6 +12,8 @@ import {
 import { Checkbox } from '@/core/ui/checkbox'
 
 import CalendarIcon from '../../../public/assets/calendar_icon.svg'
+import { Button } from '@/core/ui/button'
+import { Input } from '@/core/ui/input'
 
 const DateTimeForm = () => {
   const [activeButton, setActiveButton] = useState('SingleEvent')
@@ -45,20 +47,20 @@ const DateTimeForm = () => {
             </span>
 
             <div className='mt-5 flex gap-5 max-md:flex-wrap max-md:items-center max-md:justify-center'>
-              <button
+              <Button
                 className='h-[55px] w-[180px] rounded-lg bg-[#EFF8FF]'
                 style={buttonStyles('SingleEvent')}
                 onClick={() => handleButtonClick('SingleEvent')}
               >
                 Single Event
-              </button>
-              <button
+              </Button>
+              <Button
                 className='h-[55px] w-[180px] rounded-lg bg-[#EFF8FF]'
                 style={buttonStyles('RecurringEvent')}
                 onClick={() => handleButtonClick('RecurringEvent')}
               >
                 Recurring Event
-              </button>
+              </Button>
             </div>
 
             <div className='mt-5 flex flex-col gap-2'>
@@ -66,14 +68,14 @@ const DateTimeForm = () => {
               <div className='flex flex-wrap gap-10'>
                 <div className='flex flex-col gap-2'>
                   <span className='pl-3 text-[#313131]'>Day</span>
-                  <input
+                  <Input
                     type='date'
                     className='w-[250px] rounded-lg border border-solid border-[#9DCAEF] p-2 text-[#757575]  max-sm:w-[220px]'
                   />
                 </div>
                 <div className='flex flex-col gap-2'>
                   <span className='pl-3 text-[#313131]'>Time</span>
-                  <input
+                  <Input
                     type='time'
                     className='w-[250px] rounded-lg border border-solid border-[#9DCAEF] p-2 text-[#757575]  max-sm:w-[220px]'
                   />
@@ -85,14 +87,14 @@ const DateTimeForm = () => {
               <div className='flex flex-wrap gap-10'>
                 <div className='flex flex-col gap-2'>
                   <span className='pl-3 text-[#313131]'>Day</span>
-                  <input
+                  <Input
                     type='date'
                     className='w-[250px] rounded-lg border border-solid border-[#9DCAEF] p-2 text-[#757575] max-sm:w-[220px]'
                   />
                 </div>
                 <div className='flex flex-col gap-2'>
                   <span className='pl-3 text-[#313131]'>Time</span>
-                  <input
+                  <Input
                     type='time'
                     className='w-[250px] rounded-lg border border-solid border-[#9DCAEF] p-2 text-[#757575]  max-sm:w-[220px]'
                   />

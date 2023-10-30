@@ -7,6 +7,7 @@ import AuthHeader from '@/components/Header/AuthHeader'
 import { browse_events } from '@/utils/fakeBackend'
 
 import { Button } from '@/core/ui/button'
+import { Input } from '@/core/ui/input'
 
 const BrowseEvents = () => {
   const formik = useFormik({
@@ -30,7 +31,7 @@ const BrowseEvents = () => {
           <div className='flex w-[70%] flex-col gap-5 p-10 max-md:w-full max-sm:p-3'>
             <div className='flex w-full items-center gap-3 max-sm:flex-col '>
               <form onSubmit={formik.handleSubmit} className='mx-4 w-full'>
-                <input
+                <Input
                   className='h-[38px] w-full rounded-lg bg-navcolors p-3 text-xs font-normal italic placeholder-tertiary outline-none'
                   id='search'
                   name='search'

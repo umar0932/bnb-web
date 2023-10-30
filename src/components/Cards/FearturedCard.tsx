@@ -3,6 +3,8 @@ import Image from 'next/image'
 
 import { Organizer } from '@/interfaces'
 
+import { Button } from '@/core/ui/button'
+
 import CardCrossIcon from '../../../public/assets/cross_small_icon.svg'
 
 interface OrganizerCardProps {
@@ -30,9 +32,9 @@ const FeaturedCard = ({ organizer }: OrganizerCardProps) => {
             <span className='text-md text-[#757575]'>{organizer.countFollowers} Followers</span>
           </div>
         </div>
-        <button className='mt-5 w-[170px] rounded-lg bg-btnprimary p-2 text-white hover:bg-btnsecondary'>
+        <Button className='text-md mt-5 w-[170px] rounded-lg bg-btnprimary p-2 text-white hover:bg-btnsecondary'>
           Follow
-        </button>
+        </Button>
       </div>
     </div>
   ) : null

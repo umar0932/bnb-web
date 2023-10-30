@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import { Button } from '@/core/ui/button'
+import { Input } from '@/core/ui/input'
 
 import AddImageIcon from '../../../public/assets/add_image.svg'
 
@@ -44,7 +45,7 @@ const OrganizerProfileForm = () => {
             <form onSubmit={formik.handleSubmit} className='flex w-full flex-col gap-5 '>
               {/* First Name */}
 
-              <input
+              <Input
                 className='h-[45px] rounded-lg bg-white p-3 outline-none placeholder:text-sm'
                 id='organization_name'
                 name='organization_name'
@@ -53,7 +54,7 @@ const OrganizerProfileForm = () => {
                 value={formik.values.organization_name}
                 onChange={formik.handleChange}
               />
-              <input
+              <Input
                 className='h-[45px] rounded-lg bg-white p-3 outline-none placeholder:text-sm'
                 id='website_link'
                 name='website_link'
@@ -62,7 +63,7 @@ const OrganizerProfileForm = () => {
                 value={formik.values.website_link}
                 onChange={formik.handleChange}
               />
-              <input
+              <Input
                 className='h-[45px] rounded-lg bg-white p-3 outline-none placeholder:text-sm'
                 id='organization_bio'
                 name='organization_bio'
@@ -71,7 +72,7 @@ const OrganizerProfileForm = () => {
                 value={formik.values.organization_bio}
                 onChange={formik.handleChange}
               />
-              <input
+              <Input
                 className='h-[45px] rounded-lg bg-white p-3 outline-none placeholder:text-sm'
                 id='description'
                 name='description'
@@ -100,7 +101,7 @@ const OrganizerProfileForm = () => {
                 </div>
               )}
 
-              <input
+              <Input
                 type='file'
                 id='picture'
                 accept='image/*'

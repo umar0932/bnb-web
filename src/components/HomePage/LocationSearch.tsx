@@ -4,6 +4,8 @@ import Link from 'next/link'
 
 import useAutocomplete from '../../core/hooks/useAutocomplete'
 
+import { Input } from '@/core/ui/input'
+
 import ArrowIcon from '../../../public/assets/arrow_down.svg'
 import CurrentLocation from '../../../public/assets/current_location.svg'
 import BrowseOnline from '../../../public/assets/browse_online.svg'
@@ -49,7 +51,7 @@ const LocationSearch = () => {
             )}
           </div>
           <div>
-            <input
+            <Input
               className='w-full max-w-[180px] border-b border-white bg-transparent  p-2 text-center text-xl text-btnprimary  outline-none placeholder:text-btnprimary'
               placeholder='California'
               ref={searchInputRef}

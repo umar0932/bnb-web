@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Button } from '@/core/ui/button'
 
 const TrendingCategories = () => {
   const [selectedSpan, setSelectedSpan] = useState('All')
@@ -73,7 +74,7 @@ const TrendingCategories = () => {
         </div>
         <div className='mt-5 flex flex-wrap gap-8 max-lg:items-center max-lg:justify-center'>
           {categories.map((category, index) => (
-            <button
+            <Button
               key={index}
               className={`${buttonClasses} ${
                 selected.includes(category) ? 'bg-[#AF0001] text-white' : 'bg-white text-[#313131]'
@@ -81,7 +82,7 @@ const TrendingCategories = () => {
               onClick={() => toggleInterest(category)}
             >
               {category}
-            </button>
+            </Button>
           ))}
         </div>
       </div>

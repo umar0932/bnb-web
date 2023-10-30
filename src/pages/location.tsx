@@ -1,8 +1,10 @@
 import Link from 'next/link'
 
 import Header from '@/components/Header/Header'
-import { Progress } from '@/core/ui/progress'
 import Autocomplete from '@/components/AutoComplete/AutoCompleteAcc'
+
+import { Progress } from '@/core/ui/progress'
+import { Button } from '@/core/ui/button'
 
 const Location = () => {
   return (
@@ -37,14 +39,14 @@ const Location = () => {
         </div>
         <div className='div-drop-shadow flex items-center justify-end gap-5 p-5'>
           <Link href='/interests'>
-            <button className='flex h-[43px] w-[120px] items-center justify-center rounded-sm bg-[#DEF0FF] p-3 font-bold text-primary'>
+            <Button className='flex h-[43px] w-[120px] items-center justify-center rounded-sm bg-[#DEF0FF] p-3 font-bold text-primary'>
               Previous
-            </button>
+            </Button>
           </Link>
           <Link href='/favorites'>
-            <button className='flex h-[43px] w-[120px] items-center justify-center rounded-sm bg-btnprimary p-3 font-bold text-white hover:bg-btnsecondary'>
+            <Button className='flex h-[43px] w-[120px] items-center justify-center rounded-sm bg-btnprimary p-3 font-bold text-white hover:bg-btnsecondary'>
               Next
-            </button>
+            </Button>
           </Link>
         </div>
       </div>

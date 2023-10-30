@@ -1,6 +1,8 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
+import { Button } from '@/core/ui/button'
+
 import WelcomeImage from '../../../public/assets/welcome_screen.png'
 
 const WelcomePage = () => {
@@ -32,9 +34,9 @@ const WelcomePage = () => {
               power your events.
             </span>
             <Link href='/create-event-page/first-step'>
-              <button className=' mt-4 w-[230px] rounded-lg bg-btnprimary p-2 text-white hover:bg-btnsecondary'>
+              <Button className=' mt-4 w-[230px] rounded-lg bg-btnprimary p-2 text-white hover:bg-btnsecondary'>
                 Get Started
-              </button>
+              </Button>
             </Link>
           </div>
         </div>

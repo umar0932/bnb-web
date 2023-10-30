@@ -11,6 +11,7 @@ import Footer from '@/components/Footer/Footer'
 
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/core/ui/dialog'
 import { Button } from '@/core/ui/button'
+import { Input } from '@/core/ui/input'
 
 import LoginImage from '../../public/assets/login_page.png'
 
@@ -40,7 +41,7 @@ const Login = () => {
           >
             <div className='m-10 w-full '>
               <form onSubmit={formik.handleSubmit} className='flex flex-col gap-6 md:gap-8'>
-                <input
+                <Input
                   className='field-drop-shadow h-[45px] rounded-lg p-5 outline-none'
                   id='email'
                   name='email'
@@ -49,7 +50,7 @@ const Login = () => {
                   onChange={formik.handleChange}
                   value={formik.values.email}
                 />
-                <input
+                <Input
                   className='field-drop-shadow h-[45px] rounded-lg p-5 outline-none'
                   id='password'
                   name='password'
@@ -66,28 +67,28 @@ const Login = () => {
                     Login
                   </Button>
                 </Link>
-                <button
+                <Button
                   className=' field-drop-shadow h-[45px] rounded-lg bg-white '
                   onClick={() => {
                     setIsDialogOpen(true)
                   }}
                 >
                   Email me a login link
-                </button>
-                <button
+                </Button>
+                <Button
                   type='submit'
                   className='field-drop-shadow flex h-[45px] items-center justify-center gap-3 rounded-lg bg-white'
                 >
                   <FcGoogle size={25} /> Sign up with Google
-                </button>
+                </Button>
                 <p className='text-center text-btnprimary'>Other sign up methods</p>
                 <div className='flex justify-center gap-5'>
-                  <button className=' field-drop-shadow flex h-[54px] w-[54px] items-center justify-center rounded-full bg-white'>
+                  <Button className=' field-drop-shadow flex h-[54px] w-[54px] items-center justify-center rounded-full bg-white'>
                     <Facebook size={25} fill='#3B5998' stroke='none' />
-                  </button>
-                  <button className=' field-drop-shadow flex h-[54px] w-[54px] items-center justify-center  rounded-full bg-white'>
+                  </Button>
+                  <Button className=' field-drop-shadow flex h-[54px] w-[54px] items-center justify-center  rounded-full bg-white'>
                     <AiFillApple size={25} fill='black' stroke='none' />
-                  </button>
+                  </Button>
                 </div>
               </form>
             </div>
@@ -108,7 +109,7 @@ const Login = () => {
             <DialogTitle className='text-2xl font-bold text-primary'>
               Where should we send your login link?
             </DialogTitle>
-            <input
+            <Input
               className=' shadow-tertiary-500 h-[45px] w-full rounded-lg bg-[#EFF8FF] p-5 shadow-sm outline-none'
               id='email'
               name='email'
@@ -118,15 +119,15 @@ const Login = () => {
               value={formik.values.email}
             />
             <div className='flex justify-center gap-5'>
-              <button
+              <Button
                 onClick={() => setIsDialogOpen(false)}
                 className='shadow-tertiary-500 flex h-[48px] w-[131px] items-center justify-center rounded-lg bg-[#DEF0FF] font-bold text-primary shadow-sm'
               >
                 Back to login
-              </button>
-              <button className='shadow-tertiary-500 flex h-[48px] w-[131px] items-center justify-center rounded-lg bg-btnprimary text-white shadow-sm hover:bg-btnsecondary'>
+              </Button>
+              <Button className='shadow-tertiary-500 flex h-[48px] w-[131px] items-center justify-center rounded-lg bg-btnprimary text-white shadow-sm hover:bg-btnsecondary'>
                 Send login link
-              </button>
+              </Button>
             </div>
           </DialogHeader>
         </DialogContent>

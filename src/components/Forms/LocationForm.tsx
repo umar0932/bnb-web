@@ -3,6 +3,9 @@ import { useState } from 'react'
 
 import useAutocomplete from '../../core/hooks/useAutocomplete'
 
+import { Button } from '@/core/ui/button'
+import { Input } from '@/core/ui/input'
+
 import LocationIcon from '../../../public/assets/location_form_icon.svg'
 import SearchIcon from '../../../public/assets/search_icon.svg'
 
@@ -40,30 +43,30 @@ const LocationForm = () => {
 
             {/* Form */}
             <div className='mt-5 flex gap-5 max-md:flex-wrap max-md:items-center max-md:justify-center'>
-              <button
+              <Button
                 className='h-[55px] w-[180px] rounded-lg bg-[#EFF8FF]'
                 style={buttonStyles('Venue')}
                 onClick={() => handleButtonClick('Venue')}
               >
                 Venue
-              </button>
-              <button
+              </Button>
+              <Button
                 className='h-[55px] w-[180px] rounded-lg bg-[#EFF8FF]'
                 style={buttonStyles('Online')}
                 onClick={() => handleButtonClick('Online')}
               >
                 Online
-              </button>
-              <button
+              </Button>
+              <Button
                 className='h-[55px] w-[180px] rounded-lg bg-[#EFF8FF]'
                 style={buttonStyles('ToBeAnnounced')}
                 onClick={() => handleButtonClick('ToBeAnnounced')}
               >
                 To be announced
-              </button>
+              </Button>
             </div>
             <div className='mt-5 flex max-w-[580px] rounded-lg bg-[#EFF8FF]'>
-              <input
+              <Input
                 className='w-[90%] border-none bg-transparent p-4 outline-none placeholder:text-[#757575] max-sm:w-[80%]'
                 placeholder='Search for venue'
                 type='text'

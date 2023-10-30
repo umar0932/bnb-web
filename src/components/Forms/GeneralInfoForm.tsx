@@ -1,3 +1,4 @@
+import { Input } from '@/core/ui/input'
 import { useFormik } from 'formik'
 import { Pencil } from 'lucide-react'
 
@@ -23,7 +24,7 @@ const GeneralInfoForm = () => {
             <div className='flex w-full flex-col'>
               <span className='text-sm text-[#757575]'>First Name</span>
 
-              <input
+              <Input
                 className=' h-[25px] w-full rounded-lg border-none bg-transparent  outline-none'
                 id='first_name'
                 name='first_name'
@@ -43,7 +44,7 @@ const GeneralInfoForm = () => {
             <div className='flex w-full flex-col'>
               <span className='text-sm text-[#757575]'>Last Name</span>
 
-              <input
+              <Input
                 className=' h-[25px] w-full rounded-lg border-none bg-transparent  outline-none'
                 id='last_name'
                 name='last_name'
@@ -63,7 +64,7 @@ const GeneralInfoForm = () => {
             <div className='flex w-full flex-col'>
               <span className='text-sm text-[#757575]'>Email Address</span>
 
-              <input
+              <Input
                 className=' h-[25px] w-full rounded-lg border-none bg-transparent  outline-none'
                 id='email_address'
                 name='email_address'
@@ -83,7 +84,7 @@ const GeneralInfoForm = () => {
             <div className='flex w-full flex-col'>
               <span className='text-sm text-[#757575]'>Delivery Method</span>
 
-              <input
+              <Input
                 className=' h-[25px] w-full rounded-lg border-none bg-transparent  outline-none'
                 id='delivery_method'
                 name='delivery_method'

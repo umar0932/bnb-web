@@ -2,6 +2,7 @@ import React from 'react'
 import { useFormik } from 'formik'
 
 import { Button } from '@/core/ui/button'
+import { Input } from '@/core/ui/input'
 
 const PaymentCardForm = () => {
   const maxCardLength = 12
@@ -71,7 +72,7 @@ const PaymentCardForm = () => {
               {/* Card Holder Name */}
               <div className=' flex  flex-col rounded-lg bg-[#EFF8FF] p-3 '>
                 <span className='text-sm text-[#757575]'>Cardholder Name</span>
-                <input
+                <Input
                   className='h-[25px] bg-transparent outline-none placeholder:text-sm'
                   id='cardholder_name'
                   name='cardholder_name'
@@ -84,7 +85,7 @@ const PaymentCardForm = () => {
               {/*Card Number */}
               <div className=' flex  flex-col rounded-lg bg-[#EFF8FF] p-3'>
                 <span className='text-sm text-[#757575]'>Card Number</span>
-                <input
+                <Input
                   className='h-[25px] bg-transparent outline-none placeholder:text-sm'
                   id='card_number'
                   name='card_number'
@@ -100,7 +101,7 @@ const PaymentCardForm = () => {
               <div className='flex w-full gap-5  max-lg:flex-col'>
                 <div className=' flex w-full  flex-col rounded-lg bg-[#EFF8FF] p-3'>
                   <span className='text-sm text-[#757575]'>Expiration Date</span>
-                  <input
+                  <Input
                     className='h-[25px] bg-transparent outline-none placeholder:text-sm'
                     id='expiration_date'
                     name='expiration_date'
@@ -112,7 +113,7 @@ const PaymentCardForm = () => {
                 </div>
                 <div className='flex w-full  flex-col rounded-lg bg-[#EFF8FF] p-3'>
                   <span className='text-sm text-[#757575]'>CVV</span>
-                  <input
+                  <Input
                     className='h-[25px] bg-transparent outline-none placeholder:text-sm'
                     id='cvv_number'
                     name='cvv_number'

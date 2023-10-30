@@ -12,6 +12,8 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger
 } from '@/core/ui/dropdown-menu'
+import { Button } from '@/core/ui/button'
+import { Input } from '@/core/ui/input'
 
 import UserProfileIcon from '../../../public/assets/user_profile_icon.svg'
 import PlusIcon from '../../../public/assets/plus_icon.svg'
@@ -245,7 +247,7 @@ const Header = ({ colorScheme = 'default' }) => {
                     </Link>
                   </li>
                   <form onSubmit={formik.handleSubmit} className='mx-4'>
-                    <input
+                    <Input
                       className='h-[30px] w-[230px] rounded-lg bg-navcolors p-3 text-xs font-normal italic placeholder-tertiary outline-none'
                       id='search'
                       name='search'
@@ -257,18 +259,18 @@ const Header = ({ colorScheme = 'default' }) => {
                   </form>
                   <div className=' mx-4 my-6 flex max-w-[268px] items-center rounded-lg bg-btnprimary transition-all hover:bg-btnsecondary md:my-0'>
                     <Link href='/login'>
-                      <button className='mx-2 bg-transparent px-2 py-2 text-white max-sm:text-sm '>
+                      <Button className='mx-2 bg-transparent px-2 py-2 text-white max-sm:text-sm '>
                         Login
-                      </button>
+                      </Button>
                     </Link>
                     <div className='h-[30px] border border-[#878787] opacity-70 '></div>
                     <Link href='/signup'>
-                      <button
+                      <Button
                         className='mx-2 bg-transparent px-2 py-2 text-white max-sm:text-sm'
                         // style={{ whiteSpace: "nowrap" }}
                       >
                         Sign Up
-                      </button>
+                      </Button>
                     </Link>
                   </div>
                 </ul>
@@ -359,7 +361,7 @@ const Header = ({ colorScheme = 'default' }) => {
           {colorScheme !== 'second-alternative' && (
             <div>
               <form onSubmit={formik.handleSubmit} className='mx-4'>
-                <input
+                <Input
                   className=' mr-4 hidden h-[30px] w-[260px] rounded-lg bg-navcolors p-4 text-xs font-normal italic placeholder-tertiary outline-none max-xl:w-[210px] lg:flex'
                   id='search'
                   name='search'

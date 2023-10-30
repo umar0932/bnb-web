@@ -6,6 +6,9 @@ import Footer from '@/components/Footer/Footer'
 import Header from '@/components/Header/Header'
 import ContactUs from '@/components/ContactUs/ContactUs'
 
+import { Button } from '@/core/ui/button'
+import { Input } from '@/core/ui/input'
+
 import FileSearch from '../../public/assets/file_search.svg'
 import FileTransfer from '../../public/assets/file_transfer.svg'
 import EditInfo from '../../public/assets/info_icon.svg'
@@ -34,7 +37,7 @@ const HelpCenter = () => {
             How can we help?
           </span>
           <form onSubmit={formik.handleSubmit} className=' my-5 flex justify-center'>
-            <input
+            <Input
               className='mr-4 flex h-[42px] w-[370px] justify-center rounded-lg
                bg-white p-4 text-center text-sm font-normal italic placeholder-[#757575] outline-none max-sm:w-[280px]'
               id='search'
@@ -54,16 +57,16 @@ const HelpCenter = () => {
           </div>
           <div className='flex w-full flex-wrap justify-between gap-8 p-10 max-lg:justify-center'>
             <Link href='/find-tickets'>
-              <button className='field-drop-shadow flex items-center gap-4 rounded-lg p-3 px-5 text-xl transition-transform hover:scale-105'>
+              <Button className='field-drop-shadow flex items-center gap-4 rounded-lg p-3 px-5 text-xl transition-transform hover:scale-105'>
                 <StaticImage src={FileSearch} alt='Logo' className='h-6 w-6' />
                 Find your tickets
-              </button>
+              </Button>
             </Link>
             <Link href='/contact-event-organizer'>
-              <button className='field-drop-shadow flex items-center gap-4 rounded-lg p-3 px-5 text-xl transition-transform hover:scale-105'>
+              <Button className='field-drop-shadow flex items-center gap-4 rounded-lg  p-3 px-5 text-xl transition-transform hover:scale-105'>
                 <StaticImage src={ContactBook} alt='Logo' className='h-6 w-6' />
                 Contact organizer
-              </button>
+              </Button>
             </Link>
           </div>
         </div>
@@ -72,14 +75,14 @@ const HelpCenter = () => {
             Organizing an event
           </div>
           <div className='flex w-full flex-wrap justify-between gap-8  p-10 max-lg:justify-center'>
-            <button className='field-drop-shadow flex items-center gap-4 rounded-lg p-3 px-5 text-xl transition-transform hover:scale-105'>
+            <Button className='field-drop-shadow flex items-center gap-4 rounded-lg  p-3 px-5 text-xl transition-transform hover:scale-105'>
               <StaticImage src={FileTransfer} alt='Logo' className=' h-6 w-6' />
               Transfer tickets
-            </button>
-            <button className='field-drop-shadow flex items-center gap-4 rounded-lg p-3 px-5 text-xl transition-transform hover:scale-105'>
+            </Button>
+            <Button className='field-drop-shadow flex items-center gap-4 rounded-lg  p-3 px-5 text-xl transition-transform hover:scale-105'>
               <StaticImage src={EditInfo} alt='Logo' className=' h-6 w-6' />
               Edit order info
-            </button>
+            </Button>
           </div>
         </div>
       </div>
@@ -89,30 +92,30 @@ const HelpCenter = () => {
       </div>
 
       <div className='mt-10 flex flex-wrap justify-between gap-10 p-10 max-md:justify-center 2xl:justify-evenly'>
-        <button className='field-drop-shadow relative flex w-[300px] flex-col items-center justify-center overflow-visible rounded-lg p-5 text-xl'>
+        <Button className='field-drop-shadow relative flex h-[100px] w-[300px] flex-col items-center justify-center overflow-visible rounded-lg  p-5 text-xl'>
           <div className='absolute left-1/2 top-[-26px] -translate-x-1/2 transform rounded-full bg-[#DEF0FF] p-3'>
             <StaticImage src={Register} alt='register-icon' className='h-6 w-6' />
           </div>
           <span className='pt-3'>Buy & Register</span>
-        </button>
-        <button className='field-drop-shadow relative flex w-[300px] flex-col items-center justify-center overflow-visible rounded-lg p-5 text-xl'>
+        </Button>
+        <Button className='field-drop-shadow relative flex h-[100px] w-[300px] flex-col items-center justify-center overflow-visible rounded-lg p-5 text-xl'>
           <div className='absolute left-1/2 top-[-26px] -translate-x-1/2 transform rounded-full bg-[#DEF0FF] p-3'>
             <StaticImage src={Ticket} alt='ticket-icon' className='h-6 w-6' />
           </div>
           <span className='pt-3'>Your Tickets</span>
-        </button>
-        <button className='field-drop-shadow relative flex w-[300px] flex-col items-center justify-center overflow-visible rounded-lg p-5 text-xl'>
+        </Button>
+        <Button className='field-drop-shadow relative flex h-[100px] w-[300px] flex-col items-center justify-center overflow-visible rounded-lg p-5 text-xl'>
           <div className='absolute left-1/2 top-[-26px] -translate-x-1/2 transform rounded-full bg-[#DEF0FF] p-3'>
             <StaticImage src={Account} alt='account-icon' className='h-6 w-6' />
           </div>
           <span className='pt-3'>Your Account</span>
-        </button>
-        <button className='field-drop-shadow relative flex w-[300px] flex-col items-center justify-center overflow-visible rounded-lg p-5 text-xl'>
+        </Button>
+        <Button className='field-drop-shadow relative flex h-[100px] w-[300px] flex-col items-center justify-center overflow-visible rounded-lg p-5 text-xl'>
           <div className='absolute left-1/2 top-[-26px] -translate-x-1/2 transform rounded-full bg-[#DEF0FF] p-3'>
             <StaticImage src={File} alt='account-icon' className='h-6 w-6' />
           </div>
           <span className='pt-3'>Your Account</span>
-        </button>
+        </Button>
       </div>
       <ContactUs />
 

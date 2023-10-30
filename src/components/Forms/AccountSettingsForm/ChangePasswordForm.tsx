@@ -1,6 +1,7 @@
 import { useFormik } from 'formik'
 
 import { Button } from '@/core/ui/button'
+import { Input } from '@/core/ui/input'
 
 const ChangePasswordForm = () => {
   const formik = useFormik({
@@ -29,7 +30,7 @@ const ChangePasswordForm = () => {
               {/* New Password */}
               <div className=' flex  flex-col rounded-lg bg-[#EFF8FF] p-3 '>
                 <span className='text-sm text-[#757575]'>New Password</span>
-                <input
+                <Input
                   className='h-[25px] bg-transparent outline-none placeholder:text-sm'
                   id='new_password'
                   name='new_password'
@@ -42,7 +43,7 @@ const ChangePasswordForm = () => {
               {/*Confirm Password */}
               <div className=' flex  flex-col rounded-lg bg-[#EFF8FF] p-3'>
                 <span className='text-sm text-[#757575]'>Confirm Password</span>
-                <input
+                <Input
                   className='h-[25px] bg-transparent outline-none placeholder:text-sm'
                   id='confirm_password'
                   name='confirm_password'

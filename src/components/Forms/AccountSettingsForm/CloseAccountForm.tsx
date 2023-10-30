@@ -3,6 +3,7 @@ import { useFormik } from 'formik'
 
 import { Checkbox } from '@/core/ui/checkbox'
 import { Button } from '@/core/ui/button'
+import { Input } from '@/core/ui/input'
 
 const CloseAccountForm = () => {
   const formik = useFormik({
@@ -74,7 +75,7 @@ const CloseAccountForm = () => {
                 </span>
                 <span>Type "CLOSE":</span>
 
-                <input
+                <Input
                   className='h-[55px] rounded-lg bg-[#EFF8FF] p-2  outline-none'
                   id='type_confirm'
                   name='type_confirm'
@@ -84,7 +85,7 @@ const CloseAccountForm = () => {
                   value={formik.values.type_confirm}
                 />
                 <span>Enter Password:</span>
-                <input
+                <Input
                   className='h-[55px] rounded-lg bg-[#EFF8FF] p-2 outline-none'
                   id='password_confirm'
                   name='password_confirm'

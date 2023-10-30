@@ -16,8 +16,10 @@ import {
   SelectValue
 } from '@/core/ui/select'
 import { Button } from '@/core/ui/button'
+import { Input } from '@/core/ui/input'
 
 import SearchIcon from '../../../public/assets/search_icon_red.svg'
+
 
 const OrganizerEvents = () => {
   const [activeDiv, setActiveDiv] = useState('List')
@@ -85,7 +87,7 @@ const OrganizerEvents = () => {
               </SelectContent>
             </Select>
             <div className='flex h-[40px] items-center rounded-lg bg-[#EFF8FF] p-3'>
-              <input
+              <Input
                 className='w-[260px] bg-transparent outline-none placeholder:text-[#3B5998]  max-md:w-full'
                 type='text'
                 placeholder='Search event'

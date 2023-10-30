@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { Progress } from '@/core/ui/progress'
 import { Label } from '@/core/ui/label'
 import { RadioGroup, RadioGroupItem } from '@/core/ui/radio-group'
+import { Button } from '@/core/ui/button'
 
 import FifthStepImage from '../../../public/assets/stepper_step5.png'
 
@@ -101,14 +102,14 @@ const FourthStep = () => {
             </RadioGroup>
             <div className=' flex gap-5'>
               <Link href='/create-event-page/fourth-step'>
-                <button className='flex h-[43px] w-[120px] items-center justify-center rounded-sm bg-[#DEF0FF] p-3 font-bold text-primary'>
+                <Button className='flex h-[43px] w-[120px] items-center justify-center rounded-sm bg-[#DEF0FF] p-3 font-bold text-primary'>
                   Back
-                </button>
+                </Button>
               </Link>
               <Link href='/create-event-page/create-event'>
-                <button className='flex h-[43px] w-[120px] items-center justify-center rounded-sm bg-btnprimary p-3 font-bold text-white hover:bg-btnsecondary'>
+                <Button className='flex h-[43px] w-[120px] items-center justify-center rounded-sm bg-btnprimary p-3 font-bold text-white hover:bg-btnsecondary'>
                   Next
-                </button>
+                </Button>
               </Link>
             </div>
           </div>

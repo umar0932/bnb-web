@@ -6,6 +6,8 @@ import Header from '@/components/Header/Header'
 import TrustedSection from '@/components/Sections/TrustedSection'
 import ContactSalesForm from '@/components/Forms/ContactSalesForm'
 
+import { Button } from '@/core/ui/button'
+
 import EventBusiness from '../../public/assets/event_business.png'
 
 const FindTickets = () => {
@@ -20,9 +22,9 @@ const FindTickets = () => {
           <div className='flex  bg-primary p-2 max-lg:flex-col md:p-10'>
             <div className='flex w-full flex-col items-center justify-center gap-8  px-4 max-lg:order-2 lg:w-[45%]'>
               <ContactSalesForm />
-              <button className=' mt-4 w-[230px] rounded-lg bg-btnprimary p-2 text-white hover:bg-btnsecondary'>
+              <Button className=' mt-4 w-[230px] rounded-lg bg-btnprimary p-2 text-white hover:bg-btnsecondary'>
                 Contact Sales
-              </button>
+              </Button>
             </div>
             <div className='max-lgorder-1 flex w-full flex-col gap-3  p-8 max-sm:text-center lg:w-[55%]'>
               <span className='  text-6xl font-bold text-white max-md:text-5xl'>

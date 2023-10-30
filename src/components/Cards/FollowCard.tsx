@@ -2,6 +2,8 @@ import StaticImage from 'next/image'
 
 import { FollowCardProps } from '@/interfaces'
 
+import { Button } from '@/core/ui/button'
+
 const FollowCard = ({ title, SubTitle, imageSrc }: FollowCardProps) => {
   return (
     <>
@@ -12,9 +14,9 @@ const FollowCard = ({ title, SubTitle, imageSrc }: FollowCardProps) => {
         <div className='flex flex-col gap-4 max-sm:items-center max-sm:justify-center max-sm:text-center'>
           <span className='text-xl text-black'>{title}</span>
           <span className='text-sm text-[#757575]'>{SubTitle}</span>
-          <button className='h-[30px] w-[100px] rounded-md bg-btnprimary text-white hover:bg-btnsecondary'>
+          <Button className='h-[30px] w-[100px] rounded-md bg-btnprimary text-white hover:bg-btnsecondary'>
             Follow
-          </button>
+          </Button>
         </div>
       </div>
     </>

@@ -9,6 +9,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/core/ui/dial
 
 import MusicIcon from '../../public/assets/music_icon.svg'
 import FoodIcon from '../../public/assets/food_icon.svg'
+import { Button } from '@/core/ui/button'
 
 const Interests = () => {
   type Genre = string
@@ -63,13 +64,13 @@ const Interests = () => {
                 'Classic',
                 'Others'
               ].map(genre => (
-                <button
+                <Button
                   key={genre}
                   className={getButtonClassName(isGenreSelected(genre, selectedMusicGenres))}
                   onClick={() => toggleGenre(genre, setSelectedMusicGenres, selectedMusicGenres)}
                 >
                   {genre}
-                </button>
+                </Button>
               ))}
             </div>
           </div>
@@ -82,13 +83,13 @@ const Interests = () => {
             </div>
             <div className='mt-3 flex flex-wrap gap-5 p-5'>
               {['Bear', 'Food', 'Wine', 'Others'].map(genre => (
-                <button
+                <Button
                   key={genre}
                   className={getButtonClassName(isGenreSelected(genre, selectedFoodGenres))}
                   onClick={() => toggleGenre(genre, setSelectedFoodGenres, selectedFoodGenres)}
                 >
                   {genre}
-                </button>
+                </Button>
               ))}
             </div>
           </div>
@@ -114,16 +115,16 @@ const Interests = () => {
         </div>
       </div>
       <div className='div-drop-shadow flex items-center justify-end gap-5 p-5'>
-        <button
+        <Button
           className='flex h-[43px] w-[120px] items-center justify-center rounded-sm bg-[#DEF0FF] p-3 font-bold text-primary'
           onClick={() => setIsDialogOpen(true)}
         >
           Exit
-        </button>
+        </Button>
         <Link href='/location'>
-          <button className='flex h-[43px] w-[120px] items-center justify-center rounded-sm bg-btnprimary p-3 font-bold text-white hover:bg-btnsecondary'>
+          <Button className='flex h-[43px] w-[120px] items-center justify-center rounded-sm bg-btnprimary p-3 font-bold text-white hover:bg-btnsecondary'>
             Next
-          </button>
+          </Button>
         </Link>
       </div>
       <Dialog open={isDialogOpen} onOpenChange={() => setIsDialogOpen(false)}>
@@ -137,19 +138,19 @@ const Interests = () => {
                 </span>
                 <div className='flex items-center justify-center gap-5 p-5'>
                   <Link href='/'>
-                    <button
+                    <Button
                       className='flex h-[33px] w-[100px] items-center justify-center rounded-sm bg-[#DEF0FF] p-2 text-base  font-normal text-primary'
                       onClick={() => setIsDialogOpen(false)}
                     >
                       Exit
-                    </button>
+                    </Button>
                   </Link>
-                  <button
+                  <Button
                     className='flex h-[33px] w-[100px] items-center justify-center rounded-sm bg-btnprimary p-2 text-base font-normal text-white hover:bg-btnsecondary'
                     onClick={() => setIsDialogOpen(false)}
                   >
                     Stay
-                  </button>
+                  </Button>
                 </div>
               </div>
             </DialogTitle>

@@ -4,6 +4,7 @@ import FollowCard from '@/components/Cards/FollowCard'
 import Header from '@/components/Header/Header'
 
 import { Progress } from '@/core/ui/progress'
+import { Button } from '@/core/ui/button'
 
 import CollectionLogo1 from '../../public/assets/Collection1_logo.svg'
 import CollectionLogo2 from '../../public/assets/Collection2_logo.svg'
@@ -61,14 +62,14 @@ const Location = () => {
         </div>
         <div className='div-drop-shadow flex items-center justify-end gap-5 p-5'>
           <Link href='/location'>
-            <button className='flex h-[43px] w-[120px] items-center justify-center rounded-sm bg-[#DEF0FF] p-3 font-bold text-primary'>
+            <Button className='flex h-[43px] w-[120px] items-center justify-center rounded-sm bg-[#DEF0FF] p-3 font-bold text-primary'>
               Previous
-            </button>
+            </Button>
           </Link>
           <Link href='/'>
-            <button className='flex h-[43px] w-[120px] items-center justify-center rounded-sm bg-btnprimary p-3 font-bold text-white hover:bg-btnsecondary'>
+            <Button className='flex h-[43px] w-[120px] items-center justify-center rounded-sm bg-btnprimary p-3 font-bold text-white hover:bg-btnsecondary'>
               Finish
-            </button>
+            </Button>
           </Link>
         </div>
       </div>

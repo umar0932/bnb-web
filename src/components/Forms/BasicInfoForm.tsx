@@ -13,6 +13,7 @@ import {
 } from '../../core/ui/select'
 
 import BasicInfoIcon from '../../../public/assets/basic_info_icon.svg'
+import { Input } from '@/core/ui/input'
 
 const options = [
   { value: 'event', label: 'event' },
@@ -88,7 +89,7 @@ const BasicInfoForm = () => {
                 <span>
                   Event Title<span className='text-btnsecondary'>*</span>
                 </span>
-                <input
+                <Input
                   className='h-[25px] bg-transparent outline-none placeholder:text-sm'
                   id='event_title'
                   name='event_title'
@@ -107,7 +108,7 @@ const BasicInfoForm = () => {
 
               <div className='mt-5 flex  flex-col rounded-lg bg-[#EFF8FF] p-3'>
                 <span>Organizer</span>
-                <input
+                <Input
                   className='h-[25px] bg-transparent outline-none placeholder:text-sm'
                   id='organizer_name'
                   name='organizer_name'

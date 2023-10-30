@@ -10,8 +10,10 @@ import {
   SelectTrigger,
   SelectValue
 } from '@/core/ui/select'
+import { Input } from '@/core/ui/input'
 
 import SearchIcon from '../../../public/assets/search_icon_red.svg'
+
 
 const OrganizerOrders = () => {
   return (
@@ -54,7 +56,7 @@ const OrganizerOrders = () => {
             </Select>
 
             <div className='flex h-[40px] items-center rounded-lg bg-[#EFF8FF] p-3'>
-              <input
+              <Input
                 className='w-[310px] bg-transparent outline-none placeholder:text-[#3B5998] max-md:w-[300px] max-sm:w-[260px] max-sm:placeholder:text-sm'
                 type='text'
                 placeholder='Search order number, email, or name'
