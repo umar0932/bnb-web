@@ -1,20 +1,12 @@
-import Image, { StaticImageData } from 'next/image'
+import Image from 'next/image'
 
-interface BrowseEvent {
-  imageSrc: StaticImageData
-  title: string
-  sub_title: string
-  location: string
-  creatorFollowers: string
-  date: string
-  price: string
-  time: string
-}
+import { BrowseEvent } from '@/interfaces'
 
 interface BrowseEventCardProps {
   browse_event: BrowseEvent // Use the Event interface for the event prop
 }
-export default function BrowseEventCard({ browse_event }: BrowseEventCardProps) {
+
+const BrowseEventCard = ({ browse_event }: BrowseEventCardProps) => {
   return (
     <>
       <div className='flex w-full gap-3 rounded-lg bg-[#F6FBFF] max-sm:flex-col'>
@@ -43,3 +35,5 @@ export default function BrowseEventCard({ browse_event }: BrowseEventCardProps) 
     </>
   )
 }
+
+export default BrowseEventCard

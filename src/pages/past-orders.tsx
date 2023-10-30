@@ -1,11 +1,13 @@
-import Header from '@/components/Header/Header'
+import Link from 'next/link'
 import { ChevronLeftIcon } from 'lucide-react'
-import { Button } from '@/core/ui/button'
+
+import Header from '@/components/Header/Header'
 import GeneralInfoForm from '@/components/Forms/GeneralInfoForm'
 import Copyright from '@/components/Copyright/Copyright'
-import Link from 'next/link'
 
-export default function PastOrders() {
+import { Button } from '@/core/ui/button'
+
+const PastOrders = () => {
   return (
     <>
       <div className='flex flex-col'>
@@ -57,3 +59,5 @@ export default function PastOrders() {
     </>
   )
 }
+
+export default PastOrders

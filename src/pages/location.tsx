@@ -1,9 +1,10 @@
+import Link from 'next/link'
+
 import Header from '@/components/Header/Header'
 import { Progress } from '@/core/ui/progress'
 import Autocomplete from '@/components/AutoComplete/AutoCompleteAcc'
-import Link from 'next/link'
 
-export default function Location() {
+const Location = () => {
   return (
     <>
       <div className='flex h-full flex-col  sm:h-screen'>
@@ -50,3 +51,5 @@ export default function Location() {
     </>
   )
 }
+
+export default Location

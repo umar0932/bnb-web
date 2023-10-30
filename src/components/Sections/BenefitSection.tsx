@@ -1,10 +1,12 @@
+import Image from 'next/image'
+
 import BnbImage1 from '../../../public/assets/benefit_section_image-1.png'
 import BnbImage2 from '../../../public/assets/benefit_section_image-2.png'
 import AttendeeIcon from '../../../public/assets/attendee_icon.svg'
 import AdIcon from '../../../public/assets/ad_icon.svg'
 import MarketingIcon from '../../../public/assets/marketing_icon.svg'
-import Image from 'next/image'
-export default function BenefitSection() {
+
+const BenefitSection = () => {
   return (
     <>
       <div className='mt-20 flex flex-col bg-primary p-10 max-md:p-2'>
@@ -75,3 +77,5 @@ export default function BenefitSection() {
     </>
   )
 }
+
+export default BenefitSection

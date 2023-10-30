@@ -1,12 +1,15 @@
-import { Button } from '@/core/ui/button'
 import Image from 'next/image'
+import Link from 'next/link'
+
 import { Label } from '@/core/ui/label'
+import { Button } from '@/core/ui/button'
+import { RadioGroup, RadioGroupItem } from '@/core/ui/radio-group'
+
 import OrganizeProfileImage from '../../../public/assets/Organizer_profile_image.png'
 import EditProfileIcon from '../../../public/assets/edit_profile_icon.svg'
 import LinkIcon from '../../../public/assets/link_icon.svg'
-import { RadioGroup, RadioGroupItem } from '@/core/ui/radio-group'
-import Link from 'next/link'
-export default function OrganizerHome() {
+
+const OrganizerHome = () => {
   return (
     <>
       <div className='flex w-full flex-col gap-5 p-10'>
@@ -134,3 +137,5 @@ export default function OrganizerHome() {
     </>
   )
 }
+
+export default OrganizerHome

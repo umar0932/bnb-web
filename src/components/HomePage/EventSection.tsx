@@ -1,10 +1,8 @@
 import EventCard from '../Cards/EventCard'
 import { events } from '../../utils/fakeBackend.js'
 
-export default function EventSection() {
+const EventSection = () => {
   const eventsArray = events
-
-  // console.log(eventsArray, events);
 
   return (
     <>
@@ -31,3 +29,5 @@ export default function EventSection() {
     </>
   )
 }
+
+export default EventSection

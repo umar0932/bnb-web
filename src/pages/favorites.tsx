@@ -1,12 +1,15 @@
+import Link from 'next/link'
+
 import FollowCard from '@/components/Cards/FollowCard'
 import Header from '@/components/Header/Header'
+
 import { Progress } from '@/core/ui/progress'
-import Link from 'next/link'
+
 import CollectionLogo1 from '../../public/assets/Collection1_logo.svg'
 import CollectionLogo2 from '../../public/assets/Collection2_logo.svg'
 import CollectionLogo3 from '../../public/assets/Collection3_logo.svg'
 
-export default function Location() {
+const Location = () => {
   return (
     <>
       <div className='flex h-full flex-col  sm:h-screen'>
@@ -72,3 +75,5 @@ export default function Location() {
     </>
   )
 }
+
+export default Location

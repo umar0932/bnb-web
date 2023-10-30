@@ -3,7 +3,7 @@ import { Dialog, DialogContent, DialogTrigger } from '@/core/ui/dialog'
 
 import { Button } from '@/core/ui/button'
 
-export default function ChangeEmailForm() {
+const ChangeEmailForm = () => {
   const formik = useFormik({
     initialValues: {
       email_address: '',
@@ -94,3 +94,5 @@ export default function ChangeEmailForm() {
     </>
   )
 }
+
+export default ChangeEmailForm

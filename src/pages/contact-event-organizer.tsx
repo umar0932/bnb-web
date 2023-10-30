@@ -1,9 +1,10 @@
+import Link from 'next/link'
+
 import Footer from '@/components/Footer/Footer'
 import Header from '@/components/Header/Header'
 import ContactUs from '@/components/ContactUs/ContactUs'
-import Link from 'next/link'
 
-export default function FindTickets() {
+const FindTickets = () => {
   return (
     <>
       <div className='flex w-full flex-col  bg-[#EFF8FF] '>
@@ -188,3 +189,5 @@ export default function FindTickets() {
     </>
   )
 }
+
+export default FindTickets

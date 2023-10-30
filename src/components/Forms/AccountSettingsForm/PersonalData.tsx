@@ -1,4 +1,4 @@
-export default function PersonalData() {
+const PersonalData = () => {
   return (
     <>
       <div className='card-drop-shadow flex h-[470px] gap-10 rounded-lg bg-white p-10 max-sm:p-5'>
@@ -20,3 +20,5 @@ export default function PersonalData() {
     </>
   )
 }
+
+export default PersonalData

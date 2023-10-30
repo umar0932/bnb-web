@@ -1,6 +1,7 @@
 import { Button } from '@/core/ui/button'
 import { Checkbox } from '@/core/ui/checkbox'
-export default function EmailPreferanceForm() {
+
+const EmailPreferanceForm = () => {
   return (
     <>
       <div className='card-drop-shadow flex gap-10 rounded-lg bg-white p-10 max-sm:p-5'>
@@ -109,3 +110,5 @@ export default function EmailPreferanceForm() {
     </>
   )
 }
+
+export default EmailPreferanceForm

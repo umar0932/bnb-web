@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-export default function TrendingCategories() {
+const TrendingCategories = () => {
   const [selectedSpan, setSelectedSpan] = useState('All')
 
   const handleSpanClick = (spanText: string) => {
@@ -17,7 +17,6 @@ export default function TrendingCategories() {
   }
 
   const [selected, setSelected] = useState<string[]>([])
-  // const [isVisible, setIsVisible] = useState(true);
   const categories: string[] = [
     'Barbers',
     'Stylists',
@@ -42,10 +41,6 @@ export default function TrendingCategories() {
       setSelected([...selected, category])
     }
   }
-
-  // const handleClose = () => {
-  //   setIsVisible(false); // Set visibility to false when closing
-  // };
 
   const buttonClasses = 'text-md w-[169px] rounded-lg border border-[#C9C9C9]  p-2'
 
@@ -93,3 +88,5 @@ export default function TrendingCategories() {
     </>
   )
 }
+
+export default TrendingCategories

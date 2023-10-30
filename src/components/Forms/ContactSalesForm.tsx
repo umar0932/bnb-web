@@ -1,4 +1,5 @@
 import { useFormik } from 'formik'
+
 import {
   Select,
   SelectContent,
@@ -7,7 +8,8 @@ import {
   SelectTrigger,
   SelectValue
 } from '@/core/ui/select'
-export default function ContactSalesForm() {
+
+const ContactSalesForm = () => {
   const formik = useFormik({
     initialValues: {
       email: '',
@@ -204,3 +206,5 @@ export default function ContactSalesForm() {
     </>
   )
 }
+
+export default ContactSalesForm

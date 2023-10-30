@@ -1,6 +1,11 @@
 import React from 'react'
 import Image from 'next/image'
-import ProfileIcon from '../../../public/assets/user_profile_icon.svg'
+import { GoHome } from 'react-icons/go'
+import { BiCalendar } from 'react-icons/bi'
+import { CiViewList } from 'react-icons/ci'
+import { IoSettingsOutline } from 'react-icons/io5'
+import { BsGrid3X3GapFill } from 'react-icons/bs'
+
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -15,13 +20,10 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger
 } from '@/core/ui/navigation-menu'
-import { GoHome } from 'react-icons/go'
-import { BiCalendar } from 'react-icons/bi'
-import { CiViewList } from 'react-icons/ci'
-import { IoSettingsOutline } from 'react-icons/io5'
-import { BsGrid3X3GapFill } from 'react-icons/bs'
 
-export default function OrganizerHeader({ setActiveDiv }: any) {
+import ProfileIcon from '../../../public/assets/user_profile_icon.svg'
+
+const OrganizerHeader = ({ setActiveDiv }: any) => {
   return (
     <>
       <div className='card-drop-shadow flex justify-end bg-[#DEF0FF] p-3'>
@@ -55,14 +57,7 @@ export default function OrganizerHeader({ setActiveDiv }: any) {
                       <CiViewList />
                       <span>Orders</span>
                     </div>
-                    {/* <div className='flex w-full cursor-pointer items-center gap-4 p-5 hover:bg-btnprimary hover:text-white '>
-                      <IoMdStats />
-                      <span>Stats</span>
-                    </div>
-                    <div className='flex w-full cursor-pointer items-center gap-4 p-5 hover:bg-btnprimary hover:text-white '>
-                      <BsBank />
-                      <span>Finances</span>
-                    </div> */}
+
                     <div
                       className='flex w-full cursor-pointer items-center gap-4 p-5 hover:bg-btnprimary hover:text-white '
                       onClick={() => setActiveDiv('Settings')}
@@ -93,3 +88,5 @@ export default function OrganizerHeader({ setActiveDiv }: any) {
     </>
   )
 }
+
+export default OrganizerHeader

@@ -1,11 +1,13 @@
+import Link from 'next/link'
+
 import BasicInfoForm from '@/components/Forms/BasicInfoForm'
 import DateTimeForm from '@/components/Forms/DateTimeForm'
 import LocationForm from '@/components/Forms/LocationForm'
 import Header from '@/components/Header/Header'
-import Link from 'next/link'
+
 import { Button } from '@/core/ui/button'
 
-export default function CreateEvent() {
+const CreateEvent = () => {
   return (
     <>
       <Header colorScheme='event-page-header' />
@@ -29,3 +31,5 @@ export default function CreateEvent() {
     </>
   )
 }
+
+export default CreateEvent

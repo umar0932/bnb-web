@@ -1,7 +1,19 @@
-import BasicInfoIcon from '../../../public/assets/basic_info_icon.svg'
+import { useState } from 'react'
+import Image from 'next/image'
 import { useFormik } from 'formik'
-// import { XCircle } from "lucide-react";
 import CreatableSelect from 'react-select/creatable'
+
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectTrigger,
+  SelectValue
+} from '../../core/ui/select'
+
+import BasicInfoIcon from '../../../public/assets/basic_info_icon.svg'
+
 const options = [
   { value: 'event', label: 'event' },
   { value: 'concert', label: 'concert' },
@@ -18,23 +30,10 @@ const options = [
   { value: 'Workshops', label: 'Workshops' }
 ]
 
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectTrigger,
-  SelectValue
-} from '../../core/ui/select'
-import Image from 'next/image'
-import { useState } from 'react'
-
-export default function BasicInfoForm() {
+const BasicInfoForm = () => {
   const [value, setValue] = useState<any[]>([])
   const [charCount, setCharCount] = useState(0)
-  // const [tagCharCount, setTagCharCount] = useState(0);
 
-  // const [TagCharCount, setTagCharCount] = useState(0);
   const maxCharLimit = 75
   const [tagCount, setTagCount] = useState(0)
 
@@ -47,26 +46,6 @@ export default function BasicInfoForm() {
     }
   }
 
-  // const maxTagLimit = 25;
-  // const [tags, setTags] = useState([]);
-  // const addTags = (event: any) => {
-  //   if (event.key === "Enter" && event.target.value !== "") {
-  //     const newTag = event.target.value.trim().substring(0, 25); // Limit tag length to 25 characters
-  //     setTagCharCount(0);
-  //     // event.target.value = "";
-  //     if (newTag) {
-  //       if (tags.length < 10) {
-  //         setTags([...tags, newTag]);
-  //         formik.setFieldValue("tagval", ""); // Clear the tagval field
-  //       }
-  //     }
-  //   }
-  // };
-  // const removeTags = (indexToRemove: any) => {
-  //   setTags(tags.filter((_, index) => index != indexToRemove));
-  // };
-  //   Checking Input should not exceed 75 characters limit
-
   const handleInputChange = (e: any) => {
     const inputValue = e.target.value
     if (inputValue.length <= maxCharLimit) {
@@ -74,14 +53,6 @@ export default function BasicInfoForm() {
       setCharCount(inputValue.length) // Update charCount
     }
   }
-
-  // const handleTagChange = (e: any) => {
-  //   const tagValue = e.target.value;
-  //   if (tagValue.length <= maxTagLimit) {
-  //     formik.handleChange(e); // Handle formik changes
-  //     setTagCharCount(tagValue.length); // Update charCount
-  //   }
-  // };
 
   const formik = useFormik({
     initialValues: {
@@ -187,21 +158,7 @@ export default function BasicInfoForm() {
                 </span>
                 <div className=' flex  flex-col flex-wrap rounded-lg bg-[#EFF8FF] p-3 '>
                   <span>Add Tags</span>
-                  {/* <ReactSelect
-                    options={options}
-                    defaultValue={value}
-                    placeholder="Add search key"
-                    onChange={handleTagChange}
-                    isMulti
-                    isOptionDisabled={() => value.length >= 10}
-                    styles={{
-                      control: (baseStyles, state) => ({
-                        ...baseStyles,
-                        backgroundColor: "transparent",
-                        border: "none",
-                      }),
-                    }}
-                  /> */}
+
                   <CreatableSelect
                     onChange={handleTagChange}
                     isMulti
@@ -209,44 +166,16 @@ export default function BasicInfoForm() {
                     options={options}
                     placeholder='Add search key'
                     styles={{
-                      control: (baseStyles) => ({
+                      control: baseStyles => ({
                         ...baseStyles,
                         backgroundColor: 'transparent',
                         border: 'none'
                       })
                     }}
                   />
-
-                  {/* <div className="flex flex-wrap items-center gap-2">
-                    <ul className="flex flex-wrap gap-1">
-                      {tags.map((tag, index) => (
-                        <li key={index}>
-                          <span className="flex items-center justify-center gap-2 rounded-lg bg-btnsecondary p-2 text-sm text-white">
-                            {tag}{" "}
-                            <XCircle
-                              className="h-[16px] w-[16px] cursor-pointer"
-                              onClick={() => removeTags(index)}
-                            />
-                          </span>
-                        </li>
-                      ))}
-                    </ul>
-                    <input
-                      className="h-[25px] bg-transparent outline-none placeholder:text-sm"
-                      placeholder="Add search keys"
-                      id="tagval"
-                      name="tagval"
-                      type="text"
-                      onChange={handleTagChange}
-                      value={formik.values.tagval}
-                      maxLength={maxTagLimit}
-                      onKeyUp={(e) => (e.key === "Enter" ? addTags(e) : null)}
-                    />
-                  </div> */}
                 </div>
                 <div className='flex justify-between'>
                   <span className='text-btnsecondary'>{tagCount}/10 Tags</span>
-                  {/* <span className="text-btnsecondary">{tagCharCount}/25</span> */}
                 </div>
               </div>
             </form>
@@ -256,3 +185,5 @@ export default function BasicInfoForm() {
     </>
   )
 }
+
+export default BasicInfoForm

@@ -6,10 +6,7 @@ import LocationSearch from '@/components/HomePage/LocationSearch'
 import ScrollCategories from '@/components/HomePage/ScrollCategories'
 import TrendingCategories from '@/components/HomePage/TrendingCategories'
 
-// import Head from "next/head";
-// import Link from "next/link";
-
-export default function Home() {
+const Home = () => {
   return (
     <>
       <div className='flex-col'>
@@ -25,3 +22,5 @@ export default function Home() {
     </>
   )
 }
+
+export default Home

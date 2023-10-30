@@ -1,8 +1,9 @@
-import Header from '../Header/Header'
-import { Button } from '@/core/ui/button'
 import Link from 'next/link'
 
-export default function HeroSection() {
+import Header from '../Header/Header'
+import { Button } from '@/core/ui/button'
+
+const HeroSection = () => {
   return (
     <>
       <div className='background-image relative '>
@@ -31,3 +32,5 @@ export default function HeroSection() {
     </>
   )
 }
+
+export default HeroSection

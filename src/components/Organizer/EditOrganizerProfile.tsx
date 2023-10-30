@@ -1,6 +1,6 @@
 import OrganizerProfileForm from '../Forms/OrganizerProfileForm'
 
-export default function EditOrganizerProfile() {
+const EditOrganizerProfile = () => {
   return (
     <>
       <div>
@@ -16,3 +16,5 @@ export default function EditOrganizerProfile() {
     </>
   )
 }
+
+export default EditOrganizerProfile

@@ -1,19 +1,21 @@
 import { useState } from 'react'
 import Image from 'next/image'
-import Header from '@/components/Header/Header'
-import { useAutocomplete } from '@/core/hooks/useAutocomplete'
-import ArrowIcon from '../../public/assets/arrow_down.svg'
-import CurrentLocation from '../../public/assets/current_location.svg'
-import BrowseOnline from '../../public/assets/browse_online.svg'
-import NextEventImage from '../../public/assets/next_event_image.png'
-import { events } from '@/utils/fakeBackend'
 
+import Header from '@/components/Header/Header'
+import useAutocomplete from '@/core/hooks/useAutocomplete'
 import EventCard from '@/components/Cards/EventCard'
 import EventSection from '@/components/HomePage/EventSection'
 import FeaturedSection from '@/components/Sections/FeaturedSection'
 import Footer from '@/components/Footer/Footer'
 
-export default function FindNextEvent() {
+import { events } from '@/utils/fakeBackend'
+
+import ArrowIcon from '../../public/assets/arrow_down.svg'
+import CurrentLocation from '../../public/assets/current_location.svg'
+import BrowseOnline from '../../public/assets/browse_online.svg'
+import NextEventImage from '../../public/assets/next_event_image.png'
+
+const FindNextEvent = () => {
   const eventsArray = events
 
   const { searchInputRef, findMyLocation } = useAutocomplete()
@@ -88,3 +90,5 @@ export default function FindNextEvent() {
     </>
   )
 }
+
+export default FindNextEvent

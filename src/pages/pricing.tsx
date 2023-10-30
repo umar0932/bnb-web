@@ -1,11 +1,13 @@
-import Footer from '@/components/Footer/Footer'
-import Header from '@/components/Header/Header'
 import Link from 'next/link'
 import { useState } from 'react'
 import { Check } from 'lucide-react'
 import { XCircle } from 'lucide-react'
 import { Info } from 'lucide-react'
-export default function Pricing() {
+
+import Footer from '@/components/Footer/Footer'
+import Header from '@/components/Header/Header'
+
+const Pricing = () => {
   const [isDivVisible, setIsDivVisible] = useState(true)
   function toggleDivVisibility() {
     setIsDivVisible(!isDivVisible)
@@ -172,3 +174,5 @@ export default function Pricing() {
     </>
   )
 }
+
+export default Pricing

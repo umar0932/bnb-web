@@ -1,5 +1,6 @@
+import { useState } from 'react'
 import Image from 'next/image'
-import CalendarIcon from '../../../public/assets/calendar_icon.svg'
+
 import {
   Select,
   SelectContent,
@@ -8,9 +9,11 @@ import {
   SelectTrigger,
   SelectValue
 } from '../../core/ui/select'
-import { useState } from 'react'
 import { Checkbox } from '@/core/ui/checkbox'
-export default function DateTimeForm() {
+
+import CalendarIcon from '../../../public/assets/calendar_icon.svg'
+
+const DateTimeForm = () => {
   const [activeButton, setActiveButton] = useState('SingleEvent')
 
   const handleButtonClick = (buttonName: any) => {
@@ -140,3 +143,5 @@ export default function DateTimeForm() {
     </>
   )
 }
+
+export default DateTimeForm

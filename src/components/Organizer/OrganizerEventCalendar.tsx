@@ -13,8 +13,6 @@ const myEventsList = [
   }
 ]
 
-// const today = moment().startOf("day").toDate(); // Get today's date
-
 const dayPropGetter = (date: Date) => {
   // Check the day of the week (0 for Sunday, 1 for Monday, etc.)
   const dayOfWeek = moment(date).day()
@@ -40,15 +38,10 @@ const dayPropGetter = (date: Date) => {
   }
 }
 
-export default function OrganizerEventCalendar() {
+const OrganizerEventCalendar = () => {
   const handleSelect = () => {
     window.open('/create-event-page/welcome') // Open in a new tab
   }
-
-  // const today = moment().startOf('day').toDate() // Get today's date
-
-  // // Set the initial date to the first day of the current month
-  // const initialDate = moment().startOf('month').toDate()
 
   return (
     <div>
@@ -64,8 +57,9 @@ export default function OrganizerEventCalendar() {
         formats={{ weekdayFormat: 'dddd' }}
         className='table-drop-shadow rounded-lg bg-[#F3FAFF] p-3'
         dayPropGetter={dayPropGetter}
-        // date={initialDate} // Set the initial date to the first day of the current month
       />
     </div>
   )
 }
+
+export default OrganizerEventCalendar

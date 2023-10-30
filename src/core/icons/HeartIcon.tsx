@@ -6,7 +6,7 @@ interface HeartIconProps {
   onClick: () => void // Add the onClick prop
 }
 
-export default function HeartIcon({ isLiked, onClick }: HeartIconProps) {
+const HeartIcon = ({ isLiked, onClick }: HeartIconProps) => {
   return (
     <Heart
       size={25}
@@ -16,3 +16,5 @@ export default function HeartIcon({ isLiked, onClick }: HeartIconProps) {
     />
   )
 }
+
+export default HeartIcon

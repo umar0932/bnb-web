@@ -1,22 +1,20 @@
 import { useState } from 'react'
-import OrganizerHeader from '@/components/Header/OrganizerHeader'
 import { GoHome } from 'react-icons/go'
 import { BiCalendar } from 'react-icons/bi'
 import { CiViewList } from 'react-icons/ci'
 import { IoSettingsOutline } from 'react-icons/io5'
 import Image from 'next/image'
-// import StatsIcon from "../../public/assets/stats_icon.svg";
-// import FinanceIcon from "../../public/assets/finance_icon.svg";
 import Link from 'next/link'
 
-import HelpIcon from '../../public/assets/help_icon.svg'
 import OrganizerHome from '@/components/Organizer/OrganizerHome'
-
+import OrganizerHeader from '@/components/Header/OrganizerHeader'
 import OrganizerEvents from '@/components/Organizer/OrganizerEvents'
 import OrganizerOrders from '@/components/Organizer/OrganizerOrders'
 import OrganizationSettings from '@/components/Organizer/OrganizationSettings'
 
-export default function Organizer() {
+import HelpIcon from '../../public/assets/help_icon.svg'
+
+const Organizer = () => {
   const [activeDiv, setActiveDiv] = useState('Home')
 
   // Function to handle div click
@@ -115,20 +113,8 @@ export default function Organizer() {
                   className={` ${activeDiv === 'Settings' ? 'text-white' : 'text-[#3B5998]'}`}
                 />
               </div>
-              <div className='flex h-[70px] cursor-pointer items-center justify-center p-2'>
-                {/* <Image
-                  src={StatsIcon}
-                  alt="stats_icon"
-                  className="h-[22px] w-[22px]"
-                /> */}
-              </div>
-              <div className='flex h-[80px] cursor-pointer items-center justify-center p-2'>
-                {/* <Image
-                  src={FinanceIcon}
-                  alt="finance_icon"
-                  className="h-[22px] w-[22px]"
-                /> */}
-              </div>
+              <div className='flex h-[70px] cursor-pointer items-center justify-center p-2'></div>
+              <div className='flex h-[80px] cursor-pointer items-center justify-center p-2'></div>
 
               <Link href='/help-center'>
                 <div className='mt-5 flex h-[80px] cursor-pointer items-center justify-center p-2'>
@@ -142,15 +128,12 @@ export default function Organizer() {
             <div className='card-drop-shadow  mt-20 w-[130px] rounded-r-lg bg-btnprimary p-2 text-center text-white'>
               {getActiveDivText()} {/* Display the active div text */}
             </div>
-            <div className='w-full items-center justify-center'>
-              {/* <OrganizerHome /> */}
-              {/* <EditOrganizerProfile /> */}
-              {/* <OrganizerEvents /> */}
-              {getActiveComponent()}
-            </div>
+            <div className='w-full items-center justify-center'>{getActiveComponent()}</div>
           </div>
         </div>
       </div>
     </>
   )
 }
+
+export default Organizer

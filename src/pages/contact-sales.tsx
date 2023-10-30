@@ -1,12 +1,14 @@
-import Footer from '@/components/Footer/Footer'
-import Header from '@/components/Header/Header'
-import EventBusiness from '../../public/assets/event_business.png'
 import Image from 'next/image'
 import Link from 'next/link'
+
+import Footer from '@/components/Footer/Footer'
+import Header from '@/components/Header/Header'
 import TrustedSection from '@/components/Sections/TrustedSection'
 import ContactSalesForm from '@/components/Forms/ContactSalesForm'
 
-export default function FindTickets() {
+import EventBusiness from '../../public/assets/event_business.png'
+
+const FindTickets = () => {
   return (
     <>
       <div className='flex w-full flex-col '>
@@ -72,3 +74,5 @@ export default function FindTickets() {
     </>
   )
 }
+
+export default FindTickets

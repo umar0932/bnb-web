@@ -1,18 +1,15 @@
-import Image, { StaticImageData } from 'next/image'
-import CardCrossIcon from '../../../public/assets/cross_small_icon.svg'
 import { useState } from 'react'
+import Image from 'next/image'
 
-interface Organizer {
-  imageSrc: StaticImageData
-  name: string
-  countFollowers: string
-}
+import { Organizer } from '@/interfaces'
+
+import CardCrossIcon from '../../../public/assets/cross_small_icon.svg'
 
 interface OrganizerCardProps {
   organizer: Organizer
 }
 
-export default function FeaturedCard({ organizer }: OrganizerCardProps) {
+const FeaturedCard = ({ organizer }: OrganizerCardProps) => {
   const [isVisible, setIsVisible] = useState(true) // State to manage visibility
 
   const handleClose = () => {
@@ -40,3 +37,5 @@ export default function FeaturedCard({ organizer }: OrganizerCardProps) {
     </div>
   ) : null
 }
+
+export default FeaturedCard

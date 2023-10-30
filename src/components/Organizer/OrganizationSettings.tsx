@@ -1,7 +1,8 @@
-import { Button } from '@/core/ui/button'
 import { useFormik } from 'formik'
 import Image from 'next/image'
-import OrganizerProfileImage from '../../../public/assets/organizer_image_settings.png'
+import { useState } from 'react'
+
+import { Button } from '@/core/ui/button'
 import {
   Select,
   SelectContent,
@@ -11,9 +12,12 @@ import {
   SelectValue
 } from '@/core/ui/select'
 import { Dialog, DialogContent, DialogTrigger } from '@/core/ui/dialog'
-import { useState } from 'react'
+
 import EditOrganizerProfile from './EditOrganizerProfile'
-export default function OrganizationSettings() {
+
+import OrganizerProfileImage from '../../../public/assets/organizer_image_settings.png'
+
+const OrganizationSettings = () => {
   const [isEditing, setIsEditing] = useState(false)
   const handleEditClick = () => {
     setIsEditing(true) // Set editing mode to true
@@ -126,3 +130,5 @@ export default function OrganizationSettings() {
     </>
   )
 }
+
+export default OrganizationSettings

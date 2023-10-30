@@ -1,8 +1,10 @@
-import { Checkbox } from '@/core/ui/checkbox'
-import { useFormik } from 'formik'
-import { Button } from '@/core/ui/button'
 import Link from 'next/link'
-export default function CloseAccountForm() {
+import { useFormik } from 'formik'
+
+import { Checkbox } from '@/core/ui/checkbox'
+import { Button } from '@/core/ui/button'
+
+const CloseAccountForm = () => {
   const formik = useFormik({
     initialValues: {
       other_information: '',
@@ -104,3 +106,5 @@ export default function CloseAccountForm() {
     </>
   )
 }
+
+export default CloseAccountForm

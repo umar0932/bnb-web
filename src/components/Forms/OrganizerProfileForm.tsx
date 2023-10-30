@@ -1,10 +1,13 @@
 import { useFormik } from 'formik'
 import { useState } from 'react'
-import { Button } from '@/core/ui/button'
-import AddImageIcon from '../../../public/assets/add_image.svg'
 import Image from 'next/image'
 import Link from 'next/link'
-export default function OrganizerProfileForm() {
+
+import { Button } from '@/core/ui/button'
+
+import AddImageIcon from '../../../public/assets/add_image.svg'
+
+const OrganizerProfileForm = () => {
   const [imageURL, setImageURL] = useState(null)
   const formik = useFormik({
     initialValues: {
@@ -128,3 +131,5 @@ export default function OrganizerProfileForm() {
     </>
   )
 }
+
+export default OrganizerProfileForm

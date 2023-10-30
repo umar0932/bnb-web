@@ -74,7 +74,7 @@ const extractAddress = (place: google.maps.places.PlaceResult): Address => {
   return address
 }
 
-export function useAutocomplete() {
+const useAutocomplete = () => {
   const searchInputRef = useRef<HTMLInputElement | null>(null)
   const [address, setAddress] = useState<Address>({
     city: '',
@@ -145,3 +145,5 @@ export function useAutocomplete() {
     findMyLocation
   }
 }
+
+export default useAutocomplete

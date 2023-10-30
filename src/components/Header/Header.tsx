@@ -1,9 +1,8 @@
 import React from 'react'
 import Link from 'next/link'
-import UserProfileIcon from '../../../public/assets/user_profile_icon.svg'
-import PlusIcon from '../../../public/assets/plus_icon.svg'
-import ChevronDown from '../../../public/assets/arrow_down.svg'
 import Image from 'next/image'
+import { Menu } from 'lucide-react'
+import { useFormik } from 'formik'
 
 import { Sheet, SheetContent, SheetTrigger } from '@/core/ui/sheet'
 
@@ -14,27 +13,17 @@ import {
   DropdownMenuTrigger
 } from '@/core/ui/dropdown-menu'
 
-import { Menu } from 'lucide-react'
+import UserProfileIcon from '../../../public/assets/user_profile_icon.svg'
+import PlusIcon from '../../../public/assets/plus_icon.svg'
+import ChevronDown from '../../../public/assets/arrow_down.svg'
 
-import { useFormik } from 'formik'
-
-export default function Header({ colorScheme = 'default' }) {
+const Header = ({ colorScheme = 'default' }) => {
   const formik = useFormik({
     initialValues: { search: '' },
     onSubmit: values => {
       JSON.stringify(values, null, 2)
     }
   })
-
-  // const getButtonClasses = () => {
-  //   if (colorScheme === 'default') {
-  //     return 'text-secondary'
-  //   } else if (colorScheme === 'alternative') {
-  //     return 'text-white'
-  //   } else if (colorScheme === 'second-alternative') {
-  //     return 'text-white'
-  //   }
-  // }
 
   // Event Page Header
   if (colorScheme === 'event-page-header') {
@@ -56,8 +45,6 @@ export default function Header({ colorScheme = 'default' }) {
                 </div>
               </DropdownMenuTrigger>
               <DropdownMenuContent className='cursor-pointer border-[#07264E] bg-[#07264E] p-3 text-white'>
-                {/* <DropdownMenuLabel>Switch to attendee</DropdownMenuLabel> */}
-                {/* <DropdownMenuSeparator /> */}
                 <DropdownMenuItem className='cursor-pointer'>Switch to attendee</DropdownMenuItem>
                 <Link href='/account-settings'>
                   <DropdownMenuItem className='cursor-pointer'>Account Settings</DropdownMenuItem>
@@ -91,8 +78,6 @@ export default function Header({ colorScheme = 'default' }) {
                 </div>
               </DropdownMenuTrigger>
               <DropdownMenuContent className='cursor-pointer border-[#07264E] bg-[#07264E] p-3 text-white'>
-                {/* <DropdownMenuLabel>Switch to attendee</DropdownMenuLabel> */}
-                {/* <DropdownMenuSeparator /> */}
                 <DropdownMenuItem className='cursor-pointer'>Switch to attendee</DropdownMenuItem>
                 <Link href='/account-settings'>
                   <DropdownMenuItem className='cursor-pointer'>Account Settings</DropdownMenuItem>
@@ -128,8 +113,6 @@ export default function Header({ colorScheme = 'default' }) {
                 </div>
               </DropdownMenuTrigger>
               <DropdownMenuContent className='cursor-pointer border-[#07264E] bg-[#07264E] p-3 text-white'>
-                {/* <DropdownMenuLabel>Switch to attendee</DropdownMenuLabel> */}
-                {/* <DropdownMenuSeparator /> */}
                 <DropdownMenuItem className='cursor-pointer'>Switch to attendee</DropdownMenuItem>
                 <Link href='/account-settings'>
                   <DropdownMenuItem className='cursor-pointer'>Account Settings</DropdownMenuItem>
@@ -163,8 +146,6 @@ export default function Header({ colorScheme = 'default' }) {
                 </div>
               </DropdownMenuTrigger>
               <DropdownMenuContent className='cursor-pointer border-[#07264E] bg-[#07264E] p-3 text-white'>
-                {/* <DropdownMenuLabel>Switch to attendee</DropdownMenuLabel> */}
-                {/* <DropdownMenuSeparator /> */}
                 <DropdownMenuItem className='cursor-pointer'>Switch to attendee</DropdownMenuItem>
                 <Link href='/account-settings'>
                   <DropdownMenuItem className='cursor-pointer'>Account Settings</DropdownMenuItem>
@@ -220,18 +201,6 @@ export default function Header({ colorScheme = 'default' }) {
                     </DropdownMenu>
                   </li>
                   <li className='mx-4 my-6 md:my-0'>
-                    {/* <Select>
-                      <SelectTrigger className="w-[80px] border-none  bg-transparent font-normal text-secondary outline-none">
-                        <SelectValue placeholder="Help" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectGroup>
-                          <SelectLabel className=" font-normal">
-                            Help
-                          </SelectLabel>
-                        </SelectGroup>
-                      </SelectContent>
-                    </Select> */}
                     <DropdownMenu>
                       <DropdownMenuTrigger className='outline-none'>
                         <div className='flex  cursor-pointer items-center  gap-4 text-secondary'>
@@ -313,25 +282,6 @@ export default function Header({ colorScheme = 'default' }) {
               }  left-0 top-[-400px] z-[-1] w-full gap-5 bg-transparent py-4 pl-7 opacity-0 transition-all duration-500 ease-in lg:static lg:z-auto lg:flex lg:items-center lg:justify-center lg:py-0 lg:pl-10 lg:opacity-100 `}
             >
               <li className='mx-6 my-6  md:my-0'>
-                {/* <Select>
-                  <SelectTrigger
-                    className={`w-[110px] border-none text-${
-                      colorScheme === "alternative" ? "white" : "secondary"
-                    }  bg-transparent font-normal  outline-none`}
-                  >
-                    <SelectValue
-                      placeholder="Organize"
-                      className="text-[30px]"
-                    />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectGroup>
-                      <SelectLabel className=" font-normal ">
-                        Organize
-                      </SelectLabel>
-                    </SelectGroup>
-                  </SelectContent>
-                </Select> */}
                 <DropdownMenu>
                   <DropdownMenuTrigger
                     className={`w-[80px] border-none  bg-transparent font-normal text-${
@@ -351,35 +301,10 @@ export default function Header({ colorScheme = 'default' }) {
                     <Link href='/organizer'>
                       <DropdownMenuItem className='cursor-pointer'>Organizer</DropdownMenuItem>
                     </Link>
-                    {/* 
-                    <Link href="/find-tickets">
-                      <DropdownMenuItem className="cursor-pointer">
-                        Find your tickets
-                      </DropdownMenuItem>
-                    </Link>
-                    <Link href="/contact-event-organizer">
-                      <DropdownMenuItem className="cursor-pointer">
-                        Contact your event organizer
-                      </DropdownMenuItem>
-                    </Link> */}
                   </DropdownMenuContent>
                 </DropdownMenu>
               </li>
               <li className='mx-6 my-6 md:my-0'>
-                {/* <Select>
-                  <SelectTrigger
-                    className={`w-[80px] border-none  bg-transparent font-normal text-${
-                      colorScheme === "alternative" ? "white" : "secondary"
-                    }  outline-none`}
-                  >
-                    <SelectValue placeholder="Help" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectGroup>
-                      <SelectLabel className=" font-normal">Help</SelectLabel>
-                    </SelectGroup>
-                  </SelectContent>
-                </Select> */}
                 <DropdownMenu>
                   <DropdownMenuTrigger
                     className={`w-[80px] border-none  bg-transparent font-normal text-${
@@ -465,3 +390,5 @@ export default function Header({ colorScheme = 'default' }) {
     </>
   )
 }
+
+export default Header

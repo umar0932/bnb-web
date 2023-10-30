@@ -1,7 +1,9 @@
 import Image from 'next/image'
-import WelcomeImage from '../../../public/assets/welcome_screen.png'
 import Link from 'next/link'
-export default function WelcomePage() {
+
+import WelcomeImage from '../../../public/assets/welcome_screen.png'
+
+const WelcomePage = () => {
   return (
     <>
       <div className='flex h-screen flex-col gap-4'>
@@ -40,3 +42,5 @@ export default function WelcomePage() {
     </>
   )
 }
+
+export default WelcomePage

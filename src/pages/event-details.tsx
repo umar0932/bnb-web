@@ -1,11 +1,9 @@
-import AuthHeader from '@/components/Header/AuthHeader'
-import HeartIcon from '../core/icons/HeartIcon' // Import the HeartIcon component
 import { useState } from 'react'
-import { Button } from '../core/ui/button'
 import Image from 'next/image'
-import CompanyLogo from '../../public/assets/company_logo.svg'
-import CalendarIcon from '../../public/assets/calendar_icon.svg'
-import LocationIcon from '../../public/assets/location_icon.svg'
+
+import AuthHeader from '@/components/Header/AuthHeader'
+import Footer from '@/components/Footer/Footer'
+import Checkout from '@/components/Checkout/Checkout'
 
 import {
   Select,
@@ -15,9 +13,14 @@ import {
   SelectTrigger,
   SelectValue
 } from '../core/ui/select'
-import Footer from '@/components/Footer/Footer'
-import Checkout from '@/components/Checkout/Checkout'
-export default function EventDetails() {
+import { Button } from '../core/ui/button'
+import HeartIcon from '../core/icons/HeartIcon' // Import the HeartIcon component
+
+import CompanyLogo from '../../public/assets/company_logo.svg'
+import CalendarIcon from '../../public/assets/calendar_icon.svg'
+import LocationIcon from '../../public/assets/location_icon.svg'
+
+const EventDetails = () => {
   const [isLiked, setIsLiked] = useState(false)
   const [count, setCount] = useState(1)
   const [showCheckout, setShowCheckout] = useState(false)
@@ -195,3 +198,5 @@ export default function EventDetails() {
     </>
   )
 }
+
+export default EventDetails

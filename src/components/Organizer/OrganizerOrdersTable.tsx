@@ -2,7 +2,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@
 
 import { OrganizersOrders } from '@/utils/fakeBackend'
 
-export default function OrganizerOrdersTable() {
+const OrganizerOrdersTable = () => {
   return (
     <>
       <div>
@@ -33,3 +33,5 @@ export default function OrganizerOrdersTable() {
     </>
   )
 }
+
+export default OrganizerOrdersTable

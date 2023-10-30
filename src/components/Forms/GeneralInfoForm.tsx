@@ -1,7 +1,7 @@
 import { useFormik } from 'formik'
 import { Pencil } from 'lucide-react'
 
-export default function GeneralInfoForm() {
+const GeneralInfoForm = () => {
   const formik = useFormik({
     initialValues: {
       first_name: '',
@@ -99,3 +99,5 @@ export default function GeneralInfoForm() {
     </>
   )
 }
+
+export default GeneralInfoForm

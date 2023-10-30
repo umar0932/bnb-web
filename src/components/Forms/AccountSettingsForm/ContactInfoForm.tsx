@@ -1,9 +1,10 @@
-import { useFormik } from 'formik'
 import { useState } from 'react'
+import { useFormik } from 'formik'
+import Image from 'next/image'
+
 import { Checkbox } from '@/core/ui/checkbox'
 import { Button } from '@/core/ui/button'
-import PlusIcon from '../../../../public/assets/plus_icon.svg'
-import Image from 'next/image'
+
 import {
   Select,
   SelectContent,
@@ -12,7 +13,10 @@ import {
   SelectTrigger,
   SelectValue
 } from '@/core/ui/select'
-export default function ContactInfoForm() {
+
+import PlusIcon from '../../../../public/assets/plus_icon.svg'
+
+const ContactInfoForm = () => {
   const [imageURL, setImageURL] = useState(null)
 
   const formik = useFormik({
@@ -422,3 +426,5 @@ export default function ContactInfoForm() {
     </>
   )
 }
+
+export default ContactInfoForm

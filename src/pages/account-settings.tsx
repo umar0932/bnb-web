@@ -1,4 +1,5 @@
 import { useState } from 'react'
+
 import AuthHeader from '@/components/Header/AuthHeader'
 import ContactInfoForm from '@/components/Forms/AccountSettingsForm/ContactInfoForm'
 import Copyright from '@/components/Copyright/Copyright'
@@ -10,15 +11,7 @@ import EmailPreferanceForm from '@/components/Forms/AccountSettingsForm/EmailPre
 import CloseAccountForm from '@/components/Forms/AccountSettingsForm/CloseAccountForm'
 import PersonalData from '@/components/Forms/AccountSettingsForm/PersonalData'
 
-export default function AccountSetting() {
-  // function getScreenHeight() {
-  //   return window.innerHeight;
-  // }
-
-  // // Example usage:
-  // const screenHeight = getScreenHeight();
-  // console.log(`Screen height is ${screenHeight} pixels.`);
-
+const AccountSetting = () => {
   const [selectedDiv, setSelectedDiv] = useState(0)
   const [displayedForm, setDisplayedForm] = useState('ContactInfo') // Initial form to display
 
@@ -120,3 +113,5 @@ export default function AccountSetting() {
     </div>
   )
 }
+
+export default AccountSetting

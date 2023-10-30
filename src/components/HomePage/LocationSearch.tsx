@@ -1,12 +1,14 @@
 import { useState } from 'react'
-import { useAutocomplete } from '../../core/hooks/useAutocomplete'
 import Image from 'next/image'
+import Link from 'next/link'
+
+import useAutocomplete from '../../core/hooks/useAutocomplete'
+
 import ArrowIcon from '../../../public/assets/arrow_down.svg'
 import CurrentLocation from '../../../public/assets/current_location.svg'
 import BrowseOnline from '../../../public/assets/browse_online.svg'
-import Link from 'next/link'
 
-export default function LocationSearch() {
+const LocationSearch = () => {
   const { searchInputRef, findMyLocation } = useAutocomplete()
   const [isAdditionalDivOpen, setIsAdditionalDivOpen] = useState(false)
 
@@ -17,7 +19,6 @@ export default function LocationSearch() {
   return (
     <>
       <div className='flex items-center justify-center bg-secondary p-10'>
-        {/* <Autocomplete /> */}
         <div className='flex flex-col items-center justify-center gap-5'>
           <div className='relative flex items-center gap-4'>
             <span className='text-5xl font-bold text-[#89A1D3] max-sm:text-3xl'>Popular in</span>
@@ -60,3 +61,5 @@ export default function LocationSearch() {
     </>
   )
 }
+
+export default LocationSearch

@@ -1,9 +1,10 @@
 import EventCard from '@/components/Cards/EventCard'
 import Copyright from '@/components/Copyright/Copyright'
 import Header from '@/components/Header/Header'
+
 import { events } from '@/utils/fakeBackend'
 
-export default function Likes() {
+const Likes = () => {
   const eventsArray = events
   return (
     <>
@@ -21,3 +22,5 @@ export default function Likes() {
     </>
   )
 }
+
+export default Likes

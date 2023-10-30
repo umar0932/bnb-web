@@ -1,18 +1,21 @@
 import StaticImage from 'next/image'
-import Footer from '@/components/Footer/Footer'
 import { useState } from 'react'
 import { Info } from 'lucide-react'
 import { Pencil } from 'lucide-react'
-import SignupImage from '../../public/assets/signup_page.png'
 import { Facebook } from 'lucide-react'
 import { AiFillApple } from 'react-icons/ai'
 import { FcGoogle } from 'react-icons/fc'
 import { useFormik } from 'formik'
 import Link from 'next/link'
+
+import Footer from '@/components/Footer/Footer'
+
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/core/ui/dialog'
 import { Button } from '@/core/ui/button'
 
-export default function Signup() {
+import SignupImage from '../../public/assets/signup_page.png'
+
+const Signup = () => {
   const [isDialogOpen, setIsDialogOpen] = useState(false)
   const [showSecondForm, setShowSecondForm] = useState(false)
 
@@ -220,3 +223,5 @@ export default function Signup() {
     </>
   )
 }
+
+export default Signup

@@ -1,6 +1,8 @@
 import { useFormik } from 'formik'
+
 import { Button } from '@/core/ui/button'
-export default function ChangePasswordForm() {
+
+const ChangePasswordForm = () => {
   const formik = useFormik({
     initialValues: {
       new_password: '',
@@ -60,3 +62,5 @@ export default function ChangePasswordForm() {
     </>
   )
 }
+
+export default ChangePasswordForm

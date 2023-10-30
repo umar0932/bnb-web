@@ -1,9 +1,11 @@
 import Image from 'next/image'
+
 import EventTicketIcon from '../../../public/assets/event_ticket_icon.svg'
 import AnalyticsIcon from '../../../public/assets/analytics_icon.svg'
 import AppIcon from '../../../public/assets/app_icon.svg'
 import MobileImage from '../../../public/assets/mobile_prototype.png'
-export default function StandOutSection() {
+
+const StandOutSection = () => {
   return (
     <>
       <div className='mt-5 flex w-full max-sm:flex-col max-sm:items-center max-sm:justify-center'>
@@ -71,3 +73,5 @@ export default function StandOutSection() {
     </>
   )
 }
+
+export default StandOutSection

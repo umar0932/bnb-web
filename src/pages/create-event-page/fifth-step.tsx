@@ -1,10 +1,13 @@
 import Image from 'next/image'
+import Link from 'next/link'
+
 import { Progress } from '@/core/ui/progress'
 import { Label } from '@/core/ui/label'
-import Link from 'next/link'
 import { RadioGroup, RadioGroupItem } from '@/core/ui/radio-group'
+
 import FifthStepImage from '../../../public/assets/stepper_step5.png'
-export default function FourthStep() {
+
+const FourthStep = () => {
   return (
     <>
       <div className='flex h-screen flex-col gap-4  '>
@@ -114,3 +117,5 @@ export default function FourthStep() {
     </>
   )
 }
+
+export default FourthStep

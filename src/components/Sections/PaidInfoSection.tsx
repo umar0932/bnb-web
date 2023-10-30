@@ -1,9 +1,10 @@
 import Image from 'next/image'
+
 import MoneyIcon from '../../../public/assets/money_icon.svg'
 import CardIcon from '../../../public/assets/card_icon.svg'
 import WalletIcon from '../../../public/assets/wallet_icon.svg'
 
-export default function PaidInfoSection() {
+const PaidInfoSection = () => {
   return (
     <>
       <div className='flex flex-col bg-white'>
@@ -46,3 +47,5 @@ export default function PaidInfoSection() {
     </>
   )
 }
+
+export default PaidInfoSection

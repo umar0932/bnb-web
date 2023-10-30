@@ -1,5 +1,6 @@
 import GoogleMapReact from 'google-map-react'
-export default function GoogleMap() {
+
+const GoogleMap = () => {
   const defaultProps = {
     center: {
       lat: 36.7783, // Latitude of California
@@ -22,3 +23,5 @@ export default function GoogleMap() {
     </>
   )
 }
+
+export default GoogleMap

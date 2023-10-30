@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import Image from 'next/image'
+
 import CrossIcon from '../../../public/assets/cross_icon.svg'
 
-export default function InterestsDialog() {
+const InterestsDialog = () => {
   const [selected, setSelected] = useState<string[]>([])
   const [isVisible, setIsVisible] = useState(true) // State to manage visibility
   const interests: string[] = [
@@ -30,9 +31,7 @@ export default function InterestsDialog() {
     }
   }
 
-  const handleClose = () => {
-    setIsVisible(false) // Set visibility to false when closing
-  }
+  const handleClose = () => setIsVisible(false) // Set visibility to false when closing
 
   const buttonClasses: string = 'text-md w-[169px] rounded-lg border border-[#C9C9C9] p-2'
 
@@ -66,3 +65,5 @@ export default function InterestsDialog() {
     </>
   ) : null
 }
+
+export default InterestsDialog

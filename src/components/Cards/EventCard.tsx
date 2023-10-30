@@ -1,24 +1,16 @@
-import Image, { StaticImageData } from 'next/image'
 import { useState } from 'react'
+import Image from 'next/image'
+
+import { Event } from '@/interfaces'
+
 import HeartIcon from '../../core/icons/HeartIcon' // Import the HeartIcon component
 
-// Define an interface for the event object
-interface Event {
-  imageSrc: StaticImageData
-  title: string
-  sub_title: string
-  location: string
-  creatorFollowers: string
-  date: string
-  price: string
-  time: string
-}
 
 interface EventCardProps {
   event: Event // Use the Event interface for the event prop
 }
 
-export default function EventCard({ event }: EventCardProps) {
+const EventCard = ({ event }: EventCardProps) => {
   const [isLiked, setIsLiked] = useState(false)
 
   const toggleLike = () => {
@@ -61,3 +53,5 @@ export default function EventCard({ event }: EventCardProps) {
     </>
   )
 }
+
+export default EventCard

@@ -1,7 +1,9 @@
 import ScrollContainer from 'react-scroll-horizontal'
+
 import { events } from '@/utils/fakeBackend'
 import EventCard from '../Cards/EventCard'
-export default function ScrollCategories() {
+
+const ScrollCategories = () => {
   const eventsArray = events
   return (
     <>
@@ -13,7 +15,6 @@ export default function ScrollCategories() {
             height: '450px',
             overflow: 'auto'
           }}
-          //   className="absolute bottom-[150px]"
         >
           <div className='  flex w-[2700px] items-center justify-center  gap-10 p-5'>
             {eventsArray.map((event, index) => (
@@ -25,3 +26,5 @@ export default function ScrollCategories() {
     </>
   )
 }
+
+export default ScrollCategories

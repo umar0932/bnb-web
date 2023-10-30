@@ -1,13 +1,16 @@
 import { useFormik } from 'formik'
+import Link from 'next/link'
+import Image from 'next/image'
+
 import { RadioGroup, RadioGroupItem } from '@/core/ui/radio-group'
 import { Label } from '@/core/ui/label'
-import CreditCardIcon from '../../../public/assets/credit_card.svg'
-import PayPalIcon from '../../../public/assets/paypal.svg'
-import Image from 'next/image'
 import { Checkbox } from '@/core/ui/checkbox'
 import { Button } from '@/core/ui/button'
-import Link from 'next/link'
-export default function CheckoutForm() {
+
+import CreditCardIcon from '../../../public/assets/credit_card.svg'
+import PayPalIcon from '../../../public/assets/paypal.svg'
+
+const CheckoutForm = () => {
   const formik = useFormik({
     initialValues: {
       first_name: '',
@@ -158,47 +161,10 @@ export default function CheckoutForm() {
               <span className='text-btnsecondary'>$49.39</span>
             </div>
           </div>
-
-          {/* Event Type */}
-          {/* <div className="flex w-full flex-col justify-center gap-3 bg-[#F6FBFF] p-10 max-sm:p-5">
-            <span className="text-center text-3xl font-bold text-primary">
-              Event type
-            </span>
-
-            <RadioGroup
-              defaultValue="option-one"
-              className="div-drop-shadow mt-2 flex flex-col rounded-lg bg-white p-3"
-            >
-              <div className=" flex items-center justify-between gap-5 rounded-lg bg-white p-5">
-                <Label
-                  htmlFor="option-one"
-                  className=" text-md flex items-center gap-2 text-[#313131]"
-                >
-                  Public
-                </Label>
-                <RadioGroupItem
-                  value="option-one"
-                  id="option-one"
-                  className="h-[20px] w-[20px] border-btnprimary bg-white text-btnprimary"
-                />
-              </div>
-              <div className=" flex items-center justify-between gap-5 border-t border-t-[#9CB2DF] bg-white p-5">
-                <Label
-                  htmlFor="option-two"
-                  className=" text-md flex items-center gap-2 text-[#313131]"
-                >
-                  Private
-                </Label>
-                <RadioGroupItem
-                  value="option-two"
-                  id="option-two"
-                  className="h-[20px] w-[20px] border-btnprimary bg-white text-btnprimary"
-                />
-              </div>
-            </RadioGroup>
-          </div> */}
         </div>
       </div>
     </>
   )
 }
+
+export default CheckoutForm

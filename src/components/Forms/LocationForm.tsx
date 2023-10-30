@@ -1,10 +1,12 @@
-import LocationIcon from '../../../public/assets/location_form_icon.svg'
-import SearchIcon from '../../../public/assets/search_icon.svg'
 import Image from 'next/image'
 import { useState } from 'react'
 
-import { useAutocomplete } from '../../core/hooks/useAutocomplete'
-export default function LocationForm() {
+import useAutocomplete from '../../core/hooks/useAutocomplete'
+
+import LocationIcon from '../../../public/assets/location_form_icon.svg'
+import SearchIcon from '../../../public/assets/search_icon.svg'
+
+const LocationForm = () => {
   const { searchInputRef } = useAutocomplete()
   const [activeButton, setActiveButton] = useState('Venue')
 
@@ -81,3 +83,5 @@ export default function LocationForm() {
     </>
   )
 }
+
+export default LocationForm

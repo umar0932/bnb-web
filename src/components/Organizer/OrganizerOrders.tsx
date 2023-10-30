@@ -1,3 +1,7 @@
+import Image from 'next/image'
+
+import OrganizerOrdersTable from './OrganizerOrdersTable'
+
 import {
   Select,
   SelectContent,
@@ -6,11 +10,10 @@ import {
   SelectTrigger,
   SelectValue
 } from '@/core/ui/select'
-import SearchIcon from '../../../public/assets/search_icon_red.svg'
-import Image from 'next/image'
 
-import OrganizerOrdersTable from './OrganizerOrdersTable'
-export default function OrganizerOrders() {
+import SearchIcon from '../../../public/assets/search_icon_red.svg'
+
+const OrganizerOrders = () => {
   return (
     <>
       <div className='flex w-full flex-col p-10 max-sm:p-5'>
@@ -67,3 +70,5 @@ export default function OrganizerOrders() {
     </>
   )
 }
+
+export default OrganizerOrders

@@ -1,12 +1,8 @@
 import StaticImage from 'next/image'
 
-interface FollowCardProps {
-  title: string
-  SubTitle: string
-  imageSrc: string
-}
+import { FollowCardProps } from '@/interfaces'
 
-export default function FollowCard({ title, SubTitle, imageSrc }: FollowCardProps) {
+const FollowCard = ({ title, SubTitle, imageSrc }: FollowCardProps) => {
   return (
     <>
       <div className='mt-3 flex gap-5 rounded-sm bg-[#F6FBFF] p-5 max-sm:flex-col max-sm:items-center max-sm:justify-center max-sm:text-center'>
@@ -24,3 +20,5 @@ export default function FollowCard({ title, SubTitle, imageSrc }: FollowCardProp
     </>
   )
 }
+
+export default FollowCard

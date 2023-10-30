@@ -1,5 +1,7 @@
 import Link from 'next/link'
+
 import Copyright from '../Copyright/Copyright'
+
 import {
   Select,
   SelectContent,
@@ -9,7 +11,7 @@ import {
   SelectValue
 } from '@/core/ui/select'
 
-export default function Footer() {
+const Footer = () => {
   return (
     <div className=' w-full'>
       <footer className=' bg-primary px-6 py-6'>
@@ -201,3 +203,5 @@ export default function Footer() {
     </div>
   )
 }
+
+export default Footer

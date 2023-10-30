@@ -1,16 +1,18 @@
-import OrderCard from '@/components/Cards/OrderCard'
-import Copyright from '@/components/Copyright/Copyright'
 import { useState } from 'react'
-import Header from '@/components/Header/Header'
-import ArrowDown from '../../public/assets/arrow_down.svg'
 import { Mail } from 'lucide-react'
 import { useFormik } from 'formik'
 import Image from 'next/image'
-import { Button } from '@/core/ui/button'
 
+import Header from '@/components/Header/Header'
+import OrderCard from '@/components/Cards/OrderCard'
+import Copyright from '@/components/Copyright/Copyright'
+
+import { Button } from '@/core/ui/button'
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/core/ui/dialog'
 
-export default function Orders() {
+import ArrowDown from '../../public/assets/arrow_down.svg'
+
+const Orders = () => {
   const [isDialogOpen, setIsDialogOpen] = useState(false)
   const [showPastOrders, setShowPastOrders] = useState(false) // Add state for past orders
   const formik = useFormik({
@@ -113,3 +115,5 @@ export default function Orders() {
     </>
   )
 }
+
+export default Orders

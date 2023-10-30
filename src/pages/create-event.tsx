@@ -1,14 +1,18 @@
-import Header from '@/components/Header/Header'
 import Link from 'next/link'
 import Image from 'next/image'
-import EventPageImg from '../../public/assets/create-event.png'
+
+import Header from '@/components/Header/Header'
 import StandOutSection from '@/components/Sections/StandOutSection'
 import BenefitSection from '@/components/Sections/BenefitSection'
 import PaidInfoSection from '@/components/Sections/PaidInfoSection'
 import HelpCenterSection from '@/components/Sections/HelpCenterSection'
 import Footer from '@/components/Footer/Footer'
+
 import { Button } from '@/core/ui/button'
-export default function CreateEvent() {
+
+import EventPageImg from '../../public/assets/create-event.png'
+
+const CreateEvent = () => {
   return (
     <>
       <div className='flex flex-col'>
@@ -52,3 +56,5 @@ export default function CreateEvent() {
     </>
   )
 }
+
+export default CreateEvent

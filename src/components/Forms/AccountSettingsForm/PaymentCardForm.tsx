@@ -1,8 +1,9 @@
 import React from 'react'
 import { useFormik } from 'formik'
+
 import { Button } from '@/core/ui/button'
 
-export default function PaymentCardForm() {
+const PaymentCardForm = () => {
   const maxCardLength = 12
   const maxCVVLength = 3
 
@@ -130,3 +131,5 @@ export default function PaymentCardForm() {
     </>
   )
 }
+
+export default PaymentCardForm

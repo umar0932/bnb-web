@@ -1,6 +1,8 @@
 import Image from 'next/image'
+
 import OrderImage from '../../../public/assets/order_image.png'
-export default function OrderCard() {
+
+const OrderCard = () => {
   return (
     <>
       <div className='flex w-full bg-white p-5 max-sm:flex-col max-sm:items-center max-sm:justify-center'>
@@ -22,3 +24,5 @@ export default function OrderCard() {
     </>
   )
 }
+
+export default OrderCard

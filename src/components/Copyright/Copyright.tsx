@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-export default function Copyright() {
+const Copyright = () => {
   return (
     <div className='flex w-full justify-between  bg-primary px-8 pb-3 pt-3 font-light'>
       <div>
@@ -20,3 +20,5 @@ export default function Copyright() {
     </div>
   )
 }
+
+export default Copyright

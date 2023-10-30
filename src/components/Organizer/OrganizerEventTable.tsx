@@ -1,12 +1,16 @@
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/core/ui/table'
 import Image from 'next/image'
+import Link from 'next/link'
+
+import { eventsData } from '@/utils/fakeBackend'
+
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/core/ui/table'
+
+import DownloadIcon from '../../../public/assets/download_icon.svg'
 import EditProfileIcon from '../../../public/assets/edit_profile_icon.svg'
 import LinkIcon from '../../../public/assets/link_icon.svg'
 import DeleteIcon from '../../../public/assets/delete_icon.svg'
-import { eventsData } from '@/utils/fakeBackend'
-import DownloadIcon from '../../../public/assets/download_icon.svg'
-import Link from 'next/link'
-export default function OrganizerEventTable() {
+
+const OrganizerEventTable = () => {
   const exportToCSV = () => {
     // Create a CSV string
     const csvData = eventsData.map(event => {
@@ -94,3 +98,5 @@ export default function OrganizerEventTable() {
     </>
   )
 }
+
+export default OrganizerEventTable

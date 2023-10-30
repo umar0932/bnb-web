@@ -1,6 +1,8 @@
 import Link from 'next/link'
+
 import { Button } from '@/core/ui/button'
-export default function HelpCenterSection() {
+
+const HelpCenterSection = () => {
   return (
     <>
       <div className='drop-shadow-custom flex flex-col items-center justify-center  bg-[#DEF0FF] p-10'>
@@ -27,3 +29,5 @@ export default function HelpCenterSection() {
     </>
   )
 }
+
+export default HelpCenterSection

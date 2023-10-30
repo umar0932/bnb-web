@@ -1,13 +1,11 @@
-import { Dialog, DialogContent } from '@/core/ui/dialog'
-import CheckoutForm from '../Forms/CheckoutForm'
 import { useState, useRef, useEffect } from 'react'
+import { Dialog, DialogContent } from '@/core/ui/dialog'
 
-interface CheckoutProps {
-  isOpen: boolean
-  onClose: () => void
-}
+import CheckoutForm from '../Forms/CheckoutForm'
 
-export default function Checkout({ isOpen, onClose }: CheckoutProps) {
+import { CheckoutProps } from '@/interfaces'
+
+const Checkout = ({ isOpen, onClose }: CheckoutProps) => {
   const Ref = useRef<number | NodeJS.Timeout | null>(null) // Update the type here
 
   const [timer, setTimer] = useState('06:00')
@@ -45,9 +43,7 @@ export default function Checkout({ isOpen, onClose }: CheckoutProps) {
 
       return () => {
         // Clean up the timer when the component unmounts or isOpen becomes false
-        if (Ref.current !== null) {
-          clearInterval(Ref.current as number) // Cast to number
-        }
+        if (Ref.current !== null) clearInterval(Ref.current as number) // Cast to number
       }
     }
   }, [isOpen, onClose])
@@ -79,3 +75,5 @@ export default function Checkout({ isOpen, onClose }: CheckoutProps) {
     </>
   )
 }
+
+export default Checkout

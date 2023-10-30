@@ -1,18 +1,20 @@
 import StaticImage from 'next/image'
 import Link from 'next/link'
-
-import Footer from '@/components/Footer/Footer'
 import { useState } from 'react'
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/core/ui/dialog'
-
-import LoginImage from '../../public/assets/login_page.png'
 import { Facebook } from 'lucide-react'
 import { Mail } from 'lucide-react'
 import { AiFillApple } from 'react-icons/ai'
 import { FcGoogle } from 'react-icons/fc'
 import { useFormik } from 'formik'
+
+import Footer from '@/components/Footer/Footer'
+
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/core/ui/dialog'
 import { Button } from '@/core/ui/button'
-export default function Login() {
+
+import LoginImage from '../../public/assets/login_page.png'
+
+const Login = () => {
   const [isDialogOpen, setIsDialogOpen] = useState(false)
   const formik = useFormik({
     initialValues: { email: '', password: '' },
@@ -132,3 +134,5 @@ export default function Login() {
     </>
   )
 }
+
+export default Login

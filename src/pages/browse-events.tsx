@@ -1,11 +1,14 @@
+import { useFormik } from 'formik'
+
 import BrowseEventCard from '@/components/Cards/BrowseEventCard'
 import GoogleMap from '@/components/GoogleMaps/GoogleMap'
 import AuthHeader from '@/components/Header/AuthHeader'
-import { browse_events } from '@/utils/fakeBackend'
-import { Button } from '@/core/ui/button'
-import { useFormik } from 'formik'
 
-export default function BrowseEvents() {
+import { browse_events } from '@/utils/fakeBackend'
+
+import { Button } from '@/core/ui/button'
+
+const BrowseEvents = () => {
   const formik = useFormik({
     initialValues: { search: '' },
     onSubmit: values => {
@@ -56,3 +59,5 @@ export default function BrowseEvents() {
     </>
   )
 }
+
+export default BrowseEvents

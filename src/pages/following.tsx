@@ -3,7 +3,7 @@ import Header from '@/components/Header/Header'
 import { organizers } from '@/utils/fakeBackend'
 import FeaturedCard from '@/components/Cards/FearturedCard'
 
-export default function Following() {
+const Following = () => {
   const organizersArray = organizers
   return (
     <>
@@ -11,9 +11,6 @@ export default function Following() {
         <Header colorScheme='follow-page-header' />
         <div className='mt-10 flex  h-full items-center justify-center bg-[#DEF0FF]'>
           <div className='flex  justify-between gap-10 overflow-auto  p-10'>
-            {/* {eventsArray.map((event, index) => (
-              <EventCard key={index} event={event} />
-            ))} */}
             {organizersArray.map((organizer, index) => (
               <FeaturedCard key={index} organizer={organizer} />
             ))}
@@ -24,3 +21,5 @@ export default function Following() {
     </>
   )
 }
+
+export default Following

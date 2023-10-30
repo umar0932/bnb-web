@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
 import Image from 'next/image'
-import CrossIcon from '../../../public/assets/cross_icon.svg'
 
 import { organizers } from '@/utils/fakeBackend'
+
 import FeaturedCard from '../Cards/FearturedCard'
 
-export default function FeaturedSection() {
+import CrossIcon from '../../../public/assets/cross_icon.svg'
+
+const FeaturedSection = () => {
   const organizersArray = organizers
   const [isVisible, setIsVisible] = useState(true) // State to manage visibility
 
@@ -38,3 +40,5 @@ export default function FeaturedSection() {
     </>
   ) : null
 }
+
+export default FeaturedSection

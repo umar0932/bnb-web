@@ -1,13 +1,16 @@
-import Header from '@/components/Header/Header'
-import { Progress } from '@/core/ui/progress'
-import MusicIcon from '../../public/assets/music_icon.svg'
-import FoodIcon from '../../public/assets/food_icon.svg'
 import { useState } from 'react'
 import Link from 'next/link'
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/core/ui/dialog'
 import StaticImage from 'next/image'
 
-export default function Interests() {
+import Header from '@/components/Header/Header'
+
+import { Progress } from '@/core/ui/progress'
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/core/ui/dialog'
+
+import MusicIcon from '../../public/assets/music_icon.svg'
+import FoodIcon from '../../public/assets/food_icon.svg'
+
+const Interests = () => {
   type Genre = string
 
   const [isDialogOpen, setIsDialogOpen] = useState<boolean>(false)
@@ -156,3 +159,5 @@ export default function Interests() {
     </div>
   )
 }
+
+export default Interests

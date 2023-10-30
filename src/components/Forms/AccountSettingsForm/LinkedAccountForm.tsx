@@ -1,9 +1,12 @@
-import { Switch } from '@/core/ui/switch'
 import Image from 'next/image'
+
+import { Switch } from '@/core/ui/switch'
+
 import GoogleIcon from '../../../../public/assets/google_icon.svg'
 import FacebookIcon from '../../../../public/assets/facebook_icon.svg'
 import AppleIcon from '../../../../public/assets/apple_icon.svg'
-export default function LinkedAccountForm() {
+
+const LinkedAccountForm = () => {
   return (
     <>
       <div className='card-drop-shadow flex h-[470px] gap-10 rounded-lg bg-white p-10 max-sm:p-5'>
@@ -50,3 +53,5 @@ export default function LinkedAccountForm() {
     </>
   )
 }
+
+export default LinkedAccountForm

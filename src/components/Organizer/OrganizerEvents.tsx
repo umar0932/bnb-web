@@ -1,10 +1,12 @@
-import { Button } from '@/core/ui/button'
+import Link from 'next/link'
 import { AiOutlineUnorderedList } from 'react-icons/ai'
 import Image from 'next/image'
-import SearchIcon from '../../../public/assets/search_icon_red.svg'
-// import { ChevronDown } from 'lucide-react'
 import { BiCalendar } from 'react-icons/bi'
 import { useState } from 'react'
+
+import OrganizerEventTable from './OrganizerEventTable'
+import OrganizerEventCalendar from './OrganizerEventCalendar'
+
 import {
   Select,
   SelectContent,
@@ -13,10 +15,11 @@ import {
   SelectTrigger,
   SelectValue
 } from '@/core/ui/select'
-import OrganizerEventTable from './OrganizerEventTable'
-import OrganizerEventCalendar from './OrganizerEventCalendar'
-import Link from 'next/link'
-export default function OrganizerEvents() {
+import { Button } from '@/core/ui/button'
+
+import SearchIcon from '../../../public/assets/search_icon_red.svg'
+
+const OrganizerEvents = () => {
   const [activeDiv, setActiveDiv] = useState('List')
   const handleDivClick = (divName: string) => {
     setActiveDiv(divName)
@@ -98,3 +101,5 @@ export default function OrganizerEvents() {
     </>
   )
 }
+
+export default OrganizerEvents
