@@ -11,9 +11,7 @@ const FeaturedSection = () => {
   const organizersArray = organizers
   const [isVisible, setIsVisible] = useState(true) // State to manage visibility
 
-  const handleClose = () => {
-    setIsVisible(false) // Set visibility to false when closing
-  }
+  const handleClose = () => setIsVisible(false) // Set visibility to false when closing
 
   return isVisible ? (
     <>

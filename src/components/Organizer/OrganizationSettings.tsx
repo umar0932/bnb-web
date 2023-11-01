@@ -20,9 +20,8 @@ import OrganizerProfileImage from '../../../public/assets/organizer_image_settin
 
 const OrganizationSettings = () => {
   const [isEditing, setIsEditing] = useState(false)
-  const handleEditClick = () => {
-    setIsEditing(true) // Set editing mode to true
-  }
+  const handleEditClick = () => setIsEditing(true) // Set editing mode to true
+
   const formik = useFormik({
     initialValues: {
       organization_name: 'John Doe'

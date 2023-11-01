@@ -14,9 +14,7 @@ const LocationSearch = () => {
   const { searchInputRef, findMyLocation } = useAutocomplete()
   const [isAdditionalDivOpen, setIsAdditionalDivOpen] = useState(false)
 
-  const toggleAdditionalDiv = () => {
-    setIsAdditionalDivOpen(!isAdditionalDivOpen)
-  }
+  const toggleAdditionalDiv = () => setIsAdditionalDivOpen(!isAdditionalDivOpen)
 
   return (
     <>

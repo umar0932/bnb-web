@@ -23,9 +23,8 @@ const FindNextEvent = () => {
   const { searchInputRef, findMyLocation } = useAutocomplete()
   const [isAdditionalDivOpen, setIsAdditionalDivOpen] = useState(false)
 
-  const toggleAdditionalDiv = () => {
-    setIsAdditionalDivOpen(!isAdditionalDivOpen)
-  }
+  const toggleAdditionalDiv = () => setIsAdditionalDivOpen(!isAdditionalDivOpen)
+
   const slicedEvents = eventsArray.slice(0, 4)
 
   return (

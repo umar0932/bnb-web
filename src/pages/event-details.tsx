@@ -25,9 +25,8 @@ const EventDetails = () => {
   const [count, setCount] = useState(1)
   const [showCheckout, setShowCheckout] = useState(false)
 
-  const toggleLike = () => {
-    setIsLiked(!isLiked)
-  }
+  const toggleLike = () => setIsLiked(!isLiked)
+
   const incrementCount = () => {
     // Calculate the incremented value and update the state
     const incrementedValue = count + 1
@@ -43,12 +42,10 @@ const EventDetails = () => {
       setCount(decrementedValue)
     }
   }
-  const handleReserveClick = () => {
-    setShowCheckout(true)
-  }
-  const handleCloseCheckout = () => {
-    setShowCheckout(false) // Close the dialog
-  }
+  const handleReserveClick = () => setShowCheckout(true)
+
+  const handleCloseCheckout = () => setShowCheckout(false) // Close the dialog
+
   return (
     <>
       <div className='flex flex-col'>

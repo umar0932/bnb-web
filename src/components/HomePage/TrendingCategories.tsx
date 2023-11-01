@@ -4,9 +4,7 @@ import { Button } from '@/core/ui/button'
 const TrendingCategories = () => {
   const [selectedSpan, setSelectedSpan] = useState('All')
 
-  const handleSpanClick = (spanText: string) => {
-    setSelectedSpan(spanText)
-  }
+  const handleSpanClick = (spanText: string) => setSelectedSpan(spanText)
 
   const getSpanStyle = (spanText: string) => {
     return {

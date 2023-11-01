@@ -14,9 +14,8 @@ interface OrganizerCardProps {
 const FeaturedCard = ({ organizer }: OrganizerCardProps) => {
   const [isVisible, setIsVisible] = useState(true) // State to manage visibility
 
-  const handleClose = () => {
-    setIsVisible(false) // Set visibility to false when closing
-  }
+  const handleClose = () => setIsVisible(false)
+
   return isVisible ? (
     <div className='card-drop-shadow flex min-w-[300px] flex-col rounded-3xl bg-[#F6FBFF] p-5'>
       <div className='flex w-full justify-end'>

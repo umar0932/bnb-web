@@ -18,9 +18,8 @@ import { Input } from '@/core/ui/input'
 const DateTimeForm = () => {
   const [activeButton, setActiveButton] = useState('SingleEvent')
 
-  const handleButtonClick = (buttonName: any) => {
+  const handleButtonClick = (buttonName: any) =>
     setActiveButton(buttonName === activeButton ? null : buttonName)
-  }
 
   const buttonStyles = (buttonName: any) => {
     return {

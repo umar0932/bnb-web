@@ -11,9 +11,8 @@ import Header from '@/components/Header/Header'
 
 const Pricing = () => {
   const [isDivVisible, setIsDivVisible] = useState(true)
-  function toggleDivVisibility() {
-    setIsDivVisible(!isDivVisible)
-  }
+  const toggleDivVisibility = () => setIsDivVisible(!isDivVisible)
+
   return (
     <>
       <div className='flex w-full flex-col  bg-[#EFF8FF]'>

@@ -20,12 +20,10 @@ import { Input } from '@/core/ui/input'
 
 import SearchIcon from '../../../public/assets/search_icon_red.svg'
 
-
 const OrganizerEvents = () => {
   const [activeDiv, setActiveDiv] = useState('List')
-  const handleDivClick = (divName: string) => {
-    setActiveDiv(divName)
-  }
+  const handleDivClick = (divName: string) => setActiveDiv(divName)
+
   return (
     <>
       <div className='flex w-full flex-col p-10 max-sm:p-5'>
