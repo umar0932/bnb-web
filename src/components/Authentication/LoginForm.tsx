@@ -1,13 +1,15 @@
+import { useLoginMutation } from "@/api/Authentication/useLoginMutation";
 import { Button } from "@/core/ui/button";
 import InputField from "@/core/ui/form-fields/InputField";
 import { FormikProvider, useFormik } from "formik";
 import React from "react";
 
 const LoginForm = () => {
+  const { mutateAsync } = useLoginMutation();
   const formik = useFormik({
     initialValues: { email: "", password: "" },
-    onSubmit: (values) => {
-      JSON.stringify(values, null, 2);
+    onSubmit: async (values) => {
+      await mutateAsync([values]);
     },
   });
 
@@ -24,7 +26,9 @@ const LoginForm = () => {
           type="password"
           placeholder="Password"
         />
-        <Button type="submit">Login</Button>
+        <Button type="submit" loading={formik.isSubmitting}>
+          Login
+        </Button>
       </form>
     </FormikProvider>
   );

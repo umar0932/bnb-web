@@ -1,15 +1,31 @@
 import AuthLayout from "@/components/Authentication/layouts/AuthLayout";
 import CardLayout from "@/components/Authentication/layouts/CardLayout";
 import LoginForm from "@/components/Authentication/LoginForm";
+import Link from "next/link";
 
 export default function Login() {
   return (
-    <AuthLayout Title={<>
-      Lo<span className="text-primary">gin</span>
-    </>} imagePath="/assets/login_page.png">
+    <AuthLayout
+      Title={
+        <>
+          Lo<span className="text-primary">gin</span>
+        </>
+      }
+      imagePath="/assets/login_page.png"
+    >
       <CardLayout>
-        <LoginForm />
-        
+        <div className="space-y-8"> 
+          <LoginForm />
+          <div>
+            <Link
+              href="/signup"
+              className="flex cursor-pointer justify-end font-normal text-secondary underline"
+            >
+              {"Signup"}
+            </Link>
+          </div>
+        </div>
+
         {/* <button
           type="submit"
           className="field-drop-shadow flex h-[45px] items-center justify-center gap-3 rounded-lg bg-white"

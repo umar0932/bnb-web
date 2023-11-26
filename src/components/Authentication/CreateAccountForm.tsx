@@ -5,6 +5,7 @@ import { Button } from "@/core/ui/button";
 import useTermsConfirmation from "./useTermsConfirmation";
 import { toFormikValidationSchema } from "zod-formik-adapter";
 import InputField from "@/core/ui/form-fields/InputField";
+import {useCreateAccountMutation} from "@/api/Authentication";
 
 const FormSchema = z
   .object({
@@ -33,15 +34,22 @@ const CreateAccountForm = ({
   },
 }: Props) => {
   const {modalNode,getTermsConfirmation} = useTermsConfirmation();
+  const {mutateAsync} = useCreateAccountMutation()
   const formik = useFormik({
     initialValues: initalValues,
     validationSchema: toFormikValidationSchema(FormSchema),
     onSubmit: async (values) => {
       const isConfirmed = await getTermsConfirmation();
-      console.log(isConfirmed + " " + JSON.stringify(values, null, 2));
+      if (isConfirmed) {
+        await mutateAsync([{
+          email: values.email,
+          firstName: values.firstName,
+          lastName: values.lastName,
+          password: values.password,
+        }])
+      }
     },
   });
-
   return (
     <div className="flex w-full flex-col gap-6 md:gap-8">
       {modalNode}
@@ -80,7 +88,7 @@ const CreateAccountForm = ({
             type="password"
             placeholder="Confirm Password"
           />
-          <Button type="submit">Continue</Button>
+          <Button type="submit" loading ={formik.isSubmitting}>Continue</Button>
         </form>
       </FormikProvider>
     </div>

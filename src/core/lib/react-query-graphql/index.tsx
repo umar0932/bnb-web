@@ -9,11 +9,15 @@ import {
 import request from "graphql-request";
 import { type TypedDocumentNode } from "@graphql-typed-document-node/core";
 import {
+  type VariablesAndRequestHeadersArgs,
   type GraphQLClientRequestHeaders,
   type Variables,
+  type ClientError,
 } from "graphql-request/build/esm/types";
 import { env } from "@/env.mjs";
 import { graphql } from "./gql-typed";
+
+
 
 export function useGraphQLQuery<TResult, TVariables>(
   queryOptions: UseQueryOptions<TResult>,
@@ -55,26 +59,24 @@ export function useGraphQLInfiniteQuery<TResult, TVariables>(
   });
 }
 
-export function useGraphQLMutation<TResult, TVariables>(
-  document: TypedDocumentNode<TResult, TVariables>,
-  mutationOptions?: UseMutationOptions<TResult>,
-  variables?: Variables,
-  requestHeaders?: GraphQLClientRequestHeaders
+export function useGraphQLMutation<TResult, TVariables extends Variables>(
+  mutationOptions: UseMutationOptions<
+    TResult,
+    ClientError,
+    VariablesAndRequestHeadersArgs<TVariables>
+  >,
+  document: TypedDocumentNode<TResult, TVariables>
 ) {
   return useMutation({
     ...mutationOptions,
-    mutationKey: mutationOptions?.mutationKey
-      ? [...mutationOptions.mutationKey, variables]
-      : [variables],
-    mutationFn: async () => {
+    mutationFn: async (variables) => {
       return await request(
         env.NEXT_PUBLIC_SERVER_GRAPHQL_URL,
         document,
-        variables,
-        requestHeaders
+        ...variables
       );
     },
   });
 }
 
-export const graphQLTyped = (document:string) => graphql(document)
+export { graphql };

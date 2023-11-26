@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Link from "next/link";
 import UserProfileIcon from "../../../public/assets/user_profile_icon.svg";
 import PlusIcon from "../../../public/assets/plus_icon.svg";
@@ -15,15 +15,9 @@ import {
 } from "@/core/ui/dropdown-menu";
 
 import { Menu } from "lucide-react";
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectLabel,
-  SelectTrigger,
-  SelectValue,
-} from "@/core/ui/select";
 import { useFormik } from "formik";
+import useAuthSessionContext from "@/lib/Authentication/context/AuthSessionContext";
+import LogoutButton from "../Authentication/LogoutButton";
 
 export default function Header({ colorScheme = "default" }) {
   const formik = useFormik({
@@ -32,7 +26,8 @@ export default function Header({ colorScheme = "default" }) {
       JSON.stringify(values, null, 2);
     },
   });
-
+  const { status } = useAuthSessionContext();
+  const isAuthenticated = status === "authenticated";
   const getButtonClasses = () => {
     if (colorScheme === "default") {
       return "text-secondary";
@@ -261,18 +256,6 @@ export default function Header({ colorScheme = "default" }) {
                     </DropdownMenu>
                   </li>
                   <li className="mx-4 my-6 md:my-0">
-                    {/* <Select>
-                      <SelectTrigger className="w-[80px] border-none  bg-transparent font-normal text-secondary outline-none">
-                        <SelectValue placeholder="Help" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectGroup>
-                          <SelectLabel className=" font-normal">
-                            Help
-                          </SelectLabel>
-                        </SelectGroup>
-                      </SelectContent>
-                    </Select> */}
                     <DropdownMenu>
                       <DropdownMenuTrigger className="outline-none">
                         <div className="flex  cursor-pointer items-center  gap-4 text-secondary">
@@ -329,22 +312,26 @@ export default function Header({ colorScheme = "default" }) {
                       value={formik.values.search}
                     />
                   </form>
-                  <div className=" mx-4 my-6 flex max-w-[268px] items-center rounded-lg bg-btnprimary transition-all hover:bg-btnsecondary md:my-0">
-                    <Link href="/login">
-                      <button className="mx-2 bg-transparent px-2 py-2 text-white max-sm:text-sm ">
-                        Login
-                      </button>
-                    </Link>
-                    <div className="h-[30px] border border-[#878787] opacity-70 "></div>
-                    <Link href="/signup">
-                      <button
-                        className="mx-2 bg-transparent px-2 py-2 text-white max-sm:text-sm"
-                        // style={{ whiteSpace: "nowrap" }}
-                      >
-                        Sign Up
-                      </button>
-                    </Link>
-                  </div>
+                  {isAuthenticated ? (
+                    <LogoutButton>{"Logout"}</LogoutButton>
+                  ) : (
+                    <div className=" mx-4 my-6 flex max-w-[268px] items-center rounded-lg bg-btnprimary transition-all hover:bg-btnsecondary md:my-0">
+                      <Link href="/login">
+                        <button className="mx-2 bg-transparent px-2 py-2 text-white max-sm:text-sm ">
+                          Login
+                        </button>
+                      </Link>
+                      <div className="h-[30px] border border-[#878787] opacity-70 "></div>
+                      <Link href="/signup">
+                        <button
+                          className="mx-2 bg-transparent px-2 py-2 text-white max-sm:text-sm"
+                          // style={{ whiteSpace: "nowrap" }}
+                        >
+                          Sign Up
+                        </button>
+                      </Link>
+                    </div>
+                  )}
                 </ul>
               </SheetContent>
             </Sheet>
@@ -493,20 +480,26 @@ export default function Header({ colorScheme = "default" }) {
               </form>
             </div>
           )}
-
-          <div className="flex h-full min-w-[328px] items-center justify-evenly rounded-lg bg-btnprimary  p-1 transition-all hover:bg-btnsecondary max-xl:min-w-[128px] max-xl:flex-col max-lg:hidden md:my-0 lg:opacity-100">
-            <Link href="/login">
-              <button className=" bg-transparent  text-white max-sm:text-sm ">
-                Login
-              </button>
-            </Link>
-            <div className="h-[25px] border border-[#878787] border-opacity-50 max-xl:hidden max-xl:h-0"></div>
-            <Link href="/signup">
-              <button className="bg-transparent text-white  max-xl:border-t-2 max-xl:border-[#878787] max-xl:border-opacity-60 max-sm:text-sm">
-                Sign Up
-              </button>
-            </Link>
-          </div>
+          {isAuthenticated ? (
+            <LogoutButton>{"Logout"}</LogoutButton>
+          ) : (
+            <div className="flex h-full min-w-[328px] items-center justify-evenly rounded-lg bg-btnprimary  p-1 transition-all hover:bg-btnsecondary max-xl:min-w-[128px] max-xl:flex-col max-lg:hidden md:my-0 lg:opacity-100">
+              <Link href="/login">
+                <button className="mx-2 bg-transparent px-2 py-2 text-white max-sm:text-sm ">
+                  Login
+                </button>
+              </Link>
+              <div className="h-[30px] border border-[#878787] opacity-70 "></div>
+              <Link href="/signup">
+                <button
+                  className="mx-2 bg-transparent px-2 py-2 text-white max-sm:text-sm"
+                  // style={{ whiteSpace: "nowrap" }}
+                >
+                  Sign Up
+                </button>
+              </Link>
+            </div>
+          )}
         </nav>
         <div className="mx-5 border-b border-b-[#00437A]"></div>
       </div>
