@@ -2,10 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css?family=Century+Gothic&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Century+Gothic&display=swap');
 
 body {
-  font-family: "Century-Gothic", sans-serif;
+  font-family: 'Century-Gothic', sans-serif;
   max-width: 1920px;
   margin: auto;
 }
@@ -116,22 +116,14 @@ body {
   }
 
   .linear-gradient {
-    background: linear-gradient(
-      270deg,
-      #def0ff 55.01%,
-      rgba(222, 240, 255, 0) 95.77%
-    );
+    background: linear-gradient(270deg, #def0ff 55.01%, rgba(222, 240, 255, 0) 95.77%);
   }
   .hero-gradient {
-    background: linear-gradient(
-      180deg,
-      #061735 0%,
-      rgba(6, 23, 53, 0.04) 54.17%
-    );
+    background: linear-gradient(180deg, #061735 0%, rgba(6, 23, 53, 0.04) 54.17%);
   }
 
   .background-image {
-    background-image: url("../../public/assets/hero_section.png");
+    background-image: url('../../public/assets/hero_section.png');
     background-size: cover;
     background-repeat: no-repeat;
     animation: changeBackground 10s linear infinite alternate;
@@ -143,18 +135,18 @@ body {
   }
   @keyframes changeBackground {
     0% {
-      background-image: url("../../public/assets/hero_section.png"); /* First image */
+      background-image: url('../../public/assets/hero_section.png'); /* First image */
     }
     50% {
-      background-image: url("../../public/assets/hero_section-2.png"); /* Second image */
+      background-image: url('../../public/assets/hero_section-2.png'); /* Second image */
     }
     100% {
-      background-image: url("../../public/assets/hero_section.png"); /* Back to the first image */
+      background-image: url('../../public/assets/hero_section.png'); /* Back to the first image */
     }
   }
 
   .event-details-background {
-    background-image: url("../../public/assets/event-details-background.png");
+    background-image: url('../../public/assets/event-details-background.png');
     background-size: cover;
     background-repeat: no-repeat;
   }

@@ -6,7 +6,8 @@
     "build": "next build",
     "dev": "next dev",
     "lint": "next lint",
-    "start": "next start"
+    "start": "next start",
+    "graphqlCodegen--watch": "npx graphql-code-generator --config ./src/core/lib/react-query-graphql/codegen.ts --watch"
   },
   "dependencies": {
     "@radix-ui/react-checkbox": "^1.0.4",
@@ -20,13 +21,19 @@
     "@radix-ui/react-separator": "^1.0.3",
     "@radix-ui/react-slot": "^1.0.2",
     "@radix-ui/react-switch": "^1.0.3",
+    "@radix-ui/react-toast": "^1.1.5",
     "@react-google-maps/api": "^2.19.2",
     "@t3-oss/env-nextjs": "^0.3.1",
+    "@tanstack/react-query": "^5.8.6",
     "@types/react-big-calendar": "^1.6.4",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
+    "cookiejs": "^2.1.2",
     "formik": "^2.4.3",
     "google-map-react": "^2.2.1",
+    "graphql": "^16.8.1",
+    "graphql-request": "^6.1.0",
+    "jwt-decode": "^4.0.0",
     "lucide-react": "^0.268.0",
     "lucide-solid": "^0.269.0",
     "next": "^13.4.2",
@@ -41,9 +48,14 @@
     "swiper": "^10.2.0",
     "tailwind-merge": "^1.14.0",
     "tailwindcss-animate": "^1.0.6",
-    "zod": "^3.21.4"
+    "zod": "^3.21.4",
+    "zod-formik-adapter": "^1.2.0"
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "5.0.0",
+    "@graphql-codegen/client-preset": "4.1.0",
+    "@graphql-codegen/typescript": "4.0.1",
+    "@parcel/watcher": "^2.3.0",
     "@types/eslint": "^8.37.0",
     "@types/google-map-react": "^2.1.7",
     "@types/node": "^18.16.0",
