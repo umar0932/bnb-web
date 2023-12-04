@@ -1,10 +1,10 @@
-import { type ReactNode, useState } from "react";
+import { type ReactNode, useState } from 'react'
 
 /**
  * A function that takes a result of a variable type and returns nothing.
  * This will close our component and return to the caller of `openComponent`.
  */
-type CloseComponent<ResultType> = (result: ResultType) => void;
+type CloseComponent<ResultType> = (result: ResultType) => void
 
 /**
  * A function that builds the UI for a component.
@@ -12,28 +12,32 @@ type CloseComponent<ResultType> = (result: ResultType) => void;
  * that we can display.
  */
 type ComponentFactory<ResultType> = (
-  isOpen:boolean,
+  isOpen: boolean,
   close: CloseComponent<ResultType>
-) => ReactNode;
+) => ReactNode
 
 function useImperativeComponent<ComponentResult>(
   componentFactory: ComponentFactory<ComponentResult>
 ) {
-  const [componentNode, setComponentNode] = useState<ReactNode | null>(componentFactory(false, () => {return;}));
-  
+  const [componentNode, setComponentNode] = useState<ReactNode | null>(
+    componentFactory(false, () => {
+      return
+    })
+  )
+
   function openComponent() {
-    return new Promise<ComponentResult>((resolve) => {
+    return new Promise<ComponentResult>(resolve => {
       function close(value: ComponentResult) {
-        resolve(value);
+        resolve(value)
         setComponentNode(componentFactory(false, close))
       }
       setComponentNode(componentFactory(true, close))
-    });
+    })
   }
 
   return {
     componentNode,
-    openComponent,
-  };
+    openComponent
+  }
 }
-export default useImperativeComponent;
+export default useImperativeComponent

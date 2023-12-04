@@ -1,16 +1,16 @@
 export const AuthBroadcastChannel = () => {
-  if (typeof BroadcastChannel !== "undefined") {
-    return new BroadcastChannel("auth-broadcast");
+  if (typeof BroadcastChannel !== 'undefined') {
+    return new BroadcastChannel('auth-broadcast')
   }
   return {
     postMessage: () => {
-      return;
+      return
     },
     addEventListener: () => {
-      return;
+      return
     },
     removeEventListener: () => {
-      return;
-    },
-  };
-};
+      return
+    }
+  }
+}

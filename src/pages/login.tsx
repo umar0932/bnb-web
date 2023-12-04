@@ -1,27 +1,27 @@
-import AuthLayout from "@/components/Authentication/layouts/AuthLayout";
-import CardLayout from "@/components/Authentication/layouts/CardLayout";
-import LoginForm from "@/components/Authentication/LoginForm";
-import Link from "next/link";
+import AuthLayout from '@/components/Authentication/layouts/AuthLayout'
+import CardLayout from '@/components/Authentication/layouts/CardLayout'
+import LoginForm from '@/components/Authentication/LoginForm'
+import Link from 'next/link'
 
 export default function Login() {
   return (
     <AuthLayout
       Title={
         <>
-          Lo<span className="text-primary">gin</span>
+          Lo<span className='text-primary'>gin</span>
         </>
       }
-      imagePath="/assets/login_page.png"
+      imagePath='/assets/login_page.png'
     >
       <CardLayout>
-        <div className="space-y-8"> 
+        <div className='space-y-8'>
           <LoginForm />
           <div>
             <Link
-              href="/signup"
-              className="flex cursor-pointer justify-end font-normal text-secondary underline"
+              href='/signup'
+              className='flex cursor-pointer justify-end font-normal text-secondary underline'
             >
-              {"Signup"}
+              {'Signup'}
             </Link>
           </div>
         </div>
@@ -43,5 +43,5 @@ export default function Login() {
         </div> */}
       </CardLayout>
     </AuthLayout>
-  );
+  )
 }
