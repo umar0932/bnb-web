@@ -11,12 +11,7 @@ const CreateCustomerMutationDocument = graphql(`
     $password: String!
   ) {
     createCustomer(
-      createCustomerInput: {
-        firstName: $firstName
-        lastName: $lastName
-        email: $email
-        password: $password
-      }
+      input: { firstName: $firstName, lastName: $lastName, email: $email, password: $password }
     ) {
       access_token
       user {
