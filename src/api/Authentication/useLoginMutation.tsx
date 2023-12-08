@@ -5,7 +5,7 @@ import { mutateSession } from './mutateSession'
 const LoginMutationDocument = graphql(`
   #graphql
   mutation Login($email: String!, $password: String!) {
-    loginAsCustomer(loginCustomerInput: { email: $email, password: $password }) {
+    loginAsCustomer(input: { email: $email, password: $password }) {
       access_token
       user {
         id
