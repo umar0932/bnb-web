@@ -3,6 +3,7 @@ import HeartIcon from '../core/icons/HeartIcon' // Import the HeartIcon componen
 import { useState } from 'react'
 import { Button } from '../core/ui/button'
 import Image from 'next/image'
+
 import CompanyLogo from '../../public/assets/company_logo.svg'
 import CalendarIcon from '../../public/assets/calendar_icon.svg'
 import LocationIcon from '../../public/assets/location_icon.svg'
@@ -12,16 +13,17 @@ import {
   SelectContent,
   SelectGroup,
   SelectItem,
-  SelectLabel,
   SelectTrigger,
   SelectValue
 } from '../core/ui/select'
+import ReportDialog from '@/components/Dialogs/ReportDialog'
 import Footer from '@/components/Footer/Footer'
 import Checkout from '@/components/Checkout/Checkout'
 export default function EventDetails() {
   const [isLiked, setIsLiked] = useState(false)
   const [count, setCount] = useState(1)
   const [showCheckout, setShowCheckout] = useState(false)
+  const [showReportDialog, setShowReportDialog] = useState(false)
 
   const toggleLike = () => {
     setIsLiked(!isLiked)
@@ -47,6 +49,11 @@ export default function EventDetails() {
   const handleCloseCheckout = () => {
     setShowCheckout(false) // Close the dialog
   }
+
+  const handleReportClick = () => {
+    setShowReportDialog(true)
+  }
+
   return (
     <>
       <div className='flex flex-col'>
@@ -188,7 +195,12 @@ export default function EventDetails() {
             </div>
           </div>
           <div className='flex justify-end'>
-            <span className='cursor-pointer text-btnprimary underline'>Report this event</span>
+            <span className='cursor-pointer text-btnprimary underline' onClick={handleReportClick}>
+              Report this event
+            </span>
+            {showReportDialog && (
+              <ReportDialog isOpen={showReportDialog} onClose={() => setShowReportDialog(false)} />
+            )}
           </div>
         </div>
         <Footer />
