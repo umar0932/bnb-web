@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Image from 'next/image'
 import ProfileIcon from '../../../public/assets/user_profile_icon.svg'
+import Link from 'next/link'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -23,7 +24,7 @@ import { BsGrid3X3GapFill } from 'react-icons/bs'
 import { IoMdStats } from 'react-icons/io'
 import { BsBank } from 'react-icons/bs'
 
-export default function OrganizerHeader({ setActiveDiv }: any) {
+export default function OrganizerHeader() {
   return (
     <>
       <div className='card-drop-shadow flex justify-end bg-[#DEF0FF] p-3'>
@@ -36,42 +37,32 @@ export default function OrganizerHeader({ setActiveDiv }: any) {
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <div className='flex w-[260px] flex-wrap'>
-                    <div
-                      className='flex w-full cursor-pointer items-center gap-4 p-5 hover:bg-btnprimary hover:text-white '
-                      onClick={() => setActiveDiv('Home')}
-                    >
-                      <GoHome size={18} />
-                      <span>Home</span>
-                    </div>
-                    <div
-                      className='flex w-full cursor-pointer items-center gap-4 p-5 hover:bg-btnprimary hover:text-white  '
-                      onClick={() => setActiveDiv('Events')}
-                    >
-                      <BiCalendar />
-                      <span>Events</span>
-                    </div>
-                    <div
-                      className='flex w-full cursor-pointer items-center gap-4 p-5 hover:bg-btnprimary hover:text-white  '
-                      onClick={() => setActiveDiv('Orders')}
-                    >
-                      <CiViewList />
-                      <span>Orders</span>
-                    </div>
-                    {/* <div className="flex w-full cursor-pointer items-center gap-4 p-5 hover:bg-btnprimary hover:text-white ">
-                      <IoMdStats />
-                      <span>Stats</span>
-                    </div>
-                    <div className="flex w-full cursor-pointer items-center gap-4 p-5 hover:bg-btnprimary hover:text-white ">
-                      <BsBank />
-                      <span>Finances</span>
-                    </div> */}
-                    <div
-                      className='flex w-full cursor-pointer items-center gap-4 p-5 hover:bg-btnprimary hover:text-white '
-                      onClick={() => setActiveDiv('Settings')}
-                    >
-                      <IoSettingsOutline />
-                      <span>Settings</span>
-                    </div>
+                    <Link href='/organizer/home'>
+                      <div className='flex w-full cursor-pointer items-center gap-4 p-5 hover:bg-btnprimary hover:text-white '>
+                        <GoHome size={18} />
+                        <span>Home</span>
+                      </div>
+                    </Link>
+
+                    <Link href='/organizer/events'>
+                      <div className='flex w-full cursor-pointer items-center gap-4 p-5 hover:bg-btnprimary hover:text-white  '>
+                        <BiCalendar />
+                        <span>Events</span>
+                      </div>
+                    </Link>
+
+                    <Link href='/organizer/orders'>
+                      <div className='flex w-full cursor-pointer items-center gap-4 p-5 hover:bg-btnprimary hover:text-white  '>
+                        <CiViewList />
+                        <span>Orders</span>
+                      </div>
+                    </Link>
+                    <Link href='/organizer/settings'>
+                      <div className='flex w-full cursor-pointer items-center gap-4 p-5 hover:bg-btnprimary hover:text-white '>
+                        <IoSettingsOutline />
+                        <span>Settings</span>
+                      </div>
+                    </Link>
                   </div>
                 </NavigationMenuContent>
               </NavigationMenuItem>
