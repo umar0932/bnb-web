@@ -21,8 +21,6 @@ import { BiCalendar } from 'react-icons/bi'
 import { CiViewList } from 'react-icons/ci'
 import { IoSettingsOutline } from 'react-icons/io5'
 import { BsGrid3X3GapFill } from 'react-icons/bs'
-import { IoMdStats } from 'react-icons/io'
-import { BsBank } from 'react-icons/bs'
 
 export default function OrganizerHeader() {
   return (
