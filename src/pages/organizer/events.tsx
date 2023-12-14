@@ -15,7 +15,7 @@ import {
 import OrganizerEventTable from '@/components/Organizer/OrganizerEventTable'
 import OrganizerEventCalendar from '@/components/Organizer/OrganizerEventCalendar'
 import Link from 'next/link'
-import OrganizerLayout from '@/components/Authentication/layouts/OrganizerLayout'
+import OrganizerLayout from '@/components/common/layouts/OrganizerLayout'
 export default function OrganizerEvents() {
   const [activeDiv, setActiveDiv] = useState('List')
   const handleDivClick = (divName: string) => {

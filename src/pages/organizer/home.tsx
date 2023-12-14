@@ -6,7 +6,7 @@ import EditProfileIcon from '../../../public/assets/edit_profile_icon.svg'
 import LinkIcon from '../../../public/assets/link_icon.svg'
 import { RadioGroup, RadioGroupItem } from '@/core/ui/radio-group'
 import Link from 'next/link'
-import OrganizerLayout from '@/components/Authentication/layouts/OrganizerLayout'
+import OrganizerLayout from '@/components/common/layouts/OrganizerLayout'
 export default function OrganizerHome() {
   return (
     <>

@@ -4,7 +4,7 @@ import LocationForm from '@/components/Forms/LocationForm'
 import Header from '@/components/Header/Header'
 import Link from 'next/link'
 import { Button } from '@/core/ui/button'
-import EventLayout from '@/components/Authentication/layouts/EventLayout'
+import EventLayout from '@/components/Events/layouts/EventLayout'
 
 export default function CreateEvent() {
   return (
