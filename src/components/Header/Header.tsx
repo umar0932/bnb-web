@@ -18,6 +18,7 @@ import { Menu } from 'lucide-react'
 import { useFormik } from 'formik'
 import useAuthSessionContext from '@/lib/Authentication/context/AuthSessionContext'
 import LogoutButton from '../Authentication/LogoutButton'
+import { ProfileAvatar } from './ProfileAvatar'
 
 export default function Header({ colorScheme = 'default' }) {
   const formik = useFormik({
@@ -441,7 +442,7 @@ export default function Header({ colorScheme = 'default' }) {
             </div>
           )}
           {isAuthenticated ? (
-            <LogoutButton>{'Logout'}</LogoutButton>
+            <ProfileAvatar />
           ) : (
             <div className='flex h-full min-w-[328px] items-center justify-evenly rounded-lg bg-btnprimary  p-1 transition-all hover:bg-btnsecondary max-xl:min-w-[128px] max-xl:flex-col max-lg:hidden md:my-0 lg:opacity-100'>
               <Link href='/login'>
@@ -451,10 +452,7 @@ export default function Header({ colorScheme = 'default' }) {
               </Link>
               <div className='h-[30px] border border-[#878787] opacity-70 '></div>
               <Link href='/signup'>
-                <button
-                  className='mx-2 bg-transparent px-2 py-2 text-white max-sm:text-sm'
-                  // style={{ whiteSpace: "nowrap" }}
-                >
+                <button className='mx-2 bg-transparent px-2 py-2 text-white max-sm:text-sm'>
                   Sign Up
                 </button>
               </Link>
@@ -463,7 +461,6 @@ export default function Header({ colorScheme = 'default' }) {
         </nav>
         <div className='mx-5 border-b border-b-[#00437A]'></div>
       </div>
-      {/* Event Page */}
     </>
   )
 }
