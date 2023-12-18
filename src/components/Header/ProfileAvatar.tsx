@@ -1,17 +1,18 @@
+import { useLogoutMutation } from '@/api/Authentication/useLogoutMutation'
 import { Avatar, AvatarFallback, AvatarImage } from '@/core/ui/avatar'
 import { Button } from '@/core/ui/button'
 import {
   DropdownMenu,
   DropdownMenuContent,
-  DropdownMenuGroup,
   DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuShortcut,
   DropdownMenuTrigger
 } from '@/core/ui/dropdown-menu'
+// import useAuthSessionContext from '@/lib/Authentication/context/AuthSessionContext'
 
 export function ProfileAvatar() {
+  // const {data,status} = useAuthSessionContext()
+  const { mutate: logout } = useLogoutMutation()
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -23,30 +24,7 @@ export function ProfileAvatar() {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className='w-56' align='end' forceMount>
-        <DropdownMenuLabel className='font-normal'>
-          <div className='flex flex-col space-y-1'>
-            <p className='text-sm font-medium leading-none'>shadcn</p>
-            <p className='text-xs leading-none text-muted-foreground'>m@example.com</p>
-          </div>
-        </DropdownMenuLabel>
-        <DropdownMenuSeparator />
-        <DropdownMenuGroup>
-          <DropdownMenuItem>
-            Profile
-            <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
-          </DropdownMenuItem>
-          <DropdownMenuItem>
-            Billing
-            <DropdownMenuShortcut>⌘B</DropdownMenuShortcut>
-          </DropdownMenuItem>
-          <DropdownMenuItem>
-            Settings
-            <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
-          </DropdownMenuItem>
-          <DropdownMenuItem>New Team</DropdownMenuItem>
-        </DropdownMenuGroup>
-        <DropdownMenuSeparator />
-        <DropdownMenuItem>
+        <DropdownMenuItem onClick={() => logout()}>
           Log out
           <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
         </DropdownMenuItem>

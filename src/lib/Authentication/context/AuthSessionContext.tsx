@@ -1,11 +1,10 @@
 import createGenericContext from '@/core/lib/create-generic-context'
-import { type JwtPayload } from 'jwt-decode'
 import { useEffect, type PropsWithChildren, useState } from 'react'
 import { AuthBroadcastChannel } from '../AuthBroadcastChannel'
 import { getSession } from '@/api/Authentication'
 
 interface AuthSessionContext {
-  data: null | undefined | JwtPayload
+  data: Awaited<ReturnType<typeof getSession>> | undefined
   status: 'loading' | 'authenticated' | 'unauthenticated'
 }
 const [_useAuthSessionContext, AuthSessionContextProvider] =
@@ -21,6 +20,7 @@ export const AuthSessionProvider = ({ children }: PropsWithChildren) => {
     const setSessionState = () => {
       getSession({ shouldBroadcast: false })
         .then(session => {
+          console.log(session)
           setState({
             data: session,
             status: session === null ? 'unauthenticated' : 'authenticated'
@@ -58,8 +58,10 @@ interface Props {
 }
 const useAuthSessionContext = (props?: Props) => {
   const { data, status } = _useAuthSessionContext()
-  if (props?.required && status === 'unauthenticated') {
-    throw new Error('User is not authenticated')
+  if (props?.required) {
+    if (!data || status === 'unauthenticated') {
+      throw new Error('User is not authenticated')
+    }
   }
   return { data, status }
 }

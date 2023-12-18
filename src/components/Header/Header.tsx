@@ -29,15 +29,15 @@ export default function Header({ colorScheme = 'default' }) {
   })
   const { status } = useAuthSessionContext()
   const isAuthenticated = status === 'authenticated'
-  const getButtonClasses = () => {
-    if (colorScheme === 'default') {
-      return 'text-secondary'
-    } else if (colorScheme === 'alternative') {
-      return 'text-white'
-    } else if (colorScheme === 'second-alternative') {
-      return 'text-white'
-    }
-  }
+  // const getButtonClasses = () => {
+  //   if (colorScheme === 'default') {
+  //     return 'text-secondary'
+  //   } else if (colorScheme === 'alternative') {
+  //     return 'text-white'
+  //   } else if (colorScheme === 'second-alternative') {
+  //     return 'text-white'
+  //   }
+  // }
 
   // Event Page Header
   if (colorScheme === 'event-page-header') {
