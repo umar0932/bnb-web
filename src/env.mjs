@@ -17,7 +17,8 @@ export const env = createEnv({
    */
   client: {
     NEXT_PUBLIC_REACT_APP_MAP_KEY: z.string(),
-    NEXT_PUBLIC_SERVER_GRAPHQL_URL: z.string()
+    NEXT_PUBLIC_SERVER_GRAPHQL_URL: z.string(),
+    NEXT_PUBLIC_GOOGLE_CLIENT_ID:z.string()
     // NEXT_PUBLIC_CLIENTVAR: z.string().min(1),
   },
 
@@ -28,6 +29,7 @@ export const env = createEnv({
   runtimeEnv: {
     NEXT_PUBLIC_REACT_APP_MAP_KEY: process.env.NEXT_PUBLIC_REACT_APP_MAP_KEY,
     NODE_ENV: process.env.NODE_ENV,
+    NEXT_PUBLIC_GOOGLE_CLIENT_ID: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID,
     NEXT_PUBLIC_SERVER_GRAPHQL_URL: process.env.NEXT_PUBLIC_SERVER_GRAPHQL_URL
     // NEXT_PUBLIC_CLIENTVAR: process.env.NEXT_PUBLIC_CLIENTVAR,
   },
