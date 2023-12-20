@@ -10,7 +10,7 @@ import SearchIcon from '../../../public/assets/search_icon_red.svg'
 import Image from 'next/image'
 
 import OrganizerOrdersTable from '@/components/Organizer/OrganizerOrdersTable'
-import OrganizerLayout from '@/components/Authentication/layouts/OrganizerLayout'
+import OrganizerLayout from '@/components/common/layouts/OrganizerLayout'
 export default function OrganizerOrders() {
   return (
     <>

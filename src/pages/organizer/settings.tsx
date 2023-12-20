@@ -13,7 +13,7 @@ import {
 import { Dialog, DialogContent, DialogTrigger } from '@/core/ui/dialog'
 import { useState } from 'react'
 import EditOrganizerProfile from '@/components/Organizer/EditOrganizerProfile'
-import OrganizerLayout from '@/components/Authentication/layouts/OrganizerLayout'
+import OrganizerLayout from '@/components/common/layouts/OrganizerLayout'
 export default function OrganizationSettings() {
   const [isEditing, setIsEditing] = useState(false)
   const handleEditClick = () => {
