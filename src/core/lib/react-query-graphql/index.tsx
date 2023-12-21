@@ -12,7 +12,7 @@ import {
   type VariablesAndRequestHeadersArgs,
   type GraphQLClientRequestHeaders,
   type Variables,
-  type ClientError
+  type ClientError,
 } from 'graphql-request/build/esm/types'
 import { env } from '@/env.mjs'
 import { graphql } from './gql-typed'
@@ -47,18 +47,19 @@ export function useGraphQLInfiniteQuery<TResult, TVariables>(
   })
 }
 
-export function useGraphQLMutation<TResult, TVariables extends Variables>(
+export function useGraphQLMutation<TResult, TVariables extends Variables, TError = ClientError, TContext = unknown>(
   mutationOptions: UseMutationOptions<
     TResult,
-    ClientError,
-    VariablesAndRequestHeadersArgs<TVariables>
+    TError,
+    VariablesAndRequestHeadersArgs<TVariables>,
+    TContext
   >,
   document: TypedDocumentNode<TResult, TVariables>
 ) {
-  return useMutation({
+  return useMutation<TResult, TError, VariablesAndRequestHeadersArgs<TVariables>, TContext>({
     ...mutationOptions,
     mutationFn: async variables => {
-      return await request(env.NEXT_PUBLIC_SERVER_GRAPHQL_URL, document, ...variables)
+      return await request(env.NEXT_PUBLIC_SERVER_GRAPHQL_URL, document,...variables)
     }
   })
 }

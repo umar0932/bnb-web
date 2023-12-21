@@ -8,10 +8,9 @@ import {
   DropdownMenuShortcut,
   DropdownMenuTrigger
 } from '@/core/ui/dropdown-menu'
-// import useAuthSessionContext from '@/lib/Authentication/context/AuthSessionContext'
+import Link from 'next/link'
 
 export function ProfileAvatar() {
-  // const {data,status} = useAuthSessionContext()
   const { mutate: logout } = useLogoutMutation()
   return (
     <DropdownMenu>
@@ -24,6 +23,12 @@ export function ProfileAvatar() {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className='w-56' align='end' forceMount>
+        <Link href=  {"/account-settings"} passHref>
+          <DropdownMenuItem>
+            Account Settings
+          </DropdownMenuItem>
+        </Link>
+
         <DropdownMenuItem onClick={() => logout()}>
           Log out
           <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
