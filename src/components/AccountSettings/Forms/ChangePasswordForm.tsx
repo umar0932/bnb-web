@@ -1,13 +1,15 @@
 import { useFormik } from 'formik'
 import { Button } from '@/core/ui/button'
+import { useUpdatePasswordMutation } from '@/api/AccountSettings/useUpdatePasswordMutation'
 export default function ChangePasswordForm() {
+  const { mutateAsync } = useUpdatePasswordMutation()
   const formik = useFormik({
     initialValues: {
       new_password: '',
       confirm_password: ''
     },
-    onSubmit: values => {
-      JSON.stringify(values, null, 2)
+    onSubmit: async values => {
+      await mutateAsync({ input: values.new_password })
     }
   })
 
@@ -51,8 +53,11 @@ export default function ChangePasswordForm() {
                 />
               </div>
             </div>
-            <Button className='mt-5 flex w-[130px] bg-btnprimary font-bold text-white hover:bg-btnsecondary'>
-              Change
+            <Button
+              className='mt-5 flex w-[130px] bg-btnprimary font-bold text-white hover:bg-btnsecondary'
+              disabled={formik.isSubmitting}
+            >
+              {formik.isSubmitting ? 'Submitting...' : 'Submit'}
             </Button>
           </form>
         </div>
