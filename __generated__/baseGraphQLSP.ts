@@ -116,7 +116,6 @@ export type CreateSubCategoryInput = {
 
 export type Customer = {
   __typename: 'Customer';
-  JobTitle?: Maybe<Scalars['String']['output']>;
   cellPhone?: Maybe<Scalars['String']['output']>;
   city?: Maybe<Scalars['String']['output']>;
   companyName?: Maybe<Scalars['String']['output']>;
@@ -127,6 +126,7 @@ export type Customer = {
   homePhone?: Maybe<Scalars['String']['output']>;
   id: Scalars['ID']['output'];
   isActive?: Maybe<Scalars['Boolean']['output']>;
+  jobTitle?: Maybe<Scalars['String']['output']>;
   lastName: Scalars['String']['output'];
   password: Scalars['String']['output'];
   secondAddress?: Maybe<Scalars['String']['output']>;
@@ -139,6 +139,24 @@ export type CustomerEmailUpdateResponse = {
   __typename: 'CustomerEmailUpdateResponse';
   access_token: Scalars['String']['output'];
   user: Customer;
+};
+
+export type CustomerFilterInput = {
+  cellPhone?: InputMaybe<Scalars['String']['input']>;
+  city?: InputMaybe<Scalars['String']['input']>;
+  companyName?: InputMaybe<Scalars['String']['input']>;
+  country?: InputMaybe<Scalars['String']['input']>;
+  email?: InputMaybe<Scalars['String']['input']>;
+  firstAddress?: InputMaybe<Scalars['String']['input']>;
+  firstName?: InputMaybe<Scalars['String']['input']>;
+  homePhone?: InputMaybe<Scalars['String']['input']>;
+  id?: InputMaybe<Scalars['ID']['input']>;
+  jobTitle?: InputMaybe<Scalars['String']['input']>;
+  lastName?: InputMaybe<Scalars['String']['input']>;
+  secondAddress?: InputMaybe<Scalars['String']['input']>;
+  state?: InputMaybe<Scalars['String']['input']>;
+  website?: InputMaybe<Scalars['String']['input']>;
+  zipCode?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type CustomerLoginResponse = {
@@ -196,6 +214,18 @@ export type EventTicketsEntity = {
   ticketDescription?: Maybe<Scalars['String']['output']>;
   ticketName: Scalars['String']['output'];
   ticketPrice: Scalars['Float']['output'];
+};
+
+export type ListCustomersInputs = {
+  filter?: InputMaybe<CustomerFilterInput>;
+  limit: Scalars['Float']['input'];
+  offset?: InputMaybe<Scalars['Float']['input']>;
+};
+
+export type ListCustomersResponse = {
+  __typename: 'ListCustomersResponse';
+  results: Array<Customer>;
+  totalRows?: Maybe<Scalars['Float']['output']>;
 };
 
 /** The type of location for an event (ONLINE_EVENT or VENUE_EVENT) */
@@ -389,6 +419,13 @@ export type Organizer = {
   websiteLink?: Maybe<Scalars['String']['output']>;
 };
 
+export type PageData = {
+  __typename: 'PageData';
+  count: Scalars['Float']['output'];
+  limit?: Maybe<Scalars['Int']['output']>;
+  offset?: Maybe<Scalars['Int']['output']>;
+};
+
 export type Query = {
   __typename: 'Query';
   /** This will get all categories */
@@ -398,12 +435,17 @@ export type Query = {
   /** Get the Customer */
   getCustomerData: Customer;
   getCustomerUploadUrl: S3SignedUrlResponse;
-  /** The List of Customers */
-  getCustomers: Array<Customer>;
+  /** The List of Customers with Pagination and filters */
+  getCustomersAdmin: ListCustomersResponse;
   /** check if email already exist */
   validEmailAdmin: SuccessResponse;
   /** check if email already exist */
   validEmailCustomer: SuccessResponse;
+};
+
+
+export type QueryGetCustomersAdminArgs = {
+  input: ListCustomersInputs;
 };
 
 
@@ -461,7 +503,6 @@ export type UpdateCategoryInput = {
 };
 
 export type UpdateCustomerInput = {
-  JobTitle?: InputMaybe<Scalars['String']['input']>;
   cellPhone?: InputMaybe<Scalars['String']['input']>;
   city?: InputMaybe<Scalars['String']['input']>;
   companyName?: InputMaybe<Scalars['String']['input']>;
@@ -470,6 +511,7 @@ export type UpdateCustomerInput = {
   firstName?: InputMaybe<Scalars['String']['input']>;
   homePhone?: InputMaybe<Scalars['String']['input']>;
   isActive?: InputMaybe<Scalars['Boolean']['input']>;
+  jobTitle?: InputMaybe<Scalars['String']['input']>;
   lastName?: InputMaybe<Scalars['String']['input']>;
   secondAddress?: InputMaybe<Scalars['String']['input']>;
   state?: InputMaybe<Scalars['String']['input']>;

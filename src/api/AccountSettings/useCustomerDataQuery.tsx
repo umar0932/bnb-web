@@ -8,7 +8,7 @@ const GetCustomerDataQueryDocument = graphql(`
       id
       firstName
       lastName
-      JobTitle
+      jobTitle
       isActive
       secondAddress
       password
@@ -25,11 +25,11 @@ const GetCustomerDataQueryDocument = graphql(`
   }
 `)
 
-const queryKey = ['customer-data']
+export const CustomerDataQueryKey = ['customer-data']
 const useCustomerDataQuery = () =>
   useGraphQLQueryProtected(
     {
-      queryKey
+      queryKey:CustomerDataQueryKey
     },
     GetCustomerDataQueryDocument
   )
