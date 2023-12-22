@@ -12,7 +12,7 @@ const GoogleOAuthInner = () => {
       console.log(codeResponse)
       setLoading(false)
     },
-    flow: 'auth-code'
+    flow: 'implicit'
   })
   return (
     <Button
