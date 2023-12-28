@@ -7,6 +7,11 @@
     "dev": "next dev",
     "lint": "next lint",
     "start": "next start",
+    "prettier": "./node_modules/.bin/prettier --check \"**/*.{js,json,ts,yml,yaml}\"",
+    "prettier:write": "./node_modules/.bin/prettier --write \"**/*.{js,json,ts,yml,yaml}\"",
+    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
+    "lint:fix": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
+    "prepare": "husky install",
     "graphqlCodegen--watch": "npx graphql-code-generator --config ./src/core/lib/react-query-graphql/codegen.ts --watch"
   },
   "dependencies": {
