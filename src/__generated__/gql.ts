@@ -1,6 +1,6 @@
 /* eslint-disable */
-import * as types from './graphql';
-import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/core';
+import * as types from './graphql'
+import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/core'
 
 /**
  * Map of all GraphQL operations in the project.
@@ -13,12 +13,17 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
  * Therefore it is highly recommended to use the babel or swc plugin for production.
  */
 const documents = {
-    "\n  query getCustomerData {\n    getCustomerData {\n      email\n      id\n      firstName\n      lastName\n      jobTitle\n      isActive\n      secondAddress\n      password\n      state\n      website\n      zipCode\n      cellPhone\n      city\n      companyName\n      country\n      firstAddress\n      homePhone\n    }\n  }\n": types.GetCustomerDataDocument,
-    "\n    mutation updateCustomerMutation($input: UpdateCustomerInput!) {\n        updateCustomer(input: $input) {\n            id\n            firstName\n            lastName\n            companyName\n            email\n            homePhone\n            cellPhone\n            website\n            firstAddress\n            secondAddress\n            city\n            state\n            zipCode\n            country\n            jobTitle\n            isActive\n        }\n    }\n": types.UpdateCustomerMutationDocument,
-    "\n  mutation updateCustomerEmail($email: String!) {\n    updateCustomerEmail(input: $email) {\n      access_token\n      user {\n        email\n      }\n    }\n  }\n": types.UpdateCustomerEmailDocument,
-    "\n  #graphql\n  mutation CreateCustomer(\n    $firstName: String!\n    $lastName: String!\n    $email: String!\n    $password: String!\n  ) {\n    createCustomer(\n      input: { firstName: $firstName, lastName: $lastName, email: $email, password: $password }\n    ) {\n      access_token\n      user {\n        id\n        email\n        firstName\n        lastName\n      }\n    }\n  }\n": types.CreateCustomerDocument,
-    "\n  #graphql\n  mutation Login($email: String!, $password: String!) {\n    loginAsCustomer(input: { email: $email, password: $password }) {\n      access_token\n      user {\n        id\n        email\n        firstName\n        lastName\n      }\n    }\n  }\n": types.LoginDocument,
-};
+  '\n  query getCustomerData {\n    getCustomerData {\n      email\n      id\n      firstName\n      lastName\n      jobTitle\n      isActive\n      secondAddress\n      password\n      state\n      website\n      zipCode\n      cellPhone\n      city\n      companyName\n      country\n      firstAddress\n      homePhone\n    }\n  }\n':
+    types.GetCustomerDataDocument,
+  '\n    mutation updateCustomerMutation($input: UpdateCustomerInput!) {\n        updateCustomer(input: $input) {\n            id\n            firstName\n            lastName\n            companyName\n            email\n            homePhone\n            cellPhone\n            website\n            firstAddress\n            secondAddress\n            city\n            state\n            zipCode\n            country\n            jobTitle\n            isActive\n        }\n    }\n':
+    types.UpdateCustomerMutationDocument,
+  '\n  mutation updateCustomerEmail($email: String!) {\n    updateCustomerEmail(input: $email) {\n      access_token\n      user {\n        email\n      }\n    }\n  }\n':
+    types.UpdateCustomerEmailDocument,
+  '\n  #graphql\n  mutation CreateCustomer(\n    $firstName: String!\n    $lastName: String!\n    $email: String!\n    $password: String!\n  ) {\n    createCustomer(\n      input: { firstName: $firstName, lastName: $lastName, email: $email, password: $password }\n    ) {\n      access_token\n      user {\n        id\n        email\n        firstName\n        lastName\n      }\n    }\n  }\n':
+    types.CreateCustomerDocument,
+  '\n  #graphql\n  mutation Login($email: String!, $password: String!) {\n    loginAsCustomer(input: { email: $email, password: $password }) {\n      access_token\n      user {\n        id\n        email\n        firstName\n        lastName\n      }\n    }\n  }\n':
+    types.LoginDocument
+}
 
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
@@ -32,31 +37,42 @@ const documents = {
  * The query argument is unknown!
  * Please regenerate the types.
  */
-export function graphql(source: string): unknown;
+export function graphql(source: string): unknown
 
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(source: "\n  query getCustomerData {\n    getCustomerData {\n      email\n      id\n      firstName\n      lastName\n      jobTitle\n      isActive\n      secondAddress\n      password\n      state\n      website\n      zipCode\n      cellPhone\n      city\n      companyName\n      country\n      firstAddress\n      homePhone\n    }\n  }\n"): (typeof documents)["\n  query getCustomerData {\n    getCustomerData {\n      email\n      id\n      firstName\n      lastName\n      jobTitle\n      isActive\n      secondAddress\n      password\n      state\n      website\n      zipCode\n      cellPhone\n      city\n      companyName\n      country\n      firstAddress\n      homePhone\n    }\n  }\n"];
+export function graphql(
+  source: '\n  query getCustomerData {\n    getCustomerData {\n      email\n      id\n      firstName\n      lastName\n      jobTitle\n      isActive\n      secondAddress\n      password\n      state\n      website\n      zipCode\n      cellPhone\n      city\n      companyName\n      country\n      firstAddress\n      homePhone\n    }\n  }\n'
+): (typeof documents)['\n  query getCustomerData {\n    getCustomerData {\n      email\n      id\n      firstName\n      lastName\n      jobTitle\n      isActive\n      secondAddress\n      password\n      state\n      website\n      zipCode\n      cellPhone\n      city\n      companyName\n      country\n      firstAddress\n      homePhone\n    }\n  }\n']
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(source: "\n    mutation updateCustomerMutation($input: UpdateCustomerInput!) {\n        updateCustomer(input: $input) {\n            id\n            firstName\n            lastName\n            companyName\n            email\n            homePhone\n            cellPhone\n            website\n            firstAddress\n            secondAddress\n            city\n            state\n            zipCode\n            country\n            jobTitle\n            isActive\n        }\n    }\n"): (typeof documents)["\n    mutation updateCustomerMutation($input: UpdateCustomerInput!) {\n        updateCustomer(input: $input) {\n            id\n            firstName\n            lastName\n            companyName\n            email\n            homePhone\n            cellPhone\n            website\n            firstAddress\n            secondAddress\n            city\n            state\n            zipCode\n            country\n            jobTitle\n            isActive\n        }\n    }\n"];
+export function graphql(
+  source: '\n    mutation updateCustomerMutation($input: UpdateCustomerInput!) {\n        updateCustomer(input: $input) {\n            id\n            firstName\n            lastName\n            companyName\n            email\n            homePhone\n            cellPhone\n            website\n            firstAddress\n            secondAddress\n            city\n            state\n            zipCode\n            country\n            jobTitle\n            isActive\n        }\n    }\n'
+): (typeof documents)['\n    mutation updateCustomerMutation($input: UpdateCustomerInput!) {\n        updateCustomer(input: $input) {\n            id\n            firstName\n            lastName\n            companyName\n            email\n            homePhone\n            cellPhone\n            website\n            firstAddress\n            secondAddress\n            city\n            state\n            zipCode\n            country\n            jobTitle\n            isActive\n        }\n    }\n']
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(source: "\n  mutation updateCustomerEmail($email: String!) {\n    updateCustomerEmail(input: $email) {\n      access_token\n      user {\n        email\n      }\n    }\n  }\n"): (typeof documents)["\n  mutation updateCustomerEmail($email: String!) {\n    updateCustomerEmail(input: $email) {\n      access_token\n      user {\n        email\n      }\n    }\n  }\n"];
+export function graphql(
+  source: '\n  mutation updateCustomerEmail($email: String!) {\n    updateCustomerEmail(input: $email) {\n      access_token\n      user {\n        email\n      }\n    }\n  }\n'
+): (typeof documents)['\n  mutation updateCustomerEmail($email: String!) {\n    updateCustomerEmail(input: $email) {\n      access_token\n      user {\n        email\n      }\n    }\n  }\n']
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(source: "\n  #graphql\n  mutation CreateCustomer(\n    $firstName: String!\n    $lastName: String!\n    $email: String!\n    $password: String!\n  ) {\n    createCustomer(\n      input: { firstName: $firstName, lastName: $lastName, email: $email, password: $password }\n    ) {\n      access_token\n      user {\n        id\n        email\n        firstName\n        lastName\n      }\n    }\n  }\n"): (typeof documents)["\n  #graphql\n  mutation CreateCustomer(\n    $firstName: String!\n    $lastName: String!\n    $email: String!\n    $password: String!\n  ) {\n    createCustomer(\n      input: { firstName: $firstName, lastName: $lastName, email: $email, password: $password }\n    ) {\n      access_token\n      user {\n        id\n        email\n        firstName\n        lastName\n      }\n    }\n  }\n"];
+export function graphql(
+  source: '\n  #graphql\n  mutation CreateCustomer(\n    $firstName: String!\n    $lastName: String!\n    $email: String!\n    $password: String!\n  ) {\n    createCustomer(\n      input: { firstName: $firstName, lastName: $lastName, email: $email, password: $password }\n    ) {\n      access_token\n      user {\n        id\n        email\n        firstName\n        lastName\n      }\n    }\n  }\n'
+): (typeof documents)['\n  #graphql\n  mutation CreateCustomer(\n    $firstName: String!\n    $lastName: String!\n    $email: String!\n    $password: String!\n  ) {\n    createCustomer(\n      input: { firstName: $firstName, lastName: $lastName, email: $email, password: $password }\n    ) {\n      access_token\n      user {\n        id\n        email\n        firstName\n        lastName\n      }\n    }\n  }\n']
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(source: "\n  #graphql\n  mutation Login($email: String!, $password: String!) {\n    loginAsCustomer(input: { email: $email, password: $password }) {\n      access_token\n      user {\n        id\n        email\n        firstName\n        lastName\n      }\n    }\n  }\n"): (typeof documents)["\n  #graphql\n  mutation Login($email: String!, $password: String!) {\n    loginAsCustomer(input: { email: $email, password: $password }) {\n      access_token\n      user {\n        id\n        email\n        firstName\n        lastName\n      }\n    }\n  }\n"];
+export function graphql(
+  source: '\n  #graphql\n  mutation Login($email: String!, $password: String!) {\n    loginAsCustomer(input: { email: $email, password: $password }) {\n      access_token\n      user {\n        id\n        email\n        firstName\n        lastName\n      }\n    }\n  }\n'
+): (typeof documents)['\n  #graphql\n  mutation Login($email: String!, $password: String!) {\n    loginAsCustomer(input: { email: $email, password: $password }) {\n      access_token\n      user {\n        id\n        email\n        firstName\n        lastName\n      }\n    }\n  }\n']
 
 export function graphql(source: string) {
-  return (documents as any)[source] ?? {};
+  return (documents as any)[source] ?? {}
 }
 
-export type DocumentType<TDocumentNode extends DocumentNode<any, any>> = TDocumentNode extends DocumentNode<  infer TType,  any>  ? TType  : never;
+export type DocumentType<TDocumentNode extends DocumentNode<any, any>> =
+  TDocumentNode extends DocumentNode<infer TType, any> ? TType : never
