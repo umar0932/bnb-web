@@ -32,7 +32,7 @@ const FormikSchema = z.object({
   work_address: z.string().optional(),
   work_address_two: z.string().optional(),
   work_city: z.string().optional(),
-  work_postal_code: z.string().optional() 
+  work_postal_code: z.string().optional()
 })
 
 export default function ContactInfoForm() {
@@ -57,10 +57,9 @@ export default function ContactInfoForm() {
       work_city: data?.getCustomerData.city ?? undefined,
       work_postal_code: data?.getCustomerData.zipCode ?? undefined
     },
-    validationSchema:toFormikValidationSchema(FormikSchema),
+    validationSchema: toFormikValidationSchema(FormikSchema),
     enableReinitialize: true,
     onSubmit: async values => {
-      
       try {
         await mutateAsync({
           input: {

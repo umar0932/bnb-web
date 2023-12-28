@@ -12,9 +12,7 @@ export default function ChangeEmailForm() {
     onSubmit: async values => {
       try {
         await mutateAsync({ email: values.email_address })
-      }catch(e){
-        
-      }
+      } catch (e) {}
     }
   })
   return (
@@ -54,7 +52,10 @@ export default function ChangeEmailForm() {
                 />
               </div>
             </div>
-            <Button className='mt-5 flex w-[130px] bg-btnprimary font-bold text-white hover:bg-btnsecondary' disabled={formik.isSubmitting}>
+            <Button
+              className='mt-5 flex w-[130px] bg-btnprimary font-bold text-white hover:bg-btnsecondary'
+              disabled={formik.isSubmitting}
+            >
               {formik.isSubmitting ? 'Submitting...' : 'Submit'}
             </Button>
           </form>

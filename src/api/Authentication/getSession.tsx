@@ -6,10 +6,10 @@ interface Params {
   shouldBroadcast?: boolean
 }
 export interface UserSession {
-  exp: number,
-  iat: number,
-  email:string,
-  accessToken:string
+  exp: number
+  iat: number
+  email: string
+  accessToken: string
 }
 // eslint-disable-next-line @typescript-eslint/require-await
 export const getSession = async ({ shouldBroadcast }: Params) => {

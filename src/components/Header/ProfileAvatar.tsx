@@ -23,10 +23,8 @@ export function ProfileAvatar() {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className='w-56' align='end' forceMount>
-        <Link href=  {"/account-settings"} passHref>
-          <DropdownMenuItem>
-            Account Settings
-          </DropdownMenuItem>
+        <Link href={'/account-settings'} passHref>
+          <DropdownMenuItem>Account Settings</DropdownMenuItem>
         </Link>
 
         <DropdownMenuItem onClick={() => logout()}>

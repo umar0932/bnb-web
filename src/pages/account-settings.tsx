@@ -18,13 +18,16 @@ const FORMS_MAPPING = {
   'Linked Account': <LinkedAccountForm />,
   'Email Preference': <EmailPreferanceForm />,
   'Close Account': <CloseAccountForm />,
-  'Personal Data': <PersonalData />,
+  'Personal Data': <PersonalData />
 }
 
 export default function AccountSetting() {
   const { query } = useRouter()
   const formKey = query.form
-  const displayedForm = typeof formKey === 'string' && formKey in FORMS_MAPPING ? formKey as keyof typeof FORMS_MAPPING: 'Contact Information';
+  const displayedForm =
+    typeof formKey === 'string' && formKey in FORMS_MAPPING
+      ? (formKey as keyof typeof FORMS_MAPPING)
+      : 'Contact Information'
   return (
     <AccountSettingsLayout>
       <div className='flex min-h-screen max-md:flex-col'>

@@ -8,9 +8,8 @@ interface Params {
 
 export const mutateSession = async ({
   shouldBroadcast,
-  accessToken
-} // eslint-disable-next-line @typescript-eslint/require-await
-: Params) => {
+  accessToken // eslint-disable-next-line @typescript-eslint/require-await
+}: Params) => {
   if (accessToken) {
     cookie.set('auth.sessionToken', accessToken, { expires: 7 })
   } else {

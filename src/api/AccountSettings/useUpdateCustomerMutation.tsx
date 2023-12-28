@@ -7,26 +7,26 @@ import { useToast } from '@/core/ui/use-toast'
 const mutationKey = ['updateCustomerMutation']
 
 const Document = graphql(`
-    mutation updateCustomerMutation($input: UpdateCustomerInput!) {
-        updateCustomer(input: $input) {
-            id
-            firstName
-            lastName
-            companyName
-            email
-            homePhone
-            cellPhone
-            website
-            firstAddress
-            secondAddress
-            city
-            state
-            zipCode
-            country
-            jobTitle
-            isActive
-        }
+  mutation updateCustomerMutation($input: UpdateCustomerInput!) {
+    updateCustomer(input: $input) {
+      id
+      firstName
+      lastName
+      companyName
+      email
+      homePhone
+      cellPhone
+      website
+      firstAddress
+      secondAddress
+      city
+      state
+      zipCode
+      country
+      jobTitle
+      isActive
     }
+  }
 `)
 
 const useUpdateCustomerMutation = () => {

@@ -29,12 +29,10 @@ export const CustomerDataQueryKey = ['customer-data']
 const useCustomerDataQuery = () =>
   useGraphQLQueryProtected(
     {
-      queryKey:CustomerDataQueryKey
+      queryKey: CustomerDataQueryKey
     },
     GetCustomerDataQueryDocument
   )
-
-
 
 export type useCustomerDataQueryDataType = ReturnType<typeof useCustomerDataQuery>['data']
 export default useCustomerDataQuery

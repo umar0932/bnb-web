@@ -11,7 +11,7 @@ const AccountEmailCard = () => {
   const { componentNode: emailFormModal, openComponent: openEmailFormModal } =
     useImperativeComponent((open, close) => {
       return (
-        <Dialog open = {open} onOpenChange={close}>
+        <Dialog open={open} onOpenChange={close}>
           <DialogContent
             className=''
             // style={{
