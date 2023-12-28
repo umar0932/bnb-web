@@ -31,7 +31,7 @@ const useUpdateEmailMutation = () => {
             ...prev,
             getCustomerData: {
               ...prev.getCustomerData,
-              email: variables.email
+              email: variables?.email
             }
           }
         })
