@@ -37,7 +37,7 @@ const LeftSideBar = ({ activeComponent }: { activeComponent: string }) => {
               <SelectValue placeholder='Draft' />
             </SelectTrigger>
             <SelectContent className='border-none bg-primary text-white outline-none'>
-              <SelectGroup>
+              <SelectGroup className='cursor-pointer'>
                 <SelectItem value='Draft'>Draft</SelectItem>
                 <SelectItem value='Publish'>Publish</SelectItem>
               </SelectGroup>
@@ -48,7 +48,7 @@ const LeftSideBar = ({ activeComponent }: { activeComponent: string }) => {
           <div className='ml-3 mt-10 flex flex-col gap-2'>
             <span className='text-3xl font-bold text-primary'>Music</span>
             <span className=' mt-3 text-sm font-bold text-[#757575]'>Monday, 31 July 2023</span>
-            <div className='flex items-center gap-2 text-sm font-bold text-[#3B5998]'>
+            <div className='flex cursor-pointer items-center gap-2 text-sm font-bold text-[#3B5998]'>
               Preview your event
               <Image
                 src={ExternalLink}
@@ -61,7 +61,9 @@ const LeftSideBar = ({ activeComponent }: { activeComponent: string }) => {
           <Link href='/create-event-page/create-event'>
             <div
               className={`flex h-[60px] cursor-pointer items-center   ${
-                activeComponent === 'home' ? 'bg-white text-primary' : 'bg-transparent text-primary'
+                activeComponent === 'create-event'
+                  ? 'bg-white text-primary'
+                  : 'bg-transparent text-primary'
               }`}
             >
               <div className='flex-start flex w-[150px] items-center gap-3 p-2'>
@@ -73,10 +75,12 @@ const LeftSideBar = ({ activeComponent }: { activeComponent: string }) => {
             </div>
           </Link>
 
-          <Link href='/create-event-page/create-event'>
+          <Link href='/create-event-page/event-details'>
             <div
               className={`flex h-[60px] cursor-pointer items-center    ${
-                activeComponent === 'home' ? 'bg-white text-primary' : 'bg-transparent text-primary'
+                activeComponent === 'event-details'
+                  ? 'bg-white text-primary'
+                  : 'bg-transparent text-primary'
               }`}
             >
               <div className='flex-start flex w-[150px]  items-center gap-3 p-2'>

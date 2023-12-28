@@ -29,12 +29,22 @@ import {
 import Image from 'next/image'
 import { useState } from 'react'
 
+const CategoryOptions = [
+  // Your category and sub-category options here
+  { value: 'event', label: 'event', subcategories: ['subcategory1', 'subcategory2'] },
+  { value: 'concert', label: 'concert', subcategories: ['subcategory3', 'subcategory4'] }
+  // ... other options
+]
+
 export default function BasicInfoForm() {
   const [value, setValue] = useState<any[]>([])
   const [charCount, setCharCount] = useState(0)
-  // const [tagCharCount, setTagCharCount] = useState(0);
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null)
+  const [selectedSubcategory, setSelectedSubcategory] = useState<string | null>(null)
 
-  // const [TagCharCount, setTagCharCount] = useState(0);
+  // console.log('Category', selectedCategory)
+  // console.log('Sub-Category', selectedSubcategory)
+
   const maxCharLimit = 75
   const [tagCount, setTagCount] = useState(0)
 
@@ -47,26 +57,6 @@ export default function BasicInfoForm() {
     }
   }
 
-  // const maxTagLimit = 25;
-  // const [tags, setTags] = useState([]);
-  // const addTags = (event: any) => {
-  //   if (event.key === "Enter" && event.target.value !== "") {
-  //     const newTag = event.target.value.trim().substring(0, 25); // Limit tag length to 25 characters
-  //     setTagCharCount(0);
-  //     // event.target.value = "";
-  //     if (newTag) {
-  //       if (tags.length < 10) {
-  //         setTags([...tags, newTag]);
-  //         formik.setFieldValue("tagval", ""); // Clear the tagval field
-  //       }
-  //     }
-  //   }
-  // };
-  // const removeTags = (indexToRemove: any) => {
-  //   setTags(tags.filter((_, index) => index != indexToRemove));
-  // };
-  //   Checking Input should not exceed 75 characters limit
-
   const handleInputChange = (e: any) => {
     const inputValue = e.target.value
     if (inputValue.length <= maxCharLimit) {
@@ -75,18 +65,24 @@ export default function BasicInfoForm() {
     }
   }
 
-  // const handleTagChange = (e: any) => {
-  //   const tagValue = e.target.value;
-  //   if (tagValue.length <= maxTagLimit) {
-  //     formik.handleChange(e); // Handle formik changes
-  //     setTagCharCount(tagValue.length); // Update charCount
-  //   }
-  // };
+  const handleCategoryChange = (selectedOption: any) => {
+    console.log('Selected Option', selectedOption)
+    setSelectedCategory(selectedOption.value)
+    console.log(
+      'Categories',
+      CategoryOptions.find(category => category.value === selectedCategory)
+    )
+    setSelectedSubcategory(null)
+  }
+
+  // Update the selected subcategory when a subcategory is selected
+  const handleSubcategoryChange = (selectedOption: any) => {
+    setSelectedSubcategory(selectedOption.value)
+  }
 
   const formik = useFormik({
     initialValues: {
       event_title: '',
-      organizer_name: '',
       tags: '',
       tagval: ''
     },
@@ -132,27 +128,6 @@ export default function BasicInfoForm() {
                 {charCount}/{maxCharLimit}
               </div>
 
-              {/* Organizer Name */}
-
-              <div className='mt-5 flex  flex-col rounded-lg bg-[#EFF8FF] p-3'>
-                <span>Organizer</span>
-                <input
-                  className='h-[25px] bg-transparent outline-none placeholder:text-sm'
-                  id='organizer_name'
-                  name='organizer_name'
-                  type='text'
-                  placeholder='Tell Attendees who is organizing this event'
-                  onChange={formik.handleChange}
-                  value={formik.values.organizer_name}
-                />
-              </div>
-              <span className='text-md mt-1 text-[#757575] max-sm:text-sm'>
-                This profile describes a unique organizer and shows all of the events on one page.{' '}
-                <span className=' cursor-pointer text-[#1556AD] underline'>
-                  View Organizer Info
-                </span>
-              </span>
-
               <div className='mt-5 flex gap-20  max-md:flex-col max-md:gap-5'>
                 <div className='w-full '>
                   <Select>
@@ -173,7 +148,42 @@ export default function BasicInfoForm() {
                     </SelectTrigger>
                     <SelectContent>
                       <SelectGroup>
-                        <SelectItem value='party'>Party</SelectItem>
+                        {/* Dynamically generate category options */}
+                        {CategoryOptions.map(category => (
+                          <SelectItem
+                            key={category.value}
+                            value={category.value}
+                            onClick={() => handleCategoryChange(category.label)}
+                          >
+                            {category.label}
+                          </SelectItem>
+                        ))}
+                      </SelectGroup>
+                    </SelectContent>
+                  </Select>
+                </div>
+                <div className='w-full'>
+                  <Select>
+                    <SelectTrigger className='w-full border-none bg-[#EFF8FF] text-[#757575]'>
+                      <SelectValue placeholder='Sub-Category' />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectGroup>
+                        {/* Dynamically generate sub-category options based on the selected category */}
+                        {selectedCategory &&
+                          CategoryOptions.find(
+                            category => category.value === selectedCategory
+                          )?.subcategories.map(subcategory => (
+                            <SelectItem
+                              key={subcategory}
+                              value={subcategory}
+                              onClick={() =>
+                                handleSubcategoryChange({ value: subcategory, label: subcategory })
+                              }
+                            >
+                              {subcategory}
+                            </SelectItem>
+                          ))}
                       </SelectGroup>
                     </SelectContent>
                   </Select>
@@ -187,21 +197,7 @@ export default function BasicInfoForm() {
                 </span>
                 <div className=' flex  flex-col flex-wrap rounded-lg bg-[#EFF8FF] p-3 '>
                   <span>Add Tags</span>
-                  {/* <ReactSelect
-                    options={options}
-                    defaultValue={value}
-                    placeholder="Add search key"
-                    onChange={handleTagChange}
-                    isMulti
-                    isOptionDisabled={() => value.length >= 10}
-                    styles={{
-                      control: (baseStyles, state) => ({
-                        ...baseStyles,
-                        backgroundColor: "transparent",
-                        border: "none",
-                      }),
-                    }}
-                  /> */}
+
                   <CreatableSelect
                     onChange={handleTagChange}
                     isMulti
@@ -216,37 +212,9 @@ export default function BasicInfoForm() {
                       })
                     }}
                   />
-
-                  {/* <div className="flex flex-wrap items-center gap-2">
-                    <ul className="flex flex-wrap gap-1">
-                      {tags.map((tag, index) => (
-                        <li key={index}>
-                          <span className="flex items-center justify-center gap-2 rounded-lg bg-btnsecondary p-2 text-sm text-white">
-                            {tag}{" "}
-                            <XCircle
-                              className="h-[16px] w-[16px] cursor-pointer"
-                              onClick={() => removeTags(index)}
-                            />
-                          </span>
-                        </li>
-                      ))}
-                    </ul>
-                    <input
-                      className="h-[25px] bg-transparent outline-none placeholder:text-sm"
-                      placeholder="Add search keys"
-                      id="tagval"
-                      name="tagval"
-                      type="text"
-                      onChange={handleTagChange}
-                      value={formik.values.tagval}
-                      maxLength={maxTagLimit}
-                      onKeyUp={(e) => (e.key === "Enter" ? addTags(e) : null)}
-                    />
-                  </div> */}
                 </div>
                 <div className='flex justify-between'>
                   <span className='text-btnsecondary'>{tagCount}/10 Tags</span>
-                  {/* <span className="text-btnsecondary">{tagCharCount}/25</span> */}
                 </div>
               </div>
             </form>

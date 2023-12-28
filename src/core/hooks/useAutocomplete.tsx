@@ -1,5 +1,10 @@
 import { useEffect, useRef, useState } from 'react'
 
+interface LatLng {
+  lat: number
+  lng: number
+}
+
 interface Address {
   city: string
   state: string
@@ -13,6 +18,13 @@ interface GeolocationPosition {
     latitude: number
     longitude: number
   }
+}
+
+interface AddressInfo {
+  city: string
+  state: string
+  zip: string
+  country: string
 }
 
 const apiKey = process.env.NEXT_PUBLIC_REACT_APP_MAP_KEY || ''
@@ -32,49 +44,9 @@ function loadAsyncScript(src: string): Promise<HTMLScriptElement> {
   })
 }
 
-const extractAddress = (place: google.maps.places.PlaceResult): Address => {
-  const address: Address = {
-    city: '',
-    state: '',
-    zip: '',
-    country: '',
-    plain() {
-      const city = this.city ? this.city + ', ' : ''
-      const zip = this.zip ? this.zip + ', ' : ''
-      const state = this.state ? this.state + ', ' : ''
-      return city + this.country
-    }
-  }
-
-  if (!Array.isArray(place?.address_components)) {
-    return address
-  }
-
-  place.address_components.forEach(component => {
-    const types = component.types
-    const value = component.long_name
-
-    if (types.includes('locality')) {
-      address.city = value
-    }
-
-    if (types.includes('administrative_area_level_1')) {
-      address.state = value
-    }
-
-    if (types.includes('postal_code')) {
-      address.zip = value
-    }
-
-    if (types.includes('country')) {
-      address.country = value
-    }
-  })
-
-  return address
-}
-
-export function useAutocomplete() {
+export function useAutocomplete(
+  onAddressChange: (latLng: LatLng, addressInfo: AddressInfo) => void
+) {
   const searchInputRef = useRef<HTMLInputElement | null>(null)
   const [address, setAddress] = useState<Address>({
     city: '',
@@ -92,9 +64,56 @@ export function useAutocomplete() {
     return loadAsyncScript(src)
   }
 
+  const extractAddressInfo = (place: google.maps.places.PlaceResult): AddressInfo => {
+    const addressInfo: AddressInfo = {
+      city: '',
+      state: '',
+      zip: '',
+      country: ''
+    }
+
+    if (!Array.isArray(place?.address_components)) {
+      return addressInfo
+    }
+
+    place.address_components.forEach(component => {
+      const types = component.types
+      const value = component.long_name
+
+      if (types.includes('locality')) {
+        addressInfo.city = value
+      }
+
+      if (types.includes('administrative_area_level_1')) {
+        addressInfo.state = value
+      }
+
+      if (types.includes('postal_code')) {
+        addressInfo.zip = value
+      }
+
+      if (types.includes('country')) {
+        addressInfo.country = value
+      }
+    })
+
+    return addressInfo
+  }
+
   const onChangeAddress = (autocomplete: google.maps.places.Autocomplete): void => {
     const place = autocomplete.getPlace()
-    setAddress(extractAddress(place))
+    setAddress(extractAddressInfo(place))
+
+    const location = place.geometry?.location
+    if (location) {
+      onAddressChange(
+        {
+          lat: location.lat(),
+          lng: location.lng()
+        },
+        extractAddressInfo(place)
+      )
+    }
   }
 
   const initAutocomplete = (): void => {
@@ -114,10 +133,10 @@ export function useAutocomplete() {
       .then(response => response.json())
       .then(location => {
         const place = location.results[0]
-        const _address = extractAddress(place)
+        const _address = extractAddressInfo(place)
         setAddress(_address)
         if (searchInputRef.current) {
-          searchInputRef.current.value = _address.plain()
+          searchInputRef.current.value = _address.country
         }
       })
   }

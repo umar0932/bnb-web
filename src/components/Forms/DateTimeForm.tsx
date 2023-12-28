@@ -42,21 +42,8 @@ export default function DateTimeForm() {
               Tell event-goers when your event starts and ends so they can make plans to attend.
             </span>
 
-            <div className='mt-5 flex gap-5 max-md:flex-wrap max-md:items-center max-md:justify-center'>
-              <button
-                className='h-[55px] w-[180px] rounded-lg bg-[#EFF8FF]'
-                style={buttonStyles('SingleEvent')}
-                onClick={() => handleButtonClick('SingleEvent')}
-              >
-                Single Event
-              </button>
-              <button
-                className='h-[55px] w-[180px] rounded-lg bg-[#EFF8FF]'
-                style={buttonStyles('RecurringEvent')}
-                onClick={() => handleButtonClick('RecurringEvent')}
-              >
-                Recurring Event
-              </button>
+            <div className='mt-5 flex'>
+              <span className='text-2xl font-bold text-primary max-sm:text-xl'>Single Event</span>
             </div>
 
             <div className='mt-5 flex flex-col gap-2'>
