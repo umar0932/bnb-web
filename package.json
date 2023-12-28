@@ -7,7 +7,7 @@
     "dev": "next dev",
     "lint": "next lint",
     "start": "next start",
-    "format": "prettier --write \"src/**/*.ts\"",
+    "format": "prettier --write \"src/**/*{.ts,.tsx,.js}\"",
     "prepare": "husky install",
     "graphqlCodegen--watch": "npx graphql-code-generator --config ./src/core/lib/react-query-graphql/codegen.ts --watch"
   },
