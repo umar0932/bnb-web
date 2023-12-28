@@ -1,3 +1,5 @@
+/* eslint-disable */
+import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/core';
 export type Maybe<T> = T | null;
 export type InputMaybe<T> = Maybe<T>;
 export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
@@ -17,7 +19,7 @@ export type Scalars = {
 };
 
 export type Admin = {
-  __typename: 'Admin';
+  __typename?: 'Admin';
   email: Scalars['String']['output'];
   firstName: Scalars['String']['output'];
   idAdminUser: Scalars['ID']['output'];
@@ -28,19 +30,19 @@ export type Admin = {
 };
 
 export type AdminEmailUpdateResponse = {
-  __typename: 'AdminEmailUpdateResponse';
+  __typename?: 'AdminEmailUpdateResponse';
   access_token: Scalars['String']['output'];
   user: Admin;
 };
 
 export type AdminLoginResponse = {
-  __typename: 'AdminLoginResponse';
+  __typename?: 'AdminLoginResponse';
   access_token: Scalars['String']['output'];
   user: Admin;
 };
 
 export type Category = {
-  __typename: 'Category';
+  __typename?: 'Category';
   categoryName: Scalars['String']['output'];
   events?: Maybe<Event>;
   idCategory: Scalars['ID']['output'];
@@ -67,6 +69,12 @@ export type CreateBasicEventInput = {
 
 export type CreateCategoryInput = {
   categoryName: Scalars['String']['input'];
+};
+
+export type CreateChargeInput = {
+  amount: Scalars['Float']['input'];
+  customerId: Scalars['String']['input'];
+  paymentMethodId: Scalars['String']['input'];
 };
 
 export type CreateCustomerInput = {
@@ -102,6 +110,12 @@ export type CreateLocationInput = {
   venueName: Scalars['String']['input'];
 };
 
+export type CreateOrderInput = {
+  idEvent: Scalars['Int']['input'];
+  tickets: Array<TicketTypeInput>;
+  totalPrice: Scalars['Int']['input'];
+};
+
 export type CreateOrganizerInput = {
   description?: InputMaybe<Scalars['String']['input']>;
   name: Scalars['String']['input'];
@@ -115,7 +129,7 @@ export type CreateSubCategoryInput = {
 };
 
 export type Customer = {
-  __typename: 'Customer';
+  __typename?: 'Customer';
   cellPhone?: Maybe<Scalars['String']['output']>;
   city?: Maybe<Scalars['String']['output']>;
   companyName?: Maybe<Scalars['String']['output']>;
@@ -131,12 +145,13 @@ export type Customer = {
   password: Scalars['String']['output'];
   secondAddress?: Maybe<Scalars['String']['output']>;
   state?: Maybe<Scalars['String']['output']>;
+  stripeCustomerId?: Maybe<Scalars['String']['output']>;
   website?: Maybe<Scalars['String']['output']>;
   zipCode?: Maybe<Scalars['String']['output']>;
 };
 
 export type CustomerEmailUpdateResponse = {
-  __typename: 'CustomerEmailUpdateResponse';
+  __typename?: 'CustomerEmailUpdateResponse';
   access_token: Scalars['String']['output'];
   user: Customer;
 };
@@ -160,13 +175,13 @@ export type CustomerFilterInput = {
 };
 
 export type CustomerLoginResponse = {
-  __typename: 'CustomerLoginResponse';
+  __typename?: 'CustomerLoginResponse';
   access_token: Scalars['String']['output'];
   user: Customer;
 };
 
 export type Event = {
-  __typename: 'Event';
+  __typename?: 'Event';
   category?: Maybe<Category>;
   endDate: Scalars['DateTime']['output'];
   eventDetails?: Maybe<EventDetailsEntity>;
@@ -182,7 +197,7 @@ export type Event = {
 };
 
 export type EventDetailsEntity = {
-  __typename: 'EventDetailsEntity';
+  __typename?: 'EventDetailsEntity';
   event: Event;
   eventDescription: Scalars['String']['output'];
   eventSummary: Scalars['String']['output'];
@@ -196,13 +211,14 @@ export type EventDetailsInput = {
 };
 
 /** The status of event */
-export type EventStatus =
-  | 'DRAFT'
-  | 'PUBLISHED'
-  | 'SOLD';
+export enum EventStatus {
+  Draft = 'DRAFT',
+  Published = 'PUBLISHED',
+  Sold = 'SOLD'
+}
 
 export type EventTicketsEntity = {
-  __typename: 'EventTicketsEntity';
+  __typename?: 'EventTicketsEntity';
   availableQuantity: Scalars['Float']['output'];
   endDate: Scalars['DateTime']['output'];
   event?: Maybe<Event>;
@@ -223,18 +239,19 @@ export type ListCustomersInputs = {
 };
 
 export type ListCustomersResponse = {
-  __typename: 'ListCustomersResponse';
+  __typename?: 'ListCustomersResponse';
   results: Array<Customer>;
   totalRows?: Maybe<Scalars['Float']['output']>;
 };
 
 /** The type of location for an event (ONLINE_EVENT or VENUE_EVENT) */
-export type LocationTypes =
-  | 'ONLINE_EVENT'
-  | 'VENUE_EVENT';
+export enum LocationTypes {
+  OnlineEvent = 'ONLINE_EVENT',
+  VenueEvent = 'VENUE_EVENT'
+}
 
 export type LocationsEntity = {
-  __typename: 'LocationsEntity';
+  __typename?: 'LocationsEntity';
   city: Scalars['String']['output'];
   country: Scalars['String']['output'];
   idLocation: Scalars['ID']['output'];
@@ -259,7 +276,7 @@ export type LoginCustomerInput = {
 };
 
 export type Mutation = {
-  __typename: 'Mutation';
+  __typename?: 'Mutation';
   /** Create new admin user */
   createAdminUser: SuccessResponse;
   /** This will crete new Events */
@@ -280,6 +297,8 @@ export type Mutation = {
   loginAsAdmin: AdminLoginResponse;
   /** Customer Login */
   loginAsCustomer: CustomerLoginResponse;
+  /** This will charge the Customer on test stripe */
+  testCharge: SuccessResponse;
   /** Update admin data */
   updateAdminData: Scalars['String']['output'];
   /** Update admin email */
@@ -355,6 +374,12 @@ export type MutationLoginAsCustomerArgs = {
 };
 
 
+export type MutationTestChargeArgs = {
+  chargeInput: CreateChargeInput;
+  orderInput: CreateOrderInput;
+};
+
+
 export type MutationUpdateAdminDataArgs = {
   input: UpdateAdminUserInput;
 };
@@ -409,8 +434,24 @@ export type MutationUpdateSubCategoriesArgs = {
   input: UpdateSubCategoryInput;
 };
 
+export type OrderEntity = {
+  __typename?: 'OrderEntity';
+  idEvent: Scalars['Int']['output'];
+  idOrder: Scalars['ID']['output'];
+  orderStatus: OrderStatus;
+  tickets: TicketType;
+  totalPrice: Scalars['Float']['output'];
+};
+
+/** The status of order */
+export enum OrderStatus {
+  Failed = 'FAILED',
+  Pending = 'PENDING',
+  Succeeded = 'SUCCEEDED'
+}
+
 export type Organizer = {
-  __typename: 'Organizer';
+  __typename?: 'Organizer';
   description?: Maybe<Scalars['String']['output']>;
   idOrganizerUser: Scalars['ID']['output'];
   isActive?: Maybe<Scalars['Boolean']['output']>;
@@ -420,14 +461,14 @@ export type Organizer = {
 };
 
 export type PageData = {
-  __typename: 'PageData';
+  __typename?: 'PageData';
   count: Scalars['Float']['output'];
   limit?: Maybe<Scalars['Int']['output']>;
   offset?: Maybe<Scalars['Int']['output']>;
 };
 
 export type Query = {
-  __typename: 'Query';
+  __typename?: 'Query';
   /** This will get all categories */
   getAllCategories: Array<Category>;
   /** This will get all categories */
@@ -437,6 +478,8 @@ export type Query = {
   getCustomerUploadUrl: S3SignedUrlResponse;
   /** The List of Customers with Pagination and filters */
   getCustomersAdmin: ListCustomersResponse;
+  /** This will get all Orders of Current Customer */
+  getOrdersOfCustomer: Array<OrderEntity>;
   /** check if email already exist */
   validEmailAdmin: SuccessResponse;
   /** check if email already exist */
@@ -459,13 +502,13 @@ export type QueryValidEmailCustomerArgs = {
 };
 
 export type S3SignedUrlResponse = {
-  __typename: 'S3SignedUrlResponse';
+  __typename?: 'S3SignedUrlResponse';
   fileName: Scalars['String']['output'];
   signedUrl: Scalars['String']['output'];
 };
 
 export type SubCategory = {
-  __typename: 'SubCategory';
+  __typename?: 'SubCategory';
   category: Category;
   events?: Maybe<Array<Event>>;
   idSubCategory: Scalars['ID']['output'];
@@ -473,9 +516,22 @@ export type SubCategory = {
 };
 
 export type SuccessResponse = {
-  __typename: 'SuccessResponse';
+  __typename?: 'SuccessResponse';
   message?: Maybe<Scalars['String']['output']>;
   success?: Maybe<Scalars['Boolean']['output']>;
+};
+
+export type TicketType = {
+  __typename?: 'TicketType';
+  id: Scalars['ID']['output'];
+  quantity: Scalars['Int']['output'];
+  ticketPrice: Scalars['Int']['output'];
+};
+
+export type TicketTypeInput = {
+  id: Scalars['Int']['input'];
+  quantity: Scalars['Int']['input'];
+  ticketPrice: Scalars['Int']['input'];
 };
 
 export type UpdateAdminUserInput = {
@@ -515,6 +571,7 @@ export type UpdateCustomerInput = {
   lastName?: InputMaybe<Scalars['String']['input']>;
   secondAddress?: InputMaybe<Scalars['String']['input']>;
   state?: InputMaybe<Scalars['String']['input']>;
+  stripeCustomerId?: InputMaybe<Scalars['String']['input']>;
   website?: InputMaybe<Scalars['String']['input']>;
   zipCode?: InputMaybe<Scalars['String']['input']>;
 };
@@ -546,3 +603,47 @@ export type UpdateSubCategoryInput = {
   idSubCategory: Scalars['ID']['input'];
   subCategoryName: Scalars['String']['input'];
 };
+
+export type GetCustomerDataQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetCustomerDataQuery = { __typename?: 'Query', getCustomerData: { __typename?: 'Customer', email: string, id: string, firstName: string, lastName: string, jobTitle?: string | null, isActive?: boolean | null, secondAddress?: string | null, password: string, state?: string | null, website?: string | null, zipCode?: string | null, cellPhone?: string | null, city?: string | null, companyName?: string | null, country?: string | null, firstAddress?: string | null, homePhone?: string | null } };
+
+export type UpdateCustomerMutationMutationVariables = Exact<{
+  input: UpdateCustomerInput;
+}>;
+
+
+export type UpdateCustomerMutationMutation = { __typename?: 'Mutation', updateCustomer: { __typename?: 'Customer', id: string, firstName: string, lastName: string, companyName?: string | null, email: string, homePhone?: string | null, cellPhone?: string | null, website?: string | null, firstAddress?: string | null, secondAddress?: string | null, city?: string | null, state?: string | null, zipCode?: string | null, country?: string | null, jobTitle?: string | null, isActive?: boolean | null } };
+
+export type UpdateCustomerEmailMutationVariables = Exact<{
+  email: Scalars['String']['input'];
+}>;
+
+
+export type UpdateCustomerEmailMutation = { __typename?: 'Mutation', updateCustomerEmail: { __typename?: 'CustomerEmailUpdateResponse', access_token: string, user: { __typename?: 'Customer', email: string } } };
+
+export type CreateCustomerMutationVariables = Exact<{
+  firstName: Scalars['String']['input'];
+  lastName: Scalars['String']['input'];
+  email: Scalars['String']['input'];
+  password: Scalars['String']['input'];
+}>;
+
+
+export type CreateCustomerMutation = { __typename?: 'Mutation', createCustomer: { __typename?: 'CustomerLoginResponse', access_token: string, user: { __typename?: 'Customer', id: string, email: string, firstName: string, lastName: string } } };
+
+export type LoginMutationVariables = Exact<{
+  email: Scalars['String']['input'];
+  password: Scalars['String']['input'];
+}>;
+
+
+export type LoginMutation = { __typename?: 'Mutation', loginAsCustomer: { __typename?: 'CustomerLoginResponse', access_token: string, user: { __typename?: 'Customer', id: string, email: string, firstName: string, lastName: string } } };
+
+
+export const GetCustomerDataDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"getCustomerData"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"getCustomerData"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"email"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"firstName"}},{"kind":"Field","name":{"kind":"Name","value":"lastName"}},{"kind":"Field","name":{"kind":"Name","value":"jobTitle"}},{"kind":"Field","name":{"kind":"Name","value":"isActive"}},{"kind":"Field","name":{"kind":"Name","value":"secondAddress"}},{"kind":"Field","name":{"kind":"Name","value":"password"}},{"kind":"Field","name":{"kind":"Name","value":"state"}},{"kind":"Field","name":{"kind":"Name","value":"website"}},{"kind":"Field","name":{"kind":"Name","value":"zipCode"}},{"kind":"Field","name":{"kind":"Name","value":"cellPhone"}},{"kind":"Field","name":{"kind":"Name","value":"city"}},{"kind":"Field","name":{"kind":"Name","value":"companyName"}},{"kind":"Field","name":{"kind":"Name","value":"country"}},{"kind":"Field","name":{"kind":"Name","value":"firstAddress"}},{"kind":"Field","name":{"kind":"Name","value":"homePhone"}}]}}]}}]} as unknown as DocumentNode<GetCustomerDataQuery, GetCustomerDataQueryVariables>;
+export const UpdateCustomerMutationDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"mutation","name":{"kind":"Name","value":"updateCustomerMutation"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"input"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"UpdateCustomerInput"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"updateCustomer"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"input"},"value":{"kind":"Variable","name":{"kind":"Name","value":"input"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"firstName"}},{"kind":"Field","name":{"kind":"Name","value":"lastName"}},{"kind":"Field","name":{"kind":"Name","value":"companyName"}},{"kind":"Field","name":{"kind":"Name","value":"email"}},{"kind":"Field","name":{"kind":"Name","value":"homePhone"}},{"kind":"Field","name":{"kind":"Name","value":"cellPhone"}},{"kind":"Field","name":{"kind":"Name","value":"website"}},{"kind":"Field","name":{"kind":"Name","value":"firstAddress"}},{"kind":"Field","name":{"kind":"Name","value":"secondAddress"}},{"kind":"Field","name":{"kind":"Name","value":"city"}},{"kind":"Field","name":{"kind":"Name","value":"state"}},{"kind":"Field","name":{"kind":"Name","value":"zipCode"}},{"kind":"Field","name":{"kind":"Name","value":"country"}},{"kind":"Field","name":{"kind":"Name","value":"jobTitle"}},{"kind":"Field","name":{"kind":"Name","value":"isActive"}}]}}]}}]} as unknown as DocumentNode<UpdateCustomerMutationMutation, UpdateCustomerMutationMutationVariables>;
+export const UpdateCustomerEmailDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"mutation","name":{"kind":"Name","value":"updateCustomerEmail"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"email"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"updateCustomerEmail"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"input"},"value":{"kind":"Variable","name":{"kind":"Name","value":"email"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"access_token"}},{"kind":"Field","name":{"kind":"Name","value":"user"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"email"}}]}}]}}]}}]} as unknown as DocumentNode<UpdateCustomerEmailMutation, UpdateCustomerEmailMutationVariables>;
+export const CreateCustomerDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"mutation","name":{"kind":"Name","value":"CreateCustomer"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"firstName"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"lastName"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"email"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"password"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"createCustomer"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"input"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"firstName"},"value":{"kind":"Variable","name":{"kind":"Name","value":"firstName"}}},{"kind":"ObjectField","name":{"kind":"Name","value":"lastName"},"value":{"kind":"Variable","name":{"kind":"Name","value":"lastName"}}},{"kind":"ObjectField","name":{"kind":"Name","value":"email"},"value":{"kind":"Variable","name":{"kind":"Name","value":"email"}}},{"kind":"ObjectField","name":{"kind":"Name","value":"password"},"value":{"kind":"Variable","name":{"kind":"Name","value":"password"}}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"access_token"}},{"kind":"Field","name":{"kind":"Name","value":"user"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"email"}},{"kind":"Field","name":{"kind":"Name","value":"firstName"}},{"kind":"Field","name":{"kind":"Name","value":"lastName"}}]}}]}}]}}]} as unknown as DocumentNode<CreateCustomerMutation, CreateCustomerMutationVariables>;
+export const LoginDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"mutation","name":{"kind":"Name","value":"Login"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"email"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"password"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"loginAsCustomer"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"input"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"email"},"value":{"kind":"Variable","name":{"kind":"Name","value":"email"}}},{"kind":"ObjectField","name":{"kind":"Name","value":"password"},"value":{"kind":"Variable","name":{"kind":"Name","value":"password"}}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"access_token"}},{"kind":"Field","name":{"kind":"Name","value":"user"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"email"}},{"kind":"Field","name":{"kind":"Name","value":"firstName"}},{"kind":"Field","name":{"kind":"Name","value":"lastName"}}]}}]}}]}}]} as unknown as DocumentNode<LoginMutation, LoginMutationVariables>;

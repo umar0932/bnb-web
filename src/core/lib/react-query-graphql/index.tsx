@@ -15,7 +15,7 @@ import {
   type ClientError,
 } from 'graphql-request/build/esm/types'
 import { env } from '@/env.mjs'
-import { graphql } from './gql-typed'
+import { graphql } from '@/__generated__'
 
 export function useGraphQLQuery<TResult, TVariables>(
   queryOptions: UseQueryOptions<TResult>,
