@@ -8,7 +8,7 @@ const EventDetails = () => {
     <>
       <EventLayout>
         <div className='container'>
-          <div className='mt-5 flex flex-col gap-10 px-10 max-sm:px-2'>
+          <div className='mt-10 flex flex-col gap-10 px-10 max-sm:px-2'>
             <UploadImageCard />
             <EventSummaryCard />
             <EventDetailsCard />

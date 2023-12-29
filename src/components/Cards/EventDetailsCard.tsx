@@ -54,9 +54,6 @@ const EventDetailsCard = () => {
               </div>
               {/* Event Title */}
               <div className='mt-5 flex  flex-col rounded-lg bg-[#EFF8FF] p-3'>
-                {/* <span>
-                  Event Title<span className='text-btnsecondary'>*</span>
-                </span> */}
                 <textarea
                   className='h-[125px] bg-transparent outline-none placeholder:text-sm'
                   id='event_title'
