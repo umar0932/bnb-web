@@ -1,7 +1,7 @@
+/* eslint-disable @next/next/no-img-element */
 import React, { useState } from 'react'
 import { useDropzone } from 'react-dropzone'
 import { Upload, X } from 'lucide-react'
-import Image from 'next/image'
 
 interface Image {
   file: File
@@ -59,7 +59,15 @@ const UploadImageCard = () => {
       image.isCover = i === index
     })
 
-    setCoverImage(updatedImages[index].isCover ? updatedImages[index] : null)
+    // Check if the current image is marked as a cover image
+    const selectedImageAtIndex = updatedImages[index]
+
+    if (selectedImageAtIndex && selectedImageAtIndex.isCover) {
+      setCoverImage(selectedImageAtIndex)
+    } else {
+      setCoverImage(null)
+    }
+
     setSelectedImages(updatedImages)
   }
 
@@ -74,6 +82,7 @@ const UploadImageCard = () => {
           } cursor-pointer`}
           onClick={() => toggleCoverImage(index)}
         />
+
         <button
           className='absolute right-2 top-2 cursor-pointer rounded-full bg-gray-300 p-1 text-xs text-black opacity-0 transition-opacity duration-300 group-hover:opacity-100'
           onClick={() => removeImage(index)}
@@ -93,7 +102,9 @@ const UploadImageCard = () => {
   }
 
   const { getRootProps, getInputProps } = useDropzone({
-    accept: 'image/jpeg, image/png, image/jpg',
+    accept: {
+      'image/*': ['.png', '.gif', '.jpeg', '.jpg']
+    },
     onDrop: handleAcceptedFiles,
     multiple: true,
     maxSize: 10 * 1024 * 1024 // 10MB
@@ -117,13 +128,6 @@ const UploadImageCard = () => {
                 // If there is a cover image, display a larger area for it
                 <div className='dz-message needsclick flex w-full flex-col items-center justify-center gap-2'>
                   <div className='mb-3 mt-3 flex h-[300px] w-[700px] items-center justify-center  overflow-hidden rounded-lg max-lg:w-[500px] max-sm:w-[230px]'>
-                    {/* <Image
-                      src={coverImage.previewUrl}
-                      alt={`Cover Image`}
-                      width={700} // Set the desired width
-                      height={300} // Set the desired height
-                      className='rounded object-cover'
-                    /> */}
                     <img
                       src={coverImage.previewUrl}
                       alt={`Cover Image`}
