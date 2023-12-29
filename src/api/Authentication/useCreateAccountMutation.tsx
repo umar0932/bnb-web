@@ -13,7 +13,7 @@ const CreateCustomerMutationDocument = graphql(`
     createCustomer(
       input: { firstName: $firstName, lastName: $lastName, email: $email, password: $password }
     ) {
-      access_token
+      accessToken
       user {
         id
         email
@@ -30,7 +30,7 @@ export function useCreateAccountMutation() {
     {
       async onSuccess(data) {
         return mutateSession({
-          accessToken: data.createCustomer.access_token,
+          accessToken: data.createCustomer.accessToken,
           shouldBroadcast: true
         })
       },

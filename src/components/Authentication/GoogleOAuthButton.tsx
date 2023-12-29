@@ -1,15 +1,26 @@
+import { type SocialAuthProviders } from '@/__generated__/graphql'
+import useSocialLoginMutation from '@/api/Authentication/useSocialLoginMutation'
 import { SpinnerCircle } from '@/core/icons/SpinnerCircle'
 import { Button } from '@/core/ui/button'
 import { env } from '@/env.mjs'
 import { GoogleOAuthProvider, useGoogleLogin } from '@react-oauth/google'
-import React, { PropsWithChildren, useState } from 'react'
+import React, { useState } from 'react'
 import { FcGoogle } from 'react-icons/fc'
 
 const GoogleOAuthInner = () => {
   const [loading, setLoading] = useState(false)
+  const { mutateAsync: loginSocial } = useSocialLoginMutation()
   const login = useGoogleLogin({
-    onSuccess(codeResponse) {
-      console.log(codeResponse)
+    // eslint-disable-next-line @typescript-eslint/no-misused-promises
+    onSuccess: async (codeResponse)=> {
+      await loginSocial([
+        {
+          input: {
+            provider: 'GOOGLE' as SocialAuthProviders,
+            accessToken: codeResponse.access_token
+          }
+        }
+      ])
       setLoading(false)
     },
     flow: 'implicit'
