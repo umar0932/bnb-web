@@ -7,7 +7,7 @@ import { useToast } from '@/core/ui/use-toast'
 const Document = graphql(`
   mutation updateCustomerEmail($email: String!) {
     updateCustomerEmail(input: $email) {
-      access_token
+      accessToken
       user {
         email
       }
