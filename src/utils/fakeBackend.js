@@ -241,8 +241,8 @@ export const EventOrders = [
 
 export const plans = [
   {
-    name: 'Basic',
-    price: 19,
+    name: 'Free',
+    price: 0.0,
     currency: '$',
     frequency: 'month',
 

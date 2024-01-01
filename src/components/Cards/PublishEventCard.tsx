@@ -18,8 +18,8 @@ const PublishEventCard = () => {
         </div>
         <div className='flex w-[50%] flex-col gap-1 p-4 max-lg:w-[100%]'>
           <span className='text-2xl font-bold text-primary'>Music</span>
-          <span className='text-sm text-[#061735B2] max-sm:text-xs'> Dec 12,2023 at 3 PM</span>
-          <span className='text-sm text-[#061735B2] max-sm:text-xs'>
+          <span className='text-sm text-primary max-sm:text-xs'> Dec 12,2023 at 3 PM</span>
+          <span className='text-sm text-primary max-sm:text-xs'>
             16M 1902 Main Avenue, California, USA, 54000
           </span>
           <div className='mt-2 flex items-center gap-4'>
@@ -33,7 +33,7 @@ const PublishEventCard = () => {
             </div>
           </div>
           <div className='mt-2 flex items-center'>
-            <span className='text-sm text-[#061735B2] max-sm:text-xs'>
+            <span className='text-sm text-primary max-sm:text-xs'>
               One of the greatest music concert ever in your town, full of zeal,zest and enthusiasm.
             </span>
           </div>

@@ -1,3 +1,4 @@
+import { Button } from '@/core/ui/button'
 import { CheckIcon } from 'lucide-react'
 
 const PricingCard = ({
@@ -45,7 +46,7 @@ const PricingCard = ({
             ))}
           </ul>
           {/* Call to action */}
-          <button
+          <Button
             className={`${
               featured
                 ? 'mt-6 transform bg-indigo-600 text-white hover:scale-105 hover:bg-indigo-700'
@@ -55,7 +56,7 @@ const PricingCard = ({
             transition-all  focus:outline-none focus:ring-4 focus:ring-indigo-600 focus:ring-opacity-50`}
           >
             Subscribe
-          </button>
+          </Button>
         </div>
       </div>
     </>
