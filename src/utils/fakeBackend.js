@@ -238,3 +238,29 @@ export const EventOrders = [
     date: '01 June, 12:00 PM GMT'
   }
 ]
+
+export const plans = [
+  {
+    name: 'Basic',
+    price: 19,
+    currency: '$',
+    frequency: 'month',
+
+    features: ['Free 5 Event Creation', 'Create upto 25 tickets', 'Free Chat Support']
+  },
+  {
+    name: 'Standard',
+    price: 80,
+    currency: '$',
+    frequency: 'month',
+    featured: true,
+    features: ['Free 20 Event Creation', 'Create upto 100 tickets', 'Free Chat Support']
+  },
+  {
+    name: 'Premium',
+    price: 150,
+    currency: '$',
+    frequency: 'month',
+    features: ['Unlimited Event Creation', 'Create upto 500 tickets', 'Quick Payment Processing']
+  }
+]

@@ -17,8 +17,8 @@ const LeftSideBar = ({ activeComponent }: { activeComponent: string }) => {
   return (
     <>
       <div className='md:card-drop-shadow w-[280px] bg-[#DEF0FF] max-md:bg-white '>
-        <div className='mb-10 ml-2 mt-20 flex flex-col justify-center bg-[#DEF0FF] pl-3 max-md:ml-0 max-md:bg-white max-md:pl-1'>
-          <div className='mb-5 flex items-center'>
+        <div className='mb-10  mt-20 flex flex-col justify-center bg-[#DEF0FF] max-md:ml-0 max-md:bg-white max-md:pl-1'>
+          <div className='mb-5 ml-3 flex items-center'>
             <Link href='/organizer/events'>
               <Image
                 src={ChevronLeft}
@@ -31,7 +31,7 @@ const LeftSideBar = ({ activeComponent }: { activeComponent: string }) => {
           {/* Draft and Publish Trigger */}
           <Select>
             <SelectTrigger
-              className='ml-3 h-[40px] w-[90px] border-none bg-btnsecondary text-white outline-none'
+              className='ml-5 h-[40px] w-[90px] border-none bg-btnsecondary text-white outline-none'
               color='text-white'
             >
               <SelectValue placeholder='Draft' />
@@ -45,7 +45,7 @@ const LeftSideBar = ({ activeComponent }: { activeComponent: string }) => {
           </Select>
 
           {/* Title */}
-          <div className='ml-3 mt-10 flex flex-col gap-2'>
+          <div className='ml-5 mt-10 flex flex-col gap-2  '>
             <span className='text-3xl font-bold text-primary'>Music</span>
             <span className=' mt-3 text-sm font-bold text-[#757575]'>Monday, 31 July 2023</span>
             <div className='flex cursor-pointer items-center gap-2 text-sm font-bold text-[#3B5998]'>
@@ -60,7 +60,7 @@ const LeftSideBar = ({ activeComponent }: { activeComponent: string }) => {
 
           <Link href='/create-event-page/create-event'>
             <div
-              className={`flex h-[60px] cursor-pointer items-center   ${
+              className={`mt-5 flex h-[60px] cursor-pointer items-center pl-2  ${
                 activeComponent === 'create-event'
                   ? 'bg-white text-primary'
                   : 'bg-transparent text-primary'
@@ -77,7 +77,7 @@ const LeftSideBar = ({ activeComponent }: { activeComponent: string }) => {
 
           <Link href='/create-event-page/event-details'>
             <div
-              className={`flex h-[60px] cursor-pointer items-center    ${
+              className={`flex h-[60px] cursor-pointer items-center pl-2    ${
                 activeComponent === 'event-details'
                   ? 'bg-white text-primary'
                   : 'bg-transparent text-primary'
@@ -94,7 +94,7 @@ const LeftSideBar = ({ activeComponent }: { activeComponent: string }) => {
 
           <Link href='/create-event-page/tickets'>
             <div
-              className={`flex h-[60px] cursor-pointer items-center    ${
+              className={`flex h-[60px] cursor-pointer items-center pl-2    ${
                 activeComponent === 'tickets'
                   ? 'bg-white text-primary'
                   : 'bg-transparent text-primary'
@@ -111,7 +111,7 @@ const LeftSideBar = ({ activeComponent }: { activeComponent: string }) => {
 
           <Link href='/create-event-page/publish-event'>
             <div
-              className={`flex h-[60px] cursor-pointer items-center    ${
+              className={`flex h-[60px] cursor-pointer items-center  pl-2   ${
                 activeComponent === 'publish-event'
                   ? 'bg-white text-primary'
                   : 'bg-transparent text-primary'
@@ -127,7 +127,7 @@ const LeftSideBar = ({ activeComponent }: { activeComponent: string }) => {
           </Link>
           <Link href='/create-event-page/dashboard'>
             <div
-              className={`flex h-[60px] cursor-pointer items-center    ${
+              className={`flex h-[60px] cursor-pointer items-center pl-2   ${
                 activeComponent === 'dashboard'
                   ? 'bg-white text-primary'
                   : 'bg-transparent text-primary'
