@@ -1,5 +1,9 @@
 import GoogleMapReact from 'google-map-react'
-export default function GoogleMap() {
+
+interface GoogleMapProps {
+  selectedLocation: LatLng | null
+}
+export default function GoogleMap({ selectedLocation }: GoogleMapProps) {
   const defaultProps = {
     center: {
       lat: 36.7783, // Latitude of California
@@ -15,7 +19,7 @@ export default function GoogleMap() {
           bootstrapURLKeys={{
             key: process.env.NEXT_PUBLIC_REACT_APP_MAP_KEY as any
           }}
-          center={defaultProps.center}
+          center={selectedLocation || defaultProps.center}
           zoom={defaultProps.zoom}
         ></GoogleMapReact>
       </div>

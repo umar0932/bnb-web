@@ -211,3 +211,56 @@ export const OrganizersOrders = [
     total: '$12.89'
   }
 ]
+
+export const EventOrders = [
+  {
+    id: '1',
+    order_number: '#12562',
+    customer_name: 'John Doe',
+    quantity: '2',
+    price: '$14.50',
+    date: '01 June, 12:00 PM GMT'
+  },
+  {
+    id: '2',
+    order_number: '#12362',
+    customer_name: 'Fredrick James',
+    quantity: '8',
+    price: '$197.50',
+    date: '01 June, 12:00 PM GMT'
+  },
+  {
+    id: '3',
+    order_number: '#14362',
+    customer_name: 'Dr. Watson',
+    quantity: '1',
+    price: '$11.50',
+    date: '01 June, 12:00 PM GMT'
+  }
+]
+
+export const plans = [
+  {
+    name: 'Free',
+    price: 0.0,
+    currency: '$',
+    frequency: 'month',
+
+    features: ['Free 5 Event Creation', 'Create upto 25 tickets', 'Free Chat Support']
+  },
+  {
+    name: 'Standard',
+    price: 80,
+    currency: '$',
+    frequency: 'month',
+    featured: true,
+    features: ['Free 20 Event Creation', 'Create upto 100 tickets', 'Free Chat Support']
+  },
+  {
+    name: 'Premium',
+    price: 150,
+    currency: '$',
+    frequency: 'month',
+    features: ['Unlimited Event Creation', 'Create upto 500 tickets', 'Quick Payment Processing']
+  }
+]
