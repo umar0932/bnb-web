@@ -109,10 +109,12 @@ const LeftSideBar = ({ activeComponent }: { activeComponent: string }) => {
             </div>
           </Link>
 
-          <Link href='/create-event-page/create-event'>
+          <Link href='/create-event-page/publish-event'>
             <div
               className={`flex h-[60px] cursor-pointer items-center    ${
-                activeComponent === 'home' ? 'bg-white text-primary' : 'bg-transparent text-primary'
+                activeComponent === 'publish-event'
+                  ? 'bg-white text-primary'
+                  : 'bg-transparent text-primary'
               }`}
             >
               <div className='flex-start flex w-[150px]  items-center gap-3 p-2'>
@@ -123,10 +125,12 @@ const LeftSideBar = ({ activeComponent }: { activeComponent: string }) => {
               </div>
             </div>
           </Link>
-          <Link href='/create-event-page/create-event'>
+          <Link href='/create-event-page/dashboard'>
             <div
               className={`flex h-[60px] cursor-pointer items-center    ${
-                activeComponent === 'home' ? 'bg-white text-primary' : 'bg-transparent text-primary'
+                activeComponent === 'dashboard'
+                  ? 'bg-white text-primary'
+                  : 'bg-transparent text-primary'
               }`}
             >
               <div className='flex-start flex w-[150px]  items-center gap-3 p-2'>
