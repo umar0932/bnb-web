@@ -32,6 +32,7 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
     "cookiejs": "^2.1.2",
+    "embla-carousel-react": "^8.0.0-rc18",
     "formik": "^2.4.3",
     "google-map-react": "^2.2.1",
     "google-maps-react": "^2.0.6",
