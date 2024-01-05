@@ -12,7 +12,7 @@ import {
   type VariablesAndRequestHeadersArgs,
   type GraphQLClientRequestHeaders,
   type Variables,
-  type ClientError,
+  type ClientError
 } from 'graphql-request/build/esm/types'
 import { env } from '@/env.mjs'
 import { graphql } from '@/__generated__'
@@ -25,7 +25,7 @@ export function useGraphQLQuery<TResult, TVariables>(
 ) {
   return useQuery({
     ...queryOptions,
-    queryKey: [...queryOptions.queryKey, variables],
+    queryKey: variables ? [...queryOptions.queryKey, variables]: queryOptions.queryKey,
     queryFn: async () => {
       return await request(env.NEXT_PUBLIC_SERVER_GRAPHQL_URL, document, variables, requestHeaders)
     }
@@ -40,14 +40,19 @@ export function useGraphQLInfiniteQuery<TResult, TVariables>(
 ) {
   return useInfiniteQuery({
     ...queryOptions,
-    queryKey: [...queryOptions.queryKey, variables],
+    queryKey: variables ? [...queryOptions.queryKey, variables]: queryOptions.queryKey,
     queryFn: async () => {
       return await request(env.NEXT_PUBLIC_SERVER_GRAPHQL_URL, document, variables, requestHeaders)
     }
   })
 }
 
-export function useGraphQLMutation<TResult, TVariables extends Variables, TError = ClientError, TContext = unknown>(
+export function useGraphQLMutation<
+  TResult,
+  TVariables extends Variables,
+  TError = ClientError,
+  TContext = unknown
+>(
   mutationOptions: UseMutationOptions<
     TResult,
     TError,
@@ -59,9 +64,15 @@ export function useGraphQLMutation<TResult, TVariables extends Variables, TError
   return useMutation<TResult, TError, VariablesAndRequestHeadersArgs<TVariables>, TContext>({
     ...mutationOptions,
     mutationFn: async variables => {
-      return await request(env.NEXT_PUBLIC_SERVER_GRAPHQL_URL, document,...variables)
+      return await request(env.NEXT_PUBLIC_SERVER_GRAPHQL_URL, document, ...variables)
     }
   })
+}
+export async function requestGraphQl<TResult, TVariables extends Variables>(
+  document: TypedDocumentNode<TResult, TVariables>,
+  variables: VariablesAndRequestHeadersArgs<TVariables>,
+) {
+  return await request(env.NEXT_PUBLIC_SERVER_GRAPHQL_URL, document, ...variables)
 }
 
 export { graphql }

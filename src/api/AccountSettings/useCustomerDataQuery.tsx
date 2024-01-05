@@ -16,6 +16,7 @@ const GetCustomerDataQueryDocument = graphql(`
       website
       zipCode
       cellPhone
+      mediaUrl
       city
       companyName
       country
