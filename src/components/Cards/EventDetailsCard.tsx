@@ -4,6 +4,16 @@ import { useFormik } from 'formik'
 
 const EventDetailsCard = () => {
   const [showEdit, setShowEdit] = useState(false)
+  const [charCount, setCharCount] = useState(0)
+  const maxCharLimit = 350
+
+  const handleInputChange = (e: any) => {
+    const inputValue = e.target.value
+    if (inputValue.length <= maxCharLimit) {
+      formik.handleChange(e) // Handle formik changes
+      setCharCount(inputValue.length) // Update charCount
+    }
+  }
 
   const editToggle = () => {
     setShowEdit(!showEdit)
@@ -56,12 +66,16 @@ const EventDetailsCard = () => {
               <div className='mt-5 flex  flex-col rounded-lg bg-[#EFF8FF] p-3'>
                 <textarea
                   className='h-[125px] bg-transparent outline-none placeholder:text-sm'
-                  id='event_title'
-                  name='event_title'
+                  id='event_details'
+                  name='event_details'
                   placeholder='Describe everything about event details here'
-                  onChange={formik.handleChange}
+                  onChange={handleInputChange} // Use custom function to handle input change
                   value={formik.values.event_details}
+                  maxLength={maxCharLimit}
                 />
+              </div>
+              <div className='mt-2 flex justify-end text-sm text-btnsecondary'>
+                {charCount}/{maxCharLimit}
               </div>
             </form>
           </div>

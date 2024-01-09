@@ -4,7 +4,7 @@ import { useFormik } from 'formik'
 
 const EventSummaryCard = () => {
   const [charCount, setCharCount] = useState(0)
-  const maxCharLimit = 140
+  const maxCharLimit = 150
   const [showEdit, setShowEdit] = useState(false)
 
   const handleInputChange = (e: any) => {
