@@ -1,27 +1,33 @@
 import useCustomerDataQuery from '@/api/AccountSettings/useCustomerDataQuery'
-import useUpdateProfileMutation from '@/api/AccountSettings/useUpdateProfileMutation'
+import useUpdateCustomerMutation from '@/api/AccountSettings/useUpdateCustomerMutation'
+import useProtectedS3UploadHandler from '@/api/S3Bucket/useProtectedS3UploadHandler'
 import { Skeleton } from '@/core/ui/skeleton'
-import { env } from '@/env.mjs'
-import useProtectedS3UploadHandler from '@/lib/S3Bucket/useProtectedS3UploadHandler'
 import Image from 'next/image'
-import React, {useState} from 'react'
+import React from 'react'
 
 const ProfilePicture = () => {
-  const { data, status } = useCustomerDataQuery()
-  const { mutateAsync: persistProfileImage } = useUpdateProfileMutation()
-  const { handleUploadingFile, initalLoading } = useProtectedS3UploadHandler()
- const [uploading, setUploading] = useState(false)  
-  // eslint-disable-next-line @typescript-eslint/no-misused-promises
-  const handleFileChange: React.ChangeEventHandler<HTMLInputElement> = async event => {
-    setUploading(true)
+  const { data, status:gettingDataStatus } = useCustomerDataQuery()
+  const {mutate:s3UploadHandler, status:mutatingUploadStatus} = useProtectedS3UploadHandler()
+  const { mutate:updateCustomerHandler, status:mutatingDataStatus } = useUpdateCustomerMutation()  
+
+  const handleFileChange: React.ChangeEventHandler<HTMLInputElement> = event => {
     if (!event.target.files?.length) {
-      return;
+      return
     }
-    const uploadFilename = await handleUploadingFile(event.target.files)
-    await persistProfileImage({input:uploadFilename})
-    setUploading(false)
+    if (event.target.files[0]) {
+      s3UploadHandler({fileToUpload: event.target.files[0]}, {
+        onSuccess: (data) => {
+          console.log(data)
+          updateCustomerHandler({
+            input: {
+              mediaUrl: data,
+            }
+          })
+        }
+      })
+    }
   }
-  if (uploading || initalLoading || status === 'pending') {
+  if (mutatingUploadStatus === "pending" || mutatingDataStatus === 'pending' || gettingDataStatus === 'pending') {
     return <Skeleton className='mt-5 h-[190px] w-[190px]' />
   }
   return (
@@ -32,10 +38,10 @@ const ProfilePicture = () => {
       >
         {data?.getCustomerData.mediaUrl ? (
           <Image
-            src={`https://${env.NEXT_PUBLIC_AWS_S3_FILE_HOST}/${data?.getCustomerData.mediaUrl}`}
+            src={data?.getCustomerData.mediaUrl}
             alt='profile_image'
             className='cursor-pointer rounded-full object-cover'
-            width ={100}
+            width={100}
             height={100}
           />
         ) : (
