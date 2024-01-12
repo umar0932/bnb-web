@@ -4,23 +4,23 @@ import { useGraphQLQueryProtected } from '../helpers'
 const GetCustomerDataQueryDocument = graphql(`
   query getCustomerData {
     getCustomerData {
-      email
       id
       firstName
       lastName
+      companyName
+      email
+      homePhone
+      cellPhone
+      website
+      firstAddress
+      secondAddress
+      city
+      state
+      zipCode
+      country
       jobTitle
       isActive
-      secondAddress
-      password
-      state
-      website
-      zipCode
-      cellPhone
-      city
-      companyName
-      country
-      firstAddress
-      homePhone
+      mediaUrl
     }
   }
 `)
@@ -29,7 +29,16 @@ export const CustomerDataQueryKey = ['customer-data']
 const useCustomerDataQuery = () =>
   useGraphQLQueryProtected(
     {
-      queryKey:CustomerDataQueryKey
+      queryKey:CustomerDataQueryKey,
+      select(data) {
+        return {
+          ...data,
+          getCustomerData:{
+            ...data.getCustomerData,
+            mediaUrl: data.getCustomerData.mediaUrl ? `https://${process.env.NEXT_PUBLIC_AWS_S3_FILE_HOST}/${data.getCustomerData.mediaUrl}` : null
+          }
+        }
+      },    
     },
     GetCustomerDataQueryDocument
   )

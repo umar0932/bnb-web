@@ -7,28 +7,28 @@ import { useToast } from '@/core/ui/use-toast'
 const mutationKey = ['updateCustomerMutation']
 
 const Document = graphql(`
-    mutation updateCustomerMutation($input: UpdateCustomerInput!) {
-        updateCustomer(input: $input) {
-            id
-            firstName
-            lastName
-            companyName
-            email
-            homePhone
-            cellPhone
-            website
-            firstAddress
-            secondAddress
-            city
-            state
-            zipCode
-            country
-            jobTitle
-            isActive
-        }
+  mutation updateCustomerMutation($input: UpdateCustomerInput!) {
+    updateCustomer(input: $input) {
+      id
+      firstName
+      lastName
+      companyName
+      email
+      homePhone
+      cellPhone
+      website
+      firstAddress
+      secondAddress
+      city
+      state
+      zipCode
+      country
+      jobTitle
+      isActive
+      mediaUrl
     }
+  }
 `)
-
 const useUpdateCustomerMutation = () => {
   const queryClient = useQueryClient()
   const { toast } = useToast()
@@ -44,7 +44,7 @@ const useUpdateCustomerMutation = () => {
             ...prev,
             getCustomerData: {
               ...prev.getCustomerData,
-              ...variables
+              ...(variables.input as NonNullable<useCustomerDataQueryDataType>['getCustomerData'])
             }
           }
         })
@@ -61,6 +61,7 @@ const useUpdateCustomerMutation = () => {
     },
     Document
   )
+  
 }
 
 export default useUpdateCustomerMutation

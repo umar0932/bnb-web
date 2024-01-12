@@ -1,9 +1,6 @@
 import { FormikProvider, useFormik } from 'formik'
-import { useState } from 'react'
 import { Checkbox } from '@/core/ui/checkbox'
 import { Button } from '@/core/ui/button'
-import PlusIcon from '../../../../public/assets/plus_icon.svg'
-import Image from 'next/image'
 import {
   Select,
   SelectContent,
@@ -16,6 +13,7 @@ import useCustomerDataQuery from '@/api/AccountSettings/useCustomerDataQuery'
 import useUpdateCustomerMutation from '@/api/AccountSettings/useUpdateCustomerMutation'
 import { z } from 'zod'
 import { toFormikValidationSchema } from 'zod-formik-adapter'
+import ProfilePicture from '../ProfilePicture'
 
 const FormikSchema = z.object({
   first_name: z.string().default(''),
@@ -36,7 +34,6 @@ const FormikSchema = z.object({
 })
 
 export default function ContactInfoForm() {
-  const [imageURL, setImageURL] = useState(null)
   const { data } = useCustomerDataQuery()
   const { mutateAsync } = useUpdateCustomerMutation()
   const formik = useFormik({
@@ -80,22 +77,6 @@ export default function ContactInfoForm() {
       } catch (e) {}
     }
   })
-  console.log(formik)
-  const handleFileChange = (event: any) => {
-    const file = event.target.files[0] // Get the first selected file
-
-    // Read the selected image file and set its URL to display it
-    if (file) {
-      const reader = new FileReader()
-      reader.onload = (e: any) => {
-        setImageURL(e.target.result)
-      }
-      reader.readAsDataURL(file)
-    } else {
-      setImageURL(null) // Clear the image URL if no file is selected
-    }
-  }
-
   return (
     <>
       <div className='card-drop-shadow flex gap-10 rounded-lg bg-white p-10 max-sm:p-5'>
@@ -394,35 +375,7 @@ export default function ContactInfoForm() {
                     </div>
                   </div>
                 </div>
-                <div className='mt-5 flex h-[190px] w-[190px] flex-col items-center justify-center rounded-lg bg-[#EFF8FF] p-5'>
-                  <label
-                    htmlFor='picture'
-                    className='flex h-[100px] w-[100px] flex-shrink-0 cursor-pointer items-center justify-center rounded-full bg-white'
-                  >
-                    {imageURL ? (
-                      <Image
-                        src={imageURL}
-                        alt='profile_image'
-                        className='h-[100px] w-[100px] cursor-pointer rounded-full object-cover'
-                      />
-                    ) : (
-                      <Image src={PlusIcon} alt='plus_icon' className='cursor-pointer' />
-                    )}
-
-                    <input
-                      type='file'
-                      id='picture'
-                      accept='image/*'
-                      style={{ display: 'none' }}
-                      onChange={handleFileChange}
-                    />
-                  </label>
-                  {imageURL ? (
-                    <span className='mt-5 text-center text-sm'>Click to Change Image</span>
-                  ) : (
-                    <span className='mt-5 text-center text-sm'>Upload Profile Picture</span>
-                  )}
-                </div>
+                <ProfilePicture />
               </div>
 
               {/* Billing Address */}
